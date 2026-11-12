@@ -1,0 +1,1117 @@
+/* =========================================================
+   LOAN HISTORY PAGE
+========================================================= */
+
+.loan-history-page {
+  width: 100%;
+  min-height: 100vh;
+
+  padding: 18px;
+
+  background: #f7f8fa;
+
+  color: #333;
+
+  box-sizing: border-box;
+}
+
+
+/* =========================================================
+   HEADER
+========================================================= */
+
+.loan-history-header {
+  width: 100%;
+
+  min-height: 40px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  margin-bottom: 8px;
+}
+
+
+.loan-history-title {
+  font-size: 14px;
+
+  font-weight: 700;
+
+  color: #333;
+}
+
+
+.loan-history-breadcrumb {
+  display: flex;
+
+  align-items: center;
+
+  gap: 7px;
+
+  font-size: 10px;
+
+  color: #777;
+}
+
+
+.loan-history-breadcrumb span:first-child {
+  color: #333;
+
+  font-size: 8px;
+}
+
+
+.loan-history-breadcrumb strong {
+  color: #333;
+
+  font-weight: 600;
+}
+
+
+/* =========================================================
+   FILTER CARD
+========================================================= */
+
+.loan-history-filter-card {
+  width: 100%;
+
+  background: #fff;
+
+  border: 1px solid #dedede;
+
+  border-radius: 9px;
+
+  padding: 16px;
+
+  margin-bottom: 14px;
+
+  box-sizing: border-box;
+
+  box-shadow:
+    0 1px 5px rgba(0, 0, 0, .04);
+}
+
+
+/* =========================================================
+   FILTER TITLE
+========================================================= */
+
+.loan-history-filter-title {
+  font-size: 13px;
+
+  font-weight: 600;
+
+  color: #444;
+
+  margin-bottom: 20px;
+}
+
+
+/* =========================================================
+   FILTER GRID
+========================================================= */
+
+.loan-history-filter-grid {
+  display: grid;
+
+  grid-template-columns:
+    1.1fr
+    1.1fr
+    1fr
+    .8fr;
+
+  column-gap: 28px;
+
+  row-gap: 15px;
+
+  align-items: end;
+}
+
+
+/* =========================================================
+   FIELD
+========================================================= */
+
+.loan-history-field {
+  width: 100%;
+}
+
+
+.loan-history-field label {
+  display: block;
+
+  font-size: 12px;
+
+  font-weight: 700;
+
+  color: #333;
+
+  margin-bottom: 7px;
+}
+
+
+.loan-history-field label span {
+  color: #e53935;
+}
+
+
+/* =========================================================
+   SELECT / INPUT
+========================================================= */
+
+.loan-history-field select,
+.loan-history-field input {
+  width: 100%;
+
+  height: 38px;
+
+  padding: 0 10px;
+
+  border: 1px solid #cfcfcf;
+
+  border-radius: 4px;
+
+  outline: none;
+
+  background: #fff;
+
+  color: #555;
+
+  font-size: 13px;
+
+  box-sizing: border-box;
+}
+
+
+.loan-history-field select:focus,
+.loan-history-field input:focus {
+  border-color: #26a9d1;
+}
+
+
+/* =========================================================
+   SELECT WRAPPER
+========================================================= */
+
+.loan-history-select-wrapper {
+  position: relative;
+
+  width: 100%;
+}
+
+
+.loan-history-select-wrapper select {
+  padding-right: 35px;
+}
+
+
+/* =========================================================
+   CLEAR BUTTON
+========================================================= */
+
+.loan-history-clear {
+  position: absolute;
+
+  right: 29px;
+
+  top: 50%;
+
+  transform: translateY(-50%);
+
+  border: 0;
+
+  background: transparent;
+
+  color: #777;
+
+  font-size: 21px;
+
+  cursor: pointer;
+
+  line-height: 1;
+}
+
+
+.loan-history-clear:hover {
+  color: #333;
+}
+
+
+/* =========================================================
+   GET RECORD BUTTON
+========================================================= */
+
+.loan-history-button-field {
+  display: flex;
+
+  align-items: flex-end;
+}
+
+
+.loan-history-get-button {
+  height: 38px;
+
+  padding: 0 20px;
+
+  border: 0;
+
+  border-radius: 3px;
+
+  background: #219bc5;
+
+  color: #fff;
+
+  font-size: 12px;
+
+  font-weight: 600;
+
+  cursor: pointer;
+
+  transition: .25s;
+}
+
+
+.loan-history-get-button:hover {
+  background: #168bb3;
+}
+
+
+/* =========================================================
+   HISTORY LIST CARD
+========================================================= */
+
+.loan-history-list-card {
+  width: 100%;
+
+  background: #fff;
+
+  border: 1px solid #dedede;
+
+  border-radius: 9px;
+
+  padding: 14px;
+
+  box-sizing: border-box;
+
+  box-shadow:
+    0 1px 5px rgba(0, 0, 0, .04);
+}
+
+
+/* =========================================================
+   LIST TITLE
+========================================================= */
+
+.loan-history-list-title {
+  font-size: 17px;
+
+  font-weight: 500;
+
+  color: #333;
+
+  margin-bottom: 18px;
+}
+
+
+/* =========================================================
+   TOOLBAR
+========================================================= */
+
+.loan-history-toolbar {
+  width: 100%;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  margin-bottom: 8px;
+}
+
+
+/* =========================================================
+   ENTRIES
+========================================================= */
+
+.loan-history-entries {
+  display: flex;
+
+  align-items: center;
+}
+
+
+/* =========================================================
+   SEARCH
+========================================================= */
+
+.loan-history-search {
+  width: 145px;
+
+  height: 32px;
+
+  display: flex;
+
+  align-items: center;
+
+  border: 1px solid #ddd;
+
+  border-radius: 4px;
+
+  background: #fff;
+}
+
+
+.loan-history-search input {
+  width: 112px;
+
+  height: 100%;
+
+  border: 0;
+
+  outline: 0;
+
+  padding: 0 8px;
+
+  font-size: 12px;
+
+  background: transparent;
+}
+
+
+.loan-history-search input::placeholder {
+  color: #999;
+}
+
+
+.loan-history-search button {
+  width: 30px;
+
+  height: 100%;
+
+  border: 0;
+
+  background: transparent;
+
+  color: #555;
+
+  cursor: pointer;
+
+  font-size: 11px;
+}
+
+
+/* =========================================================
+   TABLE WRAPPER
+========================================================= */
+
+.loan-history-table-wrapper {
+  width: 100%;
+
+  overflow-x: auto;
+
+  border-radius: 3px;
+}
+
+
+/* =========================================================
+   TABLE
+========================================================= */
+
+.loan-history-table {
+  width: 100%;
+
+  min-width: 1050px;
+
+  border-collapse: collapse;
+
+  table-layout: auto;
+}
+
+
+/* =========================================================
+   TABLE HEADER
+========================================================= */
+
+.loan-history-table thead th {
+  background: #e7edf0;
+
+  color: #333;
+
+  font-size: 11px;
+
+  font-weight: 700;
+
+  padding: 11px 9px;
+
+  text-align: left;
+
+  white-space: nowrap;
+
+  border-bottom: 1px solid #d9dfe1;
+}
+
+
+/* =========================================================
+   TABLE BODY
+========================================================= */
+
+.loan-history-table tbody td {
+  padding: 11px 9px;
+
+  font-size: 12px;
+
+  color: #555;
+
+  border-bottom: 1px solid #eeeeee;
+
+  white-space: nowrap;
+
+  vertical-align: middle;
+}
+
+
+.loan-history-table tbody tr:hover td {
+  background: #fafafa;
+}
+
+
+/* =========================================================
+   METHOD
+========================================================= */
+
+.loan-history-method {
+  font-size: 11px;
+
+  font-weight: 700;
+}
+
+
+.loan-history-method.get {
+  color: #238ac5;
+}
+
+
+.loan-history-method.post {
+  color: #e17c18;
+}
+
+
+/* =========================================================
+   VIEW BUTTON
+========================================================= */
+
+.loan-history-view-button {
+  width: 34px;
+
+  height: 30px;
+
+  border: 0;
+
+  border-radius: 4px;
+
+  background: #287dd8;
+
+  color: #fff;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  cursor: pointer;
+
+  transition: .25s;
+}
+
+
+.loan-history-view-button:hover {
+  background: #176bc2;
+
+  transform: translateY(-1px);
+}
+
+
+/* =========================================================
+   NO DATA
+========================================================= */
+
+.loan-history-no-data {
+  text-align: center !important;
+
+  padding: 35px !important;
+
+  color: #888 !important;
+}
+
+
+/* =========================================================
+   FOOTER
+========================================================= */
+
+.loan-history-footer {
+  min-height: 45px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  padding: 12px 3px 2px;
+
+  font-size: 12px;
+
+  color: #666;
+}
+
+
+/* =========================================================
+   PAGINATION
+========================================================= */
+
+.loan-history-pagination {
+  display: flex;
+
+  align-items: center;
+
+  gap: 4px;
+}
+
+
+.loan-history-pagination button {
+  min-width: 45px;
+
+  height: 29px;
+
+  border: 1px solid #e2e2e2;
+
+  background: #fff;
+
+  color: #777;
+
+  border-radius: 3px;
+
+  font-size: 10px;
+
+  cursor: pointer;
+}
+
+
+.loan-history-pagination button:disabled {
+  color: #c7c7c7;
+
+  background: #fafafa;
+
+  cursor: not-allowed;
+}
+
+
+.loan-history-pagination
+.loan-history-page-active {
+  min-width: 30px;
+
+  background: #2196c7;
+
+  border-color: #2196c7;
+
+  color: #fff;
+}
+
+
+/* =========================================================
+   ACTION BUTTONS
+========================================================= */
+
+.loan-history-action-buttons {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+
+/* =========================================================
+   VIEW BUTTON
+========================================================= */
+
+.loan-history-view-button,
+.loan-history-delete-button {
+  width: 34px;
+  height: 30px;
+
+  border: 0;
+  border-radius: 4px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  color: #fff;
+
+  cursor: pointer;
+
+  transition: .25s;
+}
+
+
+.loan-history-view-button {
+  background: #287dd8;
+}
+
+
+.loan-history-view-button:hover {
+  background: #176bc2;
+}
+
+
+/* =========================================================
+   DELETE BUTTON
+========================================================= */
+
+.loan-history-delete-button {
+  background: #e04b4b;
+}
+
+
+.loan-history-delete-button:hover {
+  background: #c93636;
+}
+
+
+/* =========================================================
+   POPUP OVERLAY
+========================================================= */
+
+.loan-history-popup-overlay {
+  position: fixed;
+
+  inset: 0;
+
+  background: rgba(0, 0, 0, .55);
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  padding: 20px;
+
+  z-index: 9999;
+
+  animation: loanHistoryOverlay .2s ease;
+}
+
+
+@keyframes loanHistoryOverlay {
+
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+
+}
+
+
+/* =========================================================
+   DETAILS POPUP
+========================================================= */
+
+.loan-history-view-popup {
+  width: 720px;
+
+  max-width: 100%;
+
+  max-height: 90vh;
+
+  background: #fff;
+
+  border-radius: 4px;
+
+  overflow: hidden;
+
+  box-shadow:
+    0 15px 50px rgba(0, 0, 0, .3);
+
+  animation: loanHistoryPopup .25s ease;
+}
+
+
+@keyframes loanHistoryPopup {
+
+  from {
+    opacity: 0;
+
+    transform: translateY(-25px) scale(.98);
+  }
+
+  to {
+    opacity: 1;
+
+    transform: translateY(0) scale(1);
+  }
+
+}
+
+
+/* =========================================================
+   POPUP HEADER
+========================================================= */
+
+.loan-history-popup-header {
+  height: 62px;
+
+  background: #20a8d3;
+
+  color: #fff;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  padding: 0 20px;
+}
+
+
+.loan-history-popup-header h2 {
+  margin: 0;
+
+  font-size: 20px;
+
+  font-weight: 500;
+}
+
+
+.loan-history-popup-close {
+  width: 35px;
+
+  height: 35px;
+
+  border: 0;
+
+  background: transparent;
+
+  color: #fff;
+
+  font-size: 17px;
+
+  cursor: pointer;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+}
+
+
+.loan-history-popup-close:hover {
+  opacity: .7;
+}
+
+
+/* =========================================================
+   POPUP BODY
+========================================================= */
+
+.loan-history-popup-body {
+  padding: 20px 25px;
+
+  max-height: 60vh;
+
+  overflow-y: auto;
+}
+
+
+/* =========================================================
+   DETAIL ROW
+========================================================= */
+
+.loan-history-detail-row {
+  display: grid;
+
+  grid-template-columns: 220px 1fr;
+
+  min-height: 48px;
+
+  align-items: center;
+
+  border-bottom: 1px solid #eeeeee;
+
+  gap: 15px;
+}
+
+
+.loan-history-detail-row span {
+  font-size: 12px;
+
+  font-weight: 700;
+
+  color: #333;
+
+  text-transform: uppercase;
+}
+
+
+.loan-history-detail-row strong {
+  font-size: 13px;
+
+  font-weight: 500;
+
+  color: #666;
+}
+
+
+/* =========================================================
+   METHOD COLORS IN POPUP
+========================================================= */
+
+.loan-history-popup-post {
+  color: #df7a17 !important;
+
+  font-weight: 700 !important;
+}
+
+
+.loan-history-popup-get {
+  color: #238ac5 !important;
+
+  font-weight: 700 !important;
+}
+
+
+/* =========================================================
+   POPUP FOOTER
+========================================================= */
+
+.loan-history-popup-footer {
+  min-height: 65px;
+
+  padding: 12px 20px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: flex-end;
+
+  gap: 10px;
+
+  border-top: 1px solid #eeeeee;
+
+  background: #fafafa;
+}
+
+
+/* =========================================================
+   POPUP DELETE
+========================================================= */
+
+.loan-history-popup-delete {
+  height: 36px;
+
+  padding: 0 17px;
+
+  border: 0;
+
+  border-radius: 4px;
+
+  background: #dc4b4b;
+
+  color: #fff;
+
+  font-size: 12px;
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 7px;
+
+  cursor: pointer;
+}
+
+
+.loan-history-popup-delete:hover {
+  background: #c93636;
+}
+
+
+/* =========================================================
+   POPUP CLOSE
+========================================================= */
+
+.loan-history-popup-close-button {
+  height: 36px;
+
+  padding: 0 18px;
+
+  border: 0;
+
+  border-radius: 4px;
+
+  background: #20a8d3;
+
+  color: #fff;
+
+  font-size: 12px;
+
+  cursor: pointer;
+}
+
+
+.loan-history-popup-close-button:hover {
+  background: #168fb8;
+}
+
+
+/* =========================================================
+   MOBILE POPUP
+========================================================= */
+
+@media (max-width: 600px) {
+
+  .loan-history-popup-overlay {
+    padding: 10px;
+  }
+
+
+  .loan-history-view-popup {
+    width: 100%;
+  }
+
+
+  .loan-history-popup-header {
+    height: 55px;
+
+    padding: 0 15px;
+  }
+
+
+  .loan-history-popup-header h2 {
+    font-size: 16px;
+  }
+
+
+  .loan-history-popup-body {
+    padding: 15px;
+  }
+
+
+  .loan-history-detail-row {
+    grid-template-columns: 1fr;
+
+    gap: 5px;
+
+    padding: 10px 0;
+  }
+
+
+  .loan-history-popup-footer {
+    padding: 10px 15px;
+  }
+
+}
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media (max-width: 1100px) {
+
+  .loan-history-filter-grid {
+    grid-template-columns:
+      1fr
+      1fr;
+  }
+
+}
+
+
+@media (max-width: 768px) {
+
+  .loan-history-page {
+    padding: 12px;
+  }
+
+
+  .loan-history-breadcrumb {
+    display: none;
+  }
+
+
+  .loan-history-filter-grid {
+    grid-template-columns: 1fr;
+
+    gap: 14px;
+  }
+
+
+  .loan-history-field {
+    width: 100%;
+  }
+
+
+  .loan-history-button-field {
+    align-items: stretch;
+  }
+
+
+  .loan-history-get-button {
+    width: fit-content;
+  }
+
+
+  .loan-history-footer {
+    flex-direction: column;
+
+    align-items: flex-start;
+
+    gap: 10px;
+  }
+
+}
+
+
+@media (max-width: 480px) {
+
+  .loan-history-page {
+    padding: 8px;
+  }
+
+
+  .loan-history-filter-card,
+  .loan-history-list-card {
+    padding: 10px;
+  }
+
+
+  .loan-history-list-title {
+    font-size: 15px;
+  }
+
+
+  .loan-history-toolbar {
+    gap: 10px;
+  }
+
+
+  .loan-history-search {
+    width: 130px;
+  }
+
+
+  .loan-history-search input {
+    width: 98px;
+  }
+
+}

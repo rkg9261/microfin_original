@@ -1,0 +1,886 @@
+/* =========================================================
+   GROUP EMI COLLECTION
+========================================================= */
+
+.group-emi-collection-page {
+  width: 100%;
+  min-height: 100vh;
+  padding: 18px 24px 45px;
+  box-sizing: border-box;
+  background: #f5f7f9;
+  color: #404a50;
+}
+
+
+/* =========================================================
+   HEADER
+========================================================= */
+
+.group-emi-collection-header {
+  min-height: 48px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  border-bottom: 2px solid #2faac6;
+
+  margin-bottom: 15px;
+}
+
+.group-emi-collection-header h2 {
+  margin: 0 0 10px;
+
+  font-size: 11px;
+  font-weight: 700;
+
+  color: #343d43;
+}
+
+.group-emi-collection-breadcrumb {
+  display: flex;
+  gap: 7px;
+
+  margin-bottom: 10px;
+
+  font-size: 9px;
+
+  color: #858e93;
+}
+
+.group-emi-collection-breadcrumb strong {
+  color: #424c52;
+}
+
+
+/* =========================================================
+   FILTER
+========================================================= */
+
+.group-emi-filter-card {
+  background: #fff;
+
+  border: 1px solid #dce3e6;
+
+  border-radius: 5px;
+
+  padding: 18px;
+
+  margin-bottom: 14px;
+}
+
+.group-emi-filter-grid {
+  display: grid;
+
+  grid-template-columns:
+    1fr
+    1fr
+    1fr
+    1fr;
+
+  gap: 25px;
+}
+
+.group-emi-field {
+  display: flex;
+  flex-direction: column;
+
+  gap: 6px;
+}
+
+.group-emi-field label {
+  font-size: 9px;
+
+  font-weight: 700;
+
+  color: #343e44;
+}
+
+.group-emi-field label span {
+  color: #e84e4e;
+}
+
+.group-emi-field input,
+.group-emi-field select {
+  width: 100%;
+  height: 36px;
+
+  padding: 0 10px;
+
+  box-sizing: border-box;
+
+  border: 1px solid #cbd4d8;
+
+  border-radius: 3px;
+
+  background: #fff;
+
+  outline: none;
+
+  color: #5c666b;
+
+  font-size: 10px;
+}
+
+.group-emi-field input:focus,
+.group-emi-field select:focus {
+  border-color: #2da9c5;
+}
+
+.group-emi-select-wrapper {
+  position: relative;
+}
+
+.group-emi-select-wrapper button {
+  position: absolute;
+
+  right: 28px;
+  top: 50%;
+
+  transform: translateY(-50%);
+
+  border: none;
+
+  background: transparent;
+
+  color: #929a9f;
+
+  font-size: 18px;
+
+  cursor: pointer;
+}
+
+.group-emi-filter-line {
+  height: 2px;
+
+  background: #4c9b67;
+
+  margin-top: 25px;
+}
+
+
+/* =========================================================
+   MAIN TABLE
+========================================================= */
+
+.group-emi-table-card {
+  background: #fff;
+
+  border-radius: 5px;
+
+  border: 1px solid #dce3e6;
+
+  overflow: hidden;
+}
+
+.group-emi-table-heading {
+  display: flex;
+
+  justify-content: space-between;
+
+  align-items: center;
+
+  padding: 16px 16px 12px;
+}
+
+.group-emi-table-heading h3 {
+  margin: 0;
+
+  font-size: 20px;
+
+  font-weight: 400;
+
+  color: #4a555b;
+}
+
+.group-emi-total {
+  font-size: 10px;
+
+  color: #5f686d;
+}
+
+.group-emi-total strong {
+  color: #374249;
+}
+
+
+/* =========================================================
+   TABLE
+========================================================= */
+
+.group-emi-table-wrapper {
+  width: 100%;
+
+  overflow-x: auto;
+}
+
+.group-emi-table {
+  width: 100%;
+
+  min-width: 1250px;
+
+  border-collapse: collapse;
+}
+
+.group-emi-table th {
+  background: #f7f8f9;
+
+  color: #465158;
+
+  font-size: 8px;
+
+  font-weight: 700;
+
+  text-align: left;
+
+  padding: 13px 8px;
+
+  border-bottom: 1px solid #e1e5e7;
+
+  white-space: nowrap;
+}
+
+.group-emi-table td {
+  padding: 13px 8px;
+
+  border-bottom: 1px solid #edf0f1;
+
+  color: #626c71;
+
+  font-size: 9px;
+
+  vertical-align: middle;
+
+  white-space: nowrap;
+}
+
+.group-emi-table tbody tr:hover {
+  background: #fafcfd;
+}
+
+.group-emi-code {
+  color: #556168;
+
+  font-weight: 500;
+}
+
+.group-emi-member-name {
+  min-width: 120px;
+
+  color: #4b565c;
+
+  font-weight: 500;
+
+  white-space: normal !important;
+}
+
+.group-emi-collect-button {
+  padding: 6px 10px;
+
+  border: none;
+
+  border-radius: 4px;
+
+  background: #43a66c;
+
+  color: #fff;
+
+  font-size: 8px;
+
+  cursor: pointer;
+
+  white-space: nowrap;
+}
+
+.group-emi-collect-button:hover {
+  background: #348e59;
+}
+
+
+/* =========================================================
+   TABLE FOOTER
+========================================================= */
+
+.group-emi-table-footer {
+  min-height: 50px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  padding: 0 16px;
+}
+
+.group-emi-entries-wrapper {
+  display: flex;
+
+  align-items: center;
+
+  gap: 10px;
+
+  color: #737d82;
+
+  font-size: 8px;
+}
+
+.group-emi-pagination {
+  display: flex;
+
+  gap: 15px;
+
+  color: #818a8f;
+
+  font-size: 8px;
+}
+
+
+/* =========================================================
+   PAYMENT MODAL
+========================================================= */
+
+.group-emi-modal-overlay {
+  position: fixed;
+
+  inset: 0;
+
+  z-index: 9999;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  padding: 20px;
+
+  background: rgba(0, 0, 0, 0.38);
+}
+
+.group-emi-payment-modal {
+  width: min(1000px, 95vw);
+
+  max-height: 92vh;
+
+  overflow-y: auto;
+
+  background: #fff;
+
+  border-radius: 5px;
+
+  box-shadow:
+    0 15px 45px rgba(0, 0, 0, 0.25);
+}
+
+
+/* =========================================================
+   MODAL HEADER
+========================================================= */
+
+.group-emi-modal-header {
+  height: 58px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  padding: 0 20px;
+
+  box-sizing: border-box;
+
+  background: #24b5d0;
+
+  color: #fff;
+}
+
+.group-emi-modal-header h2 {
+  margin: 0;
+
+  font-size: 19px;
+
+  font-weight: 500;
+}
+
+.group-emi-modal-close {
+  width: 30px;
+
+  height: 30px;
+
+  border: none;
+
+  background: transparent;
+
+  color: #fff;
+
+  font-size: 25px;
+
+  cursor: pointer;
+}
+
+
+/* =========================================================
+   MODAL BODY
+========================================================= */
+
+.group-emi-modal-body {
+  display: grid;
+
+  grid-template-columns:
+    1.15fr
+    0.85fr;
+
+  gap: 35px;
+
+  padding: 25px;
+}
+
+
+/* =========================================================
+   PAYMENT FORM
+========================================================= */
+
+.group-emi-payment-form {
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 17px;
+}
+
+.group-emi-payment-field {
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 6px;
+}
+
+.group-emi-payment-field label {
+  color: #4c565c;
+
+  font-size: 10px;
+
+  font-weight: 700;
+}
+
+.group-emi-payment-field label span {
+  color: #e54f4f;
+}
+
+.group-emi-payment-field input,
+.group-emi-payment-field select,
+.group-emi-payment-field textarea {
+  width: 100%;
+
+  box-sizing: border-box;
+
+  border: none;
+
+  border-bottom: 1px solid #cdd4d7;
+
+  background: transparent;
+
+  outline: none;
+
+  color: #59636a;
+
+  font-size: 11px;
+}
+
+.group-emi-payment-field input,
+.group-emi-payment-field select {
+  height: 35px;
+}
+
+.group-emi-payment-field textarea {
+  padding: 8px 0;
+
+  resize: vertical;
+}
+
+.group-emi-payment-field input:focus,
+.group-emi-payment-field select:focus,
+.group-emi-payment-field textarea:focus {
+  border-bottom-color: #27abc6;
+}
+
+
+/* =========================================================
+   PAYMENT BUTTONS
+========================================================= */
+
+.group-emi-payment-buttons {
+  display: flex;
+
+  justify-content: flex-end;
+
+  align-items: center;
+
+  gap: 8px;
+
+  margin-top: 20px;
+}
+
+.group-emi-cancel-button {
+  min-width: 80px;
+
+  height: 34px;
+
+  border: none;
+
+  border-radius: 3px;
+
+  background: #d66b63;
+
+  color: #fff;
+
+  font-size: 9px;
+
+  font-weight: 700;
+
+  cursor: pointer;
+}
+
+.group-emi-cancel-button:hover {
+  background: #c3554d;
+}
+
+
+/* =========================================================
+   CUSTOMER DETAILS
+========================================================= */
+
+.group-emi-customer-section h3 {
+  margin: 25px 0 20px;
+
+  color: #4b555b;
+
+  font-size: 17px;
+
+  font-weight: 400;
+}
+
+.group-emi-profile-image {
+  height: 90px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  margin-bottom: 8px;
+
+  color: #8b9499;
+
+  font-size: 10px;
+}
+
+.group-emi-customer-card {
+  padding: 18px;
+
+  background: #25b4c8;
+
+  color: #fff;
+
+  border-radius: 3px;
+}
+
+.group-emi-customer-card label {
+  display: block;
+
+  margin-top: 7px;
+
+  margin-bottom: 3px;
+
+  font-size: 10px;
+
+  font-weight: 700;
+}
+
+.group-emi-customer-card strong {
+  display: block;
+
+  margin-bottom: 7px;
+
+  font-size: 12px;
+
+  font-weight: 500;
+}
+
+.group-emi-group-card {
+  margin-top: 20px;
+
+  padding: 15px;
+
+  background: #df6d68;
+
+  color: #fff;
+
+  border-radius: 3px;
+}
+
+.group-emi-group-card label {
+  display: block;
+
+  margin-bottom: 6px;
+
+  font-size: 10px;
+
+  font-weight: 700;
+}
+
+.group-emi-group-card strong {
+  font-size: 12px;
+
+  font-weight: 500;
+}
+
+
+/* =========================================================
+   MEMBER COLLECTION
+========================================================= */
+
+.member-collection-card {
+  margin-top: 18px;
+
+  background: #fff;
+
+  border-radius: 5px;
+
+  border: 1px solid #dce3e6;
+
+  overflow: hidden;
+}
+
+.member-collection-line {
+  height: 2px;
+
+  background: #4b9c66;
+}
+
+.member-collection-header {
+  padding: 18px 16px 5px;
+}
+
+.member-collection-header h3 {
+  margin: 0;
+
+  font-size: 20px;
+
+  font-weight: 400;
+
+  color: #4a555b;
+}
+
+.member-collection-search-row {
+  display: flex;
+
+  justify-content: flex-end;
+
+  padding: 0 16px 10px;
+}
+
+.member-collection-search {
+  width: 180px;
+
+  height: 30px;
+
+  display: flex;
+
+  align-items: center;
+
+  border: 1px solid #d5dcdf;
+
+  border-radius: 3px;
+}
+
+.member-collection-search input {
+  flex: 1;
+
+  width: 100%;
+
+  height: 100%;
+
+  border: none;
+
+  outline: none;
+
+  padding: 0 8px;
+
+  font-size: 9px;
+}
+
+.member-collection-search span {
+  width: 30px;
+
+  text-align: center;
+
+  color: #69757c;
+}
+
+.member-collection-table-wrapper {
+  overflow-x: auto;
+}
+
+.member-collection-table {
+  width: 100%;
+
+  min-width: 750px;
+
+  border-collapse: collapse;
+}
+
+.member-collection-table th {
+  height: 45px;
+
+  padding: 8px 12px;
+
+  background: #f7f8f9;
+
+  border-bottom: 1px solid #dce2e5;
+
+  color: #4d575d;
+
+  font-size: 9px;
+
+  text-align: left;
+}
+
+.member-collection-table td {
+  padding: 13px 12px;
+
+  border-bottom: 1px solid #edf0f1;
+
+  color: #646e73;
+
+  font-size: 9px;
+}
+
+.member-collection-empty {
+  height: 90px;
+
+  text-align: center;
+
+  color: #9ba2a6 !important;
+}
+
+.member-collection-status {
+  padding: 4px 9px;
+
+  border-radius: 10px;
+
+  background: #e9f7ed;
+
+  border: 1px solid #c9e7d2;
+
+  color: #318653;
+
+  font-size: 7px;
+
+  font-weight: 700;
+}
+
+.member-collection-footer {
+  min-height: 50px;
+
+  padding: 0 16px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  color: #7d868b;
+
+  font-size: 8px;
+}
+
+.member-collection-entries {
+  display: flex;
+
+  align-items: center;
+
+  gap: 10px;
+}
+
+.member-collection-pagination {
+  display: flex;
+
+  gap: 15px;
+}
+
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media (max-width: 1000px) {
+
+  .group-emi-filter-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .group-emi-modal-body {
+    grid-template-columns: 1fr;
+  }
+
+  .group-emi-customer-section {
+    order: -1;
+  }
+}
+
+
+@media (max-width: 650px) {
+
+  .group-emi-collection-page {
+    padding: 12px;
+  }
+
+  .group-emi-collection-header {
+    flex-direction: column;
+
+    align-items: flex-start;
+
+    padding-bottom: 8px;
+  }
+
+  .group-emi-filter-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .group-emi-table-heading {
+    align-items: flex-start;
+
+    flex-direction: column;
+
+    gap: 10px;
+  }
+
+  .group-emi-modal-overlay {
+    padding: 8px;
+  }
+
+  .group-emi-payment-modal {
+    width: 100%;
+
+    max-height: 96vh;
+  }
+
+  .group-emi-modal-body {
+    padding: 16px;
+  }
+
+  .group-emi-payment-buttons {
+    justify-content: stretch;
+  }
+
+  .group-emi-payment-buttons button {
+    flex: 1;
+  }
+
+}

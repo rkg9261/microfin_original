@@ -1,0 +1,1589 @@
+/* =========================================================
+   MASTER SETTINGS PAGE
+========================================================= */
+
+.master-settings-page {
+  width: 100%;
+  min-height: 100vh;
+
+  padding: 18px 20px 35px;
+
+  box-sizing: border-box;
+
+  background: #f5f6f7;
+
+  font-family:
+    Arial,
+    Helvetica,
+    sans-serif;
+
+  color: #222;
+}
+
+
+/* =========================================================
+   PAGE HEADER
+========================================================= */
+
+.master-settings-page-header {
+  display: flex;
+
+  justify-content: space-between;
+
+  align-items: center;
+
+  margin-bottom: 13px;
+}
+
+.master-settings-page-header h2 {
+  margin: 0;
+
+  font-size: 14px;
+
+  font-weight: 700;
+}
+
+.master-settings-breadcrumb {
+  display: flex;
+
+  align-items: center;
+
+  gap: 7px;
+
+  font-size: 10px;
+
+  color: #777;
+}
+
+
+/* =========================================================
+   MAIN GRID
+========================================================= */
+
+.master-settings-content {
+  display: grid;
+
+  grid-template-columns:
+    295px
+    minmax(0, 1fr);
+
+  gap: 22px;
+
+  align-items: start;
+}
+
+
+/* =========================================================
+   LEFT
+========================================================= */
+
+.master-settings-left {
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 18px;
+}
+
+
+/* =========================================================
+   UPLOAD CARD
+========================================================= */
+
+.master-settings-upload-card {
+  background: #fff;
+
+  border: 1px solid #e2e2e2;
+
+  box-sizing: border-box;
+}
+
+
+/* =========================================================
+   RED HEADER
+========================================================= */
+
+.master-settings-upload-title {
+  min-height: 47px;
+
+  padding: 0 13px;
+
+  display: flex;
+
+  align-items: center;
+
+  box-sizing: border-box;
+
+  background: linear-gradient(
+    90deg,
+    #c91414,
+    #e12b2b
+  );
+
+  color: #fff;
+
+  font-size: 18px;
+
+  font-weight: 400;
+}
+
+
+/* =========================================================
+   UPLOAD BODY
+========================================================= */
+
+.master-settings-upload-body {
+  padding: 15px 12px;
+
+  text-align: center;
+
+  background: #fff;
+}
+
+
+/* =========================================================
+   LOGO
+========================================================= */
+
+.master-settings-logo-preview {
+  position: relative;
+
+  width: 110px;
+
+  height: 65px;
+
+  margin: 0 auto 5px;
+
+  display: flex;
+
+  justify-content: center;
+
+  align-items: center;
+}
+
+.master-settings-logo-preview img {
+  width: 110px;
+
+  height: 65px;
+
+  object-fit: contain;
+
+  border-radius: 50%;
+}
+
+.master-settings-empty-logo {
+  width: 110px;
+
+  height: 65px;
+
+  border-radius: 50%;
+
+  border: 1px solid #ccc;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  color: #777;
+
+  font-size: 12px;
+}
+
+
+/* =========================================================
+   COMPANY NAME
+========================================================= */
+
+.master-settings-company-short-name {
+  margin-top: 5px;
+
+  font-size: 20px;
+
+  color: #333;
+}
+
+.master-settings-company-name {
+  margin-top: 6px;
+
+  font-size: 11px;
+
+  line-height: 15px;
+
+  color: #666;
+}
+
+
+/* =========================================================
+   IMAGE PREVIEW
+========================================================= */
+
+.master-settings-square-preview {
+  position: relative;
+
+  width: 92px;
+
+  height: 92px;
+
+  margin: 0 auto 15px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+}
+
+.master-settings-square-preview img {
+  width: 92px;
+
+  height: 92px;
+
+  padding: 3px;
+
+  object-fit: contain;
+
+  border: 2px solid #d4d4d4;
+
+  border-radius: 50%;
+
+  box-sizing: border-box;
+}
+
+
+/* =========================================================
+   EMPTY FAVICON
+========================================================= */
+
+.master-settings-empty-square {
+  width: 92px;
+
+  height: 92px;
+
+  border: 2px solid #d4d4d4;
+
+  border-radius: 50%;
+
+  display: flex;
+
+  justify-content: center;
+
+  align-items: center;
+
+  background: #f6f6f6;
+
+  color: #777;
+
+  font-size: 30px;
+}
+
+
+/* =========================================================
+   QR
+========================================================= */
+
+.master-settings-square-preview.qr {
+  width: 100px;
+
+  height: 100px;
+}
+
+.master-settings-square-preview.qr img {
+  width: 100px;
+
+  height: 100px;
+
+  border-radius: 0;
+
+  border: 1px solid #bbb;
+
+  padding: 3px;
+}
+
+.master-settings-empty-qr {
+  width: 100px;
+
+  height: 100px;
+
+  border: 1px solid #aaa;
+
+  display: flex;
+
+  justify-content: center;
+
+  align-items: center;
+
+  color: #777;
+
+  font-size: 20px;
+}
+
+
+/* =========================================================
+   FILE
+========================================================= */
+
+.master-settings-file-area {
+  display: flex;
+
+  justify-content: center;
+
+  align-items: center;
+
+  flex-wrap: wrap;
+
+  gap: 5px;
+}
+
+.master-settings-file-input {
+  display: none;
+}
+
+.master-settings-choose-btn {
+  height: 27px;
+
+  padding: 4px 9px;
+
+  display: inline-flex;
+
+  align-items: center;
+
+  gap: 5px;
+
+  border: 1px solid #999;
+
+  background: #f4f4f4;
+
+  color: #333;
+
+  font-size: 11px;
+
+  cursor: pointer;
+
+  border-radius: 2px;
+}
+
+.master-settings-choose-btn:hover {
+  background: #e5e5e5;
+}
+
+.master-settings-file-name {
+  max-width: 125px;
+
+  overflow: hidden;
+
+  text-overflow: ellipsis;
+
+  white-space: nowrap;
+
+  color: #666;
+
+  font-size: 11px;
+}
+
+
+/* =========================================================
+   REMOVE
+========================================================= */
+
+.master-settings-remove-image {
+  position: absolute;
+
+  right: -8px;
+
+  top: -7px;
+
+  width: 21px;
+
+  height: 21px;
+
+  border: none;
+
+  border-radius: 50%;
+
+  display: flex;
+
+  justify-content: center;
+
+  align-items: center;
+
+  background: #d51616;
+
+  color: #fff;
+
+  font-size: 9px;
+
+  cursor: pointer;
+}
+
+
+/* =========================================================
+   RIGHT
+========================================================= */
+
+.master-settings-right {
+  min-width: 0;
+
+  background: #fff;
+
+  border: 1px solid #ddd;
+}
+
+
+/* =========================================================
+   PROFILE HEADER
+========================================================= */
+
+.master-settings-profile-header {
+  min-height: 51px;
+
+  display: flex;
+
+  align-items: center;
+
+  padding: 0 14px;
+
+  box-sizing: border-box;
+
+  background: linear-gradient(
+    90deg,
+    #c91414,
+    #df2b2b
+  );
+}
+
+.master-settings-profile-title {
+  margin: 0;
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 10px;
+
+  color: #fff;
+
+  font-size: 18px;
+
+  font-weight: 400;
+}
+
+
+/* =========================================================
+   EDIT ICON
+========================================================= */
+
+.master-settings-edit-btn {
+  width: 22px;
+
+  height: 22px;
+
+  padding: 0;
+
+  border: none;
+
+  background: transparent;
+
+  color: #fff;
+
+  cursor: pointer;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  font-size: 13px;
+
+  transition: 0.2s;
+}
+
+.master-settings-edit-btn:hover {
+  transform: scale(1.15);
+}
+
+
+/* =========================================================
+   TABLE CONTAINER
+========================================================= */
+
+.master-settings-table-container {
+  width: 100%;
+
+  background: #fff;
+
+  overflow-x: auto;
+}
+
+
+/* =========================================================
+   TWO TABLE
+========================================================= */
+
+.master-settings-two-table {
+  display: grid;
+
+  grid-template-columns: 1fr 1fr;
+
+  min-width: 850px;
+}
+
+
+/* =========================================================
+   DATA TABLE
+========================================================= */
+
+.master-settings-data-table {
+  width: 100%;
+}
+
+
+/* =========================================================
+   DATA ROW
+========================================================= */
+
+.master-settings-data-row {
+  display: grid;
+
+  grid-template-columns:
+    minmax(190px, 48%)
+    minmax(150px, 52%);
+
+  min-height: 37px;
+
+  border-bottom: 1px solid #ededed;
+
+  box-sizing: border-box;
+}
+
+
+/* =========================================================
+   LABEL
+========================================================= */
+
+.master-settings-data-label {
+  padding: 8px 10px;
+
+  display: flex;
+
+  align-items: center;
+
+  box-sizing: border-box;
+
+  color: #222;
+
+  font-size: 11px;
+
+  font-weight: 700;
+
+  line-height: 15px;
+}
+
+
+/* =========================================================
+   VALUE
+========================================================= */
+
+.master-settings-data-value {
+  padding: 8px 8px;
+
+  display: flex;
+
+  align-items: center;
+
+  box-sizing: border-box;
+
+  color: #666;
+
+  font-size: 11px;
+
+  line-height: 15px;
+
+  word-break: break-word;
+}
+
+.master-settings-right-value {
+  justify-content: flex-end;
+
+  text-align: right;
+
+  padding-right: 18px;
+}
+
+
+/* =========================================================
+   FORM
+========================================================= */
+
+.master-settings-edit-form {
+  width: 100%;
+
+  background: #fff;
+}
+
+
+/* =========================================================
+   FORM HEADER
+========================================================= */
+
+.master-settings-form-header {
+  min-height: 51px;
+
+  padding: 0 15px;
+
+  display: flex;
+
+  align-items: center;
+
+  background: linear-gradient(
+    90deg,
+    #c91414,
+    #df2b2b
+  );
+
+  color: #fff;
+}
+
+.master-settings-form-header h2 {
+  margin: 0;
+
+  font-size: 18px;
+
+  font-weight: 400;
+}
+
+
+/* =========================================================
+   FORM BODY
+========================================================= */
+
+.master-settings-form-body {
+  padding: 15px;
+
+  max-height: 75vh;
+
+  overflow-y: auto;
+
+  box-sizing: border-box;
+}
+
+
+/* =========================================================
+   FORM SECTION
+========================================================= */
+
+.master-settings-form-section {
+  margin-bottom: 20px;
+
+  border: 1px solid #ddd;
+
+  background: #fff;
+}
+
+.master-settings-form-section h3 {
+  margin: 0;
+
+  padding: 10px 12px;
+
+  background: #f1f1f1;
+
+  border-bottom: 1px solid #ddd;
+
+  color: #333;
+
+  font-size: 13px;
+
+  font-weight: 700;
+}
+
+
+/* =========================================================
+   FORM GRID
+========================================================= */
+
+.master-settings-form-grid {
+  display: grid;
+
+  grid-template-columns:
+    repeat(2, minmax(0, 1fr));
+
+  gap: 0 18px;
+
+  padding: 10px 12px;
+}
+
+
+/* =========================================================
+   FORM GROUP
+========================================================= */
+
+.master-settings-form-group {
+  margin-bottom: 12px;
+}
+
+.master-settings-form-group label {
+  display: block;
+
+  margin-bottom: 5px;
+
+  color: #333;
+
+  font-size: 11px;
+
+  font-weight: 700;
+
+  text-transform: uppercase;
+}
+
+
+/* =========================================================
+   INPUT
+========================================================= */
+
+.master-settings-form-group input,
+.master-settings-form-group select {
+  width: 100%;
+
+  height: 36px;
+
+  padding: 7px 9px;
+
+  box-sizing: border-box;
+
+  border: 1px solid #ccc;
+
+  border-radius: 2px;
+
+  outline: none;
+
+  background: #fff;
+
+  color: #333;
+
+  font-size: 12px;
+}
+
+.master-settings-form-group input:focus,
+.master-settings-form-group select:focus {
+  border-color: #c91616;
+
+  box-shadow:
+    0 0 0 1px rgba(201, 22, 22, 0.12);
+}
+
+
+/* =========================================================
+   FORM ACTIONS
+========================================================= */
+
+.master-settings-form-actions {
+  display: flex;
+
+  justify-content: flex-end;
+
+  gap: 8px;
+
+  padding: 12px 15px;
+
+  border-top: 1px solid #ddd;
+
+  background: #fafafa;
+}
+
+.master-settings-form-save,
+.master-settings-form-cancel {
+  min-width: 105px;
+
+  height: 36px;
+
+  padding: 0 14px;
+
+  border: none;
+
+  display: flex;
+
+  justify-content: center;
+
+  align-items: center;
+
+  gap: 6px;
+
+  color: #fff;
+
+  font-size: 12px;
+
+  font-weight: 600;
+
+  border-radius: 3px;
+
+  cursor: pointer;
+}
+
+.master-settings-form-save {
+  background: #2d9d65;
+}
+
+.master-settings-form-cancel {
+  background: #d44a4a;
+}
+
+.master-settings-form-save:hover,
+.master-settings-form-cancel:hover {
+  opacity: 0.88;
+}
+
+
+/* =========================================================
+   UPDATE COMPANY PROFILE MODAL
+========================================================= */
+
+.ms-modal-overlay {
+  position: fixed;
+
+  inset: 0;
+
+  z-index: 9999;
+
+  background: rgba(0, 0, 0, 0.58);
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  padding: 18px;
+
+  box-sizing: border-box;
+}
+
+
+/* =========================================================
+   MODAL
+========================================================= */
+
+.ms-profile-modal {
+  width: min(1080px, 96vw);
+
+  max-height: 94vh;
+
+  background: #fff;
+
+  border-radius: 2px;
+
+  overflow: hidden;
+
+  box-shadow:
+    0 12px 45px rgba(0, 0, 0, 0.35);
+
+  display: flex;
+
+  flex-direction: column;
+}
+
+
+/* =========================================================
+   RED HEADER
+========================================================= */
+
+.ms-modal-header {
+  min-height: 58px;
+
+  flex-shrink: 0;
+
+  padding: 0 20px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  background: linear-gradient(
+    90deg,
+    #d51b1b,
+    #e42b2b
+  );
+
+  color: #fff;
+}
+
+.ms-modal-header h2 {
+  margin: 0;
+
+  font-size: 21px;
+
+  font-weight: 400;
+
+  letter-spacing: 0.2px;
+}
+
+
+/* =========================================================
+   CLOSE
+========================================================= */
+
+.ms-modal-close {
+  width: 30px;
+
+  height: 30px;
+
+  border: none;
+
+  background: transparent;
+
+  color: #9d0000;
+
+  font-size: 16px;
+
+  cursor: pointer;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+}
+
+.ms-modal-close:hover {
+  color: #fff;
+}
+
+
+/* =========================================================
+   FORM
+========================================================= */
+
+.ms-modal-form {
+  min-height: 0;
+
+  display: flex;
+
+  flex-direction: column;
+
+  flex: 1;
+}
+
+
+/* =========================================================
+   SCROLL AREA
+========================================================= */
+
+.ms-modal-scroll {
+  flex: 1;
+
+  overflow-y: auto;
+
+  overflow-x: hidden;
+
+  padding: 20px 30px 35px;
+
+  box-sizing: border-box;
+
+  scrollbar-width: thin;
+}
+
+
+/* =========================================================
+   TOP 3 COLUMN GRID
+========================================================= */
+
+.ms-top-grid {
+  display: grid;
+
+  grid-template-columns:
+    repeat(3, minmax(0, 1fr));
+
+  gap: 30px;
+}
+
+
+/* =========================================================
+   REGISTRATION 3 COLUMNS
+========================================================= */
+
+.ms-three-column-grid {
+  display: grid;
+
+  grid-template-columns:
+    repeat(3, minmax(0, 1fr));
+
+  gap: 28px;
+}
+
+
+/* =========================================================
+   COLUMN
+========================================================= */
+
+.ms-form-column {
+  min-width: 0;
+}
+
+
+/* =========================================================
+   FIELD
+========================================================= */
+
+.ms-form-field {
+  width: 100%;
+
+  margin-bottom: 15px;
+}
+
+.ms-form-field label {
+  display: block;
+
+  min-height: 17px;
+
+  margin-bottom: 5px;
+
+  color: #333;
+
+  font-size: 12px;
+
+  font-weight: 700;
+
+  line-height: 16px;
+
+  text-transform: uppercase;
+}
+
+.ms-required {
+  color: #d21b1b;
+
+  margin-left: 3px;
+}
+
+
+/* =========================================================
+   INPUT / SELECT / TEXTAREA
+========================================================= */
+
+.ms-form-field input,
+.ms-form-field select,
+.ms-form-field textarea {
+  width: 100%;
+
+  box-sizing: border-box;
+
+  border: 1px solid #d5d5d5;
+
+  border-radius: 15px;
+
+  outline: none;
+
+  background: #fff;
+
+  color: #555;
+
+  font-family: inherit;
+
+  font-size: 12px;
+}
+
+
+/* INPUT */
+
+.ms-form-field input,
+.ms-form-field select {
+  height: 38px;
+
+  padding: 7px 14px;
+}
+
+
+/* TEXTAREA */
+
+.ms-form-field textarea {
+  min-height: 63px;
+
+  padding: 9px 13px;
+
+  resize: vertical;
+
+  border-radius: 8px;
+}
+
+
+/* SELECT */
+
+.ms-form-field select {
+  appearance: auto;
+
+  cursor: pointer;
+}
+
+
+/* FOCUS */
+
+.ms-form-field input:focus,
+.ms-form-field select:focus,
+.ms-form-field textarea:focus {
+  border-color: #c9c9c9;
+
+  box-shadow:
+    0 0 0 2px rgba(213, 27, 27, 0.05);
+}
+
+
+/* =========================================================
+   SECTION TITLE
+========================================================= */
+
+.ms-section-title {
+  margin-top: 22px;
+
+  margin-bottom: 14px;
+
+  color: #333;
+
+  font-size: 28px;
+
+  font-weight: 300;
+
+  line-height: 36px;
+
+  letter-spacing: 0.3px;
+}
+
+
+/* =========================================================
+   SERVICE GRID
+========================================================= */
+
+.ms-service-grid {
+  display: grid;
+
+  grid-template-columns:
+    repeat(3, minmax(0, 1fr));
+
+  gap: 25px 42px;
+
+  padding-bottom: 5px;
+}
+
+
+/* =========================================================
+   SERVICE FIELD
+========================================================= */
+
+.ms-service-field {
+  margin-bottom: 17px;
+
+  min-width: 0;
+}
+
+
+/* =========================================================
+   SERVICE LABEL
+========================================================= */
+
+.ms-service-label {
+  display: flex;
+
+  align-items: flex-start;
+
+  gap: 5px;
+
+  color: #444;
+
+  font-size: 12px;
+
+  font-weight: 700;
+
+  line-height: 17px;
+
+  text-transform: uppercase;
+}
+
+.ms-service-label svg {
+  flex-shrink: 0;
+
+  margin-top: 1px;
+
+  color: #6d8d95;
+
+  font-size: 13px;
+}
+
+
+/* =========================================================
+   RADIO
+========================================================= */
+
+.ms-radio-group {
+  display: flex;
+
+  align-items: center;
+
+  gap: 7px;
+
+  height: 22px;
+
+  margin-top: 1px;
+
+  margin-left: 1px;
+}
+
+.ms-radio-item {
+  position: relative;
+
+  width: 19px;
+
+  height: 19px;
+
+  display: inline-flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  cursor: pointer;
+}
+
+.ms-radio-item input {
+  position: absolute;
+
+  opacity: 0;
+
+  pointer-events: none;
+}
+
+
+/* CIRCLE */
+
+.ms-radio-circle {
+  width: 13px;
+
+  height: 13px;
+
+  border: 1px solid #9a9a9a;
+
+  border-radius: 50%;
+
+  box-sizing: border-box;
+}
+
+
+/* ACTIVE */
+
+.ms-radio-item
+input[value="Active"]:checked
+~ .ms-radio-circle {
+  border: 1px solid #159bd0;
+
+  background: #159bd0;
+
+  box-shadow:
+    inset 0 0 0 3px #fff;
+}
+
+
+/* CHECK */
+
+.ms-check-icon {
+  position: absolute;
+
+  left: 17px;
+
+  top: 4px;
+
+  color: #60916d;
+
+  font-size: 10px;
+}
+
+
+/* CROSS */
+
+.ms-cross-icon {
+  position: absolute;
+
+  left: 16px;
+
+  top: 0px;
+
+  color: #c65b66;
+
+  font-size: 17px;
+
+  line-height: 18px;
+}
+
+
+/* =========================================================
+   MODAL FOOTER
+========================================================= */
+
+.ms-modal-footer {
+  flex-shrink: 0;
+
+  min-height: 58px;
+
+  padding: 10px 25px;
+
+  box-sizing: border-box;
+
+  border-top: 1px solid #ddd;
+
+  background: #fafafa;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: flex-end;
+
+  gap: 9px;
+}
+
+
+/* =========================================================
+   BUTTONS
+========================================================= */
+
+.ms-save-button,
+.ms-cancel-button {
+  height: 36px;
+
+  min-width: 105px;
+
+  padding: 0 15px;
+
+  border: none;
+
+  border-radius: 3px;
+
+  color: #fff;
+
+  display: inline-flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  gap: 7px;
+
+  font-size: 12px;
+
+  font-weight: 600;
+
+  cursor: pointer;
+}
+
+.ms-save-button {
+  background: #2c9b63;
+}
+
+.ms-cancel-button {
+  background: #d34a4a;
+}
+
+.ms-save-button:hover,
+.ms-cancel-button:hover {
+  opacity: 0.88;
+}
+
+
+/* =========================================================
+   SCROLLBAR
+========================================================= */
+
+.ms-modal-scroll::-webkit-scrollbar {
+  width: 7px;
+}
+
+.ms-modal-scroll::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+.ms-modal-scroll::-webkit-scrollbar-thumb {
+  background: #bdbdbd;
+
+  border-radius: 10px;
+}
+
+
+
+
+/* =========================================================
+   DESKTOP - SCREENSHOT LIKE
+========================================================= */
+
+@media (min-width: 1200px) {
+
+  .ms-profile-modal {
+    width: 1080px;
+  }
+
+  .ms-modal-scroll {
+    padding-left: 30px;
+
+    padding-right: 30px;
+  }
+
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 900px) {
+
+  .ms-profile-modal {
+    width: 96vw;
+  }
+
+  .ms-top-grid,
+  .ms-three-column-grid,
+  .ms-service-grid {
+    grid-template-columns:
+      repeat(2, minmax(0, 1fr));
+  }
+
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 650px) {
+
+  .ms-modal-overlay {
+    padding: 5px;
+  }
+
+  .ms-profile-modal {
+    width: 100%;
+
+    max-height: 97vh;
+  }
+
+  .ms-modal-header {
+    min-height: 52px;
+
+    padding: 0 13px;
+  }
+
+  .ms-modal-header h2 {
+    font-size: 17px;
+  }
+
+  .ms-modal-scroll {
+    padding: 15px;
+  }
+
+  .ms-top-grid,
+  .ms-three-column-grid,
+  .ms-service-grid {
+    grid-template-columns: 1fr;
+
+    gap: 0;
+  }
+
+  .ms-section-title {
+    font-size: 23px;
+  }
+
+  .ms-modal-footer {
+    padding: 10px 15px;
+  }
+
+}
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 1100px) {
+
+  .master-settings-content {
+    grid-template-columns:
+      250px
+      minmax(0, 1fr);
+  }
+
+  .master-settings-two-table {
+    grid-template-columns: 1fr;
+  }
+
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 768px) {
+
+  .master-settings-page {
+    padding: 12px;
+  }
+
+  .master-settings-content {
+    grid-template-columns: 1fr;
+  }
+
+  .master-settings-left {
+    display: grid;
+
+    grid-template-columns:
+      repeat(3, 1fr);
+
+    gap: 10px;
+  }
+
+  .master-settings-upload-title {
+    min-height: 40px;
+
+    font-size: 14px;
+  }
+
+  .master-settings-company-short-name {
+    font-size: 17px;
+  }
+
+  .master-settings-company-name {
+    font-size: 9px;
+  }
+
+  .master-settings-form-grid {
+    grid-template-columns: 1fr;
+  }
+
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media (max-width: 520px) {
+
+  .master-settings-left {
+    grid-template-columns: 1fr;
+  }
+
+  .master-settings-page-header {
+    align-items: flex-start;
+
+    flex-direction: column;
+
+    gap: 6px;
+  }
+
+  .master-settings-form-actions {
+    flex-direction: column;
+  }
+
+  .master-settings-form-save,
+  .master-settings-form-cancel {
+    width: 100%;
+  }
+
+}

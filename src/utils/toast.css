@@ -1,0 +1,36 @@
+.Toastify__toast {
+  border-radius: 8px;
+  font-family: "Poppins", sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  min-height: 52px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+}
+
+.Toastify__toast--success {
+  background: #15803d !important;
+  color: #ffffff !important;
+}
+
+.Toastify__toast--error {
+  background: #dc2626 !important;
+  color: #ffffff !important;
+}
+
+.Toastify__toast--success .Toastify__toast-icon svg,
+.Toastify__toast--error .Toastify__toast-icon svg {
+  fill: #ffffff;
+}
+
+.Toastify__close-button {
+  color: #ffffff;
+  opacity: 0.9;
+}
+
+.Toastify__progress-bar--success {
+  background: #bbf7d0;
+}
+
+.Toastify__progress-bar--error {
+  background: #fecaca;
+}

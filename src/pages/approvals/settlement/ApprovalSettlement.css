@@ -1,0 +1,1353 @@
+/* =========================================================
+   APPROVAL SETTLEMENT PAGE
+========================================================= */
+
+.approval-settlement-page {
+  width: 100%;
+  min-height: 100vh;
+  padding: 20px 24px 35px;
+  box-sizing: border-box;
+  background: #f5f7fa;
+  color: #263238;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+
+/* =========================================================
+   PAGE HEADER
+========================================================= */
+
+.approval-settlement-page-header {
+  width: 100%;
+  min-height: 42px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  margin-bottom: 15px;
+}
+
+.approval-settlement-page-header h2 {
+  margin: 0;
+
+  font-size: 15px;
+  font-weight: 700;
+  color: #222b35;
+
+  letter-spacing: 0.2px;
+}
+
+.approval-settlement-breadcrumb {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+
+  font-size: 11px;
+  color: #7b858f;
+}
+
+.approval-settlement-breadcrumb strong {
+  color: #303841;
+  font-weight: 600;
+}
+
+
+/* =========================================================
+   FILTER CARD
+========================================================= */
+
+.approval-settlement-filter-card {
+  width: 100%;
+  min-height: 145px;
+
+  background: #ffffff;
+
+  border: 1px solid #dce1e5;
+  border-radius: 10px;
+
+  box-sizing: border-box;
+
+  padding: 20px 24px 23px;
+
+  margin-bottom: 16px;
+
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.03);
+}
+
+
+/* =========================================================
+   FILTER TITLE
+========================================================= */
+
+.approval-settlement-filter-title {
+  margin-bottom: 20px;
+
+  font-size: 14px;
+  font-weight: 700;
+
+  color: #343b43;
+
+  text-transform: uppercase;
+}
+
+
+/* =========================================================
+   FILTER GRID
+========================================================= */
+
+.approval-settlement-filter-grid {
+  width: 100%;
+
+  display: grid;
+
+  grid-template-columns:
+    minmax(280px, 1fr)
+    minmax(280px, 1fr)
+    auto;
+
+  gap: 28px;
+
+  align-items: end;
+}
+
+
+/* =========================================================
+   FIELD
+========================================================= */
+
+.approval-settlement-field {
+  width: 100%;
+
+  display: flex;
+  flex-direction: column;
+
+  gap: 8px;
+}
+
+.approval-settlement-field label {
+  display: block;
+
+  font-size: 12px;
+  font-weight: 700;
+
+  color: #30363d;
+
+  text-transform: uppercase;
+
+  letter-spacing: 0.2px;
+}
+
+
+/* =========================================================
+   SELECT / INPUT
+========================================================= */
+
+.approval-settlement-field select,
+.approval-settlement-field input {
+  width: 100%;
+  height: 42px;
+
+  padding: 0 13px;
+
+  border: 1px solid #cfd5da;
+  border-radius: 4px;
+
+  background: #ffffff;
+
+  color: #4b535b;
+
+  font-size: 13px;
+
+  outline: none;
+
+  box-sizing: border-box;
+
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.approval-settlement-field select {
+  cursor: pointer;
+}
+
+.approval-settlement-field input {
+  cursor: text;
+}
+
+.approval-settlement-field select:focus,
+.approval-settlement-field input:focus {
+  border-color: #26a9d6;
+
+  box-shadow:
+    0 0 0 2px rgba(38, 169, 214, 0.12);
+}
+
+.approval-settlement-field select:hover,
+.approval-settlement-field input:hover {
+  border-color: #aeb7bf;
+}
+
+
+/* =========================================================
+   DATE INPUT
+========================================================= */
+
+.approval-settlement-field input[type="date"] {
+  color: #59636c;
+}
+
+.approval-settlement-field input[type="date"]::-webkit-calendar-picker-indicator {
+  cursor: pointer;
+  opacity: 0.75;
+}
+
+
+/* =========================================================
+   GET RECORD BUTTON
+========================================================= */
+
+.approval-settlement-get-record-btn {
+  height: 42px;
+
+  min-width: 120px;
+
+  padding: 0 20px;
+
+  border: none;
+  border-radius: 4px;
+
+  background: #19a9d1;
+
+  color: #ffffff;
+
+  font-size: 12px;
+  font-weight: 700;
+
+  text-transform: uppercase;
+
+  cursor: pointer;
+
+  transition:
+    background 0.2s ease,
+    transform 0.15s ease,
+    box-shadow 0.2s ease;
+}
+
+.approval-settlement-get-record-btn:hover {
+  background: #118fb5;
+
+  box-shadow:
+    0 4px 10px rgba(25, 169, 209, 0.2);
+}
+
+.approval-settlement-get-record-btn:active {
+  transform: translateY(1px);
+}
+
+
+/* =========================================================
+   TABLE CARD
+========================================================= */
+
+.approval-settlement-table-card {
+  width: 100%;
+
+  background: #ffffff;
+
+  border: 1px solid #dce1e5;
+  border-radius: 10px;
+
+  box-sizing: border-box;
+
+  padding: 17px 16px 13px;
+
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.03);
+
+  overflow: hidden;
+}
+
+
+/* =========================================================
+   TABLE HEADER
+========================================================= */
+
+.approval-settlement-table-header {
+  width: 100%;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  margin-bottom: 15px;
+
+  gap: 20px;
+}
+
+.approval-settlement-table-header h3 {
+  margin: 0;
+
+  font-size: 17px;
+  font-weight: 500;
+
+  color: #3b4249;
+
+  text-transform: uppercase;
+}
+
+
+/* =========================================================
+   SEARCH
+========================================================= */
+
+.approval-settlement-search {
+  width: 180px;
+  height: 32px;
+
+  display: flex;
+  align-items: center;
+
+  border: 1px solid #d8dde1;
+  border-radius: 3px;
+
+  background: #ffffff;
+
+  overflow: hidden;
+}
+
+.approval-settlement-search input {
+  width: 100%;
+  height: 100%;
+
+  border: none;
+  outline: none;
+
+  padding: 0 9px;
+
+  font-size: 11px;
+
+  color: #555e66;
+}
+
+.approval-settlement-search input::placeholder {
+  color: #a0a6ab;
+}
+
+.approval-settlement-search svg {
+  width: 12px;
+  height: 12px;
+
+  margin-right: 9px;
+
+  color: #5d646b;
+}
+
+
+/* =========================================================
+   TABLE WRAPPER
+========================================================= */
+
+.approval-settlement-table-wrapper {
+  width: 100%;
+
+  overflow-x: auto;
+  overflow-y: hidden;
+
+  border-top: 1px solid #eef0f2;
+
+  scrollbar-width: thin;
+  scrollbar-color: #aeb7bf #f1f3f5;
+}
+
+
+/* Chrome scrollbar */
+
+.approval-settlement-table-wrapper::-webkit-scrollbar {
+  height: 7px;
+}
+
+.approval-settlement-table-wrapper::-webkit-scrollbar-track {
+  background: #f1f3f5;
+}
+
+.approval-settlement-table-wrapper::-webkit-scrollbar-thumb {
+  background: #aeb7bf;
+  border-radius: 10px;
+}
+
+.approval-settlement-table-wrapper::-webkit-scrollbar-thumb:hover {
+  background: #8d979f;
+}
+
+
+/* =========================================================
+   TABLE
+========================================================= */
+
+.approval-settlement-table {
+  width: 100%;
+
+  min-width: 1450px;
+
+  border-collapse: collapse;
+
+  table-layout: auto;
+}
+
+
+/* =========================================================
+   TABLE HEADER
+========================================================= */
+
+.approval-settlement-table thead th {
+  height: 54px;
+
+  padding: 9px 10px;
+
+  background: #e8edf0;
+
+  border-bottom: 1px solid #d3d9dd;
+
+  color: #313940;
+
+  font-size: 10px;
+
+  font-weight: 700;
+
+  text-align: left;
+
+  vertical-align: middle;
+
+  white-space: nowrap;
+
+  text-transform: uppercase;
+}
+
+
+/* First header */
+
+.approval-settlement-table thead th:first-child {
+  padding-left: 13px;
+}
+
+
+/* =========================================================
+   TABLE BODY
+========================================================= */
+
+.approval-settlement-table tbody td {
+  height: 48px;
+
+  padding: 8px 10px;
+
+  border-bottom: 1px solid #edf0f2;
+
+  color: #59636c;
+
+  font-size: 11px;
+
+  white-space: nowrap;
+
+  vertical-align: middle;
+}
+
+.approval-settlement-table tbody tr {
+  background: #ffffff;
+
+  transition:
+    background 0.15s ease;
+}
+
+.approval-settlement-table tbody tr:hover {
+  background: #f8fafb;
+}
+
+
+/* First column */
+
+.approval-settlement-table tbody td:first-child {
+  padding-left: 13px;
+
+  color: #6e777f;
+}
+
+
+/* Strong text */
+
+.approval-settlement-table tbody td strong {
+  color: #394149;
+
+  font-weight: 600;
+}
+
+
+/* =========================================================
+   NO DATA
+========================================================= */
+
+.approval-settlement-no-data {
+  height: 130px !important;
+
+  text-align: center !important;
+
+  color: #9ca3a9 !important;
+
+  font-size: 12px !important;
+
+  font-weight: 500;
+
+  background: #ffffff;
+}
+
+
+/* =========================================================
+   AMOUNT STYLES
+========================================================= */
+
+.due-amount {
+  color: #d9822b !important;
+
+  font-weight: 600;
+}
+
+.settlement-amount {
+  color: #168c62 !important;
+
+  font-weight: 700;
+}
+
+
+/* =========================================================
+   PAYMENT MODE
+========================================================= */
+
+.payment-mode {
+  display: inline-flex;
+
+  align-items: center;
+  justify-content: center;
+
+  min-width: 48px;
+
+  padding: 4px 8px;
+
+  border-radius: 3px;
+
+  background: #edf5f8;
+
+  color: #377387;
+
+  font-size: 9px;
+
+  font-weight: 700;
+
+  text-transform: uppercase;
+}
+
+
+/* =========================================================
+   STATUS
+========================================================= */
+
+.settlement-status {
+  display: inline-flex;
+
+  align-items: center;
+  justify-content: center;
+
+  min-width: 68px;
+
+  padding: 5px 9px;
+
+  border-radius: 3px;
+
+  font-size: 9px;
+
+  font-weight: 700;
+
+  text-transform: uppercase;
+
+  white-space: nowrap;
+}
+
+.settlement-status.pending {
+  background: #fff3cd;
+
+  color: #9a7100;
+}
+
+.settlement-status.approved {
+  background: #dff5e9;
+
+  color: #167a4d;
+}
+
+.settlement-status.rejected {
+  background: #fde4e4;
+
+  color: #b33b3b;
+}
+
+
+/* =========================================================
+   ACTION BUTTONS
+========================================================= */
+
+.settlement-action-buttons {
+  display: flex;
+
+  align-items: center;
+
+  gap: 5px;
+
+  min-width: max-content;
+}
+
+.settlement-action-buttons button {
+  width: 32px;
+  height: 30px;
+
+  display: inline-flex;
+
+  align-items: center;
+  justify-content: center;
+
+  border: none;
+
+  border-radius: 3px;
+
+  color: #ffffff;
+
+  cursor: pointer;
+
+  transition:
+    transform 0.15s ease,
+    opacity 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.settlement-action-buttons button:hover {
+  transform: translateY(-1px);
+
+  opacity: 0.92;
+}
+
+.settlement-action-buttons button svg {
+  width: 12px;
+  height: 12px;
+}
+
+
+/* View */
+
+.settlement-view-btn {
+  background: #2196d2;
+
+  box-shadow:
+    0 2px 4px rgba(33, 150, 210, 0.15);
+}
+
+
+/* Approve */
+
+.settlement-approve-btn {
+  background: #3caf73;
+
+  box-shadow:
+    0 2px 4px rgba(60, 175, 115, 0.15);
+}
+
+
+/* Reject */
+
+.settlement-reject-btn {
+  background: #df6565;
+
+  box-shadow:
+    0 2px 4px rgba(223, 101, 101, 0.15);
+}
+
+
+/* =========================================================
+   TABLE FOOTER
+========================================================= */
+
+.approval-settlement-table-footer {
+  min-height: 45px;
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 9px;
+
+  padding: 10px 5px 2px;
+
+  color: #777f86;
+
+  font-size: 10px;
+}
+
+.approval-settlement-table-footer select {
+  height: 28px;
+
+  min-width: 55px;
+
+  padding: 0 7px;
+
+  border: 1px solid #d4d9dd;
+
+  border-radius: 3px;
+
+  background: #ffffff;
+
+  color: #555d64;
+
+  font-size: 10px;
+
+  outline: none;
+
+  cursor: pointer;
+}
+
+.approval-settlement-count {
+  margin-left: 8px;
+
+  color: #8a9298;
+
+  font-size: 10px;
+}
+
+
+/* =========================================================
+   VIEW MODAL OVERLAY
+========================================================= */
+
+.approval-settlement-modal-overlay {
+  position: fixed;
+
+  inset: 0;
+
+  z-index: 9999;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  padding: 20px;
+
+  box-sizing: border-box;
+
+  background: rgba(25, 32, 38, 0.55);
+
+  animation: approvalSettlementFadeIn 0.2s ease;
+}
+
+
+/* =========================================================
+   VIEW MODAL
+========================================================= */
+
+.approval-settlement-modal {
+  width: 100%;
+
+  max-width: 850px;
+
+  max-height: 88vh;
+
+  overflow-y: auto;
+
+  background: #ffffff;
+
+  border-radius: 8px;
+
+  box-shadow:
+    0 15px 45px rgba(0, 0, 0, 0.25);
+
+  animation: approvalSettlementModalIn 0.22s ease;
+}
+
+
+/* =========================================================
+   MODAL HEADER
+========================================================= */
+
+.approval-settlement-modal-header {
+  min-height: 55px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: space-between;
+
+  padding: 0 20px;
+
+  background: #19a9d1;
+
+  color: #ffffff;
+
+  border-radius: 8px 8px 0 0;
+
+  box-sizing: border-box;
+}
+
+.approval-settlement-modal-header h3 {
+  margin: 0;
+
+  font-size: 15px;
+
+  font-weight: 600;
+
+  text-transform: uppercase;
+}
+
+.approval-settlement-modal-header button {
+  width: 30px;
+  height: 30px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  border: none;
+
+  background: transparent;
+
+  color: #ffffff;
+
+  cursor: pointer;
+}
+
+.approval-settlement-modal-header button:hover {
+  opacity: 0.75;
+}
+
+
+/* =========================================================
+   DETAILS GRID
+========================================================= */
+
+.approval-settlement-details-grid {
+  display: grid;
+
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+
+  gap: 0;
+
+  padding: 18px 22px 10px;
+}
+
+.approval-settlement-details-grid > div {
+  min-height: 70px;
+
+  padding: 10px 12px;
+
+  border-bottom: 1px solid #edf0f2;
+
+  box-sizing: border-box;
+}
+
+.approval-settlement-details-grid label {
+  display: block;
+
+  margin-bottom: 7px;
+
+  color: #737b82;
+
+  font-size: 10px;
+
+  font-weight: 700;
+
+  text-transform: uppercase;
+}
+
+.approval-settlement-details-grid strong {
+  display: block;
+
+  color: #303940;
+
+  font-size: 13px;
+
+  font-weight: 600;
+}
+
+
+/* =========================================================
+   MODAL FOOTER
+========================================================= */
+
+.approval-settlement-modal-footer {
+  display: flex;
+
+  justify-content: flex-end;
+
+  padding: 14px 22px 18px;
+}
+
+.settlement-close-btn {
+  min-width: 85px;
+
+  height: 36px;
+
+  border: none;
+
+  border-radius: 4px;
+
+  background: #6c757d;
+
+  color: #ffffff;
+
+  font-size: 11px;
+
+  font-weight: 700;
+
+  cursor: pointer;
+}
+
+.settlement-close-btn:hover {
+  background: #5a6268;
+}
+
+
+/* =========================================================
+   CONFIRM MODAL
+========================================================= */
+
+.approval-settlement-confirm-modal {
+  width: 100%;
+
+  max-width: 410px;
+
+  padding: 30px 25px 24px;
+
+  box-sizing: border-box;
+
+  text-align: center;
+
+  background: #ffffff;
+
+  border-radius: 8px;
+
+  box-shadow:
+    0 15px 45px rgba(0, 0, 0, 0.25);
+
+  animation: approvalSettlementModalIn 0.22s ease;
+}
+
+.approval-settlement-confirm-modal h3 {
+  margin: 15px 0 8px;
+
+  color: #30373d;
+
+  font-size: 18px;
+}
+
+.approval-settlement-confirm-modal p {
+  margin: 0;
+
+  color: #737b82;
+
+  font-size: 12px;
+
+  line-height: 1.6;
+}
+
+
+/* =========================================================
+   CONFIRM ICON
+========================================================= */
+
+.confirm-icon {
+  width: 55px;
+  height: 55px;
+
+  margin: 0 auto;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50%;
+
+  font-size: 20px;
+}
+
+.confirm-icon.approve {
+  background: #e0f5e9;
+
+  color: #319b68;
+}
+
+.confirm-icon.reject {
+  background: #fde8e8;
+
+  color: #d55757;
+}
+
+
+/* =========================================================
+   CONFIRM BUTTONS
+========================================================= */
+
+.confirm-buttons {
+  display: flex;
+
+  justify-content: center;
+
+  gap: 10px;
+
+  margin-top: 24px;
+}
+
+.confirm-buttons button {
+  min-width: 95px;
+
+  height: 36px;
+
+  border: none;
+
+  border-radius: 4px;
+
+  font-size: 10px;
+
+  font-weight: 700;
+
+  cursor: pointer;
+
+  transition:
+    background 0.2s ease,
+    transform 0.15s ease;
+}
+
+.confirm-buttons button:hover {
+  transform: translateY(-1px);
+}
+
+.confirm-cancel {
+  background: #e8ecef;
+
+  color: #555d64;
+}
+
+.confirm-cancel:hover {
+  background: #dce1e5;
+}
+
+.confirm-approve {
+  background: #3caf73;
+
+  color: #ffffff;
+}
+
+.confirm-approve:hover {
+  background: #309961;
+}
+
+.confirm-reject {
+  background: #df6565;
+
+  color: #ffffff;
+}
+
+.confirm-reject:hover {
+  background: #cc5050;
+}
+
+
+/* =========================================================
+   MODAL SCROLLBAR
+========================================================= */
+
+.approval-settlement-modal::-webkit-scrollbar {
+  width: 6px;
+}
+
+.approval-settlement-modal::-webkit-scrollbar-track {
+  background: #f1f3f5;
+}
+
+.approval-settlement-modal::-webkit-scrollbar-thumb {
+  background: #b8c0c6;
+
+  border-radius: 10px;
+}
+
+
+/* =========================================================
+   ANIMATIONS
+========================================================= */
+
+@keyframes approvalSettlementFadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes approvalSettlementModalIn {
+  from {
+    opacity: 0;
+
+    transform: translateY(-15px) scale(0.98);
+  }
+
+  to {
+    opacity: 1;
+
+    transform: translateY(0) scale(1);
+  }
+}
+
+
+/* =========================================================
+   LARGE SCREEN
+========================================================= */
+
+@media (min-width: 1400px) {
+
+  .approval-settlement-page {
+    padding-left: 28px;
+    padding-right: 28px;
+  }
+
+  .approval-settlement-filter-card {
+    padding-left: 28px;
+    padding-right: 28px;
+  }
+
+  .approval-settlement-table-card {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  .approval-settlement-table thead th {
+    font-size: 10px;
+  }
+
+  .approval-settlement-table tbody td {
+    font-size: 11px;
+  }
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 1100px) {
+
+  .approval-settlement-page {
+    padding: 18px;
+  }
+
+  .approval-settlement-filter-grid {
+    grid-template-columns:
+      minmax(240px, 1fr)
+      minmax(240px, 1fr);
+
+    gap: 20px;
+  }
+
+  .approval-settlement-get-record-btn {
+    grid-column: 1 / -1;
+
+    width: 120px;
+  }
+
+  .approval-settlement-table {
+    min-width: 1350px;
+  }
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 768px) {
+
+  .approval-settlement-page {
+    padding: 14px 10px 25px;
+  }
+
+
+  /* PAGE HEADER */
+
+  .approval-settlement-page-header {
+    min-height: auto;
+
+    flex-direction: column;
+
+    align-items: flex-start;
+
+    gap: 8px;
+
+    margin-bottom: 12px;
+  }
+
+  .approval-settlement-page-header h2 {
+    font-size: 14px;
+  }
+
+  .approval-settlement-breadcrumb {
+    font-size: 9px;
+  }
+
+
+  /* FILTER */
+
+  .approval-settlement-filter-card {
+    padding: 15px;
+
+    border-radius: 8px;
+  }
+
+  .approval-settlement-filter-title {
+    font-size: 13px;
+
+    margin-bottom: 16px;
+  }
+
+  .approval-settlement-filter-grid {
+    grid-template-columns: 1fr;
+
+    gap: 15px;
+  }
+
+  .approval-settlement-get-record-btn {
+    grid-column: auto;
+
+    width: 100%;
+  }
+
+
+  /* TABLE */
+
+  .approval-settlement-table-card {
+    padding: 13px 10px 10px;
+
+    border-radius: 8px;
+  }
+
+  .approval-settlement-table-header {
+    flex-direction: column;
+
+    align-items: flex-start;
+
+    gap: 12px;
+  }
+
+  .approval-settlement-table-header h3 {
+    font-size: 14px;
+  }
+
+  .approval-settlement-search {
+    width: 100%;
+
+    max-width: none;
+  }
+
+  .approval-settlement-table {
+    min-width: 1400px;
+  }
+
+
+  /* MODAL */
+
+  .approval-settlement-modal-overlay {
+    padding: 10px;
+  }
+
+  .approval-settlement-modal {
+    max-height: 92vh;
+  }
+
+  .approval-settlement-details-grid {
+    grid-template-columns: 1fr;
+
+    padding: 12px 15px;
+  }
+
+  .approval-settlement-modal-header {
+    min-height: 50px;
+
+    padding: 0 15px;
+  }
+
+  .approval-settlement-modal-footer {
+    padding: 12px 15px 15px;
+  }
+
+
+  /* CONFIRM */
+
+  .approval-settlement-confirm-modal {
+    max-width: 95%;
+
+    padding: 25px 18px 20px;
+  }
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media (max-width: 480px) {
+
+  .approval-settlement-page {
+    padding: 10px 7px 20px;
+  }
+
+  .approval-settlement-filter-card {
+    padding: 13px 12px;
+  }
+
+  .approval-settlement-table-card {
+    padding: 12px 7px 8px;
+  }
+
+  .approval-settlement-filter-title {
+    font-size: 12px;
+  }
+
+  .approval-settlement-field label {
+    font-size: 10px;
+  }
+
+  .approval-settlement-field select,
+  .approval-settlement-field input {
+    height: 40px;
+
+    font-size: 12px;
+  }
+
+  .approval-settlement-get-record-btn {
+    height: 40px;
+
+    font-size: 11px;
+  }
+
+  .approval-settlement-table-header h3 {
+    font-size: 13px;
+  }
+
+  .approval-settlement-table-footer {
+    flex-wrap: wrap;
+  }
+
+  .approval-settlement-count {
+    width: 100%;
+
+    margin-left: 0;
+
+    margin-top: 4px;
+  }
+}

@@ -1,0 +1,1410 @@
+/* =========================================================
+   LOAN TOPUP PAGE
+========================================================= */
+
+.loan-topup-page {
+  width: 100%;
+  min-height: 100vh;
+  padding: 18px;
+  box-sizing: border-box;
+  background: #f7f8fa;
+}
+
+
+/* =========================================================
+   PAGE HEADER
+========================================================= */
+
+.loan-topup-page-header {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 15px;
+}
+
+.loan-topup-page-header h2 {
+  margin: 0;
+  color: #333;
+  font-size: 17px;
+  font-weight: 600;
+}
+
+.loan-topup-breadcrumb {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #777;
+  font-size: 12px;
+}
+
+.loan-topup-breadcrumb strong {
+  color: #333;
+}
+
+
+/* =========================================================
+   SEARCH SECTION
+========================================================= */
+
+.loan-topup-search-section {
+  width: 100%;
+  padding: 16px;
+  margin-bottom: 12px;
+
+  box-sizing: border-box;
+
+  background: #fff;
+
+  border: 1px solid #d8d8d8;
+  border-radius: 5px;
+}
+
+.loan-topup-search-title {
+  margin-bottom: 18px;
+
+  color: #444;
+
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.loan-topup-search-grid {
+  width: 100%;
+
+  display: grid;
+
+  grid-template-columns:
+    minmax(0, 1fr)
+    minmax(0, 1fr);
+
+  gap: 30px;
+
+  box-sizing: border-box;
+}
+
+.loan-topup-search-field {
+  width: 100%;
+  min-width: 0;
+}
+
+.loan-topup-search-field label {
+  display: block;
+
+  margin-bottom: 7px;
+
+  color: #333;
+
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.loan-topup-search-input-wrapper {
+  position: relative;
+
+  width: 100%;
+}
+
+.loan-topup-search-input-wrapper input {
+  width: 100%;
+  height: 38px;
+
+  padding: 0 60px 0 12px;
+
+  box-sizing: border-box;
+
+  border: 1px solid #cfcfcf;
+  border-radius: 4px;
+
+  outline: none;
+
+  background: #fff;
+
+  font-size: 13px;
+}
+
+.loan-topup-search-input-wrapper input:focus {
+  border-color: #12a9d8;
+}
+
+.loan-topup-search-clear {
+  position: absolute;
+
+  top: 50%;
+  right: 32px;
+
+  transform: translateY(-50%);
+
+  width: 22px;
+  height: 22px;
+
+  padding: 0;
+
+  border: none;
+
+  background: transparent;
+
+  color: #777;
+
+  font-size: 19px;
+
+  cursor: pointer;
+}
+
+.loan-topup-search-arrow {
+  position: absolute;
+
+  top: 50%;
+  right: 12px;
+
+  transform: translateY(-50%);
+
+  color: #777;
+
+  font-size: 11px;
+
+  pointer-events: none;
+}
+
+
+/* =========================================================
+   LOAN TOPUP LIST
+========================================================= */
+
+.loan-topup-list-container {
+  width: 100%;
+
+  padding: 12px;
+
+  box-sizing: border-box;
+
+  background: #fff;
+
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
+
+.loan-topup-list-header {
+  width: 100%;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  margin-bottom: 15px;
+}
+
+.loan-topup-list-header h2 {
+  margin: 0;
+
+  color: #333;
+
+  font-size: 20px;
+  font-weight: 500;
+}
+
+
+/* =========================================================
+   TABLE TOOLBAR
+========================================================= */
+
+.loan-topup-table-toolbar {
+  width: 100%;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  margin-bottom: 12px;
+}
+
+.loan-topup-table-search {
+  width: 170px;
+  height: 34px;
+
+  display: flex;
+  align-items: center;
+
+  box-sizing: border-box;
+
+  border: 1px solid #ddd;
+
+  background: #fff;
+}
+
+.loan-topup-table-search input {
+  width: 100%;
+  height: 100%;
+
+  padding: 0 8px;
+
+  box-sizing: border-box;
+
+  border: none;
+  outline: none;
+
+  font-size: 12px;
+}
+
+.loan-topup-table-search span {
+  width: 30px;
+
+  text-align: center;
+
+  color: #555;
+}
+
+
+/* =========================================================
+   TABLE
+========================================================= */
+
+.common-table-wrapper {
+  width: 100%;
+
+  overflow-x: auto;
+  overflow-y: visible;
+}
+
+.loan-topup-table {
+  min-width: 1500px;
+}
+
+.loan-topup-table th {
+  white-space: nowrap;
+
+  text-align: center;
+  vertical-align: middle;
+}
+
+.loan-topup-table td {
+  white-space: nowrap;
+
+  vertical-align: middle;
+}
+
+.loan-topup-member {
+  display: flex;
+  flex-direction: column;
+
+  line-height: 1.3;
+}
+
+.loan-topup-member span {
+  color: #4384a8;
+
+  font-weight: 500;
+}
+
+.loan-topup-member small {
+  color: #4384a8;
+
+  font-size: 11px;
+}
+
+
+/* =========================================================
+   TASK DROPDOWN
+========================================================= */
+
+.loan-topup-action-cell {
+  position: relative;
+
+  min-width: 100px;
+}
+
+.loan-topup-task-button {
+  padding: 5px 8px;
+
+  border: none;
+
+  background: transparent;
+
+  color: #444;
+
+  font-size: 13px;
+
+  cursor: pointer;
+}
+
+.loan-topup-task-button:hover {
+  color: #009acb;
+}
+
+.loan-topup-task-menu {
+  position: absolute;
+
+  top: 30px;
+  left: 0;
+
+  z-index: 1000;
+
+  width: 205px;
+
+  padding: 3px 0;
+
+  box-sizing: border-box;
+
+  background: #fff;
+
+  border: 1px solid #d8d8d8;
+  border-radius: 3px;
+
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.18);
+}
+
+.loan-topup-task-menu button {
+  width: 100%;
+
+  display: flex;
+  align-items: center;
+
+  gap: 9px;
+
+  padding: 10px 12px;
+
+  box-sizing: border-box;
+
+  border: none;
+
+  background: #fff;
+
+  color: #444;
+
+  font-size: 13px;
+
+  text-align: left;
+
+  cursor: pointer;
+}
+
+.loan-topup-task-menu button:hover {
+  background: #f2f5f6;
+}
+
+.loan-topup-task-menu button span {
+  width: 18px;
+}
+
+
+/* =========================================================
+   STATUS
+========================================================= */
+
+.loan-topup-status {
+  font-size: 11px;
+
+  font-weight: 600;
+}
+
+.loan-topup-status.approved {
+  color: #239b56;
+}
+
+.loan-topup-status.pending {
+  color: #e19b1a;
+}
+
+
+/* =========================================================
+   NO DATA
+========================================================= */
+
+.loan-topup-no-data {
+  padding: 30px !important;
+
+  text-align: center;
+
+  color: #777;
+}
+
+
+/* =========================================================
+   MODAL OVERLAY
+========================================================= */
+
+.loan-topup-page .common-modal-overlay {
+  position: fixed !important;
+
+  top: 0 !important;
+  left: 0 !important;
+  right: 0 !important;
+  bottom: 0 !important;
+
+  z-index: 99999 !important;
+
+  width: 100vw !important;
+  height: 100vh !important;
+
+  display: flex !important;
+
+  align-items: flex-start !important;
+  justify-content: center !important;
+
+  padding: 60px 20px 30px !important;
+
+  box-sizing: border-box !important;
+
+  background: rgba(0, 0, 0, 0.55) !important;
+
+  overflow-y: auto !important;
+}
+
+
+/* =========================================================
+   MODAL
+   VERY IMPORTANT
+========================================================= */
+
+.loan-topup-page .common-modal {
+  position: relative !important;
+
+  display: flex !important;
+
+  flex-direction: column !important;
+
+  align-items: stretch !important;
+
+  justify-content: flex-start !important;
+
+  flex: 0 0 auto !important;
+
+  width: 1050px !important;
+
+  max-width: calc(100vw - 40px) !important;
+
+  min-height: 0 !important;
+
+  margin: 0 auto !important;
+
+  padding: 0 !important;
+
+  box-sizing: border-box !important;
+
+  background: #fff !important;
+
+  border-radius: 3px !important;
+
+  overflow: hidden !important;
+
+  box-shadow:
+    0 10px 35px rgba(0, 0, 0, 0.30) !important;
+}
+
+
+/* =========================================================
+   ADD NEW MODAL WIDTH
+========================================================= */
+
+.loan-topup-page .loan-topup-add-modal {
+  width: 1050px !important;
+}
+
+
+/* =========================================================
+   APPROVE MODAL WIDTH
+========================================================= */
+
+.loan-topup-page .loan-topup-approve-modal {
+  width: 1100px !important;
+
+  max-width: calc(100vw - 40px) !important;
+}
+
+
+/* =========================================================
+   MODAL HEADER
+   FORCE HEADER TO TOP
+========================================================= */
+
+.loan-topup-page .common-modal > .common-modal-header {
+  position: relative !important;
+
+  order: 1 !important;
+
+  width: 100% !important;
+
+  height: 58px !important;
+
+  min-height: 58px !important;
+
+  max-height: 58px !important;
+
+  display: flex !important;
+
+  flex-direction: row !important;
+
+  align-items: center !important;
+
+  justify-content: space-between !important;
+
+  flex: 0 0 58px !important;
+
+  margin: 0 !important;
+
+  padding: 0 18px !important;
+
+  box-sizing: border-box !important;
+
+  background: linear-gradient(
+    90deg,
+    #16a9d6,
+    #13b3df
+  ) !important;
+
+  border: none !important;
+
+  color: #fff !important;
+}
+
+
+/* =========================================================
+   MODAL TITLE
+========================================================= */
+
+.loan-topup-page
+.common-modal
+> .common-modal-header
+h2 {
+  position: static !important;
+
+  order: 1 !important;
+
+  display: block !important;
+
+  width: auto !important;
+
+  height: auto !important;
+
+  margin: 0 !important;
+
+  padding: 0 !important;
+
+  color: #fff !important;
+
+  font-size: 20px !important;
+
+  font-weight: 500 !important;
+
+  line-height: 1.2 !important;
+
+  text-align: left !important;
+
+  white-space: nowrap !important;
+}
+
+
+/* =========================================================
+   CLOSE BUTTON
+========================================================= */
+
+.loan-topup-page
+.common-modal
+> .common-modal-header
+button {
+  position: static !important;
+
+  order: 2 !important;
+
+  flex: 0 0 auto !important;
+
+  width: 30px !important;
+
+  height: 30px !important;
+
+  min-width: 30px !important;
+
+  margin: 0 !important;
+
+  padding: 0 !important;
+
+  display: flex !important;
+
+  align-items: center !important;
+
+  justify-content: center !important;
+
+  border: none !important;
+
+  background: transparent !important;
+
+  color: #fff !important;
+
+  font-size: 21px !important;
+
+  line-height: 1 !important;
+
+  cursor: pointer !important;
+}
+
+
+/* =========================================================
+   FORM
+   FORCE FORM BELOW HEADER
+========================================================= */
+
+.loan-topup-page
+.common-modal
+> .common-form {
+  position: relative !important;
+
+  order: 2 !important;
+
+  width: 100% !important;
+
+  display: block !important;
+
+  flex: 0 0 auto !important;
+
+  margin: 0 !important;
+
+  padding: 25px !important;
+
+  box-sizing: border-box !important;
+
+  background: #fff !important;
+}
+
+
+/* =========================================================
+   FORM GRID
+========================================================= */
+
+.loan-topup-page
+.common-modal
+> .common-form
+.common-form-grid {
+  width: 100% !important;
+
+  display: grid !important;
+
+  grid-template-columns:
+    minmax(0, 1fr)
+    minmax(0, 1fr) !important;
+
+  column-gap: 35px !important;
+
+  row-gap: 0 !important;
+
+  align-items: start !important;
+
+  box-sizing: border-box !important;
+}
+
+
+/* =========================================================
+   FORM COLUMN
+========================================================= */
+
+.loan-topup-page
+.common-modal
+.common-form-column {
+  width: 100% !important;
+
+  min-width: 0 !important;
+
+  display: flex !important;
+
+  flex-direction: column !important;
+
+  align-items: stretch !important;
+
+  margin: 0 !important;
+
+  padding: 0 !important;
+
+  box-sizing: border-box !important;
+}
+
+
+/* =========================================================
+   FORM GROUP
+========================================================= */
+
+.loan-topup-page
+.common-modal
+.common-form-group {
+  width: 100% !important;
+
+  min-width: 0 !important;
+
+  display: flex !important;
+
+  flex-direction: column !important;
+
+  align-items: stretch !important;
+
+  margin: 0 0 18px !important;
+
+  padding: 0 !important;
+
+  box-sizing: border-box !important;
+}
+
+
+/* =========================================================
+   LABEL
+========================================================= */
+
+.loan-topup-page
+.common-modal
+.common-form-group
+label {
+  width: 100% !important;
+
+  display: block !important;
+
+  margin: 0 0 7px !important;
+
+  padding: 0 !important;
+
+  color: #292929 !important;
+
+  font-size: 12px !important;
+
+  font-weight: 700 !important;
+
+  line-height: 1.3 !important;
+
+  text-align: left !important;
+
+  box-sizing: border-box !important;
+}
+
+.loan-topup-page
+.common-modal
+.common-form-group
+label
+span {
+  color: #e33434 !important;
+}
+
+
+/* =========================================================
+   INPUT / SELECT
+========================================================= */
+
+.loan-topup-page
+.common-modal
+.common-form-group
+input,
+.loan-topup-page
+.common-modal
+.common-form-group
+select {
+  width: 100% !important;
+
+  height: 40px !important;
+
+  min-height: 40px !important;
+
+  max-height: 40px !important;
+
+  display: block !important;
+
+  margin: 0 !important;
+
+  padding: 0 12px !important;
+
+  box-sizing: border-box !important;
+
+  border: 1px solid #d1d1d1 !important;
+
+  border-radius: 5px !important;
+
+  outline: none !important;
+
+  background: #fff !important;
+
+  color: #333 !important;
+
+  font-family: inherit !important;
+
+  font-size: 13px !important;
+}
+
+.loan-topup-page
+.common-modal
+.common-form-group
+input::placeholder {
+  color: #999 !important;
+}
+
+.loan-topup-page
+.common-modal
+.common-form-group
+input:focus,
+.loan-topup-page
+.common-modal
+.common-form-group
+select:focus {
+  border-color: #16a9d7 !important;
+
+  outline: none !important;
+
+  box-shadow: none !important;
+}
+
+
+/* =========================================================
+   ADD NEW FORM
+========================================================= */
+
+.loan-topup-page
+.loan-topup-add-modal
+.common-form {
+  padding: 25px !important;
+}
+
+.loan-topup-page
+.loan-topup-add-modal
+.common-form-grid {
+  grid-template-columns:
+    minmax(0, 1fr)
+    minmax(0, 1fr) !important;
+
+  column-gap: 35px !important;
+}
+
+.loan-topup-page
+.loan-topup-add-modal
+.common-form-group {
+  margin-bottom: 0 !important;
+}
+
+
+/* =========================================================
+   APPROVE FORM
+========================================================= */
+
+.loan-topup-page
+.loan-topup-approve-modal
+.common-form {
+  padding: 25px !important;
+}
+
+.loan-topup-page
+.loan-topup-approve-modal
+.common-form-grid {
+  grid-template-columns:
+    minmax(0, 1fr)
+    minmax(0, 1fr) !important;
+
+  column-gap: 35px !important;
+
+  align-items: start !important;
+}
+
+.loan-topup-page
+.loan-topup-approve-modal
+.common-form-column
+.common-form-group {
+  margin-bottom: 18px !important;
+}
+
+
+/* =========================================================
+   FORM ACTIONS
+========================================================= */
+
+.loan-topup-page
+.common-modal
+.common-form-actions {
+  width: 100% !important;
+
+  display: flex !important;
+
+  flex-direction: row !important;
+
+  align-items: center !important;
+
+  justify-content: flex-end !important;
+
+  gap: 10px !important;
+
+  margin: 10px 0 0 !important;
+
+  padding: 0 !important;
+
+  box-sizing: border-box !important;
+}
+
+
+/* =========================================================
+   SAVE / CANCEL BUTTONS
+========================================================= */
+
+.loan-topup-page
+.common-modal
+.common-form-actions
+button {
+  flex: 0 0 auto !important;
+
+  min-width: 82px !important;
+
+  width: auto !important;
+
+  height: 40px !important;
+
+  min-height: 40px !important;
+
+  margin: 0 !important;
+}
+
+
+/* ======= view button=========== */
+/* =========================================================
+   VIEW MODAL
+========================================================= */
+
+.loan-topup-view-overlay {
+  position: fixed !important;
+
+  inset: 0 !important;
+
+  z-index: 999999 !important;
+
+  width: 100vw !important;
+  height: 100vh !important;
+
+  display: flex !important;
+
+  align-items: flex-start !important;
+  justify-content: center !important;
+
+  padding: 60px 20px 30px !important;
+
+  box-sizing: border-box !important;
+
+  background: rgba(0, 0, 0, 0.55) !important;
+
+  overflow-y: auto !important;
+}
+
+
+.loan-topup-view-modal {
+  position: relative !important;
+
+  width: 940px !important;
+
+  max-width: calc(100vw - 40px) !important;
+
+  margin: 0 auto !important;
+
+  padding: 0 !important;
+
+  box-sizing: border-box !important;
+
+  background: #fff !important;
+
+  border-radius: 4px !important;
+
+  overflow: hidden !important;
+
+  box-shadow: 0 10px 35px rgba(0, 0, 0, 0.3) !important;
+}
+
+
+/* HEADER */
+
+.loan-topup-view-header {
+  width: 100% !important;
+
+  height: 62px !important;
+
+  min-height: 62px !important;
+
+  display: flex !important;
+
+  align-items: center !important;
+
+  justify-content: space-between !important;
+
+  padding: 0 18px !important;
+
+  box-sizing: border-box !important;
+
+  background: #12afd8 !important;
+}
+
+.loan-topup-view-header h2 {
+  margin: 0 !important;
+
+  padding: 0 !important;
+
+  color: #fff !important;
+
+  font-size: 20px !important;
+
+  font-weight: 500 !important;
+}
+
+
+.loan-topup-view-close-icon {
+  width: 30px !important;
+
+  height: 30px !important;
+
+  padding: 0 !important;
+
+  border: none !important;
+
+  background: transparent !important;
+
+  color: #fff !important;
+
+  font-size: 23px !important;
+
+  cursor: pointer !important;
+}
+
+
+/* CONTENT */
+
+.loan-topup-view-content {
+  width: 100% !important;
+
+  display: grid !important;
+
+  grid-template-columns:
+    minmax(0, 1fr)
+    minmax(0, 1fr) !important;
+
+  gap: 40px !important;
+
+  padding: 25px !important;
+
+  box-sizing: border-box !important;
+
+  background: #fff !important;
+}
+
+
+/* LEFT / RIGHT */
+
+.loan-topup-view-left,
+.loan-topup-view-right {
+  width: 100% !important;
+
+  min-width: 0 !important;
+}
+
+
+/* ROW */
+
+.loan-topup-view-row {
+  display: flex !important;
+
+  align-items: baseline !important;
+
+  gap: 7px !important;
+
+  min-height: 32px !important;
+
+  padding: 5px 0 !important;
+
+  box-sizing: border-box !important;
+}
+
+.loan-topup-view-row span,
+.loan-topup-view-detail-row span,
+.loan-topup-view-status-row span {
+  color: #333 !important;
+
+  font-size: 11px !important;
+
+  font-weight: 700 !important;
+}
+
+.loan-topup-view-row span::after,
+.loan-topup-view-detail-row span::after,
+.loan-topup-view-status-row span::after {
+  content: ":";
+
+  margin-left: 4px;
+}
+
+.loan-topup-view-row strong,
+.loan-topup-view-detail-row strong {
+  color: #607b8a !important;
+
+  font-size: 12px !important;
+
+  font-weight: 500 !important;
+}
+
+
+/* SECTION TITLE */
+
+.loan-topup-view-section-title {
+  margin-top: 16px !important;
+
+  margin-bottom: 8px !important;
+
+  color: #333 !important;
+
+  font-size: 11px !important;
+
+  font-weight: 700 !important;
+}
+
+
+/* RIGHT DETAILS */
+
+.loan-topup-view-detail-row {
+  display: flex !important;
+
+  align-items: baseline !important;
+
+  gap: 6px !important;
+
+  min-height: 26px !important;
+}
+
+
+/* NEW LOAN */
+
+.loan-topup-new-loan {
+  margin-top: 20px !important;
+}
+
+
+/* STATUS */
+
+.loan-topup-view-status-row {
+  display: flex !important;
+
+  align-items: baseline !important;
+
+  gap: 6px !important;
+
+  margin-top: 20px !important;
+}
+
+.loan-topup-view-status-pending {
+  color: #607b8a !important;
+}
+
+.loan-topup-view-status-approved {
+  color: #299b57 !important;
+}
+
+
+/* FOOTER */
+
+.loan-topup-view-footer {
+  width: 100% !important;
+
+  display: flex !important;
+
+  justify-content: flex-end !important;
+
+  padding: 10px 25px 18px !important;
+
+  box-sizing: border-box !important;
+}
+
+.loan-topup-view-close-button {
+  min-width: 65px !important;
+
+  height: 38px !important;
+
+  padding: 0 15px !important;
+
+  border: none !important;
+
+  border-radius: 3px !important;
+
+  background: #18a9c7 !important;
+
+  color: #fff !important;
+
+  font-size: 12px !important;
+
+  cursor: pointer !important;
+}
+
+
+/* MOBILE */
+
+@media (max-width: 800px) {
+
+  .loan-topup-view-overlay {
+    padding: 20px 10px !important;
+  }
+
+  .loan-topup-view-modal {
+    width: 100% !important;
+
+    max-width: 100% !important;
+  }
+
+  .loan-topup-view-content {
+    grid-template-columns: 1fr !important;
+
+    gap: 20px !important;
+  }
+
+}
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 900px) {
+
+  .loan-topup-page {
+    padding: 10px;
+  }
+
+  .loan-topup-page-header {
+    flex-direction: column;
+
+    align-items: flex-start;
+
+    gap: 8px;
+  }
+
+  .loan-topup-search-grid {
+    grid-template-columns: 1fr;
+
+    gap: 15px;
+  }
+
+  .loan-topup-list-header {
+    flex-direction: column;
+
+    align-items: flex-start;
+
+    gap: 12px;
+  }
+
+  .loan-topup-table-toolbar {
+    flex-wrap: wrap;
+
+    gap: 10px;
+  }
+
+
+  /* MODAL */
+
+  .loan-topup-page
+  .common-modal-overlay {
+    align-items: flex-start !important;
+
+    padding:
+      20px 10px 30px !important;
+  }
+
+  .loan-topup-page
+  .common-modal,
+  .loan-topup-page
+  .loan-topup-add-modal,
+  .loan-topup-page
+  .loan-topup-approve-modal {
+    width: 100% !important;
+
+    max-width: 100% !important;
+  }
+
+
+  /* HEADER */
+
+  .loan-topup-page
+  .common-modal
+  > .common-modal-header {
+    height: 55px !important;
+
+    min-height: 55px !important;
+
+    max-height: 55px !important;
+
+    flex-basis: 55px !important;
+
+    padding: 0 14px !important;
+  }
+
+  .loan-topup-page
+  .common-modal
+  > .common-modal-header
+  h2 {
+    font-size: 16px !important;
+
+    white-space: normal !important;
+  }
+
+
+  /* FORM */
+
+  .loan-topup-page
+  .common-modal
+  > .common-form {
+    padding: 20px 15px !important;
+  }
+
+
+  /* GRID */
+
+  .loan-topup-page
+  .common-modal
+  .common-form-grid {
+    grid-template-columns: 1fr !important;
+
+    column-gap: 0 !important;
+  }
+
+
+  /* GROUP */
+
+  .loan-topup-page
+  .common-modal
+  .common-form-group {
+    margin-bottom: 17px !important;
+  }
+
+
+  /* BUTTONS */
+
+  .loan-topup-page
+  .common-modal
+  .common-form-actions {
+    justify-content: flex-end !important;
+
+    flex-wrap: wrap;
+  }
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media (max-width: 500px) {
+
+  .loan-topup-page {
+    padding: 7px;
+  }
+
+  .loan-topup-page
+  .common-modal-overlay {
+    padding: 10px !important;
+  }
+
+  .loan-topup-page
+  .common-modal
+  > .common-form {
+    padding: 15px 12px !important;
+  }
+
+  .loan-topup-page
+  .common-modal
+  .common-form-actions {
+    justify-content: stretch !important;
+  }
+
+  .loan-topup-page
+  .common-modal
+  .common-form-actions
+  button {
+    flex: 1 1 0 !important;
+  }
+}

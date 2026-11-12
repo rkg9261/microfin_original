@@ -1,0 +1,382 @@
+/* =========================================================
+   TRIAL BALANCE PAGE
+========================================================= */
+
+.trial-balance-page {
+  width: 100%;
+  min-height: calc(100vh - 70px);
+  padding: 28px 32px 50px;
+  background: #f7f9fc;
+  box-sizing: border-box;
+}
+
+
+/* =========================================================
+   HEADER
+========================================================= */
+
+.trial-balance-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 22px;
+}
+
+.trial-balance-header h1 {
+  margin: 0;
+  font-size: 18px;
+  font-weight: 700;
+  color: #1c2733;
+}
+
+.trial-balance-breadcrumb {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 12px;
+  color: #777;
+}
+
+.trial-balance-breadcrumb strong {
+  color: #222;
+}
+
+
+/* =========================================================
+   FILTER CARD
+========================================================= */
+
+.trial-balance-filter-card {
+  background: #ffffff;
+  border: 1px solid #e1e6ec;
+  border-radius: 12px;
+  padding: 20px;
+  margin-bottom: 18px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+}
+
+.filter-title {
+  font-size: 14px;
+  font-weight: 700;
+  color: #39434d;
+  margin-bottom: 18px;
+}
+
+.trial-balance-filter-row {
+  display: flex;
+  align-items: flex-end;
+  gap: 25px;
+}
+
+.trial-balance-field {
+  width: 300px;
+}
+
+.trial-balance-field label {
+  display: block;
+  font-size: 13px;
+  font-weight: 700;
+  color: #26323d;
+  margin-bottom: 8px;
+}
+
+
+/* =========================================================
+   BRANCH SELECT
+========================================================= */
+
+.branch-select-wrapper {
+  position: relative;
+  width: 100%;
+}
+
+.branch-select-wrapper select {
+  width: 100%;
+  height: 42px;
+  padding: 0 38px 0 13px;
+  border: 1px solid #d4dbe2;
+  border-radius: 6px;
+  background: #ffffff;
+  color: #444;
+  font-size: 13px;
+  outline: none;
+  appearance: none;
+  cursor: pointer;
+}
+
+.branch-select-wrapper select:focus {
+  border-color: #279fd0;
+  box-shadow: 0 0 0 2px rgba(39, 159, 208, 0.08);
+}
+
+.branch-select-wrapper svg {
+  position: absolute;
+  right: 13px;
+  top: 50%;
+  transform: translateY(-50%);
+  pointer-events: none;
+  color: #777;
+  font-size: 11px;
+}
+
+
+/* =========================================================
+   TABLE CARD
+========================================================= */
+
+.trial-balance-card {
+  background: #ffffff;
+  border: 1px solid #e1e6ec;
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+}
+
+
+/* =========================================================
+   TABLE HEADER
+========================================================= */
+
+.trial-balance-table-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 2px solid #2aa4d3;
+  padding-bottom: 10px;
+  margin-bottom: 14px;
+}
+
+.trial-balance-table-header h2 {
+  margin: 0;
+  font-size: 16px;
+  font-weight: 700;
+  color: #303a44;
+}
+
+.trial-balance-export-btn {
+  border: none;
+  background: transparent;
+  color: #65717d;
+  font-size: 12px;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  cursor: pointer;
+  padding: 6px 8px;
+}
+
+.trial-balance-export-btn:hover {
+  color: #178ab8;
+}
+
+
+/* =========================================================
+   CONTROLS
+========================================================= */
+
+.trial-balance-controls {
+  display: flex;
+  justify-content: flex-start;
+  margin-bottom: 14px;
+}
+
+
+/* =========================================================
+   TABLE WRAPPER
+========================================================= */
+
+.trial-balance-table-wrapper {
+  width: 100%;
+  overflow-x: auto;
+}
+
+
+/* =========================================================
+   TABLE
+========================================================= */
+
+.trial-balance-table {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 750px;
+}
+
+.trial-balance-table thead th {
+  background: #f3f6f8;
+  color: #202b35;
+  font-size: 12px;
+  font-weight: 700;
+  padding: 13px 12px;
+  text-align: right;
+  border-bottom: 1px solid #dce2e7;
+}
+
+.trial-balance-table thead th:first-child {
+  text-align: left;
+}
+
+.trial-balance-table tbody td {
+  padding: 13px 12px;
+  border-bottom: 1px solid #edf0f2;
+  color: #4b5660;
+  font-size: 12px;
+  text-align: right;
+}
+
+.trial-balance-table tbody td:first-child {
+  text-align: left;
+}
+
+.trial-balance-table tbody tr:hover {
+  background: #f9fbfc;
+}
+
+
+/* =========================================================
+   PARTICULAR
+========================================================= */
+
+.particular-cell {
+  font-weight: 600;
+  color: #27333e !important;
+}
+
+
+/* =========================================================
+   DEBIT
+========================================================= */
+
+.debit-cell {
+  color: #657d55 !important;
+}
+
+
+/* =========================================================
+   CREDIT
+========================================================= */
+
+.credit-cell {
+  color: #ad5c5c !important;
+}
+
+
+/* =========================================================
+   CLOSING
+========================================================= */
+
+.closing-positive {
+  color: #536878 !important;
+  font-weight: 500;
+}
+
+.closing-negative {
+  color: #c85b5b !important;
+  font-weight: 600;
+}
+
+
+/* =========================================================
+   TOTAL
+========================================================= */
+
+.trial-balance-table tfoot td {
+  padding: 14px 12px;
+  background: #f4f7f9;
+  border-top: 2px solid #dce3e8;
+  font-size: 12px;
+  font-weight: 700;
+  color: #26323c;
+  text-align: right;
+}
+
+.trial-balance-table tfoot td:first-child {
+  text-align: left;
+}
+
+
+/* =========================================================
+   NO DATA
+========================================================= */
+
+.no-data {
+  text-align: center !important;
+  padding: 35px !important;
+  color: #888 !important;
+}
+
+
+/* =========================================================
+   FOOTER
+========================================================= */
+
+.trial-balance-footer {
+  padding-top: 18px;
+  font-size: 12px;
+  color: #6b747c;
+  font-weight: 500;
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 900px) {
+
+  .trial-balance-page {
+    padding: 22px 18px 40px;
+  }
+
+  .trial-balance-header {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .trial-balance-field {
+    width: 100%;
+    max-width: 320px;
+  }
+
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 600px) {
+
+  .trial-balance-page {
+    padding: 18px 12px 30px;
+  }
+
+  .trial-balance-header h1 {
+    font-size: 16px;
+  }
+
+  .trial-balance-filter-card,
+  .trial-balance-card {
+    padding: 14px;
+    border-radius: 8px;
+  }
+
+  .trial-balance-filter-row {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .trial-balance-field {
+    max-width: 100%;
+  }
+
+  .trial-balance-table-header {
+    align-items: flex-start;
+  }
+
+  .trial-balance-table-header h2 {
+    font-size: 14px;
+  }
+
+}

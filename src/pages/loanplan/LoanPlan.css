@@ -1,0 +1,418 @@
+/*  LOAN PLAN PAGE*/
+  
+ 
+
+.loan-plan-page{
+    padding:25px;
+    background:#f5f7fb;
+    min-height:100vh;
+}
+
+/*  HEADER */
+  
+
+
+.loan-plan-header{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    margin-bottom:20px;
+}
+
+.loan-plan-header h2{
+    font-size:28px;
+    font-weight:700;
+    color:#1e293b;
+}
+
+.loan-plan-header p{
+    margin-top:5px;
+    color:#64748b;
+    font-size:14px;
+}
+
+/*  SEARCH*/
+  
+ 
+
+/* .loan-plan-search{
+    margin-bottom:20px;
+}
+
+.loan-plan-search input{
+    width:320px;
+    max-width:100%;
+    height:45px;
+    padding:0 15px;
+    border:1px solid #dbe4ee;
+    border-radius:10px;
+    outline:none;
+    font-size:15px;
+    background:#fff;
+}
+
+.loan-plan-search input:focus{
+    border-color:#2563eb;
+} */
+
+/* 
+   TABLE
+ */
+
+/* .loan-plan-table-wrapper{
+    background:#fff;
+    border-radius:15px;
+    overflow:hidden;
+    box-shadow:0 5px 18px rgba(0,0,0,.08);
+}
+
+.loan-plan-table{
+    width:100%;
+    border-collapse:collapse;
+}
+
+.loan-plan-table thead{
+    background:#2563eb;
+    color:#fff;
+}
+
+.loan-plan-table th{
+    padding:16px;
+    text-align:left;
+    font-size:15px;
+    font-weight:600;
+}
+
+.loan-plan-table td{
+    padding:15px;
+    border-bottom:1px solid #edf2f7;
+    font-size:14px;
+}
+
+.loan-plan-table tbody tr:hover{
+    background:#f8fbff;
+}
+
+.loan-plan-empty{
+    text-align:center;
+    padding:40px;
+    color:#64748b;
+}
+
+.loan-plan-action{
+    display:flex;
+    align-items:center;
+    gap:10px;
+} */
+
+/* 
+   STATUS
+ */
+
+/* .loan-plan-status{
+    padding:6px 15px;
+    border-radius:20px;
+    font-size:13px;
+    font-weight:600;
+}
+
+.loan-plan-status.active{
+    background:#dcfce7;
+    color:#15803d;
+}
+
+.loan-plan-status.inactive{
+    background:#fee2e2;
+    color:#dc2626;
+} */
+
+/*  MODAL */
+  
+
+
+.loan-plan-modal{
+    position:fixed;
+    inset:0;
+    background:rgba(0,0,0,.45);
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    z-index:99999;
+}
+
+.loan-plan-modal-content{
+    width:92%;
+    max-width:1150px;
+    background:#fff;
+    border-radius:16px;
+    overflow:hidden;
+    animation:popup .25s ease;
+}
+
+@keyframes popup{
+
+    from{
+        transform:scale(.90);
+        opacity:0;
+    }
+
+    to{
+        transform:scale(1);
+        opacity:1;
+    }
+
+}
+
+/* POPUP HEADER */
+   
+
+
+.loan-plan-modal-header{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:18px 25px;
+    background:#2563eb;
+    color:#fff;
+}
+
+.loan-plan-modal-header h2{
+    font-size:22px;
+    font-weight:700;
+}
+
+/*   FORM */
+ 
+
+
+.loan-plan-form{
+    padding:25px;
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:20px;
+}
+
+.loan-plan-form-group{
+    display:flex;
+    flex-direction:column;
+}
+
+.loan-plan-form-group label{
+    font-size:14px;
+    font-weight:600;
+    margin-bottom:8px;
+    color:#334155;
+}
+
+.loan-plan-form-group input,
+.loan-plan-form-group select{
+
+    height:45px;
+    border:1px solid #dbe4ee;
+    border-radius:10px;
+    padding:0 14px;
+    font-size:14px;
+    outline:none;
+    background:#fff;
+}
+
+.loan-plan-form-group input:focus,
+.loan-plan-form-group select:focus{
+
+    border-color:#2563eb;
+}
+
+/*  FORM BUTTONS */
+  
+
+
+.loan-plan-form-buttons{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    gap:15px;
+    padding:0 25px 25px;
+    flex-wrap:wrap;
+}
+
+/*    DEFAULT BUTTON STYLE */
+
+
+
+.loan-plan-btn{
+    min-width:150px;
+    height:45px;
+    border:none;
+    outline:none;
+    border-radius:10px;
+    cursor:pointer;
+    font-size:15px;
+    font-weight:600;
+    transition:.3s;
+    color:#fff;
+}
+
+/* Save */
+
+.loan-plan-btn{
+    background:#2563eb;
+}
+
+.loan-plan-btn:hover{
+    background:#1d4ed8;
+}
+
+/* Calculate EMI */
+
+.emi-btn{
+    background:#16a34a;
+}
+
+.emi-btn:hover{
+    background:#15803d;
+}
+
+/* Cancel */
+
+.cancel-btn{
+    background:#ef4444;
+}
+
+.cancel-btn:hover{
+    background:#dc2626;
+}
+
+/*  SCROLLBAR */
+  
+
+
+.loan-plan-modal-content{
+    max-height:90vh;
+    overflow-y:auto;
+}
+
+.loan-plan-modal-content::-webkit-scrollbar{
+    width:8px;
+}
+
+.loan-plan-modal-content::-webkit-scrollbar-track{
+    background:#f1f5f9;
+}
+
+.loan-plan-modal-content::-webkit-scrollbar-thumb{
+    background:#cbd5e1;
+    border-radius:10px;
+}
+
+.loan-plan-modal-content::-webkit-scrollbar-thumb:hover{
+    background:#94a3b8;
+}
+
+/* 
+   TABLET
+ */
+
+@media (max-width:992px){
+
+    .loan-plan-form{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+    .loan-plan-header{
+        flex-direction:column;
+        align-items:flex-start;
+        gap:15px;
+    }
+
+    .loan-plan-search input{
+        width:100%;
+    }
+
+}
+
+/* 
+   MOBILE
+ */
+
+@media (max-width:768px){
+
+    .loan-plan-page{
+        padding:15px;
+    }
+
+    .loan-plan-header h2{
+        font-size:22px;
+    }
+
+    .loan-plan-header p{
+        font-size:13px;
+    }
+
+    .loan-plan-form{
+        grid-template-columns:1fr;
+        padding:18px;
+        gap:15px;
+    }
+
+    .loan-plan-modal-content{
+        width:96%;
+        border-radius:12px;
+    }
+
+    .loan-plan-modal-header{
+        padding:15px 18px;
+    }
+
+    .loan-plan-modal-header h2{
+        font-size:18px;
+    }
+
+    .loan-plan-form-buttons{
+        flex-direction:column;
+        padding:20px;
+    }
+
+    .loan-plan-btn{
+        width:100%;
+    }
+
+    .loan-plan-table-wrapper{
+        overflow-x:auto;
+    }
+
+    .loan-plan-table{
+        min-width:900px;
+    }
+
+}
+
+/* 
+   SMALL MOBILE
+ */
+
+@media (max-width:480px){
+
+    .loan-plan-page{
+        padding:10px;
+    }
+
+    .loan-plan-search input{
+        height:42px;
+    }
+
+    .loan-plan-form-group label{
+        font-size:13px;
+    }
+
+    .loan-plan-form-group input,
+    .loan-plan-form-group select{
+        height:42px;
+        font-size:13px;
+    }
+
+    .loan-plan-btn{
+        height:42px;
+        font-size:14px;
+    }
+
+}

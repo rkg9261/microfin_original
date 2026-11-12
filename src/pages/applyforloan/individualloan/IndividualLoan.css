@@ -1,0 +1,1227 @@
+/* =========================================================
+   INDIVIDUAL LOAN PAGE
+========================================================= */
+
+.individual-loan-page {
+  width: 100%;
+  min-height: 100vh;
+  padding: 20px 24px 40px;
+  box-sizing: border-box;
+  background: #f7f8fa;
+  color: #333;
+}
+
+
+/* =========================================================
+   PAGE HEADER
+========================================================= */
+
+.individual-loan-page-header {
+  width: 100%;
+  margin-bottom: 18px;
+}
+
+.individual-loan-page-header h1 {
+  margin: 0 0 5px;
+  font-size: 17px;
+  font-weight: 700;
+  color: #303030;
+}
+
+.individual-loan-breadcrumb {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  font-size: 11px;
+  color: #777;
+}
+
+.individual-loan-breadcrumb span {
+  color: #aaa;
+}
+
+
+/* =========================================================
+   SEARCH SECTION
+========================================================= */
+
+.individual-loan-search-section {
+  width: 100%;
+  min-height: 115px;
+  padding: 18px 20px;
+  margin-bottom: 18px;
+  box-sizing: border-box;
+
+  background: #fff;
+
+  border: 1px solid #e2e2e2;
+  border-radius: 7px;
+
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+}
+
+
+/* SEARCH BY TITLE */
+
+.individual-loan-search-section h3 {
+  margin: 0 0 16px;
+
+  font-size: 14px;
+  font-weight: 600;
+
+  color: #333;
+}
+
+
+/* =========================================================
+   SEARCH FIELDS
+========================================================= */
+
+.individual-loan-search-fields {
+  width: 100%;
+
+  display: flex;
+  align-items: flex-end;
+
+  gap: 14px;
+
+  flex-wrap: nowrap;
+}
+
+
+/* =========================================================
+   SEARCH FIELD
+========================================================= */
+
+.individual-loan-search-field {
+  width: 310px;
+  max-width: 310px;
+
+  flex: 0 0 310px;
+}
+
+
+.individual-loan-search-field label {
+  display: block;
+
+  margin-bottom: 7px;
+
+  font-size: 11px;
+  font-weight: 700;
+
+  color: #333;
+
+  text-transform: uppercase;
+}
+
+
+/* =========================================================
+   BRANCH INPUT WRAPPER
+========================================================= */
+
+.individual-loan-input-wrapper {
+  position: relative;
+
+  width: 100%;
+  height: 38px;
+
+  display: flex;
+  align-items: center;
+
+  box-sizing: border-box;
+
+  background: #fff;
+
+  border: 1px solid #d5d5d5;
+  border-radius: 4px;
+}
+
+
+/* INPUT */
+
+.individual-loan-input-wrapper input {
+  width: 100%;
+  height: 100%;
+
+  padding: 0 58px 0 12px;
+
+  box-sizing: border-box;
+
+  border: none;
+  outline: none;
+
+  background: transparent;
+
+  color: #444;
+
+  font-size: 13px;
+}
+
+
+/* PLACEHOLDER */
+
+.individual-loan-input-wrapper input::placeholder {
+  color: #777;
+}
+
+
+/* =========================================================
+   CLEAR BUTTON
+========================================================= */
+
+.individual-loan-input-wrapper button {
+  position: absolute;
+
+  right: 27px;
+  top: 50%;
+
+  transform: translateY(-50%);
+
+  width: 20px;
+  height: 20px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 0;
+
+  border: none;
+
+  background: transparent;
+
+  color: #777;
+
+  font-size: 18px;
+
+  cursor: pointer;
+}
+
+
+.individual-loan-input-wrapper button:hover {
+  color: #333;
+}
+
+
+/* =========================================================
+   DROPDOWN ARROW
+========================================================= */
+
+.individual-loan-input-wrapper > span {
+  position: absolute;
+
+  right: 9px;
+  top: 50%;
+
+  transform: translateY(-50%);
+
+  color: #555;
+
+  font-size: 14px;
+
+  pointer-events: none;
+}
+
+
+/* =========================================================
+   GET RECORD BUTTON
+========================================================= */
+
+.individual-loan-get-record-button {
+  height: 38px;
+
+  flex: 0 0 auto;
+
+  padding: 0 22px;
+
+  border: none;
+  border-radius: 4px;
+
+  background: #20a9d2;
+
+  color: #fff;
+
+  font-size: 12px;
+  font-weight: 600;
+
+  cursor: pointer;
+
+  white-space: nowrap;
+
+  transition: background 0.2s ease;
+}
+
+
+.individual-loan-get-record-button:hover {
+  background: #0798c2;
+}
+
+
+/* =========================================================
+   INDIVIDUAL LOAN LIST
+========================================================= */
+
+.individual-loan-list-container {
+  width: 100%;
+
+  padding: 18px 20px 22px;
+
+  box-sizing: border-box;
+
+  background: #fff;
+
+  border: 1px solid #e1e1e1;
+
+  border-radius: 7px;
+
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+}
+
+
+/* =========================================================
+   LIST HEADER
+========================================================= */
+
+.individual-loan-list-header {
+  width: 100%;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  margin-bottom: 16px;
+}
+
+
+.individual-loan-list-header h2 {
+  margin: 0;
+
+  font-size: 18px;
+  font-weight: 500;
+
+  color: #333;
+}
+
+
+/* =========================================================
+   TABLE TOOLBAR
+========================================================= */
+
+.individual-loan-table-toolbar {
+  width: 100%;
+
+  min-height: 40px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  margin-bottom: 10px;
+}
+
+
+/* =========================================================
+   SEARCH BOX
+========================================================= */
+
+.individual-loan-search-box {
+  width: 210px;
+  height: 35px;
+
+  display: flex;
+  align-items: center;
+
+  box-sizing: border-box;
+
+  border: 1px solid #ddd;
+  border-radius: 4px;
+
+  background: #fff;
+}
+
+
+.individual-loan-search-box input {
+  width: 100%;
+  height: 100%;
+
+  padding: 0 10px;
+
+  border: none;
+  outline: none;
+
+  background: transparent;
+
+  font-size: 12px;
+}
+
+
+.individual-loan-search-box input::placeholder {
+  color: #888;
+}
+
+
+.individual-loan-search-box span {
+  width: 35px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  color: #555;
+
+  font-size: 16px;
+}
+
+
+/* =========================================================
+   TABLE WRAPPER
+========================================================= */
+
+.common-table-wrapper {
+  width: 100%;
+
+  overflow-x: auto;
+  overflow-y: visible;
+
+  border: 1px solid #e5e5e5;
+
+  border-radius: 4px;
+
+  background: #fff;
+}
+
+
+/* =========================================================
+   TABLE
+========================================================= */
+
+.individual-loan-table {
+  width: 100%;
+  min-width: 1350px;
+
+  border-collapse: collapse;
+
+  font-size: 12px;
+}
+
+
+.individual-loan-table thead th {
+  padding: 12px 9px;
+
+  background: #f4f6f8;
+
+  border-bottom: 1px solid #ddd;
+
+  color: #333;
+
+  font-size: 10px;
+
+  font-weight: 700;
+
+  text-align: center;
+
+  vertical-align: middle;
+
+  white-space: nowrap;
+}
+
+
+.individual-loan-table tbody td {
+  padding: 13px 9px;
+
+  border-bottom: 1px solid #eeeeee;
+
+  color: #555;
+
+  font-size: 11px;
+
+  text-align: center;
+
+  vertical-align: middle;
+
+  white-space: nowrap;
+}
+
+
+.individual-loan-table tbody tr:hover {
+  background: #fafcfd;
+}
+
+
+.individual-loan-table th em {
+  display: block;
+
+  margin-top: 2px;
+
+  color: #a54b4b;
+
+  font-style: italic;
+}
+
+
+/* =========================================================
+   PLAN CELL
+========================================================= */
+
+.individual-loan-plan-cell {
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: flex-start;
+
+  gap: 3px;
+}
+
+
+.individual-loan-plan-cell strong {
+  color: #444;
+
+  font-size: 11px;
+
+  font-weight: 600;
+}
+
+
+.individual-loan-plan-cell em {
+  color: #a54b4b;
+
+  font-size: 10px;
+
+  font-style: italic;
+}
+
+
+/* =========================================================
+   MEMBER CELL
+========================================================= */
+
+.individual-loan-member-cell {
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: flex-start;
+
+  gap: 2px;
+}
+
+
+.individual-loan-member-cell strong {
+  color: #65899f;
+
+  font-size: 11px;
+}
+
+
+.individual-loan-member-cell small {
+  color: #65899f;
+
+  font-size: 10px;
+}
+
+
+/* =========================================================
+   ACTION
+========================================================= */
+
+.individual-loan-action-cell {
+  position: relative;
+
+  min-width: 100px;
+}
+
+
+.individual-loan-task-button {
+  min-width: 75px;
+
+  padding: 6px 8px;
+
+  border: none;
+
+  background: transparent;
+
+  color: #555;
+
+  font-size: 11px;
+
+  cursor: pointer;
+}
+
+
+.individual-loan-task-button:hover {
+  color: #149bc3;
+}
+
+
+/* =========================================================
+   TASK MENU
+========================================================= */
+
+.individual-loan-task-menu {
+  position: absolute;
+
+  top: 32px;
+  left: 0;
+
+  z-index: 99999;
+
+  width: 185px;
+
+  padding: 4px 0;
+
+  background: #fff;
+
+  border: 1px solid #ddd;
+
+  border-radius: 4px;
+
+  box-shadow:
+    0 6px 18px rgba(0, 0, 0, 0.18);
+}
+
+
+.individual-loan-task-menu button {
+  width: 100%;
+
+  min-height: 36px;
+
+  display: flex;
+  align-items: center;
+
+  gap: 9px;
+
+  padding: 7px 12px;
+
+  border: none;
+
+  background: #fff;
+
+  color: #444;
+
+  font-size: 11px;
+
+  text-align: left;
+
+  cursor: pointer;
+}
+
+
+.individual-loan-task-menu button:hover {
+  background: #f2f7f9;
+}
+
+
+.individual-loan-task-menu button span {
+  width: 18px;
+
+  text-align: center;
+}
+
+
+/* =========================================================
+   NO DATA
+========================================================= */
+
+.individual-loan-no-data {
+  padding: 30px !important;
+
+  color: #777 !important;
+
+  text-align: center !important;
+}
+
+
+/* =========================================================
+   MODAL OVERLAY
+========================================================= */
+
+.individual-loan-modal-overlay {
+  position: fixed;
+
+  inset: 0;
+
+  z-index: 99999;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  padding: 20px;
+
+  box-sizing: border-box;
+
+  background: rgba(0, 0, 0, 0.55);
+}
+
+
+/* =========================================================
+   VIEW DETAILS MODAL
+========================================================= */
+
+.individual-loan-details-modal {
+  width: 900px;
+
+  max-width: calc(100vw - 40px);
+
+  max-height: 90vh;
+
+  display: flex;
+
+  flex-direction: column;
+
+  background: #fff;
+
+  border-radius: 4px;
+
+  overflow: hidden;
+
+  box-shadow:
+    0 15px 45px rgba(0, 0, 0, 0.35);
+}
+
+
+/* =========================================================
+   VIEW HEADER
+========================================================= */
+
+.individual-loan-details-header {
+  height: 60px;
+
+  flex-shrink: 0;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: space-between;
+
+  padding: 0 18px;
+
+  background: linear-gradient(
+    90deg,
+    #20add7,
+    #0fa7d0
+  );
+
+  color: #fff;
+}
+
+
+.individual-loan-details-header h2 {
+  margin: 0;
+
+  font-size: 19px;
+
+  font-weight: 500;
+}
+
+
+.individual-loan-details-close-icon {
+  border: none;
+
+  background: transparent;
+
+  color: #fff;
+
+  font-size: 26px;
+
+  cursor: pointer;
+}
+
+
+/* =========================================================
+   VIEW BODY
+========================================================= */
+
+.individual-loan-details-body {
+  display: grid;
+
+  grid-template-columns: 1fr 1fr;
+
+  gap: 35px;
+
+  padding: 22px 25px;
+
+  overflow-y: auto;
+}
+
+
+.loan-detail-row {
+  display: grid;
+
+  grid-template-columns: 180px 12px minmax(0, 1fr);
+
+  margin-bottom: 5px;
+
+  padding-bottom: 4px;
+
+  border-bottom: 1px solid #f0f0f0;
+}
+
+
+.loan-detail-label {
+  color: #222;
+
+  font-size: 10px;
+
+  font-weight: 700;
+
+  line-height: 1.5;
+}
+
+
+.loan-detail-colon {
+  color: #555;
+
+  font-size: 10px;
+}
+
+
+.loan-detail-value {
+  color: #70828b;
+
+  font-size: 11px;
+
+  line-height: 1.5;
+
+  word-break: break-word;
+}
+
+
+.loan-details-section-title {
+  margin: 14px 0 8px;
+
+  color: #222;
+
+  font-size: 10px;
+
+  font-weight: 700;
+}
+
+
+.loan-details-new-loan {
+  margin-top: 25px;
+}
+
+
+.loan-detail-status-row {
+  display: grid;
+
+  grid-template-columns: 180px 12px auto;
+
+  margin-top: 20px;
+}
+
+
+.loan-detail-status {
+  font-size: 11px;
+}
+
+
+.loan-detail-status.pending {
+  color: #70828b;
+}
+
+
+.loan-detail-status.approved {
+  color: #20a85a;
+}
+
+
+/* =========================================================
+   VIEW FOOTER
+========================================================= */
+
+.individual-loan-details-footer {
+  display: flex;
+
+  justify-content: flex-end;
+
+  padding: 12px 25px 18px;
+
+  border-top: 1px solid #eee;
+}
+
+
+.individual-loan-details-close-button {
+  min-width: 70px;
+
+  height: 35px;
+
+  border: none;
+
+  border-radius: 3px;
+
+  background: #20add7;
+
+  color: #fff;
+
+  font-size: 11px;
+
+  font-weight: 600;
+
+  cursor: pointer;
+}
+
+
+.individual-loan-details-close-button:hover {
+  background: #0798bd;
+}
+
+
+/* =========================================================
+   FORM MODAL
+========================================================= */
+
+.individual-loan-form-modal {
+  width: 1000px;
+
+  max-width: calc(100vw - 40px);
+
+  max-height: 90vh;
+
+  background: #fff;
+
+  border-radius: 4px;
+
+  overflow: hidden;
+
+  box-shadow:
+    0 15px 45px rgba(0, 0, 0, 0.35);
+}
+
+
+.individual-loan-form-header {
+  height: 62px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  padding: 0 20px;
+
+  background: linear-gradient(
+    90deg,
+    #20add7,
+    #0fa7d0
+  );
+
+  color: #fff;
+}
+
+
+.individual-loan-form-header h2 {
+  margin: 0;
+
+  font-size: 19px;
+
+  font-weight: 500;
+}
+
+
+.individual-loan-form-close {
+  border: none;
+
+  background: transparent;
+
+  color: white;
+
+  font-size: 27px;
+
+  cursor: pointer;
+}
+
+
+/* =========================================================
+   FORM BODY
+========================================================= */
+
+.individual-loan-form-body {
+  max-height: calc(90vh - 62px);
+
+  padding: 25px;
+
+  overflow-y: auto;
+
+  box-sizing: border-box;
+}
+
+
+.individual-loan-form-grid {
+  display: grid;
+
+  grid-template-columns: 1fr 1fr;
+
+  gap: 30px;
+}
+
+
+.individual-loan-form-grid label {
+  display: block;
+
+  margin: 0 0 7px;
+
+  color: #222;
+
+  font-size: 11px;
+
+  font-weight: 700;
+}
+
+
+.individual-loan-form-grid label:not(:first-child) {
+  margin-top: 15px;
+}
+
+
+.individual-loan-form-grid label span {
+  color: red;
+}
+
+
+.individual-loan-form-grid input,
+.individual-loan-form-grid select {
+  width: 100%;
+
+  height: 40px;
+
+  padding: 0 12px;
+
+  box-sizing: border-box;
+
+  border: 1px solid #d7d7d7;
+
+  border-radius: 4px;
+
+  background: #fff;
+
+  color: #444;
+
+  font-size: 12px;
+
+  outline: none;
+}
+
+
+.individual-loan-form-grid input:focus,
+.individual-loan-form-grid select:focus {
+  border-color: #1daed7;
+}
+
+
+/* =========================================================
+   RADIO
+========================================================= */
+
+.individual-loan-radio-group {
+  display: flex;
+
+  align-items: center;
+
+  gap: 15px;
+}
+
+
+.individual-loan-radio-group label {
+  display: flex;
+
+  align-items: center;
+
+  gap: 4px;
+
+  margin: 0 !important;
+
+  font-weight: 500;
+}
+
+
+.individual-loan-radio-group input {
+  width: auto;
+
+  height: auto;
+}
+
+
+/* =========================================================
+   FORM FOOTER
+========================================================= */
+
+.individual-loan-form-footer {
+  display: flex;
+
+  justify-content: flex-end;
+
+  align-items: center;
+
+  gap: 8px;
+
+  padding-top: 25px;
+}
+
+
+/* =========================================================
+   ADD BUTTON AREA
+========================================================= */
+
+.individual-loan-list-header button {
+  white-space: nowrap;
+}
+
+
+/* =========================================================
+   RESPONSIVE - TABLET
+========================================================= */
+
+@media (max-width: 900px) {
+
+  .individual-loan-page {
+    padding: 16px;
+  }
+
+  .individual-loan-search-fields {
+    flex-wrap: wrap;
+  }
+
+  .individual-loan-search-field {
+    width: 280px;
+    max-width: 280px;
+    flex-basis: 280px;
+  }
+
+}
+
+
+/* =========================================================
+   RESPONSIVE - MOBILE
+========================================================= */
+
+@media (max-width: 600px) {
+
+  .individual-loan-page {
+    padding: 12px;
+  }
+
+
+  .individual-loan-search-section {
+    padding: 15px;
+  }
+
+
+  .individual-loan-search-fields {
+    width: 100%;
+
+    flex-direction: column;
+
+    align-items: stretch;
+
+    gap: 12px;
+  }
+
+
+  .individual-loan-search-field {
+    width: 100%;
+
+    max-width: none;
+
+    flex: 1 1 auto;
+  }
+
+
+  .individual-loan-get-record-button {
+    width: 120px;
+
+    height: 38px;
+  }
+
+
+  .individual-loan-list-container {
+    padding: 15px;
+  }
+
+
+  .individual-loan-list-header {
+    align-items: flex-start;
+
+    gap: 10px;
+  }
+
+
+  .individual-loan-list-header h2 {
+    font-size: 16px;
+  }
+
+
+  .individual-loan-table-toolbar {
+    gap: 10px;
+  }
+
+
+  .individual-loan-search-box {
+    width: 160px;
+  }
+
+
+  .individual-loan-details-body {
+    grid-template-columns: 1fr;
+
+    gap: 15px;
+  }
+
+
+  .individual-loan-form-grid {
+    grid-template-columns: 1fr;
+  }
+
+}
+
+
+/* =========================================================
+   VERY SMALL SCREEN
+========================================================= */
+
+@media (max-width: 400px) {
+
+  .individual-loan-page {
+    padding: 10px;
+  }
+
+
+  .individual-loan-search-section {
+    padding: 12px;
+  }
+
+
+  .individual-loan-table-toolbar {
+    flex-direction: column;
+
+    align-items: stretch;
+  }
+
+
+  .individual-loan-search-box {
+    width: 100%;
+  }
+
+
+  .individual-loan-list-header {
+    flex-direction: column;
+  }
+
+
+  .individual-loan-details-modal,
+  .individual-loan-form-modal {
+    max-width: calc(100vw - 16px);
+  }
+
+
+  .loan-detail-row {
+    grid-template-columns:
+      130px
+      10px
+      minmax(0, 1fr);
+  }
+
+}

@@ -1,0 +1,818 @@
+/* =========================================================
+   DISBURSEMENT PAGE
+========================================================= */
+
+.disbursement-page {
+    width: 100%;
+    min-height: 100vh;
+    padding: 14px 18px 35px;
+    box-sizing: border-box;
+    background: #f5f6f7;
+    color: #333;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+
+/* =========================================================
+   PAGE HEADING
+========================================================= */
+
+.disbursement-page-heading {
+    width: 100%;
+    margin-bottom: 12px;
+}
+
+.disbursement-page-heading h2 {
+    margin: 0;
+    font-size: 14px;
+    font-weight: 600;
+    color: #333;
+}
+
+
+/* =========================================================
+   SEARCH CARD
+========================================================= */
+
+.disbursement-search-card {
+    width: 100%;
+    background: #ffffff;
+    border: 1px solid #cfcfcf;
+    border-radius: 8px;
+    box-sizing: border-box;
+    margin-bottom: 13px;
+    overflow: hidden;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.08);
+}
+
+
+/* =========================================================
+   SEARCH HEADER
+========================================================= */
+
+.disbursement-search-header {
+    height: 38px;
+    padding: 0 12px;
+    display: flex;
+    align-items: center;
+    box-sizing: border-box;
+    border-bottom: 1px solid #d9d9d9;
+    background: #ffffff;
+}
+
+
+.disbursement-search-header span {
+    font-size: 13px;
+    font-weight: 500;
+    color: #333;
+}
+
+
+/* =========================================================
+   SEARCH BODY
+========================================================= */
+
+.disbursement-search-body {
+    padding: 12px 13px 14px;
+    display: grid;
+    grid-template-columns:
+        1.1fr
+        1fr
+        1fr
+        1fr;
+    column-gap: 28px;
+    row-gap: 9px;
+    box-sizing: border-box;
+}
+
+
+/* =========================================================
+   FIELD
+========================================================= */
+
+.disbursement-field {
+    width: 100%;
+    min-width: 0;
+}
+
+
+.disbursement-field label {
+    display: block;
+    margin-bottom: 5px;
+    font-size: 11px;
+    line-height: 13px;
+    font-weight: 600;
+    color: #333;
+    text-transform: uppercase;
+}
+
+
+/* =========================================================
+   INPUT / SELECT
+========================================================= */
+
+.disbursement-field input,
+.disbursement-field select {
+    width: 100%;
+    height: 31px;
+    padding: 4px 9px;
+    box-sizing: border-box;
+    border: 1px solid #c9c9c9;
+    border-radius: 4px;
+    background: #fff;
+    color: #555;
+    outline: none;
+    font-size: 11px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+
+.disbursement-field input:focus,
+.disbursement-field select:focus {
+    border-color: #169dbd;
+    box-shadow: 0 0 0 2px rgba(22, 157, 189, 0.08);
+}
+
+
+.disbursement-field input::placeholder {
+    color: #777;
+}
+
+
+/* =========================================================
+   INPUT WRAPPER
+========================================================= */
+
+.disbursement-input-wrapper {
+    position: relative;
+    width: 100%;
+}
+
+
+.disbursement-input-wrapper input {
+    padding-right: 55px;
+}
+
+
+/* =========================================================
+   CLEAR BUTTON
+========================================================= */
+
+.disbursement-clear-btn {
+    position: absolute;
+    right: 25px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 20px;
+    height: 20px;
+    padding: 0;
+    border: none;
+    background: transparent;
+    color: #777;
+    font-size: 17px;
+    line-height: 18px;
+    cursor: pointer;
+}
+
+
+.disbursement-clear-btn:hover {
+    color: #333;
+}
+
+
+/* =========================================================
+   DROPDOWN ICON
+========================================================= */
+
+.disbursement-dropdown-icon {
+    position: absolute;
+    right: 8px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 9px;
+    color: #555;
+    pointer-events: none;
+}
+
+
+/* =========================================================
+   DATE INPUT
+========================================================= */
+
+.disbursement-field input[type="date"] {
+    color: #666;
+    cursor: pointer;
+}
+
+
+/* =========================================================
+   FILTER BUTTONS
+========================================================= */
+
+.disbursement-filter-buttons {
+    display: flex;
+    align-items: flex-end;
+    gap: 7px;
+    padding-top: 17px;
+}
+
+
+/* =========================================================
+   SUBMIT BUTTON
+========================================================= */
+
+.disbursement-submit-button {
+    height: 33px;
+    padding: 0 15px;
+    border: none;
+    border-radius: 4px;
+    background: #1599bb;
+    color: #ffffff;
+    font-size: 12px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.2s ease;
+}
+
+
+.disbursement-submit-button:hover {
+    background: #087f9e;
+}
+
+
+.disbursement-submit-button:active {
+    transform: translateY(1px);
+}
+
+
+/* =========================================================
+   TABLE CARD
+========================================================= */
+
+.disbursement-table-card {
+    width: 100%;
+    background: #ffffff;
+    border: 1px solid #cfcfcf;
+    border-radius: 8px;
+    box-sizing: border-box;
+    overflow: hidden;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.08);
+}
+
+
+/* =========================================================
+   TABLE TITLE
+========================================================= */
+
+.disbursement-table-title-row {
+    min-height: 43px;
+    padding: 0 12px;
+    display: flex;
+    align-items: center;
+    box-sizing: border-box;
+    background: #ffffff;
+}
+
+
+.disbursement-table-title-row h2 {
+    margin: 0;
+    font-size: 17px;
+    font-weight: 500;
+    color: #333;
+}
+
+
+/* =========================================================
+   TABLE CONTROLS
+========================================================= */
+
+.disbursement-table-controls {
+    min-height: 48px;
+    padding: 7px 12px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    box-sizing: border-box;
+    background: #ffffff;
+}
+
+
+/* =========================================================
+   ENTRIES
+========================================================= */
+
+.disbursement-entries select {
+    width: 62px;
+    height: 31px;
+    padding: 3px 8px;
+    border: 1px solid #cfcfcf;
+    border-radius: 3px;
+    background: #fff;
+    color: #555;
+    font-size: 11px;
+    outline: none;
+    cursor: pointer;
+}
+
+
+/* =========================================================
+   TABLE SEARCH
+========================================================= */
+
+.disbursement-table-search {
+    width: 215px;
+    height: 31px;
+    display: flex;
+    align-items: center;
+    border: 1px solid #d0d0d0;
+    border-radius: 3px;
+    background: #ffffff;
+    overflow: hidden;
+}
+
+
+.disbursement-table-search input {
+    flex: 1;
+    width: 100%;
+    height: 100%;
+    padding: 0 9px;
+    border: none;
+    outline: none;
+    font-size: 10px;
+    color: #555;
+    box-sizing: border-box;
+}
+
+
+.disbursement-table-search input::placeholder {
+    color: #999;
+}
+
+
+.disbursement-table-search button {
+    width: 34px;
+    height: 100%;
+    padding: 0;
+    border: none;
+    border-left: 1px solid #e3e3e3;
+    background: #fff;
+    color: #555;
+    font-size: 12px;
+    cursor: pointer;
+}
+
+
+.disbursement-table-search button:hover {
+    background: #f4f4f4;
+}
+
+
+/* =========================================================
+   TABLE WRAPPER
+========================================================= */
+
+.disbursement-table-wrapper {
+    width: 100%;
+    overflow-x: auto;
+    overflow-y: hidden;
+    box-sizing: border-box;
+}
+
+
+/* =========================================================
+   TABLE
+========================================================= */
+
+.disbursement-table {
+    width: 100%;
+    min-width: 1450px;
+    border-collapse: collapse;
+    table-layout: auto;
+}
+
+
+/* =========================================================
+   TABLE HEAD
+========================================================= */
+
+.disbursement-table thead th {
+    height: 47px;
+    padding: 5px 6px;
+    border: 1px solid #cfd9db;
+    background: #edf3f4;
+    color: #344347;
+    font-size: 9px;
+    font-weight: 600;
+    text-align: center;
+    vertical-align: middle;
+    text-transform: uppercase;
+    white-space: nowrap;
+    line-height: 12px;
+}
+
+
+.disbursement-table thead th span {
+    color: #d64d52;
+    font-style: italic;
+}
+
+
+/* =========================================================
+   TABLE BODY
+========================================================= */
+
+.disbursement-table tbody td {
+    height: 37px;
+    padding: 6px 7px;
+    border: 1px solid #e0e0e0;
+    color: #555;
+    font-size: 10px;
+    text-align: center;
+    vertical-align: middle;
+    white-space: nowrap;
+}
+
+
+.disbursement-table tbody tr {
+    background: #fff;
+    transition: background 0.2s ease;
+}
+
+
+.disbursement-table tbody tr:hover {
+    background: #f7fbfc;
+}
+
+
+/* =========================================================
+   LOAN NAME
+========================================================= */
+
+.disbursement-loan-name {
+    line-height: 13px;
+}
+
+
+.disbursement-loan-name strong {
+    color: #555;
+    font-size: 10px;
+    font-weight: 600;
+}
+
+
+.disbursement-loan-name span {
+    color: #d64d52;
+    font-size: 9px;
+    font-style: italic;
+    font-weight: 600;
+}
+
+
+/* =========================================================
+   MEMBER
+========================================================= */
+
+.disbursement-member {
+    font-weight: 600;
+    color: #444 !important;
+}
+
+
+/* =========================================================
+   TASK
+========================================================= */
+
+.disbursement-task {
+    color: #555;
+    font-size: 10px;
+    cursor: pointer;
+}
+
+
+.disbursement-task:hover {
+    color: #1599bb;
+}
+
+
+/* =========================================================
+   NO DATA
+========================================================= */
+
+.disbursement-no-data {
+    height: 80px !important;
+    text-align: center !important;
+    color: #999 !important;
+    font-size: 12px !important;
+}
+
+
+/* =========================================================
+   TABLE FOOTER
+========================================================= */
+
+.disbursement-table-footer {
+    min-height: 45px;
+    padding: 7px 12px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    box-sizing: border-box;
+    background: #ffffff;
+}
+
+
+/* =========================================================
+   SHOWING
+========================================================= */
+
+.disbursement-showing {
+    color: #777;
+    font-size: 10px;
+}
+
+
+/* =========================================================
+   PAGINATION
+========================================================= */
+
+.disbursement-pagination {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+
+.disbursement-pagination button {
+    min-width: 28px;
+    height: 27px;
+    padding: 0 7px;
+    border: 1px solid #d3d3d3;
+    border-radius: 3px;
+    background: #ffffff;
+    color: #666;
+    font-size: 10px;
+    cursor: pointer;
+}
+
+
+.disbursement-pagination button:hover:not(:disabled) {
+    background: #1599bb;
+    border-color: #1599bb;
+    color: #ffffff;
+}
+
+
+.disbursement-pagination button.active {
+    background: #1599bb;
+    border-color: #1599bb;
+    color: #ffffff;
+}
+
+
+.disbursement-pagination button:disabled {
+    opacity: 0.45;
+    cursor: not-allowed;
+}
+
+
+/* =========================================================
+   TABLE SCROLLBAR
+========================================================= */
+
+.disbursement-table-wrapper::-webkit-scrollbar {
+    height: 7px;
+}
+
+
+.disbursement-table-wrapper::-webkit-scrollbar-track {
+    background: #eeeeee;
+}
+
+
+.disbursement-table-wrapper::-webkit-scrollbar-thumb {
+    background: #b9c1c3;
+    border-radius: 10px;
+}
+
+
+.disbursement-table-wrapper::-webkit-scrollbar-thumb:hover {
+    background: #90999b;
+}
+
+
+/* =========================================================
+   TABLE COLUMN WIDTHS
+========================================================= */
+
+.disbursement-table th:nth-child(1),
+.disbursement-table td:nth-child(1) {
+    min-width: 42px;
+    width: 42px;
+}
+
+
+.disbursement-table th:nth-child(2),
+.disbursement-table td:nth-child(2) {
+    min-width: 70px;
+}
+
+
+.disbursement-table th:nth-child(3),
+.disbursement-table td:nth-child(3) {
+    min-width: 125px;
+}
+
+
+.disbursement-table th:nth-child(4),
+.disbursement-table td:nth-child(4) {
+    min-width: 90px;
+}
+
+
+.disbursement-table th:nth-child(5),
+.disbursement-table td:nth-child(5) {
+    min-width: 75px;
+}
+
+
+.disbursement-table th:nth-child(6),
+.disbursement-table td:nth-child(6) {
+    min-width: 70px;
+}
+
+
+.disbursement-table th:nth-child(7),
+.disbursement-table td:nth-child(7) {
+    min-width: 65px;
+}
+
+
+.disbursement-table th:nth-child(8),
+.disbursement-table td:nth-child(8) {
+    min-width: 105px;
+}
+
+
+.disbursement-table th:nth-child(9),
+.disbursement-table td:nth-child(9) {
+    min-width: 105px;
+}
+
+
+.disbursement-table th:nth-child(10),
+.disbursement-table td:nth-child(10) {
+    min-width: 105px;
+}
+
+
+.disbursement-table th:nth-child(11),
+.disbursement-table td:nth-child(11) {
+    min-width: 100px;
+}
+
+
+.disbursement-table th:nth-child(12),
+.disbursement-table td:nth-child(12) {
+    min-width: 60px;
+}
+
+
+.disbursement-table th:nth-child(13),
+.disbursement-table td:nth-child(13) {
+    min-width: 90px;
+}
+
+
+.disbursement-table th:nth-child(14),
+.disbursement-table td:nth-child(14) {
+    min-width: 100px;
+}
+
+
+.disbursement-table th:nth-child(15),
+.disbursement-table td:nth-child(15) {
+    min-width: 90px;
+}
+
+
+.disbursement-table th:nth-child(16),
+.disbursement-table td:nth-child(16) {
+    min-width: 70px;
+}
+
+
+.disbursement-table th:nth-child(17),
+.disbursement-table td:nth-child(17) {
+    min-width: 65px;
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 1100px) {
+
+    .disbursement-page {
+        padding: 12px;
+    }
+
+    .disbursement-search-body {
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr));
+        column-gap: 18px;
+    }
+
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 700px) {
+
+    .disbursement-page {
+        padding: 8px;
+    }
+
+
+    .disbursement-search-body {
+        grid-template-columns: 1fr;
+        row-gap: 11px;
+    }
+
+
+    .disbursement-filter-buttons {
+        padding-top: 5px;
+        align-items: stretch;
+    }
+
+
+    .disbursement-submit-button {
+        height: 36px;
+    }
+
+
+    .disbursement-table-title-row {
+        min-height: 40px;
+    }
+
+
+    .disbursement-table-title-row h2 {
+        font-size: 14px;
+    }
+
+
+    .disbursement-table-controls {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 8px;
+    }
+
+
+    .disbursement-table-search {
+        width: 100%;
+    }
+
+
+    .disbursement-table-footer {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+
+    .disbursement-pagination {
+        justify-content: center;
+    }
+
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media (max-width: 400px) {
+
+    .disbursement-page-heading h2 {
+        font-size: 13px;
+    }
+
+
+    .disbursement-search-header span {
+        font-size: 12px;
+    }
+
+
+    .disbursement-field label {
+        font-size: 10px;
+    }
+
+
+    .disbursement-field input,
+    .disbursement-field select {
+        height: 35px;
+    }
+
+}

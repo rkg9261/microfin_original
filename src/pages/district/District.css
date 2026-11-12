@@ -1,0 +1,67 @@
+/* ===========================
+   DISTRICT PAGE
+=========================== */
+
+.district-page {
+  width: 100%;
+  min-height: 100vh;
+  padding: 20px;
+  background: #f5f7fb;
+}
+
+.district-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.district-header h2 {
+  margin: 0;
+  font-size: 28px;
+  font-weight: 700;
+  color: #1f2937;
+}
+
+.district-header p {
+  margin: 4px 0 0;
+  color: #6b7280;
+}
+
+.status-active {
+  background: #dcfce7;
+  color: #15803d;
+  padding: 5px 14px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 700;
+  display: inline-block;
+}
+
+.status-inactive {
+  background: #fee2e2;
+  color: #dc2626;
+  padding: 5px 14px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 700;
+  display: inline-block;
+}
+
+.table-action {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+@media (max-width: 768px) {
+  .district-page {
+    padding: 15px;
+  }
+
+  .district-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 15px;
+  }
+}

@@ -1,0 +1,462 @@
+/* =========================================================
+   OLD MEMBER COLLECTION
+========================================================= */
+
+.old-member-collection-page {
+  width: 100%;
+  min-height: 100vh;
+  padding: 20px 25px 40px;
+  box-sizing: border-box;
+  background: #f7f8fa;
+  color: #30343b;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* =========================================================
+   PAGE TITLE
+========================================================= */
+
+.old-member-collection-title {
+  font-size: 14px;
+  font-weight: 700;
+  color: #252b35;
+  margin-bottom: 22px;
+  text-transform: uppercase;
+}
+
+/* =========================================================
+   FILTER SECTION
+========================================================= */
+
+.old-member-filter-section {
+  width: 100%;
+  background: #ffffff;
+  border-radius: 4px;
+  padding: 0 18px 24px;
+  box-sizing: border-box;
+  box-shadow: 0 1px 5px rgba(0, 0, 0, 0.04);
+}
+
+.old-member-filter-line {
+  width: 100%;
+  height: 3px;
+  background: #28a9d0;
+  margin-bottom: 25px;
+}
+
+.old-member-filter-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1.5fr;
+  gap: 28px;
+  align-items: end;
+}
+
+/* =========================================================
+   FIELD
+========================================================= */
+
+.old-member-field {
+  width: 100%;
+  position: relative;
+}
+
+.old-member-field label {
+  display: block;
+  margin-bottom: 8px;
+  font-size: 12px;
+  font-weight: 700;
+  color: #333842;
+  text-transform: uppercase;
+}
+
+.old-member-field input,
+.old-member-field select {
+  width: 100%;
+  height: 42px;
+  border: 1px solid #d3d7dc;
+  border-radius: 3px;
+  background: #fff;
+  padding: 0 38px 0 13px;
+  box-sizing: border-box;
+  font-size: 13px;
+  color: #555b63;
+  outline: none;
+  appearance: none;
+}
+
+.old-member-field input:focus,
+.old-member-field select:focus {
+  border-color: #28a9d0;
+  box-shadow: 0 0 0 2px rgba(40, 169, 208, 0.08);
+}
+
+.old-member-field input::placeholder {
+  color: #a7abb0;
+}
+
+/* =========================================================
+   SELECT
+========================================================= */
+
+.old-member-select-wrapper {
+  position: relative;
+  width: 100%;
+}
+
+.old-member-select-arrow {
+  position: absolute;
+  right: 13px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 9px;
+  color: #777;
+  pointer-events: none;
+}
+
+/* =========================================================
+   SINGLE MEMBER SECTION
+========================================================= */
+
+.old-member-single-section {
+  width: 100%;
+  background: #fff;
+  margin-top: 14px;
+  padding: 0 18px 24px;
+  box-sizing: border-box;
+}
+
+.old-member-red-line {
+  width: 100%;
+  height: 3px;
+  background: #cf5258;
+  margin-bottom: 16px;
+}
+
+.old-member-single-section h3 {
+  margin: 0 0 16px;
+  font-size: 17px;
+  font-weight: 500;
+  color: #3f444c;
+}
+
+/* =========================================================
+   SINGLE MEMBER FORM
+========================================================= */
+
+.old-member-single-form {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 8px;
+}
+
+.old-member-single-form input {
+  width: 150px;
+  height: 38px;
+  border: 1px solid #d4d8dc;
+  border-radius: 3px;
+  padding: 0 11px;
+  font-size: 12px;
+  box-sizing: border-box;
+  outline: none;
+}
+
+.old-member-single-form input:focus {
+  border-color: #28a9d0;
+}
+
+.old-member-single-form input::placeholder {
+  color: #a5a9ae;
+}
+
+.old-member-submit-button {
+  height: 30px;
+  padding: 0 16px;
+  border: none;
+  border-radius: 3px;
+  background: #32ad73;
+  color: #fff;
+  font-size: 12px;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.old-member-submit-button:hover {
+  background: #27945f;
+}
+
+/* =========================================================
+   MEMBER COLLECTION
+========================================================= */
+
+.old-member-table-section {
+  width: 100%;
+  background: #fff;
+  margin-top: 15px;
+  padding: 0 18px 18px;
+  box-sizing: border-box;
+}
+
+.old-member-green-line {
+  width: 100%;
+  height: 3px;
+  background: #36a86d;
+  margin-bottom: 20px;
+}
+
+.old-member-table-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 12px;
+}
+
+.old-member-table-header h2 {
+  margin: 0;
+  font-size: 20px;
+  font-weight: 400;
+  color: #3d424a;
+}
+
+/* =========================================================
+   SUMMARY
+========================================================= */
+
+.old-member-summary {
+  min-width: 160px;
+  text-align: left;
+  font-size: 11px;
+  color: #4f8b63;
+  line-height: 20px;
+}
+
+.old-member-summary strong {
+  font-weight: 600;
+}
+
+/* =========================================================
+   SEARCH
+========================================================= */
+
+.old-member-table-top {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 5px;
+}
+
+.old-member-search {
+  position: relative;
+  width: 190px;
+}
+
+.old-member-search input {
+  width: 100%;
+  height: 35px;
+  border: 1px solid #e0e2e4;
+  border-radius: 3px;
+  padding: 0 32px 0 10px;
+  box-sizing: border-box;
+  outline: none;
+  font-size: 12px;
+}
+
+.old-member-search input::placeholder {
+  color: #b1b4b7;
+}
+
+.old-member-search input:focus {
+  border-color: #35a8cb;
+}
+
+.old-member-search span {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #888;
+  font-size: 17px;
+}
+
+/* =========================================================
+   TABLE
+========================================================= */
+
+.old-member-table-wrapper {
+  width: 100%;
+  overflow-x: auto;
+}
+
+.old-member-table {
+  width: 100%;
+  min-width: 800px;
+  border-collapse: collapse;
+  table-layout: auto;
+}
+
+.old-member-table thead tr {
+  background: #edf2f4;
+}
+
+.old-member-table th {
+  height: 45px;
+  padding: 8px 12px;
+  text-align: left;
+  white-space: nowrap;
+  font-size: 11px;
+  font-weight: 700;
+  color: #3f4650;
+  border-bottom: 1px solid #e0e4e7;
+}
+
+.old-member-table td {
+  height: 48px;
+  padding: 8px 12px;
+  font-size: 12px;
+  color: #555b62;
+  border-bottom: 1px solid #edf0f1;
+  white-space: nowrap;
+}
+
+.old-member-table tbody tr:hover {
+  background: #fafcfc;
+}
+
+/* =========================================================
+   NO DATA
+========================================================= */
+
+.old-member-no-data {
+  height: 80px !important;
+  text-align: center !important;
+  color: #999 !important;
+  font-size: 12px !important;
+}
+
+/* =========================================================
+   STATUS
+========================================================= */
+
+.old-member-status-approved,
+.old-member-status-pending {
+  display: inline-block;
+  padding: 4px 9px;
+  border-radius: 3px;
+  font-size: 10px;
+  font-weight: 600;
+}
+
+.old-member-status-approved {
+  color: #fff;
+  background: #39a96b;
+}
+
+.old-member-status-pending {
+  color: #fff;
+  background: #df6767;
+}
+
+/* =========================================================
+   FOOTER
+========================================================= */
+
+.old-member-table-footer {
+  min-height: 48px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 8px;
+  border-top: 1px solid #f0f1f2;
+  padding-top: 10px;
+}
+
+.old-member-entries {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.old-member-entries > span {
+  font-size: 11px;
+  color: #8c9197;
+  font-weight: 500;
+}
+
+.old-member-pagination {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  font-size: 11px;
+  color: #999;
+}
+
+.old-member-pagination span {
+  white-space: nowrap;
+}
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media (max-width: 1000px) {
+
+  .old-member-filter-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .old-member-field:last-child {
+    grid-column: 1 / -1;
+  }
+
+}
+
+@media (max-width: 700px) {
+
+  .old-member-collection-page {
+    padding: 15px 10px 30px;
+  }
+
+  .old-member-filter-section,
+  .old-member-single-section,
+  .old-member-table-section {
+    padding-left: 12px;
+    padding-right: 12px;
+  }
+
+  .old-member-filter-grid {
+    grid-template-columns: 1fr;
+    gap: 15px;
+  }
+
+  .old-member-field:last-child {
+    grid-column: auto;
+  }
+
+  .old-member-table-header {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .old-member-summary {
+    min-width: auto;
+  }
+
+  .old-member-table-top {
+    justify-content: flex-start;
+  }
+
+  .old-member-search {
+    width: 100%;
+  }
+
+  .old-member-table-footer {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 15px;
+  }
+
+  .old-member-pagination {
+    width: 100%;
+    justify-content: space-between;
+  }
+
+}

@@ -1,0 +1,772 @@
+/* ============================================================
+   PAGE
+============================================================ */
+
+.loan-settlement-page {
+  width: 100%;
+  min-height: 100vh;
+  padding: 18px 22px 40px;
+  background: #f5f7fa;
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
+  color: #303030;
+}
+
+
+/* ============================================================
+   PAGE HEADER
+============================================================ */
+
+.loan-settlement-page-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 18px;
+}
+
+.loan-settlement-page-header h1 {
+  margin: 0;
+  font-size: 16px;
+  font-weight: 700;
+}
+
+.loan-settlement-breadcrumb {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  font-size: 11px;
+  color: #777;
+}
+
+.loan-settlement-breadcrumb strong {
+  color: #333;
+}
+
+
+/* ============================================================
+   CARDS
+============================================================ */
+
+.loan-settlement-create-card,
+.loan-settlement-search-card,
+.loan-settlement-list-card {
+  background: #fff;
+  border: 1px solid #d9dfe4;
+  border-radius: 6px;
+  margin-bottom: 16px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+}
+
+
+/* ============================================================
+   CREATE CARD
+============================================================ */
+
+.loan-settlement-create-card {
+  padding: 18px 20px 22px;
+}
+
+.loan-settlement-section-header,
+.loan-settlement-list-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 22px;
+}
+
+.loan-settlement-section-header h2,
+.loan-settlement-list-header h2 {
+  margin: 0;
+  font-size: 19px;
+  font-weight: 500;
+  color: #333;
+}
+
+
+/* ============================================================
+   DOWNLOAD
+============================================================ */
+
+.loan-settlement-download-btn,
+.loan-settlement-list-export {
+  border: none;
+  background: transparent;
+  color: #777;
+  font-size: 11px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.loan-settlement-download-btn:hover,
+.loan-settlement-list-export:hover {
+  color: #159bc2;
+}
+
+
+/* ============================================================
+   FORM GRID
+============================================================ */
+
+.loan-settlement-create-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  column-gap: 28px;
+  row-gap: 17px;
+}
+
+.loan-settlement-form-field {
+  min-width: 0;
+}
+
+.loan-settlement-form-field label,
+.loan-settlement-search-loan label {
+  display: block;
+  margin-bottom: 7px;
+  font-size: 11px;
+  font-weight: 700;
+  color: #333;
+  text-transform: uppercase;
+}
+
+.loan-settlement-form-field label span {
+  color: #e33131;
+  margin-left: 3px;
+}
+
+
+/* ============================================================
+   INPUT
+============================================================ */
+
+.loan-settlement-form-field input,
+.loan-settlement-form-field select,
+.loan-settlement-search-loan input {
+  width: 100%;
+  height: 34px;
+  border: 1px solid #d8d8d8;
+  border-radius: 3px;
+  padding: 0 11px;
+  outline: none;
+  background: #fff;
+  color: #555;
+  font-size: 12px;
+  box-sizing: border-box;
+}
+
+.loan-settlement-form-field input:focus,
+.loan-settlement-form-field select:focus,
+.loan-settlement-search-loan input:focus {
+  border-color: #1ca8ce;
+}
+
+
+/* ============================================================
+   READ ONLY
+============================================================ */
+
+.loan-settlement-readonly {
+  background: #f5f5f5 !important;
+  color: #777 !important;
+}
+
+
+/* ============================================================
+   SELECT
+============================================================ */
+
+.loan-settlement-select-wrapper {
+  position: relative;
+}
+
+.loan-settlement-select-wrapper select {
+  appearance: none;
+  -webkit-appearance: none;
+  padding-right: 30px;
+  cursor: pointer;
+}
+
+.loan-settlement-select-wrapper svg {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 10px;
+  color: #777;
+  pointer-events: none;
+}
+
+
+/* ============================================================
+   DATE
+============================================================ */
+
+.loan-settlement-date-wrapper {
+  position: relative;
+}
+
+.loan-settlement-date-wrapper input {
+  padding-right: 35px;
+}
+
+.loan-settlement-date-wrapper svg {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #777;
+  font-size: 12px;
+  pointer-events: none;
+}
+
+
+/* ============================================================
+   SEARCH LOAN
+============================================================ */
+
+.loan-settlement-search-loan {
+  grid-column: span 3;
+}
+
+.loan-settlement-search-row {
+  display: flex;
+  gap: 8px;
+}
+
+.loan-settlement-search-row input {
+  flex: 1;
+}
+
+.loan-settlement-search-btn {
+  height: 34px;
+  padding: 0 15px;
+  border: none;
+  border-radius: 3px;
+  background: #35a99d;
+  color: white;
+  font-size: 11px;
+  font-weight: 600;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.loan-settlement-search-btn:hover {
+  background: #2b9187;
+}
+
+
+/* ============================================================
+   CREATE ACTION
+============================================================ */
+
+.loan-settlement-create-action {
+  margin-top: 25px;
+}
+
+
+/* ============================================================
+   SEARCH CARD
+============================================================ */
+
+.loan-settlement-search-card {
+  padding: 17px 20px 20px;
+}
+
+.loan-settlement-filter-title {
+  font-size: 12px;
+  font-weight: 600;
+  color: #555;
+  margin-bottom: 20px;
+}
+
+.loan-settlement-search-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.8fr 1fr;
+  column-gap: 28px;
+  row-gap: 17px;
+}
+
+
+/* ============================================================
+   FILTER BUTTONS
+============================================================ */
+
+.loan-settlement-filter-buttons {
+  margin-top: 20px;
+  display: flex;
+  gap: 8px;
+}
+
+.loan-settlement-submit-btn,
+.loan-settlement-reset-btn {
+  border: none;
+  border-radius: 3px;
+  padding: 9px 18px;
+  color: white;
+  font-size: 11px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.loan-settlement-submit-btn {
+  background: #1fa8ca;
+}
+
+.loan-settlement-reset-btn {
+  background: #e45454;
+}
+
+
+/* ============================================================
+   LIST CARD
+============================================================ */
+
+.loan-settlement-list-card {
+  padding: 18px 12px 16px;
+}
+
+.loan-settlement-list-header {
+  padding: 0 8px 14px;
+  border-bottom: 2px solid #20a6c9;
+}
+
+
+/* ============================================================
+   TABLE CONTROLS
+============================================================ */
+
+.loan-settlement-table-controls {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 13px 8px;
+}
+
+.loan-settlement-table-search {
+  position: relative;
+  width: 220px;
+}
+
+.loan-settlement-table-search input {
+  width: 100%;
+  height: 31px;
+  box-sizing: border-box;
+  border: 1px solid #ddd;
+  border-radius: 3px;
+  outline: none;
+  padding: 0 32px 0 10px;
+  font-size: 11px;
+}
+
+.loan-settlement-table-search svg {
+  position: absolute;
+  right: 9px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #555;
+  font-size: 11px;
+}
+
+
+/* ============================================================
+   TABLE
+============================================================ */
+
+.loan-settlement-table-wrapper {
+  width: 100%;
+  overflow-x: auto;
+}
+
+.loan-settlement-table {
+  width: 100%;
+  min-width: 1200px;
+  border-collapse: collapse;
+}
+
+.loan-settlement-table th {
+  background: #fafafa;
+  color: #333;
+  font-size: 10px;
+  font-weight: 700;
+  text-align: left;
+  padding: 11px 7px;
+  border-bottom: 1px solid #ddd;
+  white-space: nowrap;
+}
+
+.loan-settlement-table td {
+  padding: 10px 7px;
+  border-bottom: 1px solid #eee;
+  font-size: 10px;
+  color: #555;
+  vertical-align: middle;
+  white-space: nowrap;
+}
+
+.loan-settlement-table tbody tr:hover {
+  background: #fafcfd;
+}
+
+.loan-id-cell {
+  color: #287b9b !important;
+  font-weight: 600;
+}
+
+.member-code {
+  font-size: 9px;
+  color: #777;
+}
+
+.loan-settlement-table td strong {
+  font-weight: 500;
+  color: #444;
+}
+
+
+/* ============================================================
+   STATUS
+============================================================ */
+
+.loan-settlement-status {
+  color: #3a9b62;
+  font-size: 9px;
+  font-weight: 700;
+}
+
+
+/* ============================================================
+   ACTION BUTTONS
+============================================================ */
+
+.loan-settlement-action-buttons {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+
+/* ============================================================
+   NO DATA
+============================================================ */
+
+.loan-settlement-no-data {
+  text-align: center !important;
+  padding: 30px !important;
+  color: #888 !important;
+}
+
+
+/* ============================================================
+   FOOTER
+============================================================ */
+
+.loan-settlement-table-footer {
+  padding: 15px 8px 4px;
+  color: #555;
+  font-size: 10px;
+}
+
+
+/* ============================================================
+   MODAL OVERLAY
+============================================================ */
+
+.loan-settlement-modal-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  background: rgba(0, 0, 0, 0.55);
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+
+/* ============================================================
+   VIEW MODAL
+============================================================ */
+
+.loan-settlement-view-modal {
+  width: min(900px, 96vw);
+  max-height: 90vh;
+
+  background: #fff;
+  border-radius: 3px;
+  overflow: hidden;
+
+  box-shadow:
+    0 12px 45px rgba(0, 0, 0, 0.3);
+
+  animation:
+    loanSettlementModalOpen
+    0.2s ease-out;
+}
+
+@keyframes loanSettlementModalOpen {
+
+  from {
+    opacity: 0;
+    transform: translateY(-15px) scale(0.98);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+
+}
+
+
+/* ============================================================
+   MODAL HEADER
+============================================================ */
+
+.loan-settlement-modal-header {
+  height: 53px;
+
+  background:
+    linear-gradient(
+      90deg,
+      #16acd1,
+      #1ca7c7
+    );
+
+  color: #fff;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  padding: 0 17px;
+  box-sizing: border-box;
+}
+
+.loan-settlement-modal-header h2 {
+  margin: 0;
+  font-size: 16px;
+  font-weight: 500;
+}
+
+
+/* ============================================================
+   CROSS ICON
+============================================================ */
+
+.loan-settlement-modal-close-icon {
+  width: 30px;
+  height: 30px;
+
+  border: none;
+  background: transparent;
+
+  color: white;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  cursor: pointer;
+
+  font-size: 16px;
+  border-radius: 3px;
+}
+
+.loan-settlement-modal-close-icon:hover {
+  background: rgba(255, 255, 255, 0.15);
+}
+
+
+/* ============================================================
+   MODAL BODY
+============================================================ */
+
+.loan-settlement-modal-body {
+
+  padding: 25px 26px 15px;
+
+  display: grid;
+
+  grid-template-columns: 1fr 1fr;
+
+  gap: 30px;
+
+  max-height:
+    calc(90vh - 115px);
+
+  overflow-y: auto;
+}
+
+
+/* ============================================================
+   DETAILS
+============================================================ */
+
+.loan-settlement-details-column {
+  min-width: 0;
+}
+
+.loan-settlement-detail-row {
+
+  display: grid;
+
+  grid-template-columns:
+    230px 10px 1fr;
+
+  gap: 3px;
+
+  margin-bottom: 8px;
+
+  line-height: 1.4;
+}
+
+.loan-settlement-detail-row span {
+
+  font-size: 11px;
+
+  font-weight: 700;
+
+  color: #555;
+
+  text-transform: uppercase;
+}
+
+.loan-settlement-detail-row strong {
+
+  font-size: 11px;
+
+  color: #555;
+}
+
+.loan-settlement-detail-row p {
+
+  margin: 0;
+
+  font-size: 11px;
+
+  color: #777;
+
+  word-break: break-word;
+}
+
+
+/* ============================================================
+   MODAL FOOTER
+============================================================ */
+
+.loan-settlement-modal-footer {
+
+  padding: 12px 25px 18px;
+
+  display: flex;
+
+  justify-content: flex-end;
+
+  border-top: 1px solid #eee;
+}
+
+
+/* ============================================================
+   RESPONSIVE
+============================================================ */
+
+@media (max-width: 1100px) {
+
+  .loan-settlement-create-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .loan-settlement-search-loan {
+    grid-column: span 2;
+  }
+
+}
+
+
+@media (max-width: 768px) {
+
+  .loan-settlement-page {
+    padding: 12px;
+  }
+
+  .loan-settlement-page-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }
+
+  .loan-settlement-create-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .loan-settlement-search-loan {
+    grid-column: span 1;
+  }
+
+  .loan-settlement-search-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .loan-settlement-section-header,
+  .loan-settlement-list-header {
+    align-items: flex-start;
+    gap: 10px;
+    flex-direction: column;
+  }
+
+  .loan-settlement-table-controls {
+    gap: 12px;
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .loan-settlement-table-search {
+    width: 100%;
+  }
+
+  .loan-settlement-modal-body {
+    grid-template-columns: 1fr;
+    gap: 10px;
+    padding: 20px;
+  }
+
+  .loan-settlement-detail-row {
+    grid-template-columns: 180px 10px 1fr;
+  }
+
+}
+
+
+@media (max-width: 480px) {
+
+  .loan-settlement-search-row {
+    flex-direction: column;
+  }
+
+  .loan-settlement-search-btn {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .loan-settlement-detail-row {
+    grid-template-columns: 1fr;
+    gap: 2px;
+    padding-bottom: 8px;
+    border-bottom: 1px solid #eee;
+  }
+
+  .loan-settlement-detail-row strong {
+    display: none;
+  }
+
+  .loan-settlement-modal-footer {
+    padding: 10px 15px 15px;
+  }
+
+}

@@ -1,0 +1,614 @@
+/* =========================================================
+   FUND TRANSFER PAGE
+========================================================= */
+
+.fund-transfer-page {
+  width: 100%;
+  min-height: 100vh;
+  padding: 22px 24px 40px;
+  box-sizing: border-box;
+  background: #f5f7fa;
+  color: #252b35;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* =========================================================
+   PAGE HEADER
+========================================================= */
+
+.fund-transfer-page-header {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 18px;
+}
+
+.fund-transfer-page-header h2 {
+  margin: 0;
+  font-size: 17px;
+  font-weight: 700;
+  color: #252b35;
+}
+
+.fund-transfer-breadcrumb {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  font-size: 11px;
+  color: #777;
+  text-transform: uppercase;
+}
+
+.fund-transfer-breadcrumb span:first-child {
+  color: #252b35;
+  font-size: 9px;
+}
+
+.fund-transfer-breadcrumb strong {
+  color: #444;
+}
+
+/* =========================================================
+   FILTER CARD
+========================================================= */
+
+.fund-transfer-filter-card {
+  width: 100%;
+  box-sizing: border-box;
+  background: #ffffff;
+  border: 1px solid #dfe4e9;
+  border-radius: 9px;
+  padding: 22px 24px 25px;
+  margin-bottom: 16px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.03);
+}
+
+.fund-transfer-filter-title {
+  font-size: 15px;
+  font-weight: 600;
+  color: #343a40;
+  margin-bottom: 22px;
+  text-transform: uppercase;
+}
+
+.fund-transfer-filter-row {
+  display: flex;
+  align-items: flex-end;
+  gap: 30px;
+  width: 100%;
+}
+
+/* =========================================================
+   FIELD
+========================================================= */
+
+.fund-transfer-field {
+  width: 360px;
+  max-width: 100%;
+}
+
+.fund-transfer-field label {
+  display: block;
+  margin-bottom: 8px;
+  font-size: 13px;
+  font-weight: 700;
+  color: #242a30;
+  text-transform: uppercase;
+}
+
+/* =========================================================
+   SELECT
+========================================================= */
+
+.fund-transfer-select-wrapper {
+  position: relative;
+  width: 100%;
+}
+
+.fund-transfer-select-wrapper select {
+  width: 100%;
+  height: 42px;
+  padding: 0 40px 0 14px;
+  border: 1px solid #cfd5da;
+  border-radius: 5px;
+  background: #fff;
+  color: #555;
+  font-size: 13px;
+  outline: none;
+  appearance: none;
+  cursor: pointer;
+  box-sizing: border-box;
+}
+
+.fund-transfer-select-wrapper select:focus {
+  border-color: #1fa9c5;
+  box-shadow: 0 0 0 2px rgba(31, 169, 197, 0.08);
+}
+
+.fund-transfer-select-icon {
+  position: absolute;
+  right: 14px;
+  top: 50%;
+  transform: translateY(-50%);
+  pointer-events: none;
+  color: #5b6268;
+  font-size: 12px;
+}
+
+/* =========================================================
+   TABLE CARD
+========================================================= */
+
+.fund-transfer-table-card {
+  width: 100%;
+  background: #ffffff;
+  border: 1px solid #dfe4e9;
+  border-radius: 9px;
+  padding: 20px 20px 18px;
+  box-sizing: border-box;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.03);
+}
+
+/* =========================================================
+   TABLE TOP
+========================================================= */
+
+.fund-transfer-table-top {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 14px;
+}
+
+.fund-transfer-entry-info {
+  font-size: 12px;
+  color: #555;
+  font-weight: 500;
+}
+
+/* =========================================================
+   SEARCH
+========================================================= */
+
+.fund-transfer-search {
+  width: 190px;
+  height: 34px;
+  display: flex;
+  align-items: center;
+  border: 1px solid #d4d9de;
+  border-radius: 4px;
+  overflow: hidden;
+  background: #fff;
+}
+
+.fund-transfer-search input {
+  flex: 1;
+  width: 100%;
+  height: 100%;
+  border: none;
+  outline: none;
+  padding: 0 9px;
+  font-size: 12px;
+  color: #333;
+  box-sizing: border-box;
+}
+
+.fund-transfer-search input::placeholder {
+  color: #999;
+}
+
+.fund-transfer-search button {
+  width: 36px;
+  height: 100%;
+  border: none;
+  border-left: 1px solid #e1e4e7;
+  background: #fff;
+  color: #555;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.fund-transfer-search button:hover {
+  background: #f2f5f7;
+}
+
+/* =========================================================
+   ENTRY DROPDOWN
+========================================================= */
+
+.fund-transfer-table-controls {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+/*
+   This wrapper prevents the EntriesDropdown
+   from stretching across the complete table.
+*/
+
+.fund-transfer-table-controls > div {
+  width: auto !important;
+}
+
+/* =========================================================
+   TABLE WRAPPER
+========================================================= */
+
+.fund-transfer-table-wrapper {
+  width: 100%;
+  overflow-x: auto;
+  overflow-y: hidden;
+  border-radius: 4px;
+  scrollbar-width: thin;
+  scrollbar-color: #aeb8c2 #eef1f3;
+}
+
+.fund-transfer-table-wrapper::-webkit-scrollbar {
+  height: 7px;
+}
+
+.fund-transfer-table-wrapper::-webkit-scrollbar-track {
+  background: #eef1f3;
+  border-radius: 10px;
+}
+
+.fund-transfer-table-wrapper::-webkit-scrollbar-thumb {
+  background: #aeb8c2;
+  border-radius: 10px;
+}
+
+/* =========================================================
+   TABLE
+========================================================= */
+
+.fund-transfer-table {
+  width: 100%;
+  min-width: 1050px;
+  border-collapse: collapse;
+  table-layout: auto;
+}
+
+.fund-transfer-table thead {
+  background: #e9eef1;
+}
+
+.fund-transfer-table th {
+  height: 46px;
+  padding: 8px 12px;
+  border-bottom: 1px solid #d8dde1;
+  color: #28313a;
+  font-size: 11px;
+  font-weight: 700;
+  text-align: left;
+  white-space: nowrap;
+  text-transform: uppercase;
+}
+
+.fund-transfer-table td {
+  height: 54px;
+  padding: 8px 12px;
+  border-bottom: 1px solid #edf0f2;
+  color: #4c5359;
+  font-size: 12px;
+  white-space: nowrap;
+  vertical-align: middle;
+}
+
+.fund-transfer-table tbody tr:hover {
+  background: #f8fafb;
+}
+
+/* =========================================================
+   SPECIAL CELLS
+========================================================= */
+
+.fund-transfer-sr {
+  font-weight: 600;
+  color: #4a5157;
+}
+
+.fund-transfer-amount {
+  color: #333;
+  font-weight: 600;
+}
+
+.fund-transfer-ledger {
+  color: #41484e;
+  font-weight: 500;
+}
+
+/* =========================================================
+   STATUS
+========================================================= */
+
+.fund-transfer-status {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 70px;
+  padding: 5px 9px;
+  border-radius: 4px;
+  font-size: 10px;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.fund-transfer-status.pending {
+  background: #fff0c7;
+  color: #9b7000;
+}
+
+.fund-transfer-status.approved {
+  background: #dff5e7;
+  color: #228344;
+}
+
+.fund-transfer-status.rejected {
+  background: #fde3e3;
+  color: #c43838;
+}
+
+/* =========================================================
+   ACTIONS
+========================================================= */
+
+.fund-transfer-actions {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+/* =========================================================
+   ACTION BUTTON
+========================================================= */
+
+.fund-transfer-action-btn {
+  width: 27px;
+  height: 27px;
+  border: none;
+  border-radius: 3px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  color: #fff;
+  font-size: 11px;
+}
+
+.fund-transfer-action-btn.approve {
+  background: #45a866;
+}
+
+.fund-transfer-action-btn.approve:hover {
+  background: #368c54;
+}
+
+.fund-transfer-action-btn.reject {
+  background: #d85b5b;
+}
+
+.fund-transfer-action-btn.reject:hover {
+  background: #bd4646;
+}
+
+/* =========================================================
+   TASK BUTTON
+========================================================= */
+
+.fund-transfer-task-btn {
+  height: 28px;
+  padding: 0 10px;
+  border: 1px solid #d3d8dc;
+  border-radius: 4px;
+  background: #fff;
+  color: #4d545a;
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 11px;
+  cursor: pointer;
+}
+
+.fund-transfer-task-btn:hover {
+  background: #f2f5f6;
+}
+
+/* =========================================================
+   NO DATA
+========================================================= */
+
+.fund-transfer-no-data {
+  height: 130px !important;
+  text-align: center !important;
+  color: #8a9197 !important;
+  font-size: 13px !important;
+}
+
+/* =========================================================
+   FOOTER
+========================================================= */
+
+.fund-transfer-table-footer {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 16px;
+  color: #70777d;
+  font-size: 11px;
+}
+
+.fund-transfer-pagination {
+  display: flex;
+  align-items: center;
+  gap: 3px;
+}
+
+.fund-transfer-pagination button {
+  min-width: 29px;
+  height: 28px;
+  padding: 0 7px;
+  border: 1px solid #d9dee2;
+  background: #fff;
+  color: #777;
+  border-radius: 3px;
+  cursor: pointer;
+  font-size: 11px;
+}
+
+.fund-transfer-pagination button.active {
+  background: #28a9c2;
+  color: #fff;
+  border-color: #28a9c2;
+}
+
+.fund-transfer-pagination button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media (max-width: 1100px) {
+
+  .fund-transfer-page {
+    padding: 18px;
+  }
+
+  .fund-transfer-filter-row {
+    gap: 20px;
+  }
+
+  .fund-transfer-field {
+    width: 320px;
+  }
+
+  .fund-transfer-table-card {
+    padding: 16px;
+  }
+}
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 768px) {
+
+  .fund-transfer-page {
+    padding: 15px;
+  }
+
+  .fund-transfer-page-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  .fund-transfer-breadcrumb {
+    display: none;
+  }
+
+  .fund-transfer-filter-card {
+    padding: 18px;
+  }
+
+  .fund-transfer-filter-row {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 15px;
+  }
+
+  .fund-transfer-field {
+    width: 100%;
+  }
+
+  .fund-transfer-table-top {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+  }
+
+  .fund-transfer-search {
+    width: 100%;
+  }
+
+  .fund-transfer-table-card {
+    overflow: hidden;
+  }
+
+  .fund-transfer-table-wrapper {
+    width: 100%;
+  }
+
+  .fund-transfer-table-footer {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+  }
+}
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 480px) {
+
+  .fund-transfer-page {
+    padding: 12px;
+  }
+
+  .fund-transfer-page-header h2 {
+    font-size: 15px;
+  }
+
+  .fund-transfer-filter-card {
+    padding: 15px;
+    border-radius: 7px;
+  }
+
+  .fund-transfer-filter-title {
+    font-size: 13px;
+    margin-bottom: 17px;
+  }
+
+  .fund-transfer-field label {
+    font-size: 11px;
+  }
+
+  .fund-transfer-select-wrapper select {
+    height: 40px;
+    font-size: 12px;
+  }
+
+  .fund-transfer-table-card {
+    padding: 13px;
+    border-radius: 7px;
+  }
+
+  .fund-transfer-entry-info {
+    font-size: 11px;
+  }
+
+  .fund-transfer-table {
+    min-width: 1050px;
+  }
+
+  .fund-transfer-table th {
+    font-size: 10px;
+  }
+
+  .fund-transfer-table td {
+    font-size: 11px;
+  }
+
+  .fund-transfer-table-footer {
+    font-size: 10px;
+  }
+}

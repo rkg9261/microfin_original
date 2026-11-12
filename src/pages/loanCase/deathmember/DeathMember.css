@@ -1,0 +1,820 @@
+/* =========================================================
+   PAGE
+========================================================= */
+
+.death-member-page {
+  width: 100%;
+  min-height: calc(100vh - 70px);
+
+  padding: 25px;
+
+  background: #f5f7fa;
+
+  box-sizing: border-box;
+}
+
+
+/* =========================================================
+   TITLE
+========================================================= */
+
+.death-member-title {
+  margin-bottom: 15px;
+}
+
+.death-member-title h2 {
+  margin: 0;
+
+  font-size: 18px;
+  font-weight: 700;
+
+  color: #222;
+}
+
+
+/* =========================================================
+   FILTER CARD
+========================================================= */
+
+.death-filter-card {
+  width: 100%;
+
+  background: #fff;
+
+  border: 1px solid #ddd;
+
+  border-radius: 8px;
+
+  padding: 16px;
+
+  margin-bottom: 15px;
+
+  box-sizing: border-box;
+
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+}
+
+
+.death-filter-heading {
+  font-size: 14px;
+
+  font-weight: 700;
+
+  color: #444;
+
+  margin-bottom: 15px;
+}
+
+
+.death-filter-row {
+  display: flex;
+
+  align-items: flex-end;
+
+  gap: 30px;
+
+  flex-wrap: wrap;
+}
+
+
+.death-filter-field {
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 7px;
+
+  min-width: 270px;
+}
+
+
+.death-filter-field label {
+  font-size: 13px;
+
+  font-weight: 700;
+
+  color: #333;
+}
+
+
+.death-filter-field select,
+.death-filter-field input {
+  height: 38px;
+
+  width: 270px;
+
+  padding: 0 12px;
+
+  border: 1px solid #ccc;
+
+  border-radius: 4px;
+
+  background: #fff;
+
+  font-size: 13px;
+
+  outline: none;
+
+  box-sizing: border-box;
+}
+
+
+.death-filter-field select:focus,
+.death-filter-field input:focus {
+  border-color: #20a8d8;
+}
+
+
+.death-get-record {
+  height: 38px;
+
+  padding: 0 20px;
+
+  border: none;
+
+  border-radius: 4px;
+
+  background: #20a8d8;
+
+  color: #fff;
+
+  font-size: 13px;
+
+  font-weight: 700;
+
+  cursor: pointer;
+
+  transition: 0.2s;
+}
+
+
+.death-get-record:hover {
+  background: #168db8;
+}
+
+
+/* =========================================================
+   TABLE CARD
+========================================================= */
+
+.death-table-card {
+  width: 100%;
+
+  background: #fff;
+
+  border: 1px solid #ddd;
+
+  border-radius: 8px;
+
+  overflow: hidden;
+
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+}
+
+
+/* =========================================================
+   TABLE HEADER
+========================================================= */
+
+.death-table-header {
+  display: flex;
+
+  justify-content: space-between;
+
+  align-items: center;
+
+  padding: 14px 16px;
+
+  border-bottom: 1px solid #eee;
+}
+
+
+.death-table-header h2 {
+  margin: 0;
+
+  font-size: 18px;
+
+  font-weight: 500;
+
+  color: #333;
+}
+
+
+/* =========================================================
+   TABLE TOOLS
+========================================================= */
+
+.death-table-tools {
+  display: flex;
+
+  justify-content: space-between;
+
+  align-items: center;
+
+  padding: 12px 16px;
+
+  gap: 15px;
+}
+
+
+/* =========================================================
+   SEARCH
+========================================================= */
+
+.death-search {
+  position: relative;
+
+  width: 150px;
+}
+
+
+.death-search input {
+  width: 100%;
+
+  height: 34px;
+
+  padding: 0 32px 0 10px;
+
+  border: 1px solid #ddd;
+
+  border-radius: 4px;
+
+  outline: none;
+
+  box-sizing: border-box;
+
+  font-size: 13px;
+}
+
+
+.death-search span {
+  position: absolute;
+
+  right: 10px;
+
+  top: 50%;
+
+  transform: translateY(-50%);
+
+  font-size: 13px;
+
+  color: #777;
+}
+
+
+/* =========================================================
+   TABLE
+========================================================= */
+
+.death-table-wrapper {
+  width: 100%;
+
+  overflow-x: auto;
+}
+
+
+.death-member-table {
+  width: 100%;
+
+  border-collapse: collapse;
+
+  min-width: 1000px;
+}
+
+
+.death-member-table th {
+  background: #eef1f3;
+
+  color: #333;
+
+  font-size: 13px;
+
+  font-weight: 700;
+
+  text-align: left;
+
+  padding: 12px 10px;
+
+  border-top: 1px solid #d7d7d7;
+
+  border-bottom: 1px solid #d7d7d7;
+
+  white-space: nowrap;
+}
+
+
+.death-member-table td {
+  padding: 13px 10px;
+
+  font-size: 13px;
+
+  color: #444;
+
+  border-bottom: 1px solid #eee;
+
+  white-space: nowrap;
+}
+
+
+.death-member-table tbody tr:hover {
+  background: #f8fbfc;
+}
+
+
+/* =========================================================
+   ACTION
+========================================================= */
+
+.death-action {
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+}
+
+
+/* =========================================================
+   EMPTY
+========================================================= */
+
+.death-empty {
+  text-align: center !important;
+
+  padding: 35px !important;
+
+  color: #888 !important;
+}
+
+
+/* =========================================================
+   FOOTER
+========================================================= */
+
+.death-table-footer {
+  display: flex;
+
+  justify-content: space-between;
+
+  align-items: center;
+
+  padding: 15px;
+
+  font-size: 13px;
+
+  color: #444;
+}
+
+
+.death-pagination {
+  display: flex;
+
+  align-items: center;
+
+  gap: 4px;
+}
+
+
+.death-pagination button {
+  min-width: 30px;
+
+  height: 30px;
+
+  padding: 0 8px;
+
+  border: 1px solid #ddd;
+
+  background: #fff;
+
+  color: #555;
+
+  cursor: pointer;
+
+  border-radius: 2px;
+
+  font-size: 12px;
+}
+
+
+.death-pagination button:hover {
+  background: #f0f5f8;
+}
+
+
+.death-pagination .death-page-active {
+  background: #20a8d8;
+
+  color: #fff;
+
+  border-color: #20a8d8;
+}
+
+
+/* =========================================================
+   MODAL OVERLAY
+========================================================= */
+
+.death-modal-overlay {
+  position: fixed;
+
+  inset: 0;
+
+  width: 100%;
+
+  height: 100%;
+
+  background: rgba(0, 0, 0, 0.45);
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  z-index: 9999;
+
+  padding: 20px;
+
+  box-sizing: border-box;
+}
+
+
+/* =========================================================
+   ADD FORM MODAL
+========================================================= */
+
+.death-modal {
+  width: min(820px, 95vw);
+
+  max-height: 90vh;
+
+  background: #fff;
+
+  border-radius: 4px;
+
+  overflow: hidden;
+
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.25);
+
+  animation: deathModalOpen 0.2s ease;
+}
+
+
+@keyframes deathModalOpen {
+
+  from {
+    opacity: 0;
+
+    transform: translateY(-20px) scale(0.98);
+  }
+
+  to {
+    opacity: 1;
+
+    transform: translateY(0) scale(1);
+  }
+
+}
+
+
+/* =========================================================
+   DETAILS MODAL
+========================================================= */
+
+.death-details-modal {
+  width: min(650px, 95vw);
+
+  background: #fff;
+
+  border-radius: 4px;
+
+  overflow: hidden;
+
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.25);
+
+  animation: deathModalOpen 0.2s ease;
+}
+
+
+/* =========================================================
+   MODAL HEADER
+========================================================= */
+
+.death-modal-header {
+  min-height: 52px;
+
+  padding: 0 18px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  background: #20a8d8;
+
+  color: #fff;
+
+  box-sizing: border-box;
+}
+
+
+.death-modal-header h2 {
+  margin: 0;
+
+  font-size: 17px;
+
+  font-weight: 600;
+}
+
+
+.death-modal-close {
+  width: 30px;
+
+  height: 30px;
+
+  border: none;
+
+  background: transparent;
+
+  color: #fff;
+
+  font-size: 25px;
+
+  line-height: 1;
+
+  cursor: pointer;
+}
+
+
+/* =========================================================
+   FORM
+========================================================= */
+
+.death-form {
+  padding: 22px;
+
+  max-height: calc(90vh - 52px);
+
+  overflow-y: auto;
+
+  box-sizing: border-box;
+}
+
+
+.death-form-grid {
+  display: grid;
+
+  grid-template-columns: 1fr 1fr;
+
+  gap: 25px;
+}
+
+
+.death-form-column {
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 18px;
+}
+
+
+.death-form-group {
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 7px;
+}
+
+
+.death-form-group label {
+  font-size: 13px;
+
+  font-weight: 700;
+
+  color: #444;
+}
+
+
+.death-form-group label span {
+  color: #e53935;
+
+  margin-left: 3px;
+}
+
+
+.death-form-group input,
+.death-form-group select {
+  width: 100%;
+
+  height: 38px;
+
+  padding: 0 10px;
+
+  border: 1px solid #ccc;
+
+  border-radius: 3px;
+
+  outline: none;
+
+  font-size: 13px;
+
+  box-sizing: border-box;
+
+  background: #fff;
+}
+
+
+.death-form-group input:focus,
+.death-form-group select:focus {
+  border-color: #20a8d8;
+}
+
+
+/* =========================================================
+   FORM ACTIONS
+========================================================= */
+
+.death-form-actions {
+  display: flex;
+
+  justify-content: flex-end;
+
+  gap: 10px;
+
+  margin-top: 25px;
+
+  padding-top: 15px;
+
+  border-top: 1px solid #eee;
+}
+
+
+/* =========================================================
+   DETAILS
+========================================================= */
+
+.death-details-body {
+  display: grid;
+
+  grid-template-columns: 1fr 1fr;
+
+  gap: 25px;
+
+  padding: 25px;
+}
+
+
+.death-details-column {
+  border: 1px solid #ddd;
+
+  border-radius: 4px;
+
+  overflow: hidden;
+}
+
+
+.death-detail-row {
+  min-height: 50px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  gap: 15px;
+
+  padding: 0 14px;
+
+  border-bottom: 1px solid #ddd;
+
+  box-sizing: border-box;
+}
+
+
+.death-detail-row:last-child {
+  border-bottom: none;
+}
+
+
+.death-detail-row span {
+  font-size: 12px;
+
+  font-weight: 700;
+
+  color: #444;
+}
+
+
+.death-detail-row strong {
+  font-size: 12px;
+
+  font-weight: 500;
+
+  color: #7192a5;
+
+  text-align: right;
+}
+
+
+/* =========================================================
+   DETAILS FOOTER
+========================================================= */
+
+.death-details-footer {
+  display: flex;
+
+  justify-content: flex-end;
+
+  padding: 0 25px 20px;
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 768px) {
+
+  .death-member-page {
+    padding: 15px;
+  }
+
+
+  .death-filter-row {
+    flex-direction: column;
+
+    align-items: stretch;
+
+    gap: 15px;
+  }
+
+
+  .death-filter-field {
+    width: 100%;
+
+    min-width: 0;
+  }
+
+
+  .death-filter-field select,
+  .death-filter-field input {
+    width: 100%;
+  }
+
+
+  .death-get-record {
+    width: 100%;
+  }
+
+
+  .death-table-header {
+    align-items: flex-start;
+
+    gap: 10px;
+  }
+
+
+  .death-table-tools {
+    flex-direction: column;
+
+    align-items: stretch;
+  }
+
+
+  .death-search {
+    width: 100%;
+  }
+
+
+  .death-table-footer {
+    flex-direction: column;
+
+    align-items: flex-start;
+
+    gap: 15px;
+  }
+
+
+  .death-form-grid {
+    grid-template-columns: 1fr;
+
+    gap: 0;
+  }
+
+
+  .death-form-column {
+    gap: 18px;
+  }
+
+
+  .death-details-body {
+    grid-template-columns: 1fr;
+
+    gap: 15px;
+  }
+
+}

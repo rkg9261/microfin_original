@@ -1,0 +1,883 @@
+/* =========================================================
+   SETTLEMENT REPORT PAGE
+========================================================= */
+
+.settlement-report-page {
+  width: 100%;
+  min-height: 100vh;
+
+  padding: 18px 20px 40px;
+
+  background: #f8fafc;
+}
+
+
+/* =========================================================
+   PAGE HEADER
+========================================================= */
+
+.settlement-report-header {
+  width: 100%;
+
+  padding-bottom: 12px;
+
+  margin-bottom: 15px;
+
+  border-bottom: 3px solid #159bd7;
+}
+
+.settlement-report-header h2 {
+  margin: 0;
+
+  font-size: 17px;
+
+  font-weight: 700;
+
+  color: #292929;
+}
+
+
+/* =========================================================
+   FORM
+========================================================= */
+
+.settlement-report-form {
+  width: 100%;
+
+  padding: 18px 20px;
+
+  background: #ffffff;
+
+  border: 1px solid #dcdcdc;
+
+  border-radius: 8px;
+
+  box-shadow:
+    0 1px 5px rgba(0, 0, 0, 0.04);
+}
+
+
+/* =========================================================
+   SEARCH TITLE
+========================================================= */
+
+.settlement-search-title {
+  margin-bottom: 15px;
+
+  font-size: 14px;
+
+  font-weight: 500;
+
+  color: #555;
+}
+
+
+/* =========================================================
+   FORM GRID
+========================================================= */
+
+.settlement-report-grid {
+  display: grid;
+
+  grid-template-columns:
+    repeat(4, minmax(0, 1fr));
+
+  gap: 15px 25px;
+}
+
+
+/* =========================================================
+   FORM GROUP
+========================================================= */
+
+.settlement-form-group {
+  width: 100%;
+
+  position: relative;
+}
+
+.settlement-form-group label {
+  display: block;
+
+  margin-bottom: 7px;
+
+  font-size: 12px;
+
+  font-weight: 700;
+
+  color: #303030;
+}
+
+.settlement-form-group label span {
+  color: #e53935;
+}
+
+
+/* =========================================================
+   INPUT / SELECT
+========================================================= */
+
+.settlement-form-group input,
+.settlement-form-group select {
+  width: 100%;
+
+  height: 39px;
+
+  padding: 0 11px;
+
+  border: 1px solid #cfcfcf;
+
+  border-radius: 5px;
+
+  background: #ffffff;
+
+  outline: none;
+
+  font-size: 13px;
+
+  color: #555;
+
+  transition: 0.25s;
+}
+
+.settlement-form-group input:focus,
+.settlement-form-group select:focus {
+  border-color: #159bd7;
+
+  box-shadow:
+    0 0 0 2px rgba(21, 155, 215, 0.08);
+}
+
+
+/* =========================================================
+   DATE
+========================================================= */
+
+.settlement-date-wrapper {
+  position: relative;
+
+  width: 100%;
+}
+
+.settlement-date-wrapper input {
+  padding-right: 38px;
+}
+
+.settlement-date-wrapper svg {
+  position: absolute;
+
+  right: 12px;
+
+  top: 50%;
+
+  transform: translateY(-50%);
+
+  color: #555;
+
+  font-size: 14px;
+
+  pointer-events: none;
+}
+
+
+/* =========================================================
+   ERROR
+========================================================= */
+
+.settlement-input-error {
+  border-color: #e53935 !important;
+}
+
+.settlement-error {
+  display: block;
+
+  margin-top: 4px;
+
+  color: #e53935;
+
+  font-size: 11px;
+}
+
+
+/* =========================================================
+   FORM BUTTONS
+========================================================= */
+
+.settlement-form-buttons {
+  display: flex;
+
+  gap: 10px;
+
+  margin-top: 18px;
+}
+
+
+/* =========================================================
+   SUBMIT
+========================================================= */
+
+.settlement-submit-btn {
+  height: 37px;
+
+  padding: 0 18px;
+
+  border: none;
+
+  border-radius: 4px;
+
+  background: #20aee5;
+
+  color: white;
+
+  font-size: 13px;
+
+  cursor: pointer;
+
+  transition: 0.25s;
+}
+
+.settlement-submit-btn:hover {
+  background: #118ec1;
+
+  transform: translateY(-1px);
+}
+
+
+/* =========================================================
+   RESET
+========================================================= */
+
+.settlement-reset-btn {
+  height: 37px;
+
+  padding: 0 18px;
+
+  border: 1px solid #bbb;
+
+  border-radius: 4px;
+
+  background: #ffffff;
+
+  color: #555;
+
+  font-size: 13px;
+
+  cursor: pointer;
+}
+
+.settlement-reset-btn:hover {
+  background: #f2f2f2;
+}
+
+
+/* =========================================================
+   TABLE CONTAINER
+========================================================= */
+
+.settlement-table-container {
+  width: 100%;
+
+  margin-top: 18px;
+
+  background: #ffffff;
+
+  border: 1px solid #dcdcdc;
+
+  border-radius: 8px;
+
+  overflow: hidden;
+
+  box-shadow:
+    0 1px 5px rgba(0, 0, 0, 0.04);
+}
+
+
+/* =========================================================
+   TABLE HEADER
+========================================================= */
+
+.settlement-table-header {
+  min-height: 55px;
+
+  padding: 10px 15px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  gap: 15px;
+}
+
+.settlement-table-header h2 {
+  margin: 0;
+
+  font-size: 18px;
+
+  font-weight: 500;
+
+  color: #444;
+}
+
+
+/* =========================================================
+   HEADER RIGHT
+========================================================= */
+
+.settlement-table-header-right {
+  display: flex;
+
+  align-items: center;
+
+  gap: 20px;
+}
+
+
+/* =========================================================
+   DOWNLOAD
+========================================================= */
+
+.settlement-download-btn {
+  display: flex;
+
+  align-items: center;
+
+  gap: 5px;
+
+  border: none;
+
+  background: transparent;
+
+  color: #888;
+
+  font-size: 11px;
+
+  cursor: pointer;
+}
+
+.settlement-download-btn:hover {
+  color: #159bd7;
+}
+
+
+/* =========================================================
+   TOTAL
+========================================================= */
+
+.settlement-total {
+  font-size: 12px;
+
+  color: #555;
+
+  white-space: nowrap;
+}
+
+.settlement-total strong {
+  color: #222;
+
+  margin-left: 3px;
+}
+
+
+/* =========================================================
+   TOOLBAR
+========================================================= */
+
+.settlement-table-toolbar {
+  min-height: 48px;
+
+  padding: 7px 15px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  border-top: 1px solid #eee;
+
+  border-bottom: 1px solid #eee;
+}
+
+
+/* =========================================================
+   SEARCH
+========================================================= */
+
+.settlement-search {
+  width: 220px;
+
+  height: 34px;
+
+  position: relative;
+}
+
+.settlement-search input {
+  width: 100%;
+
+  height: 100%;
+
+  padding: 0 35px 0 11px;
+
+  border: 1px solid #d4d4d4;
+
+  border-radius: 4px;
+
+  outline: none;
+
+  font-size: 12px;
+}
+
+.settlement-search svg {
+  position: absolute;
+
+  right: 11px;
+
+  top: 50%;
+
+  transform: translateY(-50%);
+
+  color: #555;
+
+  font-size: 13px;
+}
+
+
+/* =========================================================
+   TABLE SCROLL
+========================================================= */
+
+.settlement-table-scroll {
+  width: 100%;
+
+  overflow-x: auto;
+}
+
+
+/* =========================================================
+   TABLE
+========================================================= */
+
+.settlement-report-table {
+  width: 100%;
+
+  min-width: 1500px;
+
+  border-collapse: collapse;
+}
+
+
+/* =========================================================
+   TABLE HEADER
+========================================================= */
+
+.settlement-report-table thead {
+  background: #e9f0f5;
+}
+
+.settlement-report-table th {
+  height: 55px;
+
+  padding: 8px 11px;
+
+  border-right: 1px solid #d9e0e5;
+
+  border-bottom: 1px solid #d1d9de;
+
+  font-size: 11px;
+
+  font-weight: 700;
+
+  color: #444;
+
+  text-align: left;
+
+  white-space: nowrap;
+}
+
+
+/* =========================================================
+   TABLE BODY
+========================================================= */
+
+.settlement-report-table td {
+  min-height: 45px;
+
+  padding: 8px 11px;
+
+  border-right: 1px solid #eeeeee;
+
+  border-bottom: 1px solid #eeeeee;
+
+  color: #555;
+
+  font-size: 11px;
+
+  white-space: nowrap;
+}
+
+.settlement-report-table tbody tr:hover {
+  background: #f8fbfd;
+}
+
+
+/* =========================================================
+   AMOUNT
+========================================================= */
+
+.settlement-amount-cell {
+  font-weight: 700;
+
+  color: #333;
+}
+
+
+/* =========================================================
+   STATUS
+========================================================= */
+
+.settlement-status-approved {
+  display: inline-block;
+
+  padding: 4px 8px;
+
+  border-radius: 20px;
+
+  background: #e8f7ed;
+
+  color: #178b43;
+
+  font-size: 10px;
+
+  font-weight: 700;
+}
+
+
+/* =========================================================
+   ACTION
+========================================================= */
+
+.settlement-action-buttons {
+  display: flex;
+
+  align-items: center;
+
+  gap: 5px;
+}
+
+
+/* =========================================================
+   NO DATA
+========================================================= */
+
+.settlement-no-data {
+  height: 100px;
+
+  text-align: center !important;
+
+  color: #999 !important;
+
+  font-size: 13px !important;
+}
+
+
+/* =========================================================
+   TABLE SCROLLBAR
+========================================================= */
+
+.settlement-table-scroll::-webkit-scrollbar {
+  height: 8px;
+}
+
+.settlement-table-scroll::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+.settlement-table-scroll::-webkit-scrollbar-thumb {
+  background: #aeb7bd;
+
+  border-radius: 20px;
+}
+
+
+/* =========================================================
+   VIEW OVERLAY
+========================================================= */
+
+.settlement-view-overlay {
+  position: fixed;
+
+  inset: 0;
+
+  z-index: 5000;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  padding: 25px;
+
+  background: rgba(0, 0, 0, 0.45);
+
+  animation: settlementOverlayIn
+    0.2s ease;
+}
+
+
+/* =========================================================
+   VIEW MODAL
+========================================================= */
+
+.settlement-view-modal {
+  width: 92%;
+
+  max-width: 1100px;
+
+  max-height: 90vh;
+
+  overflow-y: auto;
+
+  position: relative;
+
+  background: #ffffff;
+
+  border-radius: 4px;
+
+  box-shadow:
+    0 10px 40px rgba(0, 0, 0, 0.25);
+
+  animation: settlementModalIn
+    0.25s ease;
+}
+
+
+/* =========================================================
+   TOP BLUE BORDER
+========================================================= */
+
+.settlement-view-top-border {
+  width: 100%;
+
+  height: 8px;
+
+  background: #159bd7;
+}
+
+
+/* =========================================================
+   VIEW CONTENT
+========================================================= */
+
+.settlement-view-content {
+  display: grid;
+
+  grid-template-columns:
+    1fr 1fr;
+
+  padding: 20px 25px 10px;
+
+  gap: 30px;
+}
+
+
+/* =========================================================
+   COLUMN
+========================================================= */
+
+.settlement-view-column {
+  width: 100%;
+}
+
+
+/* =========================================================
+   DETAIL ROW
+========================================================= */
+
+.settlement-detail-row {
+  min-height: 48px;
+
+  padding: 11px 0;
+
+  display: flex;
+
+  align-items: flex-start;
+
+  gap: 8px;
+
+  border-bottom: 1px solid #eeeeee;
+
+  font-size: 13px;
+
+  line-height: 1.5;
+}
+
+.settlement-detail-row strong {
+  min-width: 280px;
+
+  color: #333;
+
+  font-size: 12px;
+
+  font-weight: 700;
+}
+
+.settlement-detail-row span {
+  color: #555;
+
+  word-break: break-word;
+}
+
+
+/* =========================================================
+   VIEW FOOTER
+========================================================= */
+
+.settlement-view-footer {
+  display: flex;
+
+  justify-content: flex-end;
+
+  padding: 10px 20px 18px;
+}
+
+
+/* =========================================================
+   ANIMATIONS
+========================================================= */
+
+@keyframes settlementOverlayIn {
+
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+
+}
+
+@keyframes settlementModalIn {
+
+  from {
+    opacity: 0;
+
+    transform:
+      translateY(20px)
+      scale(0.98);
+  }
+
+  to {
+    opacity: 1;
+
+    transform:
+      translateY(0)
+      scale(1);
+  }
+
+}
+
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media (max-width: 1100px) {
+
+  .settlement-report-grid {
+    grid-template-columns:
+      repeat(3, minmax(0, 1fr));
+  }
+
+  .settlement-view-content {
+    grid-template-columns: 1fr;
+  }
+
+}
+
+
+@media (max-width: 768px) {
+
+  .settlement-report-page {
+    padding: 12px;
+  }
+
+  .settlement-report-grid {
+    grid-template-columns:
+      repeat(2, minmax(0, 1fr));
+  }
+
+  .settlement-table-header {
+    align-items: flex-start;
+
+    flex-direction: column;
+  }
+
+  .settlement-table-header-right {
+    width: 100%;
+
+    justify-content: space-between;
+  }
+
+  .settlement-table-toolbar {
+    flex-direction: column;
+
+    align-items: stretch;
+
+    gap: 10px;
+  }
+
+  .settlement-search {
+    width: 100%;
+  }
+
+  .settlement-detail-row {
+    flex-direction: column;
+
+    gap: 3px;
+  }
+
+  .settlement-detail-row strong {
+    min-width: 0;
+  }
+
+}
+
+
+@media (max-width: 500px) {
+
+  .settlement-report-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .settlement-report-form {
+    padding: 15px;
+  }
+
+  .settlement-form-buttons {
+    flex-direction: column;
+  }
+
+  .settlement-submit-btn,
+  .settlement-reset-btn {
+    width: 100%;
+  }
+
+  .settlement-view-overlay {
+    padding: 10px;
+  }
+
+  .settlement-view-modal {
+    width: 100%;
+
+    max-height: 95vh;
+  }
+
+  .settlement-view-content {
+    padding: 15px;
+  }
+
+}

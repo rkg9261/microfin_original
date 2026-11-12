@@ -1,0 +1,565 @@
+/* =========================================================
+   INSURANCE PARTY PAGE
+========================================================= */
+
+.insurance-party-page {
+
+    width: 100%;
+
+    min-height: 100vh;
+
+    padding: 28px 30px;
+
+    background: #f7f9fc;
+
+}
+
+
+/* =========================================================
+   PAGE HEADER
+========================================================= */
+
+.insurance-party-page-header {
+
+    margin-bottom: 22px;
+
+}
+
+.insurance-party-page-header h1 {
+
+    margin: 0;
+
+    font-size: 27px;
+
+    font-weight: 700;
+
+    color: #111827;
+
+}
+
+.insurance-party-page-header p {
+
+    margin: 6px 0 0;
+
+    font-size: 15px;
+
+    color: #64748b;
+
+}
+
+
+/* =========================================================
+   CARD
+========================================================= */
+
+.insurance-party-card {
+
+    background: #fff;
+
+    border-radius: 12px;
+
+    padding: 18px 20px 22px;
+
+    box-shadow:
+        0 3px 15px rgba(0, 0, 0, .06);
+
+}
+
+
+/* =========================================================
+   CARD HEADER
+========================================================= */
+
+.insurance-party-card-header {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    margin-bottom: 5px;
+
+}
+
+.insurance-party-card-header h2 {
+
+    margin: 0;
+
+    font-size: 19px;
+
+    font-weight: 600;
+
+    color: #333;
+
+}
+
+
+/* =========================================================
+   CONTROLS
+========================================================= */
+
+.insurance-party-controls {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    gap: 20px;
+
+    margin-bottom: 4px;
+
+}
+
+.insurance-party-controls .common-search {
+
+    margin-bottom: 20px;
+
+}
+
+
+/* =========================================================
+   TABLE
+========================================================= */
+
+.insurance-party-card .table-wrapper {
+
+    width: 100%;
+
+    overflow-x: auto;
+
+}
+
+.insurance-party-card .common-table {
+
+    min-width: 950px;
+
+}
+
+.insurance-party-card .common-table th {
+
+    white-space: nowrap;
+
+}
+
+.insurance-party-card .common-table td {
+
+    vertical-align: middle;
+
+}
+
+
+/* =========================================================
+   INSURANCE PARTY NAME
+========================================================= */
+
+.insurance-party-card
+.common-table
+td:nth-child(2) {
+
+    min-width: 220px;
+
+    max-width: 300px;
+
+}
+
+
+/* =========================================================
+   CODE
+========================================================= */
+
+.insurance-party-card
+.common-table
+td:nth-child(3) {
+
+    min-width: 130px;
+
+    white-space: nowrap;
+
+}
+
+
+/* =========================================================
+   REMARK
+========================================================= */
+
+.insurance-party-card
+.common-table
+td:nth-child(4) {
+
+    min-width: 250px;
+
+    max-width: 450px;
+
+    word-break: break-word;
+
+}
+
+
+/* =========================================================
+   CREATED AT
+========================================================= */
+
+.insurance-party-card
+.common-table
+td:nth-child(5) {
+
+    min-width: 130px;
+
+    white-space: nowrap;
+
+}
+
+
+/* =========================================================
+   ACTION
+========================================================= */
+
+.insurance-party-card
+.table-action {
+
+    min-width: 115px;
+
+}
+
+
+/* =========================================================
+   FOOTER
+========================================================= */
+
+.insurance-party-table-footer {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    padding: 18px 5px 2px;
+
+    font-size: 14px;
+
+    color: #64748b;
+
+}
+
+
+/* =========================================================
+   PAGINATION
+========================================================= */
+
+.insurance-party-pagination {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 5px;
+
+}
+
+.insurance-party-pagination button {
+
+    min-width: 38px;
+
+    height: 34px;
+
+    padding: 0 10px;
+
+    border: none;
+
+    border-radius: 5px;
+
+    background: transparent;
+
+    color: #64748b;
+
+    cursor: pointer;
+
+    font-size: 13px;
+
+}
+
+.insurance-party-pagination button:hover {
+
+    background: #eaf2ff;
+
+    color: #2563eb;
+
+}
+
+.insurance-party-pagination button.active {
+
+    background: #2563eb;
+
+    color: #fff;
+
+}
+
+
+/* =========================================================
+   FORM MODAL
+========================================================= */
+
+.insurance-party-form-modal {
+
+    width: 850px;
+
+    max-width: 95%;
+
+    margin-top: 80px;
+
+}
+
+
+/* =========================================================
+   VIEW MODAL
+========================================================= */
+
+.insurance-party-view-modal {
+
+    width: 850px;
+
+    max-width: 95%;
+
+}
+
+
+/* =========================================================
+   VIEW SCROLL
+========================================================= */
+
+.insurance-party-view-modal
+.common-view-body {
+
+    max-height: 500px;
+
+    overflow-y: auto;
+
+}
+
+
+/* =========================================================
+   VIEW SCROLLBAR
+========================================================= */
+
+.insurance-party-view-modal
+.common-view-body::-webkit-scrollbar {
+
+    width: 7px;
+
+}
+
+.insurance-party-view-modal
+.common-view-body::-webkit-scrollbar-track {
+
+    background: #f1f5f9;
+
+    border-radius: 10px;
+
+}
+
+.insurance-party-view-modal
+.common-view-body::-webkit-scrollbar-thumb {
+
+    background: #cbd5e1;
+
+    border-radius: 10px;
+
+}
+
+.insurance-party-view-modal
+.common-view-body::-webkit-scrollbar-thumb:hover {
+
+    background: #94a3b8;
+
+}
+
+
+/* =========================================================
+   VIEW DETAILS
+========================================================= */
+
+.insurance-party-view-modal
+.common-view-details {
+
+    gap: 14px;
+
+}
+
+.insurance-party-view-modal
+.common-view-row {
+
+    grid-template-columns: 220px 20px 1fr;
+
+}
+
+.insurance-party-view-modal
+.common-view-label {
+
+    font-size: 14px;
+
+    font-weight: 600;
+
+}
+
+.insurance-party-view-modal
+.common-view-value {
+
+    font-size: 14px;
+
+    word-break: break-word;
+
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 992px) {
+
+    .insurance-party-page {
+
+        padding: 20px;
+
+    }
+
+    .insurance-party-form-modal {
+
+        width: 96%;
+
+    }
+
+}
+
+
+@media (max-width: 768px) {
+
+    .insurance-party-page {
+
+        padding: 15px;
+
+    }
+
+    .insurance-party-card {
+
+        padding: 14px;
+
+    }
+
+
+    .insurance-party-card-header {
+
+        align-items: flex-start;
+
+        gap: 15px;
+
+    }
+
+
+    .insurance-party-card-header h2 {
+
+        font-size: 17px;
+
+    }
+
+
+    .insurance-party-controls {
+
+        flex-direction: column;
+
+        align-items: stretch;
+
+        gap: 0;
+
+    }
+
+
+    .insurance-party-controls
+    .common-search {
+
+        width: 100%;
+
+    }
+
+
+    .insurance-party-controls
+    .common-search input {
+
+        width: 100%;
+
+    }
+
+
+    .insurance-party-table-footer {
+
+        flex-direction: column;
+
+        align-items: flex-start;
+
+        gap: 15px;
+
+    }
+
+
+    .insurance-party-pagination {
+
+        width: 100%;
+
+        justify-content: flex-end;
+
+    }
+
+
+    .insurance-party-view-modal {
+
+        width: 96%;
+
+    }
+
+
+    .insurance-party-view-modal
+    .common-view-row {
+
+        grid-template-columns: 1fr;
+
+        gap: 4px;
+
+    }
+
+}
+
+
+@media (max-width: 480px) {
+
+    .insurance-party-page {
+
+        padding: 10px;
+
+    }
+
+
+    .insurance-party-card {
+
+        padding: 10px;
+
+    }
+
+
+    .insurance-party-view-modal {
+
+        width: 98%;
+
+    }
+
+
+    .insurance-party-form-modal {
+
+        width: 98%;
+
+    }
+
+}

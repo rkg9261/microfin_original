@@ -1,0 +1,128 @@
+.api-charges-card {
+  background: #ffffff;
+
+  border: 1px solid #e1e6eb;
+
+  border-radius: 8px;
+
+  box-shadow:
+    0 3px 12px rgba(0, 0, 0, 0.05);
+
+  overflow: hidden;
+}
+
+
+/* =====================================
+   HEADER
+===================================== */
+
+.api-charges-header {
+  padding: 20px 22px;
+
+  border-bottom: 1px solid #e6e9ed;
+}
+
+.api-charges-header h3 {
+  margin: 0;
+
+  color: #202938;
+
+  font-size: 19px;
+
+  font-weight: 700;
+}
+
+.api-charges-header p {
+  margin: 5px 0 0;
+
+  color: #8993a0;
+
+  font-size: 13px;
+}
+
+
+/* =====================================
+   TABLE WRAPPER
+===================================== */
+
+.api-table-wrapper {
+  width: 100%;
+
+  overflow-x: auto;
+}
+
+
+/* =====================================
+   TABLE
+===================================== */
+
+.api-table {
+  width: 100%;
+
+  min-width: 650px;
+
+  border-collapse: collapse;
+}
+
+.api-table thead {
+  background: #edf1f2;
+}
+
+.api-table th {
+  padding: 15px;
+
+  text-align: left;
+
+  font-size: 12px;
+
+  font-weight: 700;
+
+  color: #29323c;
+
+  border-bottom: 1px solid #d8dde2;
+
+  white-space: nowrap;
+}
+
+.api-table td {
+  padding: 15px;
+
+  font-size: 13px;
+
+  color: #4b5563;
+
+  border-bottom: 1px solid #edf0f2;
+
+  white-space: nowrap;
+}
+
+.api-table tbody tr:hover {
+  background: #f8fafc;
+}
+
+.api-name {
+  font-weight: 600;
+
+  color: #303a46 !important;
+}
+
+
+/* =====================================
+   STATUS
+===================================== */
+
+.api-status {
+  display: inline-block;
+
+  padding: 5px 12px;
+
+  border-radius: 20px;
+
+  background: #e5f7eb;
+
+  color: #16803c;
+
+  font-size: 11px;
+
+  font-weight: 700;
+}

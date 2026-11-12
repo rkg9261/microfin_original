@@ -1,0 +1,493 @@
+/* =========================================================
+   PRODUCT VARIANT PAGE
+========================================================= */
+
+.product-variant-page{
+
+    width:100%;
+
+    padding:25px;
+
+    background:#f8fafc;
+
+    min-height:100vh;
+
+}
+
+
+/* =========================================================
+   PAGE HEADER
+========================================================= */
+
+.product-variant-header{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    margin-bottom:25px;
+
+    gap:20px;
+
+}
+
+.product-variant-header h1{
+
+    margin:0;
+
+    font-size:28px;
+
+    font-weight:700;
+
+    color:#1e293b;
+
+}
+
+.product-variant-header p{
+
+    margin:6px 0 0;
+
+    color:#64748b;
+
+    font-size:14px;
+
+}
+
+
+/* =========================================================
+   CONTROLS
+========================================================= */
+
+.product-variant-controls{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    gap:20px;
+
+    margin-bottom:5px;
+
+}
+
+.product-variant-controls .entries-dropdown{
+
+    margin-left:0;
+
+    margin-bottom:20px;
+
+}
+
+.product-variant-controls .common-search{
+
+    margin-left:auto;
+
+}
+
+
+/* =========================================================
+   TABLE CUSTOMIZATION
+========================================================= */
+
+.product-variant-page .table-wrapper{
+
+    width:100%;
+
+    overflow-x:auto;
+
+}
+
+.product-variant-page .common-table{
+
+    min-width:1050px;
+
+}
+
+.product-variant-page .common-table th{
+
+    white-space:nowrap;
+
+}
+
+.product-variant-page .common-table td{
+
+    white-space:nowrap;
+
+}
+
+
+/* =========================================================
+   TABLE HEADER
+========================================================= */
+
+.product-variant-page .common-table thead{
+
+    background:linear-gradient(
+        90deg,
+        #2563eb,
+        #3b82f6
+    );
+
+}
+
+
+/* =========================================================
+   TABLE ROW
+========================================================= */
+
+.product-variant-page .common-table tbody tr{
+
+    transition:.2s ease;
+
+}
+
+.product-variant-page .common-table tbody tr:hover{
+
+    background:#f1f7ff;
+
+}
+
+
+/* =========================================================
+   ACTION
+========================================================= */
+
+.product-variant-page .table-action{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:7px;
+
+}
+
+
+/* =========================================================
+   FOOTER
+========================================================= */
+
+.product-variant-table-footer{
+
+    padding:16px 5px;
+
+    color:#64748b;
+
+    font-size:14px;
+
+}
+
+
+/* =========================================================
+   VIEW MODAL CLOSE BUTTON
+========================================================= */
+
+.product-variant-close-btn{
+
+    border:none;
+
+    background:#ef4444;
+
+    color:#fff;
+
+    padding:10px 22px;
+
+    border-radius:7px;
+
+    font-size:14px;
+
+    font-weight:600;
+
+    cursor:pointer;
+
+    transition:.25s ease;
+
+}
+
+.product-variant-close-btn:hover{
+
+    background:#dc2626;
+
+    transform:translateY(-1px);
+
+}
+
+
+/* =========================================================
+   FORM CLOSE
+========================================================= */
+
+.product-variant-modal-close{
+
+    width:34px;
+
+    height:34px;
+
+    border:none;
+
+    background:rgba(255,255,255,.15);
+
+    color:#fff;
+
+    border-radius:50%;
+
+    font-size:25px;
+
+    line-height:30px;
+
+    cursor:pointer;
+
+    transition:.25s ease;
+
+}
+
+.product-variant-modal-close:hover{
+
+    background:#fff;
+
+    color:#2563eb;
+
+}
+
+
+/* =========================================================
+   FORM ERROR
+========================================================= */
+
+.product-variant-form-modal .error-input{
+
+    border-color:#ef4444 !important;
+
+}
+
+.product-variant-form-modal .error-text{
+
+    color:#dc2626;
+
+    font-size:13px;
+
+    margin:5px 0 0;
+
+}
+
+
+/* =========================================================
+   STATUS
+========================================================= */
+
+.product-variant-page .table-status{
+
+    display:inline-block;
+
+    min-width:65px;
+
+    text-align:center;
+
+}
+
+
+/* =========================================================
+   VIEW MODAL CUSTOMIZATION
+========================================================= */
+
+.product-variant-page .common-view-modal{
+
+    max-height:90vh;
+
+    overflow-y:auto;
+
+}
+
+
+/* =========================================================
+   VIEW MODAL IMAGE
+========================================================= */
+
+.product-variant-page .common-view-image img{
+
+    width:180px;
+
+    height:180px;
+
+    object-fit:cover;
+
+}
+
+
+/* =========================================================
+   VIEW MODAL DETAILS
+========================================================= */
+
+.product-variant-page .common-view-details{
+
+    gap:15px;
+
+}
+
+.product-variant-page .common-view-row{
+
+    grid-template-columns:
+        170px
+        20px
+        1fr;
+
+}
+
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media(max-width:992px){
+
+    .product-variant-page{
+
+        padding:20px;
+
+    }
+
+    .product-variant-header h1{
+
+        font-size:24px;
+
+    }
+
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media(max-width:768px){
+
+    .product-variant-page{
+
+        padding:15px;
+
+    }
+
+
+    .product-variant-header{
+
+        flex-direction:column;
+
+        align-items:flex-start;
+
+    }
+
+
+    .product-variant-controls{
+
+        flex-direction:column;
+
+        align-items:stretch;
+
+    }
+
+
+    .product-variant-controls .common-search{
+
+        margin-left:0;
+
+        width:100%;
+
+    }
+
+
+    .product-variant-controls
+    .common-search input{
+
+        width:100%;
+
+    }
+
+
+    .product-variant-controls
+    .entries-dropdown{
+
+        margin-bottom:5px;
+
+    }
+
+
+    .product-variant-page
+    .common-view-body{
+
+        grid-template-columns:1fr;
+
+    }
+
+
+    .product-variant-page
+    .common-view-row{
+
+        grid-template-columns:1fr;
+
+        text-align:left;
+
+        gap:5px;
+
+    }
+
+
+    .product-variant-page
+    .common-view-row > div:nth-child(2){
+
+        display:none;
+
+    }
+
+
+    .product-variant-page
+    .common-view-image img{
+
+        width:140px;
+
+        height:140px;
+
+    }
+
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media(max-width:480px){
+
+    .product-variant-page{
+
+        padding:10px;
+
+    }
+
+
+    .product-variant-header h1{
+
+        font-size:21px;
+
+    }
+
+
+    .product-variant-page
+    .common-view-header h2{
+
+        font-size:19px;
+
+    }
+
+
+    .product-variant-page
+    .common-view-body{
+
+        padding:20px;
+
+    }
+
+}

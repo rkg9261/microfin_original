@@ -1,0 +1,185 @@
+.wallet-card {
+  background: #ffffff;
+
+  border: 1px solid #e1e6eb;
+
+  border-radius: 8px;
+
+  box-shadow:
+    0 3px 12px rgba(0, 0, 0, 0.05);
+
+  overflow: hidden;
+}
+
+
+/* =====================================
+   HEADER
+===================================== */
+
+.wallet-header {
+  display: flex;
+
+  justify-content: space-between;
+
+  align-items: center;
+
+  padding: 20px 22px;
+
+  border-bottom: 1px solid #e5e8ec;
+}
+
+.wallet-header h3 {
+  margin: 0;
+
+  font-size: 19px;
+
+  color: #202938;
+}
+
+.wallet-header p {
+  margin: 5px 0 0;
+
+  color: #8993a0;
+
+  font-size: 13px;
+}
+
+
+/* =====================================
+   BALANCE
+===================================== */
+
+.wallet-balance {
+  min-width: 180px;
+
+  padding: 12px 18px;
+
+  background: #eef6ff;
+
+  border-radius: 8px;
+
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: flex-end;
+}
+
+.wallet-balance span {
+  color: #64748b;
+
+  font-size: 10px;
+
+  font-weight: 700;
+}
+
+.wallet-balance strong {
+  margin-top: 3px;
+
+  color: #2563eb;
+
+  font-size: 22px;
+}
+
+
+/* =====================================
+   TABLE
+===================================== */
+
+.wallet-table-wrapper {
+  width: 100%;
+
+  overflow-x: auto;
+}
+
+.wallet-table {
+  width: 100%;
+
+  min-width: 1100px;
+
+  border-collapse: collapse;
+}
+
+.wallet-table thead {
+  background: #edf1f2;
+}
+
+.wallet-table th {
+  padding: 15px;
+
+  text-align: left;
+
+  font-size: 11px;
+
+  font-weight: 700;
+
+  color: #29323c;
+
+  border-bottom: 1px solid #d7dde2;
+
+  white-space: nowrap;
+}
+
+.wallet-table td {
+  padding: 15px;
+
+  font-size: 12px;
+
+  color: #4b5563;
+
+  border-bottom: 1px solid #edf0f2;
+
+  white-space: nowrap;
+}
+
+.wallet-table tbody tr:hover {
+  background: #f8fafc;
+}
+
+.wallet-api {
+  font-weight: 600;
+
+  color: #303a46 !important;
+}
+
+
+/* =====================================
+   STATUS
+===================================== */
+
+.wallet-status {
+  display: inline-block;
+
+  padding: 5px 12px;
+
+  border-radius: 20px;
+
+  background: #e5f7eb;
+
+  color: #16803c;
+
+  font-size: 10px;
+
+  font-weight: 700;
+}
+
+
+/* =====================================
+   MOBILE
+===================================== */
+
+@media (max-width: 768px) {
+
+  .wallet-header {
+    align-items: flex-start;
+
+    flex-direction: column;
+
+    gap: 15px;
+  }
+
+  .wallet-balance {
+    align-items: flex-start;
+  }
+
+}

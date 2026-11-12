@@ -1,0 +1,327 @@
+/* ===============================
+   LOGIN PAGE
+================================= */
+
+.auth-page{
+    width:100%;
+    min-height:100vh;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    background:url("https://img.magnific.com/premium-vector/padlock-with-keyhole-icon-personal-data-security-illustrates-cyber-data-information-privacy-idea-blue-color-abstract-hi-speed-internet-technology_542466-600.jpg?semt=ais_hybrid&w=740&q=80") center center/cover no-repeat;
+
+    padding:10px;
+}
+
+
+/* ===============================
+   CARD
+================================= */
+
+.auth-card{
+
+    width:100%;
+    max-width:480px;
+
+    background:#ffffff;
+
+    border-radius:30px;
+
+    padding:50px;
+
+    box-shadow:
+    0 20px 45px rgba(0,0,0,.28);
+
+}
+
+
+/* ===============================
+   TITLE
+================================= */
+
+.auth-title{
+
+    text-align:center;
+
+    font-size:34px;
+
+    font-weight:600;
+
+    color:#163d83;
+
+    margin-bottom:30px;
+
+}
+
+
+/* ===============================
+   INPUT BOX
+================================= */
+
+.auth-input-box{
+
+    position:relative;
+
+    margin-bottom:28px;
+
+}
+
+.auth-input-box input{
+
+    width:100%;
+
+    height:40px;
+
+    border:2px solid #dddddd;
+
+    border-radius:50px;
+
+    padding-left:28px;
+
+    padding-right:70px;
+
+    font-size:16px;
+
+    outline:none;
+
+    transition:.3s;
+
+}
+
+.auth-input-box input:focus{
+
+    border-color:#173f82;
+
+}
+
+.auth-icon{
+
+    position:absolute;
+
+    right:28px;
+
+    top:50%;
+
+    transform:translateY(-50%);
+
+    font-size:20px;
+
+    color:#173f82;
+
+}
+
+
+/* ===============================
+   REMEMBER & FORGOT
+================================= */
+
+.auth-options{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    margin-bottom:35px;
+
+}
+
+.remember-box{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:10px;
+
+    font-size:19px;
+
+}
+
+.remember-box input{
+
+    width:22px;
+
+    height:22px;
+
+}
+
+.auth-link{
+
+    text-decoration:none;
+
+    color:#111;
+
+    font-size:19px;
+
+}
+
+.auth-link:hover{
+
+    color:#163d83;
+
+}
+
+
+/* ===============================
+   BUTTON
+================================= */
+
+.login-btn{
+
+    width:100%;
+
+    height:50px;
+
+    border:none;
+
+    border-radius:50px;
+
+    background:#d73b2d;
+
+    color:#fff;
+
+    font-size:25px;
+
+    font-weight:700;
+
+    cursor:pointer;
+
+    transition:.3s;
+
+}
+
+.login-btn:hover{
+
+    background:#c62828;
+
+}
+
+
+/* ===============================
+   REGISTER
+================================= */
+
+.register-text{
+
+    margin-top:35px;
+
+    text-align:center;
+
+    font-size:16px;
+
+}
+
+.register-link{
+
+    margin-left:8px;
+
+    color:#163d83;
+
+    text-decoration:none;
+
+    font-weight:400;
+
+}
+
+.register-link:hover{
+
+    text-decoration:underline;
+
+}
+
+
+/* ==========================
+   Role Dropdown
+========================== */
+
+.auth-input-box select{
+    width:100%;
+    height:50px;
+    border:1px solid #dcdcdc;
+    border-radius:30px;
+    background:transparent;
+    outline:none;
+    padding:0 50px 0 20px;
+    font-size:16px;
+    color:gray;
+    appearance:none;
+    -webkit-appearance:none;
+    -moz-appearance:none;
+    cursor:pointer;
+}
+
+.auth-input-box select:focus{
+    border-color:#4a7dff;
+    box-shadow:0 0 5px rgba(74,125,255,.25);
+     
+}
+
+.auth-input-box select option{
+    color:#222;
+    background:#fff;
+  
+}
+
+/* ===============================
+   MOBILE
+================================= */
+
+@media(max-width:768px){
+
+.auth-card{
+
+padding:30px;
+
+border-radius:22px;
+
+}
+
+.auth-title{
+
+font-size:42px;
+
+}
+
+.auth-input-box input{
+
+height:60px;
+
+font-size:20px;
+
+}
+
+.auth-icon{
+
+font-size:22px;
+
+}
+
+.login-btn{
+
+height:60px;
+
+font-size:26px;
+
+}
+
+.register-text{
+
+font-size:18px;
+
+}
+
+.auth-options{
+
+flex-direction:column;
+
+align-items:flex-start;
+
+gap:15px;
+
+}
+
+}

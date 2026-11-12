@@ -1,0 +1,1210 @@
+/* =========================================================
+   DUE EMI PAGE
+========================================================= */
+
+.due-emi-page {
+  width: 100%;
+  min-height: 100vh;
+  padding: 20px 24px 40px;
+  box-sizing: border-box;
+  background: #f5f7f9;
+  color: #333d44;
+}
+
+
+/* =========================================================
+   PAGE TITLE
+========================================================= */
+
+.due-emi-page-title {
+  min-height: 42px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  margin-bottom: 12px;
+}
+
+.due-emi-page-title h2 {
+  margin: 0;
+
+  font-size: 15px;
+  font-weight: 700;
+
+  color: #252d33;
+
+  text-transform: uppercase;
+}
+
+.due-emi-breadcrumb {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+
+  font-size: 10px;
+  color: #8c949a;
+}
+
+.due-emi-breadcrumb strong {
+  color: #414a51;
+}
+
+
+/* =========================================================
+   FILTER CARD
+========================================================= */
+
+.due-emi-filter-card {
+  width: 100%;
+
+  padding: 22px;
+
+  box-sizing: border-box;
+
+  background: #ffffff;
+
+  border: 1px solid #dfe5e8;
+
+  border-radius: 8px;
+
+  box-shadow:
+    0 2px 8px rgba(0, 0, 0, 0.03);
+
+  margin-bottom: 16px;
+}
+
+
+/* =========================================================
+   FILTER GRID
+========================================================= */
+
+.due-emi-filter-grid {
+  display: grid;
+
+  grid-template-columns:
+    repeat(4, minmax(170px, 1fr));
+
+  gap: 17px 22px;
+}
+
+.due-emi-field {
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 7px;
+
+  min-width: 0;
+}
+
+.due-emi-field label {
+  font-size: 10px;
+
+  font-weight: 700;
+
+  color: #333c43;
+
+  text-transform: uppercase;
+}
+
+.due-emi-field label span {
+  color: #d9534f;
+}
+
+.due-emi-field input,
+.due-emi-field select {
+  width: 100%;
+
+  height: 38px;
+
+  box-sizing: border-box;
+
+  padding: 0 11px;
+
+  border: 1px solid #cbd3d8;
+
+  border-radius: 4px;
+
+  background: #ffffff;
+
+  color: #59636b;
+
+  font-size: 11px;
+
+  outline: none;
+}
+
+.due-emi-field input:focus,
+.due-emi-field select:focus {
+  border-color: #32a5c4;
+}
+
+
+/* =========================================================
+   CITY SEARCH
+========================================================= */
+
+.due-emi-search-input {
+  height: 38px;
+
+  display: flex;
+  align-items: center;
+
+  border: 1px solid #cbd3d8;
+
+  border-radius: 4px;
+
+  background: #ffffff;
+}
+
+.due-emi-search-input input {
+  flex: 1;
+
+  width: 100%;
+
+  height: 100%;
+
+  border: none;
+
+  outline: none;
+
+  padding: 0 11px;
+}
+
+.due-emi-search-input span {
+  width: 35px;
+
+  text-align: center;
+
+  color: #68747b;
+
+  font-size: 16px;
+}
+
+
+/* =========================================================
+   FILTER BUTTONS
+========================================================= */
+
+.due-emi-filter-actions {
+  display: flex;
+
+  align-items: center;
+
+  gap: 6px;
+
+  margin-top: 20px;
+}
+
+.due-emi-filter-actions button {
+  height: 36px;
+
+  padding: 0 16px;
+
+  border: none;
+
+  border-radius: 4px;
+
+  color: #ffffff;
+
+  font-size: 10px;
+
+  font-weight: 700;
+
+  cursor: pointer;
+
+  transition: 0.2s ease;
+}
+
+.due-emi-get-btn {
+  background: #28ad68;
+}
+
+.due-emi-get-btn:hover {
+  background: #209455;
+}
+
+.due-emi-print-btn {
+  background: #2da6c7;
+}
+
+.due-emi-print-btn:hover {
+  background: #218ba9;
+}
+
+.due-emi-download-btn {
+  background: #398fb1;
+}
+
+.due-emi-download-btn:hover {
+  background: #2c7897;
+}
+
+.due-emi-clear-btn {
+  background: #68747b;
+}
+
+.due-emi-clear-btn:hover {
+  background: #525e65;
+}
+
+
+/* =========================================================
+   TABLE CARD
+========================================================= */
+
+.due-emi-table-card {
+  width: 100%;
+
+  background: #ffffff;
+
+  border: 1px solid #dfe5e8;
+
+  border-radius: 8px;
+
+  overflow: hidden;
+
+  box-shadow:
+    0 2px 8px rgba(0, 0, 0, 0.03);
+}
+
+
+/* =========================================================
+   TABLE HEADING
+========================================================= */
+
+.due-emi-table-heading {
+  min-height: 76px;
+
+  padding: 0 18px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  gap: 20px;
+}
+
+.due-emi-table-heading h3 {
+  margin: 0 0 8px;
+
+  font-size: 17px;
+
+  font-weight: 500;
+
+  color: #3f484f;
+
+  text-transform: uppercase;
+}
+
+.due-emi-summary {
+  display: flex;
+
+  align-items: center;
+
+  gap: 7px;
+
+  font-size: 11px;
+
+  color: #616b72;
+}
+
+.due-emi-summary strong {
+  color: #3f6875;
+}
+
+.due-emi-summary span {
+  color: #c1c7ca;
+}
+
+
+/* =========================================================
+   TABLE SEARCH
+========================================================= */
+
+.due-emi-table-search {
+  width: 250px;
+
+  height: 34px;
+
+  display: flex;
+
+  align-items: center;
+
+  border: 1px solid #d4dade;
+
+  border-radius: 4px;
+
+  background: #ffffff;
+}
+
+.due-emi-table-search input {
+  flex: 1;
+
+  width: 100%;
+
+  height: 100%;
+
+  padding: 0 10px;
+
+  border: none;
+
+  outline: none;
+
+  font-size: 10px;
+
+  color: #555f66;
+}
+
+.due-emi-table-search span {
+  width: 32px;
+
+  text-align: center;
+
+  font-size: 16px;
+
+  color: #7b858c;
+}
+
+
+/* =========================================================
+   TABLE CONTROLS
+========================================================= */
+
+.due-emi-table-controls {
+  padding: 0 18px 12px;
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 6px;
+
+  color: #7e878e;
+
+  font-size: 9px;
+}
+
+.due-emi-table-controls select {
+  width: 58px;
+
+  height: 30px;
+
+  border: 1px solid #d2d9dd;
+
+  border-radius: 4px;
+
+  background: #ffffff;
+
+  padding: 0 7px;
+
+  outline: none;
+
+  font-size: 10px;
+}
+
+
+/* =========================================================
+   TABLE WRAPPER
+========================================================= */
+
+.due-emi-table-wrapper {
+  width: 100%;
+
+  overflow-x: auto;
+}
+
+
+/* =========================================================
+   TABLE
+========================================================= */
+
+.due-emi-table {
+  width: 100%;
+
+  min-width: 1450px;
+
+  border-collapse: collapse;
+}
+
+.due-emi-table thead {
+  background: #e8eef1;
+}
+
+.due-emi-table th {
+  height: 48px;
+
+  padding: 7px 10px;
+
+  border-bottom: 1px solid #d3dade;
+
+  text-align: left;
+
+  vertical-align: middle;
+
+  color: #414b53;
+
+  font-size: 9px;
+
+  font-weight: 700;
+
+  white-space: nowrap;
+
+  text-transform: uppercase;
+}
+
+.due-emi-table td {
+  padding: 12px 10px;
+
+  border-bottom: 1px solid #edf0f2;
+
+  color: #5e686f;
+
+  font-size: 10px;
+
+  vertical-align: middle;
+
+  white-space: nowrap;
+}
+
+.due-emi-table tbody tr:hover {
+  background: #fafcfd;
+}
+
+
+/* =========================================================
+   LOAN
+========================================================= */
+
+.due-emi-loan {
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 3px;
+}
+
+.due-emi-loan strong {
+  color: #4e7890;
+}
+
+.due-emi-loan small {
+  color: #717c83;
+
+  font-size: 9px;
+}
+
+
+/* =========================================================
+   MEMBER
+========================================================= */
+
+.due-emi-member {
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 3px;
+
+  min-width: 135px;
+
+  white-space: normal;
+}
+
+.due-emi-member strong {
+  color: #4c565d;
+
+  font-size: 10px;
+}
+
+.due-emi-member small {
+  color: #8b949a;
+
+  font-size: 9px;
+}
+
+
+/* =========================================================
+   STAFF
+========================================================= */
+
+.due-emi-staff {
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 3px;
+
+  min-width: 105px;
+
+  white-space: normal;
+}
+
+.due-emi-staff strong {
+  font-size: 9px;
+
+  color: #505b62;
+}
+
+.due-emi-staff small {
+  font-size: 8px;
+
+  color: #899197;
+}
+
+
+/* =========================================================
+   TYPE
+========================================================= */
+
+.due-emi-type {
+  font-size: 9px;
+
+  font-style: italic;
+
+  color: #68737a;
+}
+
+
+/* =========================================================
+   AMOUNT
+========================================================= */
+
+.due-emi-amount {
+  color: #3d8056;
+
+  font-size: 10px;
+}
+
+
+/* =========================================================
+   STATUS
+========================================================= */
+
+.due-emi-status {
+  display: inline-flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  min-width: 54px;
+
+  padding: 5px 8px;
+
+  border-radius: 12px;
+
+  font-size: 8px;
+
+  font-weight: 700;
+
+  text-transform: uppercase;
+}
+
+.due-emi-status.pending {
+  color: #bf4a4a;
+
+  background: #fff0f0;
+
+  border: 1px solid #efcccc;
+}
+
+.due-emi-status.partial {
+  color: #b47927;
+
+  background: #fff7e8;
+
+  border: 1px solid #f1dfbd;
+}
+
+.due-emi-status.paid {
+  color: #2d8a50;
+
+  background: #e9f7ed;
+
+  border: 1px solid #c7e7d2;
+}
+
+
+/* =========================================================
+   ACTION
+========================================================= */
+
+.due-emi-action {
+  position: relative;
+
+  display: flex;
+
+  align-items: center;
+}
+
+.due-emi-task-btn {
+  height: 28px;
+
+  padding: 0 9px;
+
+  display: inline-flex;
+
+  align-items: center;
+
+  gap: 6px;
+
+  border: none;
+
+  border-radius: 4px;
+
+  background: #2da7a9;
+
+  color: #ffffff;
+
+  font-size: 9px;
+
+  cursor: pointer;
+}
+
+.due-emi-task-btn:hover {
+  background: #238d90;
+}
+
+.due-emi-task-menu {
+  position: absolute;
+
+  top: 33px;
+
+  right: 0;
+
+  z-index: 50;
+
+  width: 125px;
+
+  padding: 5px;
+
+  border: 1px solid #d9dfe2;
+
+  border-radius: 5px;
+
+  background: #ffffff;
+
+  box-shadow:
+    0 6px 20px rgba(0, 0, 0, 0.15);
+}
+
+.due-emi-task-menu button {
+  width: 100%;
+
+  height: 32px;
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 7px;
+
+  padding: 0 9px;
+
+  border: none;
+
+  border-radius: 3px;
+
+  background: transparent;
+
+  color: #555f66;
+
+  font-size: 10px;
+
+  text-align: left;
+
+  cursor: pointer;
+}
+
+.due-emi-task-menu button:hover {
+  background: #f1f4f5;
+}
+
+.due-emi-task-menu .pay-option {
+  color: #2b9255;
+}
+
+
+/* =========================================================
+   NO DATA
+========================================================= */
+
+.due-emi-no-data {
+  height: 150px;
+
+  text-align: center !important;
+
+  color: #9ca4a9 !important;
+}
+
+
+/* =========================================================
+   FOOTER
+========================================================= */
+
+.due-emi-table-footer {
+  min-height: 55px;
+
+  padding: 0 18px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  color: #7e878e;
+
+  font-size: 9px;
+}
+
+.due-emi-pagination {
+  display: flex;
+
+  gap: 3px;
+}
+
+.due-emi-pagination button {
+  width: 28px;
+
+  height: 27px;
+
+  border: 1px solid #d9dfe2;
+
+  border-radius: 3px;
+
+  background: #ffffff;
+
+  color: #68737a;
+
+  cursor: pointer;
+}
+
+.due-emi-pagination button.active {
+  background: #31a6c5;
+
+  border-color: #31a6c5;
+
+  color: #ffffff;
+}
+
+
+/* =========================================================
+   VIEW POPUP
+========================================================= */
+
+.due-emi-view-overlay {
+  position: fixed;
+
+  inset: 0;
+
+  z-index: 9999;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  padding: 20px;
+
+  background: rgba(20, 28, 34, 0.55);
+}
+
+.due-emi-view-modal {
+  width: min(850px, 100%);
+
+  max-height: 90vh;
+
+  overflow-y: auto;
+
+  background: #ffffff;
+
+  border-radius: 8px;
+
+  box-shadow:
+    0 20px 55px rgba(0, 0, 0, 0.25);
+}
+
+
+/* =========================================================
+   VIEW HEADER
+========================================================= */
+
+.due-emi-view-header {
+  min-height: 70px;
+
+  padding: 0 20px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  background: #f5f8fa;
+
+  border-bottom: 1px solid #e1e7ea;
+}
+
+.due-emi-view-heading {
+  display: flex;
+
+  align-items: center;
+
+  gap: 12px;
+}
+
+.due-emi-view-icon {
+  width: 40px;
+
+  height: 40px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  border-radius: 50%;
+
+  background: #e4f3f7;
+
+  color: #2e9db6;
+}
+
+.due-emi-view-heading h3 {
+  margin: 0 0 3px;
+
+  font-size: 15px;
+
+  color: #354049;
+}
+
+.due-emi-view-heading p {
+  margin: 0;
+
+  color: #899197;
+
+  font-size: 9px;
+}
+
+.due-emi-view-close {
+  width: 31px;
+
+  height: 31px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  border: none;
+
+  border-radius: 50%;
+
+  background: #e15b5b;
+
+  color: #ffffff;
+
+  cursor: pointer;
+}
+
+
+/* =========================================================
+   VIEW CONTENT
+========================================================= */
+
+.due-emi-view-content {
+  padding: 20px;
+}
+
+.due-emi-view-section {
+  padding: 16px;
+
+  margin-bottom: 15px;
+
+  border: 1px solid #e1e7ea;
+
+  border-radius: 6px;
+}
+
+.due-emi-view-section-title {
+  display: flex;
+
+  align-items: center;
+
+  gap: 8px;
+
+  padding-bottom: 10px;
+
+  margin-bottom: 15px;
+
+  border-bottom: 1px solid #edf0f2;
+
+  color: #3099b0;
+}
+
+.due-emi-view-section-title h4 {
+  margin: 0;
+
+  color: #454f56;
+
+  font-size: 11px;
+}
+
+.due-emi-view-grid {
+  display: grid;
+
+  grid-template-columns:
+    repeat(4, 1fr);
+
+  gap: 18px;
+}
+
+.due-emi-view-grid > div {
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 5px;
+}
+
+.due-emi-view-grid span,
+.due-emi-view-status span {
+  color: #8c959b;
+
+  font-size: 8px;
+
+  font-weight: 700;
+
+  text-transform: uppercase;
+}
+
+.due-emi-view-grid strong {
+  display: flex;
+
+  align-items: center;
+
+  gap: 6px;
+
+  color: #3f484f;
+
+  font-size: 10px;
+}
+
+.due-emi-view-grid strong svg {
+  color: #3998ad;
+}
+
+.due-emi-view-grid .amount strong {
+  color: #378252;
+
+  font-size: 13px;
+}
+
+
+/* =========================================================
+   VIEW STATUS
+========================================================= */
+
+.due-emi-view-status {
+  display: grid;
+
+  grid-template-columns: 1fr 1fr;
+
+  gap: 20px;
+
+  padding: 15px;
+
+  border: 1px solid #e2e7e9;
+
+  border-radius: 6px;
+
+  background: #f7f9fa;
+}
+
+.due-emi-view-status > div {
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 5px;
+}
+
+.due-emi-view-status strong {
+  font-size: 11px;
+
+  color: #444e55;
+}
+
+.due-emi-view-status strong.pending {
+  color: #c14c4c;
+}
+
+.due-emi-view-status strong.partial {
+  color: #b27627;
+}
+
+.due-emi-view-status strong.paid {
+  color: #2e8b51;
+}
+
+
+/* =========================================================
+   VIEW FOOTER
+========================================================= */
+
+.due-emi-view-footer {
+  min-height: 60px;
+
+  padding: 0 20px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: flex-end;
+
+  gap: 8px;
+
+  border-top: 1px solid #e2e7e9;
+
+  background: #fafbfc;
+}
+
+.due-emi-modal-pay,
+.due-emi-modal-close {
+  height: 35px;
+
+  padding: 0 16px;
+
+  display: inline-flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  gap: 7px;
+
+  border: none;
+
+  border-radius: 4px;
+
+  color: #ffffff;
+
+  font-size: 10px;
+
+  font-weight: 700;
+
+  cursor: pointer;
+}
+
+.due-emi-modal-pay {
+  background: #2ca96a;
+}
+
+.due-emi-modal-pay:hover {
+  background: #218b56;
+}
+
+.due-emi-modal-close {
+  background: #68747b;
+}
+
+.due-emi-modal-close:hover {
+  background: #535e65;
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 1100px) {
+
+  .due-emi-filter-grid {
+    grid-template-columns:
+      repeat(3, minmax(170px, 1fr));
+  }
+
+  .due-emi-view-grid {
+    grid-template-columns:
+      repeat(2, 1fr);
+  }
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 700px) {
+
+  .due-emi-page {
+    padding: 12px;
+  }
+
+  .due-emi-page-title {
+    flex-direction: column;
+
+    align-items: flex-start;
+
+    gap: 7px;
+  }
+
+  .due-emi-filter-card {
+    padding: 14px;
+  }
+
+  .due-emi-filter-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .due-emi-filter-actions {
+    flex-wrap: wrap;
+  }
+
+  .due-emi-filter-actions button {
+    flex: 1;
+
+    min-width: 120px;
+  }
+
+  .due-emi-table-heading {
+    flex-direction: column;
+
+    align-items: flex-start;
+
+    padding: 15px;
+  }
+
+  .due-emi-table-search {
+    width: 100%;
+  }
+
+  .due-emi-view-overlay {
+    padding: 10px;
+  }
+
+  .due-emi-view-content {
+    padding: 12px;
+  }
+
+  .due-emi-view-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .due-emi-view-status {
+    grid-template-columns: 1fr;
+  }
+
+  .due-emi-view-section {
+    padding: 13px;
+  }
+}

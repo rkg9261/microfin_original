@@ -1,0 +1,1113 @@
+/* =========================================================
+   COLLECTION PAGE
+========================================================= */
+
+.collection-page {
+  width: 100%;
+  min-height: 100vh;
+  padding: 20px;
+  background: #f7f8fa;
+  color: #333;
+  box-sizing: border-box;
+}
+
+/* =========================================================
+   PAGE HEADER
+========================================================= */
+
+.collection-page-header {
+  position: relative;
+  min-height: 38px;
+  margin-bottom: 10px;
+}
+
+.collection-page-header h2 {
+  margin: 0;
+  font-size: 14px;
+  font-weight: 700;
+  color: #333;
+}
+
+.collection-breadcrumb {
+  position: absolute;
+  right: 0;
+  top: 0;
+
+  display: flex;
+  align-items: center;
+  gap: 7px;
+
+  font-size: 10px;
+  color: #777;
+}
+
+.collection-breadcrumb strong {
+  color: #333;
+}
+
+.collection-breadcrumb-arrow {
+  font-size: 14px;
+}
+
+/* =========================================================
+   FILTER CARD
+========================================================= */
+
+.collection-filter-card {
+  width: 100%;
+  background: #fff;
+
+  border: 1px solid #ddd;
+  border-radius: 10px;
+
+  padding: 15px 18px 18px;
+  margin-bottom: 12px;
+
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.04);
+
+  box-sizing: border-box;
+}
+
+/* =========================================================
+   FILTER TITLE
+========================================================= */
+
+.collection-filter-title {
+  font-size: 14px;
+  font-weight: 600;
+
+  margin-bottom: 20px;
+
+  color: #333;
+}
+
+/* =========================================================
+   FILTER FORM
+========================================================= */
+
+.collection-filter-form {
+  display: grid;
+
+  grid-template-columns:
+    minmax(0, 1fr)
+    minmax(0, 1fr)
+    minmax(0, 1fr)
+    minmax(0, 1fr);
+
+  column-gap: 30px;
+  row-gap: 18px;
+
+  width: 100%;
+
+  align-items: end;
+}
+
+/* =========================================================
+   FIELD
+========================================================= */
+
+.collection-field {
+  position: relative;
+
+  width: 100%;
+  min-width: 0;
+}
+
+.collection-field label {
+  display: block;
+
+  margin-bottom: 7px;
+
+  font-size: 12px;
+  font-weight: 700;
+
+  color: #292929;
+}
+
+.collection-field label span {
+  color: #e53935;
+}
+
+/* =========================================================
+   INPUT / SELECT
+========================================================= */
+
+.collection-field input,
+.collection-field select {
+  width: 100%;
+  height: 40px;
+
+  border: 1px solid #cfcfcf;
+  border-radius: 4px;
+
+  background: #fff;
+
+  padding: 0 12px;
+
+  outline: none;
+
+  font-size: 13px;
+  color: #555;
+
+  box-sizing: border-box;
+}
+
+.collection-field input:focus,
+.collection-field select:focus {
+  border-color: #24a7d1;
+}
+
+/* =========================================================
+   SELECT BOX
+========================================================= */
+
+.collection-select-box {
+  position: relative;
+  width: 100%;
+}
+
+/*
+   IMPORTANT:
+   Keep native dropdown arrow.
+   Do not use custom middle icon.
+*/
+
+.collection-select-box select {
+  width: 100%;
+  height: 40px;
+
+  appearance: auto;
+  -webkit-appearance: auto;
+
+  padding: 0 12px;
+
+  border: 1px solid #cfcfcf;
+  border-radius: 4px;
+
+  background: #fff;
+
+  outline: none;
+
+  font-size: 13px;
+  color: #555;
+
+  box-sizing: border-box;
+}
+
+.collection-select-box select:focus {
+  border-color: #24a7d1;
+}
+
+/* =========================================================
+   REMOVE CUSTOM SELECT ICON
+========================================================= */
+
+.collection-select-icons {
+  display: none !important;
+}
+
+/* =========================================================
+   CUSTOMER TYPE HERE
+========================================================= */
+
+.collection-customer-field {
+  grid-column: 1 / 3;
+
+  width: 100%;
+
+  position: relative;
+}
+
+/* =========================================================
+   CUSTOMER INPUT
+========================================================= */
+
+.collection-customer-field input {
+  width: 100%;
+
+  height: 40px;
+
+  padding: 0 40px 0 12px;
+
+  border: 1px solid #cfcfcf;
+  border-radius: 4px;
+
+  background: #fff;
+
+  outline: none;
+
+  font-size: 13px;
+
+  box-sizing: border-box;
+}
+
+.collection-customer-field input:focus {
+  border-color: #24a7d1;
+}
+
+/* =========================================================
+   CUSTOMER CLEAR ICON
+========================================================= */
+
+.collection-customer-clear {
+  position: absolute;
+
+  right: 12px;
+  bottom: 11px;
+
+  color: #777;
+
+  pointer-events: none;
+
+  font-size: 16px;
+}
+
+/* =========================================================
+   GET RECORD
+========================================================= */
+
+.collection-submit-wrapper {
+  grid-column: 1 / 2;
+
+  display: flex;
+
+  align-items: flex-end;
+
+  width: 100%;
+}
+
+/* =========================================================
+   GET RECORD BUTTON
+========================================================= */
+
+.collection-get-record-btn {
+  height: 38px;
+
+  padding: 0 18px;
+
+  border: 0;
+  border-radius: 4px;
+
+  background: #2499c4;
+
+  color: #fff;
+
+  font-size: 13px;
+  font-weight: 600;
+
+  cursor: pointer;
+
+  transition: background 0.25s ease;
+}
+
+.collection-get-record-btn:hover {
+  background: #1687b0;
+}
+
+/* =========================================================
+   LIST CARD
+========================================================= */
+
+.collection-list-card {
+  width: 100%;
+
+  background: #fff;
+
+  border: 1px solid #ddd;
+  border-radius: 10px;
+
+  overflow: hidden;
+
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.04);
+}
+
+/* =========================================================
+   LIST HEADER
+========================================================= */
+
+.collection-list-header {
+  min-height: 55px;
+
+  display: flex;
+
+  align-items: center;
+
+  padding: 0 16px;
+
+  border-bottom: 1px solid #eee;
+}
+
+.collection-list-header h2 {
+  margin: 0;
+
+  font-size: 17px;
+  font-weight: 500;
+
+  color: #444;
+}
+
+/* =========================================================
+   TOOLBAR
+========================================================= */
+
+.collection-toolbar {
+  min-height: 60px;
+
+  padding: 10px 16px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  gap: 15px;
+
+  box-sizing: border-box;
+}
+
+.collection-toolbar-left {
+  display: flex;
+
+  align-items: center;
+
+  gap: 10px;
+
+  font-size: 12px;
+}
+
+.collection-toolbar-left strong {
+  color: #444;
+}
+
+/* =========================================================
+   ENTRY DROPDOWN
+========================================================= */
+
+.collection-entries-select {
+  width: 65px;
+  height: 32px;
+
+  border: 1px solid #ddd;
+  border-radius: 4px;
+
+  background: #fff;
+
+  padding: 0 7px;
+
+  font-size: 12px;
+
+  outline: none;
+
+  cursor: pointer;
+}
+
+/* =========================================================
+   SEARCH
+========================================================= */
+
+.collection-search {
+  width: 220px;
+  height: 34px;
+
+  display: flex;
+
+  align-items: center;
+
+  border: 1px solid #ddd;
+  border-radius: 3px;
+
+  overflow: hidden;
+}
+
+.collection-search input {
+  flex: 1;
+
+  width: 100%;
+  height: 100%;
+
+  border: 0;
+  outline: 0;
+
+  padding: 0 10px;
+
+  font-size: 11px;
+}
+
+.collection-search button {
+  width: 35px;
+  height: 100%;
+
+  border: 0;
+
+  background: #fff;
+
+  color: #555;
+
+  cursor: pointer;
+}
+
+/* =========================================================
+   TABLE WRAPPER
+========================================================= */
+
+.collection-table-wrapper {
+  width: 100%;
+
+  overflow-x: auto;
+}
+
+/* =========================================================
+   TABLE
+========================================================= */
+
+.collection-table {
+  width: 100%;
+
+  min-width: 1450px;
+
+  border-collapse: collapse;
+
+  font-size: 11px;
+}
+
+.collection-table thead th {
+  background: #dce7ea;
+
+  color: #303b40;
+
+  font-size: 10px;
+  font-weight: 700;
+
+  padding: 12px 8px;
+
+  text-align: left;
+
+  white-space: nowrap;
+
+  border-bottom: 1px solid #cbd4d7;
+}
+
+.collection-table tbody td {
+  padding: 12px 8px;
+
+  color: #555;
+
+  border-bottom: 1px solid #eee;
+
+  vertical-align: middle;
+
+  white-space: nowrap;
+}
+
+.collection-table tbody tr:hover {
+  background: #fafafa;
+}
+
+/* =========================================================
+   LOAN ID
+========================================================= */
+
+.collection-loan-id {
+  display: flex;
+
+  align-items: center;
+
+  gap: 4px;
+
+  font-weight: 700;
+}
+
+.collection-loan-id span {
+  color: #777;
+}
+
+.collection-table td small {
+  display: block;
+
+  margin-top: 4px;
+
+  font-size: 9px;
+
+  color: #777;
+}
+
+/* =========================================================
+   MEMBER
+========================================================= */
+
+.collection-member-name {
+  display: flex;
+
+  align-items: center;
+
+  gap: 6px;
+}
+
+.collection-user-icon {
+  color: #4c8db1;
+
+  font-size: 14px;
+}
+
+.collection-member-name strong {
+  display: block;
+
+  color: #4680a1;
+
+  font-size: 10px;
+}
+
+.collection-member-name small {
+  margin-top: 3px;
+}
+
+/* =========================================================
+   AMOUNT
+========================================================= */
+
+.collection-amount {
+  color: #4b9d61;
+
+  font-size: 11px;
+}
+
+.collection-cash {
+  color: #777;
+}
+
+/* =========================================================
+   RECEIVED BY
+========================================================= */
+
+.collection-received {
+  color: #555;
+
+  font-size: 10px;
+}
+
+/* =========================================================
+   CREATED
+========================================================= */
+
+.collection-created span {
+  display: block;
+}
+
+.collection-created small {
+  color: #777;
+}
+
+/* =========================================================
+   STATUS
+========================================================= */
+
+.collection-status {
+  display: inline-flex;
+
+  align-items: center;
+
+  padding: 4px 8px;
+
+  border-radius: 4px;
+
+  font-size: 9px;
+  font-weight: 700;
+}
+
+.collection-status.pending {
+  background: #f8e8bf;
+
+  color: #9c7419;
+}
+
+.collection-status.approved {
+  background: #d8f1df;
+
+  color: #268245;
+}
+
+/* =========================================================
+   ACTION
+========================================================= */
+
+.collection-actions {
+  display: flex;
+
+  align-items: center;
+
+  gap: 4px;
+}
+
+.collection-actions button {
+  width: 25px;
+  height: 25px;
+
+  border: 0;
+
+  border-radius: 3px;
+
+  color: #fff;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  cursor: pointer;
+
+  font-size: 10px;
+
+  transition: 0.2s;
+}
+
+/* =========================================================
+   VIEW
+========================================================= */
+
+.collection-view-btn {
+  background: #287fd4;
+}
+
+.collection-view-btn:hover {
+  background: #176bc0;
+}
+
+/* =========================================================
+   APPROVE
+========================================================= */
+
+.collection-approve-btn {
+  background: #43a85d;
+}
+
+.collection-approve-btn:hover {
+  background: #348b49;
+}
+
+/* =========================================================
+   DELETE
+========================================================= */
+
+.collection-delete-btn {
+  background: #dc4b4b;
+}
+
+.collection-delete-btn:hover {
+  background: #c63737;
+}
+
+/* =========================================================
+   NO DATA
+========================================================= */
+
+.collection-no-data {
+  text-align: center !important;
+
+  padding: 40px !important;
+
+  color: #777 !important;
+}
+
+/* =========================================================
+   FOOTER
+========================================================= */
+
+.collection-footer {
+  min-height: 55px;
+
+  padding: 10px 16px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  color: #777;
+
+  font-size: 11px;
+}
+
+.collection-pagination {
+  display: flex;
+
+  align-items: center;
+
+  gap: 5px;
+}
+
+.collection-pagination button {
+  border: 0;
+
+  background: transparent;
+
+  padding: 6px 10px;
+
+  color: #777;
+
+  cursor: pointer;
+}
+
+.collection-pagination button.active {
+  background: #2499c4;
+
+  color: #fff;
+
+  border-radius: 3px;
+}
+
+.collection-pagination button:disabled {
+  opacity: 0.5;
+
+  cursor: default;
+}
+
+/* =========================================================
+   DETAILS POPUP OVERLAY
+========================================================= */
+
+.collection-overlay {
+  position: fixed;
+
+  inset: 0;
+
+  z-index: 9999;
+
+  background: rgba(0, 0, 0, 0.55);
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  padding: 20px;
+}
+
+/* =========================================================
+   DETAILS POPUP
+========================================================= */
+
+.collection-details-popup {
+  width: 850px;
+
+  max-width: 100%;
+
+  max-height: 90vh;
+
+  background: #fff;
+
+  border-radius: 5px;
+
+  overflow: hidden;
+
+  box-shadow: 0 15px 50px rgba(0, 0, 0, 0.35);
+}
+
+/* =========================================================
+   POPUP HEADER
+========================================================= */
+
+.collection-popup-header {
+  height: 58px;
+
+  padding: 0 20px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  background: #20a8d3;
+
+  color: #fff;
+}
+
+.collection-popup-header h2 {
+  margin: 0;
+
+  font-size: 18px;
+
+  font-weight: 500;
+}
+
+.collection-popup-header button {
+  width: 35px;
+  height: 35px;
+
+  border: 0;
+
+  background: transparent;
+
+  color: #fff;
+
+  cursor: pointer;
+
+  font-size: 16px;
+}
+
+/* =========================================================
+   POPUP BODY
+========================================================= */
+
+.collection-popup-body {
+  max-height: 60vh;
+
+  overflow-y: auto;
+
+  padding: 25px;
+
+  display: grid;
+
+  grid-template-columns: 1fr 1fr;
+
+  gap: 30px;
+}
+
+/* =========================================================
+   DETAIL SECTION
+========================================================= */
+
+.collection-detail-section {
+  border: 1px solid #eee;
+
+  border-radius: 5px;
+
+  overflow: hidden;
+}
+
+.collection-detail-section h3 {
+  margin: 0;
+
+  padding: 12px 15px;
+
+  background: #f4f7f8;
+
+  border-bottom: 1px solid #ddd;
+
+  font-size: 12px;
+
+  color: #333;
+}
+
+/* =========================================================
+   DETAIL ROW
+========================================================= */
+
+.collection-detail-row {
+  min-height: 42px;
+
+  padding: 8px 14px;
+
+  display: grid;
+
+  grid-template-columns: 130px 1fr;
+
+  align-items: center;
+
+  border-bottom: 1px solid #eee;
+
+  gap: 10px;
+}
+
+.collection-detail-row:last-child {
+  border-bottom: 0;
+}
+
+.collection-detail-row span {
+  font-size: 10px;
+
+  font-weight: 700;
+
+  color: #555;
+}
+
+.collection-detail-row strong {
+  font-size: 11px;
+
+  color: #333;
+
+  word-break: break-word;
+}
+
+/* =========================================================
+   POPUP FOOTER
+========================================================= */
+
+.collection-popup-footer {
+  min-height: 65px;
+
+  padding: 12px 20px;
+
+  background: #fafafa;
+
+  border-top: 1px solid #eee;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: flex-end;
+
+  gap: 8px;
+}
+
+.collection-popup-footer button {
+  height: 36px;
+
+  padding: 0 16px;
+
+  border: 0;
+
+  border-radius: 4px;
+
+  color: #fff;
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 6px;
+
+  cursor: pointer;
+}
+
+.collection-popup-approve {
+  background: #43a85d;
+}
+
+.collection-popup-delete {
+  background: #dc4b4b;
+}
+
+.collection-popup-close {
+  background: #20a8d3;
+}
+
+
+
+/* =========================================================
+   LARGE SCREEN
+========================================================= */
+
+@media (max-width: 1100px) {
+
+  .collection-filter-form {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .collection-customer-field {
+    grid-column: 1 / 3;
+  }
+
+  .collection-submit-wrapper {
+    grid-column: 1 / 2;
+  }
+
+}
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 768px) {
+
+  .collection-page {
+    padding: 12px;
+  }
+
+  .collection-page-header {
+    min-height: auto;
+
+    margin-bottom: 15px;
+  }
+
+  .collection-breadcrumb {
+    position: static;
+
+    margin-top: 6px;
+  }
+
+  .collection-filter-form {
+    grid-template-columns: 1fr;
+
+    gap: 15px;
+  }
+
+  .collection-customer-field {
+    grid-column: 1;
+  }
+
+  .collection-submit-wrapper {
+    grid-column: 1;
+  }
+
+  .collection-toolbar {
+    flex-direction: column;
+
+    align-items: flex-start;
+  }
+
+  .collection-toolbar-left {
+    width: 100%;
+  }
+
+  .collection-search {
+    width: 100%;
+  }
+
+  .collection-popup-body {
+    grid-template-columns: 1fr;
+  }
+
+}
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 500px) {
+
+  .collection-filter-card {
+    padding: 14px;
+  }
+
+  .collection-filter-title {
+    margin-bottom: 15px;
+  }
+
+  .collection-field input,
+  .collection-field select,
+  .collection-select-box select {
+    height: 42px;
+  }
+
+  .collection-get-record-btn {
+    width: 100%;
+  }
+
+  .collection-submit-wrapper {
+    width: 100%;
+  }
+
+  .collection-detail-row {
+    grid-template-columns: 1fr;
+
+    gap: 4px;
+
+    padding: 9px 14px;
+  }
+
+  .collection-popup-footer {
+    justify-content: space-between;
+
+    flex-wrap: wrap;
+  }
+
+  .collection-popup-footer button {
+    flex: 1;
+  }
+
+}

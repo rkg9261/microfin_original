@@ -1,0 +1,1024 @@
+/* =========================================================
+   DAY BOOK PAGE
+========================================================= */
+
+.daybook-page {
+  width: 100%;
+  min-height: 100vh;
+  padding: 10px 16px 30px;
+  background: #f8f8f5;
+  color: #333;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+
+/* =========================================================
+   HEADER
+========================================================= */
+
+.daybook-page-header {
+  width: 100%;
+  min-height: 38px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+
+.daybook-title {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+
+  font-size: 13px;
+  font-weight: 700;
+}
+
+
+.daybook-title-icon {
+  color: #315d73;
+  font-size: 14px;
+}
+
+
+.daybook-breadcrumb {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+
+  font-size: 10px;
+  color: #777;
+}
+
+
+.daybook-breadcrumb strong {
+  color: #333;
+}
+
+
+.breadcrumb-arrow {
+  font-size: 15px;
+}
+
+
+/* =========================================================
+   HEADER LINE
+========================================================= */
+
+.daybook-header-line {
+  height: 2px;
+  width: 100%;
+
+  background: #294f68;
+
+  margin-bottom: 10px;
+}
+
+
+/* =========================================================
+   FILTER CARD
+========================================================= */
+
+.daybook-filter-card {
+  width: 100%;
+
+  background: #fff;
+
+  border: 1px solid #cfcfcf;
+
+  border-radius: 5px;
+
+  padding: 10px 14px 13px;
+
+  box-shadow: 0 2px 6px rgba(0, 0, 0, .06);
+}
+
+
+/* =========================================================
+   FILTER ROWS
+========================================================= */
+
+.daybook-filter-top-row {
+  display: grid;
+
+  grid-template-columns:
+    1.25fr
+    1.05fr
+    1fr;
+
+  gap: 24px;
+}
+
+
+.daybook-filter-bottom-row {
+  display: grid;
+
+  grid-template-columns:
+    1fr
+    1fr
+    1fr
+    230px;
+
+  gap: 24px;
+
+  margin-top: 8px;
+}
+
+
+/* =========================================================
+   FILTER ITEM
+========================================================= */
+
+.daybook-filter-item {
+  position: relative;
+
+  width: 100%;
+}
+
+
+.daybook-filter-item label {
+  display: block;
+
+  height: 15px;
+
+  margin-bottom: 3px;
+
+  font-size: 11px;
+
+  font-weight: 700;
+
+  color: #333;
+}
+
+
+/* =========================================================
+   INPUT
+========================================================= */
+
+.daybook-filter-item input,
+.daybook-filter-item select {
+  width: 100%;
+
+  height: 34px;
+
+  border: 1px solid #bdbdbd;
+
+  border-radius: 2px;
+
+  outline: none;
+
+  background: #fff;
+
+  color: #555;
+
+  padding: 0 9px;
+
+  font-size: 12px;
+}
+
+
+.daybook-filter-item input:focus,
+.daybook-filter-item select:focus {
+  border-color: #3784a2;
+}
+
+
+/* =========================================================
+   LOAN SELECT
+========================================================= */
+
+.daybook-loan-select {
+  position: relative;
+}
+
+
+.daybook-loan-select input {
+  padding-right: 55px;
+}
+
+
+.daybook-input-clear {
+  position: absolute;
+
+  right: 27px;
+  top: 50%;
+
+  transform: translateY(-50%);
+
+  width: 20px;
+  height: 28px;
+
+  border: none;
+
+  background: transparent;
+
+  color: #666;
+
+  cursor: pointer;
+}
+
+
+.daybook-input-arrow {
+  position: absolute;
+
+  right: 2px;
+  top: 50%;
+
+  transform: translateY(-50%);
+
+  width: 25px;
+  height: 28px;
+
+  border: none;
+
+  background: transparent;
+
+  color: #555;
+
+  cursor: pointer;
+}
+
+
+/* =========================================================
+   LOAN DROPDOWN
+========================================================= */
+
+.daybook-loan-dropdown {
+  position: absolute;
+
+  top: 54px;
+  left: 0;
+
+  width: 100%;
+
+  max-height: 220px;
+
+  overflow-y: auto;
+
+  background: #fff;
+
+  border: 1px solid #c8c8c8;
+
+  box-shadow: 0 5px 12px rgba(0, 0, 0, .15);
+
+  z-index: 1000;
+}
+
+
+.daybook-loan-option {
+  height: 40px;
+
+  padding: 5px 10px;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  border-bottom: 1px solid #eee;
+
+  cursor: pointer;
+
+  font-size: 11px;
+}
+
+
+.daybook-loan-option:hover {
+  background: #edf6fa;
+}
+
+
+.daybook-loan-option strong {
+  color: #2c6b84;
+}
+
+
+.daybook-loan-option span {
+  color: #555;
+}
+
+
+.daybook-no-option {
+  padding: 12px;
+
+  text-align: center;
+
+  color: #888;
+
+  font-size: 11px;
+}
+
+
+/* =========================================================
+   EMPTY SELECT
+========================================================= */
+
+.daybook-empty-select {
+  position: relative;
+}
+
+
+.daybook-empty-select input {
+  padding-right: 55px;
+}
+
+
+.daybook-empty-select svg {
+  position: absolute;
+
+  top: 50%;
+
+  transform: translateY(-50%);
+
+  font-size: 10px;
+
+  color: #666;
+
+  pointer-events: none;
+}
+
+
+.daybook-empty-select svg:first-of-type {
+  right: 28px;
+}
+
+
+.daybook-empty-select svg:last-of-type {
+  right: 8px;
+}
+
+
+/* =========================================================
+   VOUCHER
+========================================================= */
+
+.daybook-voucher-select {
+  position: relative;
+}
+
+
+.daybook-voucher-select select {
+  appearance: none;
+
+  padding-right: 30px;
+
+  cursor: pointer;
+}
+
+
+.daybook-voucher-select svg {
+  position: absolute;
+
+  right: 10px;
+  top: 50%;
+
+  transform: translateY(-50%);
+
+  font-size: 10px;
+
+  color: #555;
+
+  pointer-events: none;
+}
+
+
+/* =========================================================
+   DATE
+========================================================= */
+
+.daybook-date-input {
+  position: relative;
+}
+
+
+.daybook-date-input input {
+  padding-right: 35px;
+}
+
+
+.daybook-date-input svg {
+  position: absolute;
+
+  right: 10px;
+  top: 50%;
+
+  transform: translateY(-50%);
+
+  color: #444;
+
+  font-size: 12px;
+
+  pointer-events: none;
+}
+
+
+/* =========================================================
+   GET RECORDS
+========================================================= */
+
+.daybook-get-record-area {
+  display: flex;
+
+  align-items: flex-end;
+}
+
+
+.daybook-get-record-btn {
+  width: 170px;
+
+  height: 35px;
+
+  border: none;
+
+  border-radius: 2px;
+
+  background: #2885a7;
+
+  color: white;
+
+  display: flex;
+
+  justify-content: center;
+
+  align-items: center;
+
+  gap: 7px;
+
+  font-size: 11px;
+
+  font-weight: 600;
+
+  cursor: pointer;
+
+  transition: .2s;
+}
+
+
+.daybook-get-record-btn:hover {
+  background: #1d708f;
+}
+
+
+/* =========================================================
+   LEDGER CARD
+========================================================= */
+
+.daybook-ledger-card {
+  width: 100%;
+
+  margin-top: 10px;
+
+  background: #fff;
+
+  border: 1px solid #d0d0d0;
+
+  border-radius: 5px;
+
+  padding: 7px;
+
+  box-shadow: 0 2px 6px rgba(0, 0, 0, .05);
+}
+
+
+/* =========================================================
+   LEDGER HEADER
+========================================================= */
+
+.daybook-ledger-header {
+  min-height: 56px;
+
+  border-top: 2px solid #294f68;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  padding: 5px 5px 3px;
+}
+
+
+.daybook-ledger-header h2 {
+  margin: 0;
+
+  font-size: 18px;
+
+  font-weight: 500;
+}
+
+
+.daybook-ledger-header p {
+  margin: 2px 0 0;
+
+  font-size: 11px;
+}
+
+
+/* =========================================================
+   HEADER BUTTONS
+========================================================= */
+
+.daybook-header-actions {
+  display: flex;
+
+  align-items: center;
+
+  gap: 7px;
+}
+
+
+.daybook-download-btn {
+  height: 30px;
+
+  border: none;
+
+  background: transparent;
+
+  color: #666;
+
+  font-size: 10px;
+
+  cursor: pointer;
+}
+
+
+.daybook-download-btn:hover {
+  color: #277b98;
+}
+
+
+.daybook-print-btn {
+  height: 30px;
+
+  padding: 0 10px;
+
+  border: none;
+
+  border-radius: 2px;
+
+  background: #315e76;
+
+  color: #fff;
+
+  font-size: 10px;
+
+  cursor: pointer;
+}
+
+
+.daybook-print-btn:hover {
+  background: #244c61;
+}
+
+
+/* =========================================================
+   TABLE CONTROLS
+========================================================= */
+
+.daybook-table-controls {
+  width: 100%;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  padding: 5px;
+}
+
+
+.daybook-table-controls select {
+  width: 60px;
+
+  height: 30px;
+
+  border: 1px solid #c8c8c8;
+
+  background: #fff;
+
+  outline: none;
+
+  padding: 0 7px;
+
+  font-size: 11px;
+}
+
+
+.daybook-table-search input {
+  width: 220px;
+
+  height: 30px;
+
+  border: 1px solid #c8c8c8;
+
+  outline: none;
+
+  padding: 0 10px;
+
+  font-size: 11px;
+}
+
+
+.daybook-table-search input:focus {
+  border-color: #3482a0;
+}
+
+
+/* =========================================================
+   TABLE WRAPPER
+========================================================= */
+
+.daybook-table-wrapper {
+  width: 100%;
+
+  overflow-x: auto;
+}
+
+
+/* =========================================================
+   TABLE
+========================================================= */
+
+.daybook-table {
+  width: 100%;
+
+  min-width: 900px;
+
+  border-collapse: collapse;
+
+  table-layout: auto;
+
+  font-size: 10px;
+}
+
+
+/* =========================================================
+   THEAD
+========================================================= */
+
+.daybook-table thead th {
+  height: 34px;
+
+  padding: 4px 7px;
+
+  border: 1px solid #9f9878;
+
+  background: #eee8c9;
+
+  color: #333;
+
+  text-align: center;
+
+  font-size: 9px;
+
+  font-weight: 700;
+
+  white-space: nowrap;
+}
+
+
+/* =========================================================
+   TBODY
+========================================================= */
+
+.daybook-table tbody td {
+  height: 34px;
+
+  padding: 5px 8px;
+
+  border: 1px solid #d1d1d1;
+
+  background: #fff;
+
+  text-align: center;
+
+  color: #444;
+
+  white-space: nowrap;
+}
+
+
+.daybook-table tbody tr:hover td {
+  background: #f5fafc;
+}
+
+
+/* =========================================================
+   LOAN
+========================================================= */
+
+.daybook-loan-id {
+  color: #2c6b83 !important;
+
+  font-weight: 600;
+}
+
+
+/* =========================================================
+   VOUCHER BADGES
+========================================================= */
+
+.daybook-voucher-badge {
+  display: inline-block;
+
+  padding: 4px 7px;
+
+  min-width: 60px;
+
+  border-radius: 2px;
+
+  font-size: 8px;
+
+  font-weight: 700;
+}
+
+
+.daybook-voucher-badge.receipt {
+  background: #e4f2e8;
+
+  color: #287346;
+}
+
+
+.daybook-voucher-badge.payment {
+  background: #fae6e6;
+
+  color: #a13e3e;
+}
+
+
+.daybook-voucher-badge.contra {
+  background: #e6f0f6;
+
+  color: #356d88;
+}
+
+
+.daybook-voucher-badge.journal {
+  background: #f2eddf;
+
+  color: #76642e;
+}
+
+
+.daybook-voucher-badge.fund-transfer {
+  background: #ececf8;
+
+  color: #595990;
+}
+
+
+/* =========================================================
+   AMOUNT
+========================================================= */
+
+.daybook-amount-heading {
+  margin-top: 2px;
+
+  font-size: 8px;
+}
+
+
+.daybook-dr {
+  color: #a13d3d !important;
+
+  font-weight: 600;
+}
+
+
+.daybook-cr {
+  color: #277245 !important;
+
+  font-weight: 600;
+}
+
+
+/* =========================================================
+   NO DATA
+========================================================= */
+
+.daybook-no-data {
+  height: 70px !important;
+
+  color: #999 !important;
+
+  font-size: 12px !important;
+}
+
+
+/* =========================================================
+   FOOTER / TOTAL
+========================================================= */
+
+.daybook-table tfoot td {
+  height: 30px;
+
+  background: #eee8c9;
+
+  border: 1px solid #9f9878;
+
+  font-size: 9px;
+
+  font-weight: 700;
+}
+
+
+.daybook-total-label {
+  text-align: right !important;
+
+  padding-right: 15px !important;
+}
+
+
+.daybook-total-dr {
+  color: #a13d3d;
+}
+
+
+.daybook-total-cr {
+  color: #277245;
+}
+
+
+/* =========================================================
+   PAGINATION
+========================================================= */
+
+.daybook-table-footer {
+  display: flex;
+
+  justify-content: space-between;
+
+  align-items: center;
+
+  padding: 9px 5px 3px;
+}
+
+
+.daybook-showing {
+  color: #777;
+
+  font-size: 10px;
+}
+
+
+.daybook-pagination {
+  display: flex;
+
+  gap: 4px;
+}
+
+
+.daybook-pagination button {
+  min-width: 30px;
+
+  height: 27px;
+
+  border: 1px solid #ccc;
+
+  background: #fff;
+
+  border-radius: 2px;
+
+  color: #555;
+
+  font-size: 9px;
+
+  cursor: pointer;
+}
+
+
+.daybook-pagination button:hover:not(:disabled) {
+  background: #edf6fa;
+
+  border-color: #3b829f;
+}
+
+
+.daybook-pagination button.active {
+  background: #287c9b;
+
+  color: #fff;
+
+  border-color: #287c9b;
+}
+
+
+.daybook-pagination button:disabled {
+  opacity: .45;
+
+  cursor: not-allowed;
+}
+
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media (max-width: 1100px) {
+
+  .daybook-filter-top-row {
+    grid-template-columns: 1fr 1fr;
+  }
+
+
+  .daybook-filter-bottom-row {
+    grid-template-columns: 1fr 1fr;
+  }
+
+}
+
+
+@media (max-width: 768px) {
+
+  .daybook-page {
+    padding: 8px;
+  }
+
+
+  .daybook-breadcrumb {
+    display: none;
+  }
+
+
+  .daybook-filter-top-row,
+  .daybook-filter-bottom-row {
+    grid-template-columns: 1fr;
+  }
+
+
+  .daybook-get-record-btn {
+    width: 100%;
+  }
+
+
+  .daybook-ledger-header {
+    flex-direction: column;
+
+    align-items: flex-start;
+
+    gap: 8px;
+  }
+
+
+  .daybook-header-actions {
+    width: 100%;
+  }
+
+
+  .daybook-download-btn,
+  .daybook-print-btn {
+    flex: 1;
+  }
+
+
+  .daybook-table-controls {
+    flex-direction: column;
+
+    align-items: stretch;
+
+    gap: 8px;
+  }
+
+
+  .daybook-table-search input {
+    width: 100%;
+  }
+
+
+  .daybook-table-footer {
+    flex-direction: column;
+
+    align-items: flex-start;
+
+    gap: 8px;
+  }
+
+}
+
+
+/* =========================================================
+   PRINT
+========================================================= */
+
+@media print {
+
+  .daybook-page {
+    background: #fff;
+  }
+
+
+  .daybook-filter-card {
+    box-shadow: none;
+  }
+
+
+  .daybook-header-actions,
+  .daybook-table-controls,
+  .daybook-table-footer {
+    display: none;
+  }
+
+}

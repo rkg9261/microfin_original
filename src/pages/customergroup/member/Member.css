@@ -1,0 +1,1303 @@
+/* =========================================================
+   MEMBER PAGE
+========================================================= */
+
+.member-page {
+
+    width: 100%;
+
+    min-height: 100vh;
+
+    padding: 25px 30px;
+
+    background: #f5f7fa;
+
+    box-sizing: border-box;
+
+}
+
+
+/* =========================================================
+   PAGE TITLE
+========================================================= */
+
+.member-page-title {
+
+    margin-bottom: 15px;
+
+}
+
+
+.member-page-title h1 {
+
+    margin: 0;
+
+    font-size: 18px;
+
+    font-weight: 700;
+
+    color: #1f2937;
+
+}
+
+
+/* =========================================================
+   FILTER CARD
+========================================================= */
+
+.member-filter-card {
+
+    background: #fff;
+
+    border: 1px solid #d9dee7;
+
+    border-radius: 10px;
+
+    padding: 18px 20px;
+
+    margin-bottom: 18px;
+
+    box-shadow:
+        0 2px 10px
+        rgba(0, 0, 0, .04);
+
+}
+
+
+.member-filter-title {
+
+    margin-bottom: 15px;
+
+}
+
+
+.member-filter-title span {
+
+    font-size: 14px;
+
+    font-weight: 700;
+
+    color: #334155;
+
+}
+
+
+/* =========================================================
+   FILTER GRID
+========================================================= */
+
+.member-filter-grid {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, 1fr);
+
+    gap: 18px;
+
+}
+
+
+.member-filter-group {
+
+    display: flex;
+
+    flex-direction: column;
+
+}
+
+
+.member-filter-group label {
+
+    margin-bottom: 7px;
+
+    font-size: 11px;
+
+    font-weight: 700;
+
+    color: #374151;
+
+}
+
+
+.member-filter-group label span {
+
+    color: #ef4444;
+
+}
+
+
+.member-filter-group input,
+
+.member-filter-group select {
+
+    width: 100%;
+
+    height: 38px;
+
+    padding: 0 10px;
+
+    border: 1px solid #cfd5df;
+
+    border-radius: 5px;
+
+    background: #fff;
+
+    color: #374151;
+
+    font-size: 12px;
+
+    outline: none;
+
+    box-sizing: border-box;
+
+}
+
+
+.member-filter-group input:focus,
+
+.member-filter-group select:focus {
+
+    border-color: #159bc2;
+
+    box-shadow:
+        0 0 0 2px
+        rgba(21, 155, 194, .10);
+
+}
+
+
+/* =========================================================
+   FILTER BUTTONS
+========================================================= */
+
+.member-filter-actions {
+
+    display: flex;
+
+    gap: 10px;
+
+    margin-top: 15px;
+
+}
+
+
+.member-search-button {
+
+    height: 36px;
+
+    padding: 0 18px;
+
+    border: none;
+
+    border-radius: 5px;
+
+    background: #0799c8;
+
+    color: #fff;
+
+    font-size: 12px;
+
+    font-weight: 600;
+
+    cursor: pointer;
+
+}
+
+
+.member-search-button:hover {
+
+    background: #057fa8;
+
+}
+
+
+.member-reset-button {
+
+    height: 36px;
+
+    padding: 0 18px;
+
+    border: none;
+
+    border-radius: 5px;
+
+    background: #ef4444;
+
+    color: #fff;
+
+    font-size: 12px;
+
+    font-weight: 600;
+
+    cursor: pointer;
+
+}
+
+
+/* =========================================================
+   TABLE CARD
+========================================================= */
+
+.member-table-card {
+
+    background: #fff;
+
+    border: 1px solid #d9dee7;
+
+    border-radius: 10px;
+
+    overflow: hidden;
+
+    box-shadow:
+        0 2px 10px
+        rgba(0, 0, 0, .04);
+
+}
+
+
+/* =========================================================
+   TABLE HEADER
+========================================================= */
+
+.member-table-header {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    padding: 15px 18px;
+
+}
+
+
+.member-table-header h2 {
+
+    margin: 0 0 6px;
+
+    font-size: 17px;
+
+    color: #374151;
+
+}
+
+
+.member-table-header p {
+
+    margin: 0;
+
+    color: #64748b;
+
+    font-size: 11px;
+
+}
+
+
+.member-table-header-actions {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 8px;
+
+}
+
+
+.member-download-button {
+
+    height: 34px;
+
+    padding: 0 13px;
+
+    border: none;
+
+    border-radius: 5px;
+
+    background: #159bc2;
+
+    color: #fff;
+
+    font-size: 11px;
+
+    cursor: pointer;
+
+}
+
+
+.member-download-button:hover {
+
+    background: #087fa3;
+
+}
+
+
+/* =========================================================
+   TABLE CONTROLS
+========================================================= */
+
+.member-table-controls {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    padding: 0 18px 15px;
+
+}
+
+
+.member-entry-select {
+
+    width: 55px;
+
+    height: 34px;
+
+    border: 1px solid #cfd5df;
+
+    border-radius: 5px;
+
+    padding: 0 7px;
+
+    outline: none;
+
+}
+
+
+.member-search-box {
+
+    display: flex;
+
+    align-items: center;
+
+    height: 34px;
+
+    border: 1px solid #cfd5df;
+
+    border-radius: 5px;
+
+    overflow: hidden;
+
+}
+
+
+.member-search-box input {
+
+    width: 200px;
+
+    height: 100%;
+
+    border: none;
+
+    outline: none;
+
+    padding: 0 10px;
+
+    font-size: 12px;
+
+}
+
+
+.member-search-box span {
+
+    width: 35px;
+
+    text-align: center;
+
+}
+
+
+/* =========================================================
+   TABLE WRAPPER
+========================================================= */
+
+.member-table-wrapper {
+
+    width: 100%;
+
+    overflow-x: auto;
+
+}
+
+
+/* =========================================================
+   TABLE
+========================================================= */
+
+.member-table {
+
+    width: 100%;
+
+    min-width: 1600px;
+
+    border-collapse: collapse;
+
+}
+
+
+.member-table th {
+
+    background: #2388b0;
+
+    color: #fff;
+
+    padding: 11px 8px;
+
+    font-size: 10px;
+
+    font-weight: 700;
+
+    text-align: center;
+
+    white-space: nowrap;
+
+    border-right:
+        1px solid
+        rgba(255,255,255,.25);
+
+}
+
+
+.member-table td {
+
+    padding: 10px 8px;
+
+    border-bottom:
+        1px solid #edf0f4;
+
+    color: #475569;
+
+    font-size: 10px;
+
+    text-align: center;
+
+    vertical-align: middle;
+
+}
+
+
+.member-table tbody tr:hover {
+
+    background: #f8fbfd;
+
+}
+
+
+/* =========================================================
+   MEMBER DETAILS
+========================================================= */
+
+.member-details-cell {
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: flex-start;
+
+    min-width: 130px;
+
+}
+
+
+.member-details-cell strong {
+
+    color: #1681aa;
+
+    font-size: 10px;
+
+}
+
+
+.member-details-cell small {
+
+    color: #64748b;
+
+    font-size: 9px;
+
+}
+
+
+/* =========================================================
+   LOCATION
+========================================================= */
+
+.member-location {
+
+    min-width: 90px;
+
+    color: #475569;
+
+}
+
+
+.member-agent {
+
+    min-width: 100px;
+
+    color: #475569;
+
+}
+
+
+.member-branch {
+
+    min-width: 100px;
+
+    color: #475569;
+
+}
+
+
+/* =========================================================
+   ACTION
+========================================================= */
+
+.member-action-buttons {
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    gap: 4px;
+
+}
+
+
+.member-action-buttons button {
+
+    display: inline-flex;
+
+}
+
+
+/* =========================================================
+   KYC
+========================================================= */
+
+.member-kyc-badge {
+
+    width: 21px;
+
+    height: 21px;
+
+    display: inline-flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    border-radius: 4px;
+
+    font-size: 12px;
+
+    font-weight: 700;
+
+}
+
+
+.member-kyc-badge.verified {
+
+    background: #dcfce7;
+
+    color: #16a34a;
+
+}
+
+
+.member-kyc-badge.pending {
+
+    background: #fef3c7;
+
+    color: #d97706;
+
+}
+
+
+/* =========================================================
+   STATUS
+========================================================= */
+
+.member-status-badge {
+
+    width: 22px;
+
+    height: 22px;
+
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border-radius: 50%;
+
+}
+
+
+.member-status-badge.active {
+
+    background: #dcfce7;
+
+    color: #16a34a;
+
+}
+
+
+.member-status-badge.inactive {
+
+    background: #fee2e2;
+
+    color: #dc2626;
+
+}
+
+
+/* =========================================================
+   NO DATA
+========================================================= */
+
+.member-no-data {
+
+    height: 100px;
+
+    text-align: center !important;
+
+    color: #94a3b8 !important;
+
+}
+
+
+/* =========================================================
+   TABLE FOOTER
+========================================================= */
+
+.member-table-footer {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    padding: 15px 18px;
+
+    color: #64748b;
+
+    font-size: 11px;
+
+}
+
+
+.member-pagination {
+
+    display: flex;
+
+    gap: 3px;
+
+}
+
+
+.member-pagination button {
+
+    min-width: 32px;
+
+    height: 30px;
+
+    border: none;
+
+    border-radius: 4px;
+
+    background: transparent;
+
+    color: #64748b;
+
+    cursor: pointer;
+
+    font-size: 11px;
+
+}
+
+
+.member-pagination button:hover:not(:disabled) {
+
+    background: #e8f6fb;
+
+    color: #087fa3;
+
+}
+
+
+.member-pagination button.active {
+
+    background: #2388b0;
+
+    color: #fff;
+
+}
+
+
+.member-pagination button:disabled {
+
+    opacity: .4;
+
+    cursor: not-allowed;
+
+}
+
+
+/* =========================================================
+   MEMBER FORM
+========================================================= */
+
+.member-form-modal {
+
+    max-width: 950px !important;
+
+    width: 95%;
+
+}
+
+
+.member-form {
+
+    padding: 25px;
+
+    max-height: 75vh;
+
+    overflow-y: auto;
+
+}
+
+
+/* =========================================================
+   FORM SECTION
+========================================================= */
+
+.member-form-section {
+
+    margin-bottom: 25px;
+
+    padding: 18px;
+
+    border: 1px solid #e1e6ed;
+
+    border-radius: 7px;
+
+    background: #fff;
+
+}
+
+
+.member-section-title {
+
+    margin-bottom: 18px;
+
+    padding-bottom: 8px;
+
+    border-bottom:
+        2px solid #159bc2;
+
+    color: #087fa3;
+
+    font-size: 14px;
+
+    font-weight: 700;
+
+}
+
+
+/* =========================================================
+   FORM GRID
+========================================================= */
+
+.member-form-grid {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, 1fr);
+
+    gap: 18px 25px;
+
+}
+
+
+.member-full-width {
+
+    grid-column:
+        1 / -1;
+
+}
+
+
+.member-form .common-form-group {
+
+    display: flex;
+
+    flex-direction: column;
+
+}
+
+
+.member-form .common-form-group label {
+
+    margin-bottom: 7px;
+
+    color: #374151;
+
+    font-size: 12px;
+
+    font-weight: 600;
+
+}
+
+
+.member-form .common-form-group label span {
+
+    color: #ef4444;
+
+    margin-left: 2px;
+
+}
+
+
+.member-form .common-form-group input,
+
+.member-form .common-form-group select,
+
+.member-form .common-form-group textarea {
+
+    width: 100%;
+
+    box-sizing: border-box;
+
+    border: 1px solid #cfd5df;
+
+    border-radius: 5px;
+
+    background: #fff;
+
+    color: #374151;
+
+    font-size: 12px;
+
+    outline: none;
+
+}
+
+
+.member-form .common-form-group input,
+
+.member-form .common-form-group select {
+
+    height: 40px;
+
+    padding: 0 11px;
+
+}
+
+
+.member-form .common-form-group textarea {
+
+    padding: 10px 11px;
+
+    resize: vertical;
+
+    min-height: 80px;
+
+}
+
+
+.member-form .common-form-group input:focus,
+
+.member-form .common-form-group select:focus,
+
+.member-form .common-form-group textarea:focus {
+
+    border-color: #159bc2;
+
+    box-shadow:
+        0 0 0 3px
+        rgba(21,155,194,.10);
+
+}
+
+
+.member-form .common-form-group input:disabled {
+
+    background: #f3f4f6;
+
+    color: #64748b;
+
+    cursor: not-allowed;
+
+}
+
+
+/* =========================================================
+   ERROR
+========================================================= */
+
+.member-form .error-input {
+
+    border-color: #ef4444 !important;
+
+}
+
+
+.member-form .error-text {
+
+    margin-top: 5px;
+
+    color: #ef4444;
+
+    font-size: 10px;
+
+}
+
+
+/* =========================================================
+   FORM BUTTONS
+========================================================= */
+
+.member-form-buttons {
+
+    display: flex;
+
+    justify-content: flex-end;
+
+    gap: 10px;
+
+    padding-top: 5px;
+
+}
+
+
+/* =========================================================
+   VIEW MODAL
+========================================================= */
+
+.member-view-overlay {
+
+    position: fixed;
+
+    inset: 0;
+
+    z-index: 9999;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    padding: 20px;
+
+    background:
+        rgba(0,0,0,.55);
+
+}
+
+
+.member-view-modal {
+
+    width: 850px;
+
+    max-width: 95%;
+
+    max-height: 90vh;
+
+    background: #fff;
+
+    border-radius: 8px;
+
+    overflow: hidden;
+
+    box-shadow:
+        0 15px 50px
+        rgba(0,0,0,.25);
+
+}
+
+
+.member-view-header {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    padding: 15px 20px;
+
+    background:
+        linear-gradient(
+            90deg,
+            #0799c8,
+            #16afd2
+        );
+
+}
+
+
+.member-view-header h2 {
+
+    margin: 0;
+
+    color: #fff;
+
+    font-size: 18px;
+
+}
+
+
+.member-view-body {
+
+    padding: 25px;
+
+    max-height: 70vh;
+
+    overflow-y: auto;
+
+}
+
+
+.member-view-grid {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, 1fr);
+
+    border-top:
+        1px solid #e5e7eb;
+
+    border-left:
+        1px solid #e5e7eb;
+
+}
+
+
+.member-view-grid > div {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 5px;
+
+    padding: 13px;
+
+    border-right:
+        1px solid #e5e7eb;
+
+    border-bottom:
+        1px solid #e5e7eb;
+
+}
+
+
+.member-view-grid b {
+
+    color: #475569;
+
+    font-size: 10px;
+
+}
+
+
+.member-view-grid span {
+
+    color: #1f2937;
+
+    font-size: 13px;
+
+}
+
+
+.member-active-status {
+
+    display: inline-block;
+
+    padding: 4px 9px;
+
+    border-radius: 12px;
+
+    background: #dcfce7;
+
+    color: #15803d !important;
+
+    font-size: 10px !important;
+
+}
+
+
+.member-inactive-status {
+
+    display: inline-block;
+
+    padding: 4px 9px;
+
+    border-radius: 12px;
+
+    background: #fee2e2;
+
+    color: #dc2626 !important;
+
+    font-size: 10px !important;
+
+}
+
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media (max-width: 1100px) {
+
+    .member-filter-grid {
+
+        grid-template-columns:
+            repeat(2, 1fr);
+
+    }
+
+}
+
+
+@media (max-width: 768px) {
+
+    .member-page {
+
+        padding: 15px;
+
+    }
+
+
+    .member-filter-grid {
+
+        grid-template-columns: 1fr;
+
+    }
+
+
+    .member-table-header {
+
+        flex-direction: column;
+
+        align-items: flex-start;
+
+        gap: 15px;
+
+    }
+
+
+    .member-table-header-actions {
+
+        width: 100%;
+
+        justify-content: flex-end;
+
+    }
+
+
+    .member-form-grid {
+
+        grid-template-columns: 1fr;
+
+    }
+
+
+    .member-full-width {
+
+        grid-column: auto;
+
+    }
+
+
+    .member-view-grid {
+
+        grid-template-columns: 1fr;
+
+    }
+
+
+    .member-table-footer {
+
+        flex-direction: column;
+
+        align-items: flex-start;
+
+        gap: 15px;
+
+    }
+
+}
+
+
+@media (max-width: 500px) {
+
+    .member-page {
+
+        padding: 10px;
+
+    }
+
+
+    .member-table-controls {
+
+        flex-direction: column;
+
+        align-items: stretch;
+
+        gap: 10px;
+
+    }
+
+
+    .member-entry-select {
+
+        width: 100%;
+
+    }
+
+
+    .member-search-box {
+
+        width: 100%;
+
+    }
+
+
+    .member-search-box input {
+
+        flex: 1;
+
+        width: auto;
+
+    }
+
+
+    .member-filter-actions {
+
+        flex-direction: column;
+
+    }
+
+
+    .member-search-button,
+
+    .member-reset-button {
+
+        width: 100%;
+
+    }
+
+}

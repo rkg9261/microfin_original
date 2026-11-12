@@ -1,0 +1,293 @@
+/* =========================================
+   BRANCHES PAGE
+========================================= */
+
+.branches-page{
+    padding:25px;
+    background:#f5f7fb;
+    min-height:100vh;
+}
+
+/* =========================================
+   HEADER
+========================================= */
+
+.branches-header{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    margin-bottom:20px;
+}
+
+.branches-header h2{
+    font-size:28px;
+    font-weight:700;
+    color:#1e293b;
+}
+
+.branches-header p{
+    margin-top:5px;
+    font-size:14px;
+    color:#64748b;
+}
+
+/* =========================================
+   MODAL
+========================================= */
+
+.branches-modal{
+    position:fixed;
+    inset:0;
+    background:rgba(0,0,0,.45);
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    z-index:99999;
+}
+
+.branches-modal-content{
+    width:92%;
+    max-width:1100px;
+    background:#fff;
+    border-radius:15px;
+    overflow:hidden;
+    animation:popup .25s ease;
+}
+
+@keyframes popup{
+
+    from{
+        transform:scale(.92);
+        opacity:0;
+    }
+
+    to{
+        transform:scale(1);
+        opacity:1;
+    }
+
+}
+
+/* =========================================
+   POPUP HEADER
+========================================= */
+
+.branches-modal-header{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:18px 25px;
+    background:#2563eb;
+    color:#fff;
+}
+
+.branches-modal-header h2{
+    font-size:22px;
+    font-weight:700;
+}
+
+/* =========================================
+   FORM
+========================================= */
+
+.branches-form{
+    padding:25px;
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:22px;
+}
+
+.branches-form-group{
+    display:flex;
+    flex-direction:column;
+}
+
+.branches-form-group label{
+    font-size:14px;
+    font-weight:600;
+    margin-bottom:8px;
+    color:#334155;
+}
+
+.branches-form-group input,
+.branches-form-group select{
+
+    width:100%;
+    height:46px;
+    border:1px solid #dbe4ee;
+    border-radius:10px;
+    padding:0 14px;
+    font-size:14px;
+    outline:none;
+    background:#fff;
+    transition:.3s;
+}
+
+.branches-form-group input:focus,
+.branches-form-group select:focus{
+
+    border-color:#2563eb;
+
+}
+
+/* =========================================
+   RADIO BUTTONS
+========================================= */
+
+.radio-group{
+    display:flex;
+    align-items:center;
+    gap:25px;
+    min-height:46px;
+}
+
+.radio-group label{
+    display:flex;
+    align-items:center;
+    gap:8px;
+    margin:0;
+    font-size:14px;
+    font-weight:500;
+    color:#475569;
+    cursor:pointer;
+}
+
+.radio-group input[type="radio"]{
+    width:18px;
+    height:18px;
+    accent-color:#2563eb;
+    cursor:pointer;
+}
+
+/* =========================================
+   BUTTONS
+========================================= */
+
+.branches-form-buttons{
+    grid-column:1 / -1;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    gap:15px;
+    margin-top:10px;
+    flex-wrap:wrap;
+}
+
+/* =========================================
+   SCROLLBAR
+========================================= */
+
+.branches-modal-content{
+    max-height:90vh;
+    overflow-y:auto;
+}
+
+.branches-modal-content::-webkit-scrollbar{
+    width:8px;
+}
+
+.branches-modal-content::-webkit-scrollbar-track{
+    background:#f1f5f9;
+}
+
+.branches-modal-content::-webkit-scrollbar-thumb{
+    background:#cbd5e1;
+    border-radius:10px;
+}
+
+.branches-modal-content::-webkit-scrollbar-thumb:hover{
+    background:#94a3b8;
+}
+
+/* =========================================
+   TABLET
+========================================= */
+
+@media (max-width:992px){
+
+    .branches-header{
+        flex-direction:column;
+        align-items:flex-start;
+        gap:15px;
+    }
+
+    .branches-form{
+        grid-template-columns:1fr;
+    }
+
+}
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width:768px){
+
+    .branches-page{
+        padding:15px;
+    }
+
+    .branches-header h2{
+        font-size:22px;
+    }
+
+    .branches-header p{
+        font-size:13px;
+    }
+
+    .branches-modal-content{
+        width:96%;
+        border-radius:12px;
+    }
+
+    .branches-modal-header{
+        padding:15px 18px;
+    }
+
+    .branches-modal-header h2{
+        font-size:18px;
+    }
+
+    .branches-form{
+        grid-template-columns:1fr;
+        padding:18px;
+        gap:15px;
+    }
+
+    .radio-group{
+        flex-direction:column;
+        align-items:flex-start;
+        gap:10px;
+    }
+
+    .branches-form-buttons{
+        flex-direction:column;
+    }
+
+    .branches-form-buttons button{
+        width:100%;
+    }
+
+}
+
+/* =========================================
+   SMALL MOBILE
+========================================= */
+
+@media (max-width:480px){
+
+    .branches-page{
+        padding:10px;
+    }
+
+    .branches-form-group label{
+        font-size:13px;
+    }
+
+    .branches-form-group input,
+    .branches-form-group select{
+        height:42px;
+        font-size:13px;
+    }
+
+}

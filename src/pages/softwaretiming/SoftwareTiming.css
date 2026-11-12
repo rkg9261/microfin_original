@@ -1,0 +1,273 @@
+/* ==========================================
+   PAGE
+========================================== */
+
+.software-timing-page{
+
+    width:100%;
+
+    min-height:100vh;
+
+    padding:20px;
+
+    background:#f4f7fb;
+
+}
+
+/* ==========================================
+   HEADER
+========================================== */
+
+.software-timing-header{
+
+    margin-bottom:20px;
+
+}
+
+.software-timing-header h2{
+
+    margin:0;
+
+    font-size:28px;
+
+    font-weight:700;
+
+    color:#1f2937;
+
+}
+
+/* ==========================================
+   CARD
+========================================== */
+
+.software-card{
+
+    width:100%;
+
+    background:#fff;
+
+    border:1px solid #e5e7eb;
+
+    border-radius:12px;
+
+    overflow:hidden;
+
+    box-shadow:0 3px 12px rgba(0,0,0,.08);
+
+}
+
+/* ==========================================
+   CARD HEADER
+========================================== */
+
+.software-card-header{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    padding:18px 22px;
+
+    border-bottom:1px solid #e5e7eb;
+
+    background:#ffffff;
+
+}
+
+.software-card-header h3{
+
+    margin:0;
+
+    font-size:26px;
+
+    font-weight:600;
+
+    color:#111827;
+
+    letter-spacing:.3px;
+
+}
+
+/* ==========================================
+   TABLE
+========================================== */
+/* 
+.software-card .common-table{
+
+    width:100%;
+
+    border-collapse:collapse;
+
+}
+
+.software-card .common-table tbody tr{
+
+    border-bottom:1px solid #eef2f7;
+
+}
+
+.software-card .common-table tbody tr:last-child{
+
+    border-bottom:none;
+
+}
+
+.software-card .common-table th{
+
+    width:50%;
+
+    text-align:left;
+
+    padding:22px;
+
+    font-size:16px;
+
+    font-weight:700;
+
+    color:#374151;
+
+    background:#ffffff;
+
+}
+
+.software-card .common-table td{
+
+    padding:22px;
+
+    font-size:16px;
+
+    font-weight:600;
+
+    color:#111827;
+
+    background:#ffffff;
+
+} */
+
+/* ==========================================
+   STATUS
+========================================== */
+
+.status-active{
+
+    display:inline-block;
+
+    padding:6px 14px;
+
+    background:#dcfce7;
+
+    color:#15803d;
+
+    border-radius:30px;
+
+    font-size:13px;
+
+    font-weight:700;
+
+}
+
+.status-inactive{
+
+    display:inline-block;
+
+    padding:6px 14px;
+
+    background:#fee2e2;
+
+    color:#dc2626;
+
+    border-radius:30px;
+
+    font-size:13px;
+
+    font-weight:700;
+
+}
+
+/* ==========================================
+   EDIT BUTTON ALIGNMENT
+========================================== */
+
+.software-card-header .btn-edit{
+
+    min-width:48px;
+
+}
+
+/* ==========================================
+   RESPONSIVE
+========================================== */
+
+@media (max-width:768px){
+
+    .software-timing-page{
+
+        padding:15px;
+
+    }
+
+    .software-card-header{
+
+        flex-direction:column;
+
+        align-items:flex-start;
+
+        gap:15px;
+
+    }
+
+    .software-card-header h3{
+
+        font-size:22px;
+
+    }
+
+    .software-card .common-table th,
+
+    .software-card .common-table td{
+
+        display:block;
+
+        width:100%;
+
+        padding:14px 16px;
+
+    }
+
+    .software-card .common-table tr{
+
+        display:block;
+
+        border-bottom:1px solid #e5e7eb;
+
+        padding:10px 0;
+
+    }
+
+}
+
+@media (max-width:480px){
+
+    .software-timing-header h2{
+
+        font-size:22px;
+
+    }
+
+    .software-card-header h3{
+
+        font-size:18px;
+
+    }
+
+    .software-card .common-table th,
+
+    .software-card .common-table td{
+
+        font-size:14px;
+
+    }
+
+}

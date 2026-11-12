@@ -1,0 +1,243 @@
+/* ==========================================
+   PAGE
+========================================== */
+
+.session-master-page{
+    width:100%;
+    min-height:100vh;
+    padding:20px;
+    background:#f5f7fb;
+}
+
+/* ==========================================
+   HEADER
+========================================== */
+
+.session-master-header{
+    margin-bottom:20px;
+}
+
+.session-master-header h2{
+    margin:0;
+    font-size:28px;
+    font-weight:700;
+    color:#1f2937;
+}
+
+/* ==========================================
+   CARD
+========================================== */
+
+.session-card{
+    background:#fff;
+    border-radius:12px;
+    border:1px solid #e5e7eb;
+    box-shadow:0 3px 10px rgba(0,0,0,.08);
+    overflow:hidden;
+}
+
+/* ==========================================
+   CARD HEADER
+========================================== */
+
+.session-card-header{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:18px 20px;
+    border-bottom:1px solid #e5e7eb;
+    background:#fff;
+}
+
+.session-card-header h3{
+    margin:0;
+    font-size:22px;
+    font-weight:700;
+    color:#111827;
+}
+
+/* ==========================================
+   TOOLBAR
+========================================== */
+
+.table-toolbar{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:15px;
+    padding:18px 20px;
+    flex-wrap:wrap;
+}
+
+.table-search{
+    display:flex;
+    align-items:center;
+}
+
+.table-search input{
+    width:250px;
+    max-width:100%;
+    height:42px;
+    border:1px solid #d1d5db;
+    border-radius:8px;
+    padding:0 14px;
+    outline:none;
+    transition:.3s;
+    background:#fff;
+}
+
+.table-search input:focus{
+    border-color:#2563eb;
+    box-shadow:0 0 0 3px rgba(37,99,235,.12);
+}
+
+/* ==========================================
+   TABLE
+========================================== */
+/* 
+.session-card .common-table{
+    width:100%;
+    border-collapse:collapse;
+}
+
+.session-card .common-table th{
+    background:#eef5e4;
+    color:#1f2937;
+    font-size:14px;
+    font-weight:700;
+    padding:14px;
+    border:1px solid #e5e7eb;
+    text-align:left;
+    white-space:nowrap;
+}
+
+.session-card .common-table td{
+    padding:13px;
+    border:1px solid #edf0f5;
+    font-size:14px;
+    color:#374151;
+    background:#fff;
+}
+
+.session-card .common-table tbody tr:hover{
+    background:#f8fbff;
+} */
+
+/* ==========================================
+   STATUS
+========================================== */
+
+.status-active{
+    display:inline-block;
+    padding:5px 12px;
+    background:#16a34a;
+    color:#fff;
+    border-radius:4px;
+    font-size:12px;
+    font-weight:600;
+}
+
+.status-inactive{
+    display:inline-block;
+    padding:5px 12px;
+    background:#dc2626;
+    color:#fff;
+    border-radius:4px;
+    font-size:12px;
+    font-weight:600;
+}
+
+/* ==========================================
+   FOOTER
+========================================== */
+
+.table-footer{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:16px 20px;
+    border-top:1px solid #e5e7eb;
+    flex-wrap:wrap;
+    gap:10px;
+}
+
+.pagination{
+    display:flex;
+    align-items:center;
+    gap:8px;
+}
+
+.page-btn{
+    min-width:38px;
+    height:38px;
+    border:none;
+    border-radius:6px;
+    background:#e5e7eb;
+    cursor:pointer;
+    transition:.3s;
+}
+
+.page-btn:hover{
+    background:#d1d5db;
+}
+
+.page-btn.active{
+    background:#2563eb;
+    color:#fff;
+}
+
+/* ==========================================
+   RESPONSIVE
+========================================== */
+
+@media(max-width:992px){
+
+    .table-toolbar{
+        flex-direction:column;
+        align-items:stretch;
+    }
+
+    .table-search input{
+        width:100%;
+    }
+
+}
+
+@media(max-width:768px){
+
+    .session-master-page{
+        padding:15px;
+    }
+
+    .session-card-header{
+        flex-direction:column;
+        align-items:flex-start;
+        gap:12px;
+    }
+
+    .session-card{
+        overflow-x:auto;
+    }
+
+    .session-card .common-table{
+        min-width:1100px;
+    }
+
+    .table-footer{
+        flex-direction:column;
+        align-items:flex-start;
+    }
+
+}
+
+@media(max-width:480px){
+
+    .session-master-header h2{
+        font-size:22px;
+    }
+
+    .session-card-header h3{
+        font-size:18px;
+    }
+
+}

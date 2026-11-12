@@ -1,0 +1,771 @@
+/* =========================================================
+   PRODUCT LOAN APPROVAL PAGE
+========================================================= */
+
+.product-loan-approval-page {
+  width: 100%;
+  min-height: 100vh;
+
+  padding: 20px;
+
+  background: #f7f8fa;
+
+  box-sizing: border-box;
+
+  color: #333;
+}
+
+
+/* =========================================================
+   PAGE TITLE
+========================================================= */
+
+.product-loan-approval-page-title {
+  font-size: 14px;
+  font-weight: 700;
+
+  margin-bottom: 16px;
+
+  color: #333;
+}
+
+
+/* =========================================================
+   SEARCH CARD
+========================================================= */
+
+.product-loan-approval-search-card {
+  width: 100%;
+
+  background: #fff;
+
+  border: 1px solid #ddd;
+
+  border-radius: 12px;
+
+  padding: 20px;
+
+  box-sizing: border-box;
+
+  margin-bottom: 18px;
+}
+
+
+/* =========================================================
+   SEARCH TITLE
+========================================================= */
+
+.product-loan-approval-search-title {
+  font-size: 16px;
+
+  font-weight: 500;
+
+  color: #444;
+
+  margin-bottom: 25px;
+}
+
+
+/* =========================================================
+   SEARCH GRID
+========================================================= */
+
+.product-loan-approval-search-grid {
+  display: grid;
+
+  grid-template-columns:
+    minmax(250px, 1fr)
+    minmax(250px, 1fr)
+    150px;
+
+  gap: 25px;
+
+  align-items: end;
+}
+
+
+/* =========================================================
+   FIELD
+========================================================= */
+
+.product-loan-approval-field {
+  width: 100%;
+}
+
+
+.product-loan-approval-field label {
+  display: block;
+
+  font-size: 13px;
+
+  font-weight: 700;
+
+  margin-bottom: 8px;
+
+  color: #333;
+}
+
+
+/* =========================================================
+   INPUT
+========================================================= */
+
+.product-loan-approval-field input,
+.product-loan-approval-field select {
+  width: 100%;
+
+  height: 42px;
+
+  padding: 0 12px;
+
+  border: 1px solid #d2d2d2;
+
+  border-radius: 5px;
+
+  background: #fff;
+
+  color: #555;
+
+  font-size: 14px;
+
+  outline: none;
+
+  box-sizing: border-box;
+}
+
+
+.product-loan-approval-field input:focus,
+.product-loan-approval-field select:focus {
+  border-color: #2ba8c5;
+}
+
+
+/* =========================================================
+   BUTTON
+========================================================= */
+
+.product-loan-approval-button-wrapper {
+  display: flex;
+
+  align-items: flex-end;
+}
+
+
+.product-loan-approval-get-record {
+  height: 42px;
+
+  padding: 0 18px;
+
+  border: none;
+
+  border-radius: 4px;
+
+  background: #20a9c8;
+
+  color: #fff;
+
+  font-size: 13px;
+
+  font-weight: 600;
+
+  cursor: pointer;
+
+  transition: 0.25s;
+}
+
+
+.product-loan-approval-get-record:hover {
+  background: #168fae;
+}
+
+
+/* =========================================================
+   TABLE CARD
+========================================================= */
+
+.product-loan-approval-table-card {
+  width: 100%;
+
+  background: #fff;
+
+  border: 1px solid #ddd;
+
+  border-radius: 12px;
+
+  padding: 18px;
+
+  box-sizing: border-box;
+
+  overflow: hidden;
+}
+
+
+/* =========================================================
+   TABLE HEADING
+========================================================= */
+
+.product-loan-approval-table-heading {
+  font-size: 18px;
+
+  font-weight: 400;
+
+  color: #444;
+
+  margin-bottom: 18px;
+}
+
+
+/* =========================================================
+   TABLE TOP
+========================================================= */
+
+.product-loan-approval-table-top {
+  display: flex;
+
+  justify-content: space-between;
+
+  align-items: center;
+
+  margin-bottom: 12px;
+}
+
+
+/* =========================================================
+   ENTRIES
+========================================================= */
+
+.product-loan-approval-entries select {
+  height: 34px;
+
+  min-width: 65px;
+
+  border: 1px solid #ddd;
+
+  border-radius: 4px;
+
+  padding: 0 8px;
+
+  background: #fff;
+
+  outline: none;
+}
+
+
+/* =========================================================
+   SEARCH
+========================================================= */
+
+.product-loan-approval-table-search {
+  width: 180px;
+
+  height: 34px;
+
+  display: flex;
+
+  align-items: center;
+
+  border: 1px solid #ddd;
+
+  border-radius: 4px;
+
+  background: #fff;
+
+  padding: 0 8px;
+
+  box-sizing: border-box;
+}
+
+
+.product-loan-approval-table-search input {
+  width: 100%;
+
+  border: none;
+
+  outline: none;
+
+  font-size: 12px;
+}
+
+
+.product-loan-approval-table-search svg {
+  color: #555;
+
+  font-size: 12px;
+}
+
+
+/* =========================================================
+   TABLE WRAPPER
+========================================================= */
+
+.product-loan-approval-table-wrapper {
+  width: 100%;
+
+  overflow-x: auto;
+}
+
+
+/* =========================================================
+   TABLE
+========================================================= */
+
+.product-loan-approval-table {
+  width: 100%;
+
+  min-width: 1500px;
+
+  border-collapse: collapse;
+
+  table-layout: auto;
+}
+
+
+/* =========================================================
+   TABLE HEADER
+========================================================= */
+
+.product-loan-approval-table thead th {
+  background: #edf3f5;
+
+  color: #333;
+
+  font-size: 11px;
+
+  font-weight: 700;
+
+  padding: 10px 8px;
+
+  text-align: center;
+
+  border-bottom: 1px solid #ddd;
+
+  white-space: nowrap;
+}
+
+
+/* =========================================================
+   TABLE BODY
+========================================================= */
+
+.product-loan-approval-table tbody td {
+  padding: 11px 8px;
+
+  font-size: 11px;
+
+  color: #555;
+
+  border-bottom: 1px solid #eee;
+
+  white-space: nowrap;
+
+  text-align: center;
+}
+
+
+.product-loan-approval-table tbody tr:hover {
+  background: #fafafa;
+}
+
+
+/* =========================================================
+   STATUS
+========================================================= */
+
+.product-loan-approval-status {
+  display: inline-block;
+
+  padding: 4px 8px;
+
+  border-radius: 4px;
+
+  background: #dff3e4;
+
+  color: #258040;
+
+  font-size: 10px;
+
+  font-weight: 700;
+}
+
+
+/* =========================================================
+   ACTION
+========================================================= */
+
+.product-loan-approval-actions {
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  gap: 5px;
+}
+
+
+.product-loan-approval-actions button {
+  width: 32px;
+
+  height: 30px;
+
+  border: none;
+
+  border-radius: 4px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  color: #fff;
+
+  cursor: pointer;
+
+  transition: 0.2s;
+}
+
+
+.product-loan-approval-view {
+  background: #1976d2;
+}
+
+
+.product-loan-approval-view:hover {
+  background: #125ca8;
+}
+
+
+.product-loan-approval-delete {
+  background: #e74c3c;
+}
+
+
+.product-loan-approval-delete:hover {
+  background: #c0392b;
+}
+
+
+/* =========================================================
+   NO DATA
+========================================================= */
+
+.product-loan-approval-no-data {
+  height: 100px;
+
+  text-align: center !important;
+
+  color: #888 !important;
+}
+
+
+/* =========================================================
+   TABLE FOOTER
+========================================================= */
+
+.product-loan-approval-table-footer {
+  display: flex;
+
+  justify-content: space-between;
+
+  align-items: center;
+
+  margin-top: 15px;
+
+  font-size: 12px;
+
+  color: #777;
+}
+
+
+/* =========================================================
+   PAGINATION
+========================================================= */
+
+.product-loan-approval-pagination {
+  display: flex;
+
+  align-items: center;
+
+  gap: 4px;
+}
+
+
+.product-loan-approval-pagination button {
+  height: 30px;
+
+  min-width: 40px;
+
+  padding: 0 8px;
+
+  border: 1px solid #ddd;
+
+  background: #fff;
+
+  color: #777;
+
+  border-radius: 3px;
+
+  font-size: 11px;
+
+  cursor: pointer;
+}
+
+
+.product-loan-approval-pagination button.active {
+  background: #28a8c6;
+
+  border-color: #28a8c6;
+
+  color: #fff;
+}
+
+
+.product-loan-approval-pagination button:disabled {
+  opacity: 0.5;
+
+  cursor: not-allowed;
+}
+
+
+/* =========================================================
+   VIEW MODAL OVERLAY
+========================================================= */
+
+.product-loan-approval-modal-overlay {
+  position: fixed;
+
+  inset: 0;
+
+  background: rgba(0, 0, 0, 0.55);
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  padding: 20px;
+
+  z-index: 9999;
+}
+
+
+/* =========================================================
+   MODAL
+========================================================= */
+
+.product-loan-approval-modal {
+  width: 850px;
+
+  max-width: 95vw;
+
+  max-height: 90vh;
+
+  overflow-y: auto;
+
+  background: #fff;
+
+  border-radius: 6px;
+
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.25);
+}
+
+
+/* =========================================================
+   MODAL HEADER
+========================================================= */
+
+.product-loan-approval-modal-header {
+  height: 58px;
+
+  padding: 0 18px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  background: #21a8cf;
+
+  color: #fff;
+}
+
+
+.product-loan-approval-modal-header h3 {
+  margin: 0;
+
+  font-size: 17px;
+
+  font-weight: 500;
+}
+
+
+.product-loan-approval-modal-close {
+  border: none;
+
+  background: transparent;
+
+  color: #fff;
+
+  font-size: 26px;
+
+  cursor: pointer;
+
+  line-height: 1;
+}
+
+
+/* =========================================================
+   DETAILS GRID
+========================================================= */
+
+.product-loan-approval-details-grid {
+  display: grid;
+
+  grid-template-columns:
+    1fr 1fr;
+
+  gap: 0;
+
+  padding: 20px;
+}
+
+
+/* =========================================================
+   DETAIL
+========================================================= */
+
+.product-loan-approval-detail {
+  min-height: 70px;
+
+  padding: 10px 14px;
+
+  border-bottom: 1px solid #eee;
+
+  box-sizing: border-box;
+}
+
+
+.product-loan-approval-detail span {
+  display: block;
+
+  font-size: 11px;
+
+  color: #888;
+
+  font-weight: 600;
+
+  margin-bottom: 7px;
+}
+
+
+.product-loan-approval-detail strong {
+  display: block;
+
+  font-size: 14px;
+
+  color: #333;
+
+  font-weight: 500;
+}
+
+
+/* =========================================================
+   MODAL FOOTER
+========================================================= */
+
+.product-loan-approval-modal-footer {
+  display: flex;
+
+  justify-content: flex-end;
+
+  padding: 12px 20px;
+
+  border-top: 1px solid #eee;
+}
+
+
+.product-loan-approval-close-button {
+  padding: 9px 20px;
+
+  border: none;
+
+  border-radius: 4px;
+
+  background: #e74c3c;
+
+  color: #fff;
+
+  font-size: 13px;
+
+  cursor: pointer;
+}
+
+
+.product-loan-approval-close-button:hover {
+  background: #c0392b;
+}
+
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media (max-width: 900px) {
+
+  .product-loan-approval-search-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .product-loan-approval-button-wrapper {
+    grid-column: 1 / -1;
+  }
+
+}
+
+
+@media (max-width: 650px) {
+
+  .product-loan-approval-page {
+    padding: 12px;
+  }
+
+  .product-loan-approval-search-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .product-loan-approval-button-wrapper {
+    grid-column: auto;
+  }
+
+  .product-loan-approval-get-record {
+    width: 100%;
+  }
+
+  .product-loan-approval-table-top {
+    flex-direction: column;
+
+    align-items: flex-start;
+
+    gap: 10px;
+  }
+
+  .product-loan-approval-table-search {
+    width: 100%;
+  }
+
+  .product-loan-approval-table-footer {
+    flex-direction: column;
+
+    align-items: flex-start;
+
+    gap: 12px;
+  }
+
+  .product-loan-approval-details-grid {
+    grid-template-columns: 1fr;
+  }
+
+}

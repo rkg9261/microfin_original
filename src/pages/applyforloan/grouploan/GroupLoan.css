@@ -1,0 +1,1006 @@
+/* =========================================================
+   GROUP LOAN PAGE
+========================================================= */
+
+.group-loan-page {
+  width: 100%;
+  min-height: 100vh;
+
+  padding: 20px 24px 40px;
+
+  box-sizing: border-box;
+
+  background: #f7f8fa;
+}
+
+
+/* =========================================================
+   PAGE HEADER
+========================================================= */
+
+.group-loan-page-header {
+  margin-bottom: 18px;
+}
+
+.group-loan-page-header h1 {
+  margin: 0 0 5px;
+
+  font-size: 17px;
+  font-weight: 700;
+
+  color: #333;
+}
+
+
+.group-loan-breadcrumb {
+  display: flex;
+  align-items: center;
+
+  gap: 7px;
+
+  font-size: 11px;
+
+  color: #888;
+}
+
+
+.group-loan-breadcrumb strong {
+  color: #555;
+}
+
+
+/* =========================================================
+   SEARCH
+========================================================= */
+
+.group-loan-search-section {
+  width: 100%;
+
+  padding: 17px 20px;
+
+  margin-bottom: 18px;
+
+  box-sizing: border-box;
+
+  background: #fff;
+
+  border: 1px solid #ddd;
+
+  border-radius: 7px;
+}
+
+
+.group-loan-search-section h3 {
+  margin: 0 0 15px;
+
+  font-size: 13px;
+
+  font-weight: 600;
+
+  color: #333;
+}
+
+
+.group-loan-search-row {
+  display: flex;
+
+  align-items: flex-end;
+
+  gap: 15px;
+
+  flex-wrap: wrap;
+}
+
+
+.group-loan-search-field {
+  width: 285px;
+}
+
+
+.group-loan-search-field label {
+  display: block;
+
+  margin-bottom: 7px;
+
+  font-size: 11px;
+
+  font-weight: 700;
+
+  color: #333;
+}
+
+
+.group-loan-select-wrapper {
+  position: relative;
+}
+
+
+.group-loan-select-wrapper select {
+  width: 100%;
+
+  height: 38px;
+
+  padding: 0 35px 0 12px;
+
+  border: 1px solid #ccc;
+
+  border-radius: 4px;
+
+  outline: none;
+
+  background: #fff;
+
+  font-size: 12px;
+
+  color: #555;
+}
+
+
+.group-loan-clear-select {
+  position: absolute;
+
+  right: 25px;
+  top: 50%;
+
+  transform: translateY(-50%);
+
+  border: none;
+
+  background: transparent;
+
+  color: #777;
+
+  font-size: 17px;
+
+  cursor: pointer;
+}
+
+
+.group-loan-get-record-btn,
+.group-loan-print-btn {
+  height: 38px;
+
+  padding: 0 17px;
+
+  border: none;
+
+  border-radius: 4px;
+
+  color: #fff;
+
+  font-size: 11px;
+
+  font-weight: 600;
+
+  cursor: pointer;
+}
+
+
+.group-loan-get-record-btn {
+  background: #20a9d2;
+}
+
+
+.group-loan-get-record-btn:hover {
+  background: #078eb7;
+}
+
+
+.group-loan-print-btn {
+  background: #1688bd;
+}
+
+
+.group-loan-print-btn:hover {
+  background: #0a709d;
+}
+
+
+/* =========================================================
+   LIST
+========================================================= */
+
+.group-loan-list-container {
+  width: 100%;
+
+  padding: 18px 20px 25px;
+
+  box-sizing: border-box;
+
+  background: #fff;
+
+  border: 1px solid #ddd;
+
+  border-radius: 7px;
+}
+
+
+.group-loan-list-header {
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  margin-bottom: 14px;
+}
+
+
+.group-loan-list-header h2 {
+  margin: 0;
+
+  font-size: 18px;
+
+  font-weight: 500;
+
+  color: #333;
+}
+
+
+/* =========================================================
+   TOOLBAR
+========================================================= */
+
+.group-loan-table-toolbar {
+  width: 100%;
+
+  min-height: 40px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  margin-bottom: 10px;
+}
+
+
+.group-loan-table-search {
+  width: 210px;
+
+  height: 35px;
+
+  display: flex;
+
+  align-items: center;
+
+  border: 1px solid #ddd;
+
+  border-radius: 4px;
+
+  background: #fff;
+}
+
+
+.group-loan-table-search input {
+  width: 100%;
+  height: 100%;
+
+  padding: 0 10px;
+
+  border: none;
+
+  outline: none;
+
+  font-size: 12px;
+}
+
+
+.group-loan-table-search span {
+  width: 35px;
+
+  display: flex;
+
+  justify-content: center;
+
+  align-items: center;
+}
+
+
+/* =========================================================
+   TABLE
+========================================================= */
+
+.group-loan-table {
+  width: 100%;
+
+  min-width: 1250px;
+}
+
+
+.group-loan-table thead th {
+  padding: 11px 8px;
+
+  background: #edf1f3;
+
+  color: #333;
+
+  font-size: 10px;
+
+  font-weight: 700;
+
+  text-align: center;
+
+  vertical-align: middle;
+
+  white-space: nowrap;
+}
+
+
+.group-loan-table thead th em {
+  color: #9b4444;
+
+  font-style: italic;
+}
+
+
+.group-loan-table tbody td {
+  padding: 12px 8px;
+
+  border-bottom: 1px solid #eee;
+
+  color: #555;
+
+  font-size: 11px;
+
+  text-align: center;
+
+  vertical-align: middle;
+
+  white-space: nowrap;
+}
+
+
+.group-loan-table tbody tr:hover {
+  background: #fafcfd;
+}
+
+
+/* =========================================================
+   PLAN
+========================================================= */
+
+.group-loan-plan-cell {
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: flex-start;
+
+  gap: 3px;
+}
+
+
+.group-loan-plan-cell strong {
+  color: #555;
+
+  font-size: 11px;
+}
+
+
+.group-loan-plan-cell em {
+  color: #9b4444;
+
+  font-size: 10px;
+
+  font-style: italic;
+}
+
+
+/* =========================================================
+   MEMBER
+========================================================= */
+
+.group-loan-member-cell {
+  text-align: left;
+}
+
+
+.group-loan-member-cell strong {
+  color: #5e8498;
+}
+
+
+/* =========================================================
+   ACTION
+========================================================= */
+
+.group-loan-action-cell {
+  position: relative;
+
+  min-width: 100px;
+}
+
+
+.group-loan-task-button {
+  border: none;
+
+  background: transparent;
+
+  color: #555;
+
+  font-size: 11px;
+
+  cursor: pointer;
+}
+
+
+.group-loan-task-button:hover {
+  color: #129ec5;
+}
+
+
+.group-loan-task-menu {
+  position: absolute;
+
+  top: 28px;
+  left: 0;
+
+  z-index: 99999;
+
+  width: 170px;
+
+  padding: 4px 0;
+
+  background: #fff;
+
+  border: 1px solid #ddd;
+
+  border-radius: 4px;
+
+  box-shadow: 0 7px 20px rgba(0, 0, 0, 0.18);
+}
+
+
+.group-loan-task-menu button {
+  width: 100%;
+
+  min-height: 35px;
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 9px;
+
+  padding: 7px 12px;
+
+  border: none;
+
+  background: #fff;
+
+  color: #444;
+
+  font-size: 11px;
+
+  text-align: left;
+
+  cursor: pointer;
+}
+
+
+.group-loan-task-menu button:hover {
+  background: #f1f7f9;
+}
+
+
+.group-loan-task-menu span {
+  width: 18px;
+
+  text-align: center;
+}
+
+
+/* =========================================================
+   MODAL OVERLAY
+========================================================= */
+
+.group-loan-modal-overlay {
+  position: fixed;
+
+  inset: 0;
+
+  z-index: 99999;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  padding: 20px;
+
+  box-sizing: border-box;
+
+  background: rgba(0, 0, 0, 0.55);
+}
+
+
+/* =========================================================
+   FORM MODAL
+========================================================= */
+
+.group-loan-form-modal {
+  width: 1050px;
+
+  max-width: calc(100vw - 40px);
+
+  max-height: 92vh;
+
+  display: flex;
+
+  flex-direction: column;
+
+  background: #fff;
+
+  border-radius: 4px;
+
+  overflow: hidden;
+
+  box-shadow: 0 15px 45px rgba(0, 0, 0, 0.35);
+}
+
+
+/* =========================================================
+   FORM HEADER
+========================================================= */
+
+.group-loan-form-header,
+.group-loan-view-header {
+  min-height: 60px;
+
+  flex-shrink: 0;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  padding: 0 20px;
+
+  box-sizing: border-box;
+
+  background: linear-gradient(
+    90deg,
+    #20add7,
+    #08a7d2
+  );
+
+  color: #fff;
+}
+
+
+.group-loan-form-header h2,
+.group-loan-view-header h2 {
+  margin: 0;
+
+  font-size: 19px;
+
+  font-weight: 500;
+}
+
+
+.group-loan-close-button {
+  border: none;
+
+  background: transparent;
+
+  color: #fff;
+
+  font-size: 27px;
+
+  cursor: pointer;
+}
+
+
+/* =========================================================
+   FORM BODY
+========================================================= */
+
+.group-loan-form-body {
+  padding: 25px;
+
+  overflow-y: auto;
+}
+
+
+.group-loan-form-grid {
+  display: grid;
+
+  grid-template-columns: 1fr 1fr;
+
+  gap: 35px;
+}
+
+
+.group-loan-form-group {
+  margin-bottom: 17px;
+}
+
+
+.group-loan-form-group label {
+  display: block;
+
+  margin-bottom: 7px;
+
+  color: #222;
+
+  font-size: 11px;
+
+  font-weight: 700;
+}
+
+
+.group-loan-form-group label span {
+  color: #e33434;
+}
+
+
+.group-loan-form-group input,
+.group-loan-form-group select {
+  width: 100%;
+
+  height: 40px;
+
+  padding: 0 12px;
+
+  box-sizing: border-box;
+
+  border: 1px solid #d3d3d3;
+
+  border-radius: 4px;
+
+  outline: none;
+
+  background: #fff;
+
+  color: #555;
+
+  font-size: 12px;
+}
+
+
+.group-loan-form-group input:focus,
+.group-loan-form-group select:focus {
+  border-color: #19abd5;
+}
+
+
+/* =========================================================
+   RADIO
+========================================================= */
+
+.group-loan-radio-group {
+  display: flex;
+
+  align-items: center;
+
+  gap: 15px;
+}
+
+
+.group-loan-radio-group label {
+  display: flex;
+
+  align-items: center;
+
+  gap: 5px;
+
+  margin: 0;
+}
+
+
+.group-loan-radio-group input {
+  width: auto;
+
+  height: auto;
+}
+
+
+.radio-yes {
+  color: #29924e;
+}
+
+
+.radio-no {
+  color: #c54848;
+}
+
+
+/* =========================================================
+   FORM FOOTER
+========================================================= */
+
+.group-loan-form-footer {
+  display: flex;
+
+  justify-content: flex-end;
+
+  align-items: center;
+
+  gap: 8px;
+
+  padding-top: 15px;
+}
+
+
+.group-loan-calculator-btn {
+  height: 38px;
+
+  padding: 0 15px;
+
+  border: none;
+
+  border-radius: 4px;
+
+  background: #20add7;
+
+  color: #fff;
+
+  font-size: 11px;
+
+  cursor: pointer;
+}
+
+
+/* =========================================================
+   VIEW MODAL
+========================================================= */
+
+.group-loan-view-modal {
+  width: 900px;
+
+  max-width: calc(100vw - 40px);
+
+  max-height: 90vh;
+
+  display: flex;
+
+  flex-direction: column;
+
+  background: #fff;
+
+  border-radius: 4px;
+
+  overflow: hidden;
+
+  box-shadow: 0 15px 45px rgba(0, 0, 0, 0.35);
+}
+
+
+/* =========================================================
+   VIEW BODY
+========================================================= */
+
+.group-loan-view-body {
+  display: grid;
+
+  grid-template-columns: 1fr 1fr;
+
+  gap: 35px;
+
+  padding: 22px 25px;
+
+  overflow-y: auto;
+}
+
+
+.group-loan-view-column {
+  min-width: 0;
+}
+
+
+.group-loan-view-title {
+  margin: 14px 0 10px;
+
+  color: #222;
+
+  font-size: 11px;
+
+  font-weight: 700;
+}
+
+
+/* =========================================================
+   DETAILS
+========================================================= */
+
+.group-loan-detail-row {
+  display: grid;
+
+  grid-template-columns: 150px 12px minmax(0, 1fr);
+
+  padding: 7px 0;
+
+  border-bottom: 1px solid #f0f0f0;
+}
+
+
+.group-loan-detail-row strong {
+  color: #222;
+
+  font-size: 10px;
+
+  line-height: 1.5;
+}
+
+
+.group-loan-detail-row span {
+  color: #555;
+
+  font-size: 10px;
+}
+
+
+.group-loan-detail-row p {
+  margin: 0;
+
+  color: #718690;
+
+  font-size: 11px;
+
+  line-height: 1.5;
+
+  word-break: break-word;
+}
+
+
+.group-loan-approved {
+  color: #26944d !important;
+
+  font-weight: 600;
+}
+
+
+.group-loan-pending {
+  color: #b58a28 !important;
+
+  font-weight: 600;
+}
+
+
+/* =========================================================
+   VIEW FOOTER
+========================================================= */
+
+.group-loan-view-footer {
+  display: flex;
+
+  justify-content: flex-end;
+
+  padding: 12px 25px 18px;
+
+  border-top: 1px solid #eee;
+}
+
+
+.group-loan-view-footer button {
+  min-width: 70px;
+
+  height: 35px;
+
+  border: none;
+
+  border-radius: 3px;
+
+  background: #20add7;
+
+  color: #fff;
+
+  font-size: 11px;
+
+  font-weight: 600;
+
+  cursor: pointer;
+}
+
+
+.group-loan-view-footer button:hover {
+  background: #078fb9;
+}
+
+
+/* =========================================================
+   NO DATA
+========================================================= */
+
+.group-loan-no-data {
+  padding: 35px !important;
+
+  text-align: center !important;
+
+  color: #777 !important;
+}
+
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media (max-width: 900px) {
+
+  .group-loan-page {
+    padding: 15px;
+  }
+
+  .group-loan-form-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .group-loan-view-body {
+    grid-template-columns: 1fr;
+  }
+
+}
+
+
+@media (max-width: 600px) {
+
+  .group-loan-page {
+    padding: 10px;
+  }
+
+  .group-loan-search-row {
+    flex-direction: column;
+
+    align-items: stretch;
+  }
+
+  .group-loan-search-field {
+    width: 100%;
+  }
+
+  .group-loan-get-record-btn,
+  .group-loan-print-btn {
+    width: 120px;
+  }
+
+  .group-loan-list-container {
+    padding: 12px;
+  }
+
+  .group-loan-list-header {
+    flex-direction: column;
+
+    align-items: flex-start;
+
+    gap: 10px;
+  }
+
+  .group-loan-table-toolbar {
+    flex-direction: column;
+
+    align-items: stretch;
+
+    gap: 10px;
+  }
+
+  .group-loan-table-search {
+    width: 100%;
+  }
+
+  .group-loan-form-modal,
+  .group-loan-view-modal {
+    max-width: calc(100vw - 20px);
+
+    max-height: 94vh;
+  }
+
+  .group-loan-form-body {
+    padding: 15px;
+  }
+
+  .group-loan-view-body {
+    padding: 15px;
+  }
+
+  .group-loan-detail-row {
+    grid-template-columns:
+      120px
+      10px
+      minmax(0, 1fr);
+  }
+
+}

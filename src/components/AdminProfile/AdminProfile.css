@@ -1,0 +1,474 @@
+/* =========================================
+   ADMIN PROFILE WRAPPER
+========================================= */
+
+.admin-profile-wrapper {
+  position: relative;
+
+  height: 100%;
+
+  display: flex;
+
+  align-items: center;
+}
+
+
+/* =========================================
+   ADMIN BUTTON
+========================================= */
+
+.admin-profile-button {
+  height: 100%;
+
+  min-width: 125px;
+
+  padding: 0 16px;
+
+  border: none;
+
+  border-left: 1px solid #e5e7eb;
+
+  background: transparent;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  gap: 8px;
+
+  cursor: pointer;
+
+  color: #374151;
+
+  font-size: 13px;
+
+  font-weight: 600;
+
+  transition:
+    background 0.2s ease,
+    color 0.2s ease;
+}
+
+
+.admin-profile-button:hover {
+  background: #f5f8fb;
+
+  color: #1769aa;
+}
+
+
+.admin-profile-button-active {
+  background: #eef6ff;
+
+  color: #1769aa;
+}
+
+
+.admin-profile-button > svg:first-child {
+  font-size: 21px;
+}
+
+
+/* =========================================
+   ARROW
+========================================= */
+
+.admin-profile-arrow {
+  font-size: 9px !important;
+
+  transition:
+    transform 0.25s ease;
+}
+
+
+.admin-profile-arrow-open {
+  transform: rotate(180deg);
+}
+
+
+/* =========================================
+   DROPDOWN
+========================================= */
+
+.admin-profile-dropdown {
+  position: absolute;
+
+  top: calc(100% + 8px);
+
+  right: 0;
+
+  width: 320px;
+
+  background: #ffffff;
+
+  border: 1px solid #e5e7eb;
+
+  border-radius: 14px;
+
+  overflow: hidden;
+
+  box-shadow:
+    0 18px 45px rgba(15, 23, 42, 0.16);
+
+  z-index: 9999;
+
+  animation:
+    admin-profile-dropdown-animation
+    0.22s ease;
+}
+
+
+@keyframes admin-profile-dropdown-animation {
+
+  from {
+    opacity: 0;
+
+    transform:
+      translateY(-8px)
+      scale(0.98);
+  }
+
+  to {
+    opacity: 1;
+
+    transform:
+      translateY(0)
+      scale(1);
+  }
+
+}
+
+
+/* =========================================
+   TOP PROFILE
+========================================= */
+
+.admin-profile-top {
+  padding: 20px;
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 14px;
+
+  background:
+    linear-gradient(
+      135deg,
+      #1769aa,
+      #2389c9
+    );
+
+  color: #ffffff;
+}
+
+
+/* =========================================
+   AVATAR
+========================================= */
+
+.admin-profile-avatar {
+  width: 52px;
+
+  height: 52px;
+
+  border-radius: 50%;
+
+  flex-shrink: 0;
+
+  display: flex;
+
+  justify-content: center;
+
+  align-items: center;
+
+  font-size: 21px;
+
+  background:
+    rgba(255, 255, 255, 0.18);
+
+  border:
+    2px solid
+    rgba(255, 255, 255, 0.55);
+}
+
+
+/* =========================================
+   PROFILE DETAILS
+========================================= */
+
+.admin-profile-details h3 {
+  margin: 0 0 4px;
+
+  font-size: 16px;
+
+  font-weight: 700;
+}
+
+
+.admin-profile-details p {
+  margin: 0;
+
+  font-size: 12px;
+
+  opacity: 0.85;
+}
+
+
+/* =========================================
+   ONLINE
+========================================= */
+
+.admin-profile-online {
+  height: 40px;
+
+  padding: 0 18px;
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 8px;
+
+  border-bottom:
+    1px solid #edf0f2;
+
+  color: #374151;
+
+  font-size: 12px;
+}
+
+
+.admin-online-circle {
+  width: 8px;
+
+  height: 8px;
+
+  border-radius: 50%;
+
+  background: #22c55e;
+
+  box-shadow:
+    0 0 0 4px
+    rgba(34, 197, 94, 0.12);
+}
+
+
+.admin-profile-online small {
+  margin-left: auto;
+
+  color: #9ca3af;
+
+  font-size: 11px;
+}
+
+
+/* =========================================
+   INFORMATION
+========================================= */
+
+.admin-profile-information {
+  border-bottom:
+    1px solid #edf0f2;
+}
+
+
+.admin-information-item {
+  min-height: 43px;
+
+  padding: 0 18px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+}
+
+
+.admin-information-label {
+  display: flex;
+
+  align-items: center;
+
+  gap: 8px;
+
+  color: #6b7280;
+
+  font-size: 12px;
+}
+
+
+.admin-information-label svg {
+  color: #1769aa;
+
+  font-size: 13px;
+}
+
+
+.admin-information-item strong {
+  color: #374151;
+
+  font-size: 12px;
+}
+
+
+/* =========================================
+   MENU
+========================================= */
+
+.admin-profile-menu {
+  padding: 8px;
+}
+
+
+.admin-profile-menu button {
+  width: 100%;
+
+  padding: 10px;
+
+  border: none;
+
+  border-radius: 9px;
+
+  background: transparent;
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 12px;
+
+  cursor: pointer;
+
+  text-align: left;
+
+  transition:
+    background 0.2s ease;
+}
+
+
+.admin-profile-menu button:hover {
+  background: #f5f8fb;
+}
+
+
+/* =========================================
+   MENU ICON
+========================================= */
+
+.admin-menu-icon {
+  width: 36px;
+
+  height: 36px;
+
+  border-radius: 9px;
+
+  flex-shrink: 0;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  font-size: 14px;
+}
+
+
+.admin-menu-profile {
+  background: #eaf3ff;
+
+  color: #1769aa;
+}
+
+
+.admin-menu-settings {
+  background: #f1edff;
+
+  color: #7654d8;
+}
+
+
+.admin-menu-password {
+  background: #fff3e8;
+
+  color: #e47b20;
+}
+
+
+/* =========================================
+   MENU CONTENT
+========================================= */
+
+.admin-menu-content {
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 3px;
+}
+
+
+.admin-menu-content strong {
+  color: #374151;
+
+  font-size: 13px;
+}
+
+
+.admin-menu-content small {
+  color: #9ca3af;
+
+  font-size: 11px;
+}
+
+
+/* =========================================
+   LOGOUT
+========================================= */
+
+.admin-profile-logout {
+  width: calc(100% - 20px);
+
+  margin:
+    4px 10px 12px;
+
+  padding: 11px;
+
+  border:
+    1px solid #fee2e2;
+
+  border-radius: 9px;
+
+  background: #fff7f7;
+
+  color: #dc2626;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  gap: 8px;
+
+  cursor: pointer;
+
+  font-size: 13px;
+
+  font-weight: 600;
+
+  transition:
+    background 0.2s ease,
+    border-color 0.2s ease;
+}
+
+
+.admin-profile-logout:hover {
+  background: #fee2e2;
+
+  border-color: #fecaca;
+}

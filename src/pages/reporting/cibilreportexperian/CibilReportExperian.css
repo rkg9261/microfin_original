@@ -1,0 +1,587 @@
+/* =========================================================
+   PAGE
+========================================================= */
+
+.cibil-report-experian-page {
+  width: 100%;
+  min-height: 100vh;
+
+  padding: 18px 20px;
+
+  background: #f7f8fa;
+
+  box-sizing: border-box;
+}
+
+
+/* =========================================================
+   PAGE HEADER
+========================================================= */
+
+.cibil-report-experian-header {
+  width: 100%;
+
+  padding: 8px 0 13px;
+
+  margin-bottom: 10px;
+
+  border-bottom: 2px solid #239bc1;
+}
+
+.cibil-report-experian-header h2 {
+  margin: 0;
+
+  font-size: 13px;
+
+  font-weight: 700;
+
+  color: #222;
+
+  letter-spacing: 0.2px;
+}
+
+
+/* =========================================================
+   FILTER CARD
+========================================================= */
+
+.cibil-report-experian-filter-card {
+  width: 100%;
+
+  min-height: 100px;
+
+  margin-bottom: 15px;
+
+  background: #fff;
+
+  border: 1px solid #d8d8d8;
+
+  border-radius: 8px;
+
+  box-sizing: border-box;
+}
+
+
+/* =========================================================
+   FILTER TITLE
+========================================================= */
+
+.cibil-report-experian-filter-title {
+  padding: 12px 14px;
+
+  font-size: 13px;
+
+  color: #444;
+
+  font-weight: 500;
+}
+
+
+/* =========================================================
+   FILTER CONTENT
+========================================================= */
+
+.cibil-report-experian-filter-content {
+  min-height: 55px;
+
+  padding: 5px 14px 14px;
+
+  box-sizing: border-box;
+}
+
+
+/* =========================================================
+   TABLE CARD
+========================================================= */
+
+.cibil-report-experian-table-card {
+  width: 100%;
+
+  background: #fff;
+
+  border: 1px solid #d8d8d8;
+
+  border-radius: 8px;
+
+  padding: 12px;
+
+  box-sizing: border-box;
+}
+
+
+/* =========================================================
+   TABLE TITLE
+========================================================= */
+
+.cibil-report-experian-table-title {
+  padding: 0 2px 12px;
+}
+
+.cibil-report-experian-table-title h3 {
+  margin: 0;
+
+  font-size: 17px;
+
+  font-weight: 500;
+
+  color: #444;
+}
+
+
+/* =========================================================
+   TOOLBAR
+========================================================= */
+
+.cibil-report-experian-toolbar {
+  width: 100%;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  margin-bottom: 12px;
+
+  min-height: 38px;
+}
+
+
+/* =========================================================
+   ENTRIES
+========================================================= */
+
+.cibil-report-experian-entries {
+  display: flex;
+
+  align-items: center;
+}
+
+
+/* =========================================================
+   SEARCH
+========================================================= */
+
+.cibil-report-experian-search {
+  width: 220px;
+
+  height: 38px;
+
+  display: flex;
+
+  align-items: center;
+
+  background: #fff;
+
+  border: 1px solid #ddd;
+
+  border-radius: 4px;
+
+  box-sizing: border-box;
+}
+
+.cibil-report-experian-search input {
+  flex: 1;
+
+  width: 100%;
+
+  height: 100%;
+
+  padding: 0 10px;
+
+  border: none;
+
+  outline: none;
+
+  background: transparent;
+
+  font-size: 13px;
+
+  color: #444;
+}
+
+.cibil-report-experian-search input::placeholder {
+  color: #888;
+}
+
+.cibil-report-experian-search svg {
+  margin-right: 10px;
+
+  font-size: 13px;
+
+  color: #555;
+}
+
+
+/* =========================================================
+   TABLE SCROLL
+========================================================= */
+
+.cibil-report-experian-table-scroll {
+  width: 100%;
+
+  overflow-x: auto;
+
+  overflow-y: hidden;
+
+  border-radius: 3px;
+}
+
+
+/* =========================================================
+   TABLE
+========================================================= */
+
+.cibil-report-experian-table {
+  width: 100%;
+
+  min-width: 1050px;
+
+  border-collapse: collapse;
+
+  table-layout: auto;
+}
+
+
+/* =========================================================
+   TABLE HEADER
+========================================================= */
+
+.cibil-report-experian-table thead th {
+  background: #e7eff2;
+
+  color: #303941;
+
+  font-size: 12px;
+
+  font-weight: 700;
+
+  padding: 12px 10px;
+
+  text-align: left;
+
+  border-bottom: 1px solid #d5dde0;
+
+  white-space: nowrap;
+}
+
+
+/* =========================================================
+   TABLE BODY
+========================================================= */
+
+.cibil-report-experian-table tbody td {
+  padding: 13px 10px;
+
+  font-size: 13px;
+
+  color: #555;
+
+  border-bottom: 1px solid #eeeeee;
+
+  white-space: nowrap;
+
+  vertical-align: middle;
+}
+
+.cibil-report-experian-table tbody tr:hover {
+  background: #fafafa;
+}
+
+
+/* =========================================================
+   MEMBER NAME
+========================================================= */
+
+.cibil-name {
+  font-weight: 600;
+
+  color: #444 !important;
+}
+
+
+/* =========================================================
+   REPORT LINK
+========================================================= */
+
+.cibil-report-link-cell {
+  min-width: 170px;
+}
+
+.cibil-report-link {
+  display: inline-flex;
+
+  align-items: center;
+
+  gap: 6px;
+
+  color: #168ab5;
+
+  text-decoration: none;
+
+  font-size: 12px;
+
+  font-weight: 600;
+}
+
+.cibil-report-link:hover {
+  text-decoration: underline;
+}
+
+.cibil-report-link svg {
+  font-size: 10px;
+}
+
+.cibil-no-link {
+  color: #999;
+}
+
+
+/* =========================================================
+   CREDIT SCORE
+========================================================= */
+
+.cibil-credit-score {
+  display: inline-flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  min-width: 45px;
+
+  padding: 4px 8px;
+
+  border-radius: 3px;
+
+  font-size: 12px;
+
+  font-weight: 700;
+}
+
+
+/* =========================================================
+   SCORE COLORS
+========================================================= */
+
+.cibil-score-excellent {
+  background: #e1f5e8;
+
+  color: #218b45;
+}
+
+.cibil-score-good {
+  background: #e8f4fb;
+
+  color: #1976a5;
+}
+
+.cibil-score-average {
+  background: #fff4d9;
+
+  color: #a87500;
+}
+
+.cibil-score-low {
+  background: #fde5e5;
+
+  color: #c0392b;
+}
+
+
+/* =========================================================
+   STATUS
+========================================================= */
+
+.cibil-status-completed {
+  display: inline-block;
+
+  padding: 4px 9px;
+
+  border-radius: 3px;
+
+  background: #e3f5e8;
+
+  color: #268a47;
+
+  font-size: 11px;
+
+  font-weight: 700;
+}
+
+.cibil-status-pending {
+  display: inline-block;
+
+  padding: 4px 9px;
+
+  border-radius: 3px;
+
+  background: #fff2d5;
+
+  color: #a66d00;
+
+  font-size: 11px;
+
+  font-weight: 700;
+}
+
+
+/* =========================================================
+   NO DATA
+========================================================= */
+
+.cibil-no-data {
+  text-align: center !important;
+
+  padding: 35px 10px !important;
+
+  color: #888 !important;
+
+  font-size: 13px !important;
+}
+
+
+/* =========================================================
+   FOOTER
+========================================================= */
+
+.cibil-report-experian-footer {
+  width: 100%;
+
+  display: flex;
+
+  justify-content: space-between;
+
+  align-items: center;
+
+  padding: 14px 4px 3px;
+
+  box-sizing: border-box;
+}
+
+
+/* =========================================================
+   SHOWING TEXT
+========================================================= */
+
+.cibil-showing-text {
+  font-size: 12px;
+
+  color: #666;
+}
+
+
+/* =========================================================
+   PAGINATION
+========================================================= */
+
+.cibil-pagination {
+  display: flex;
+
+  align-items: center;
+
+  gap: 2px;
+}
+
+
+/* =========================================================
+   PAGINATION BUTTON
+========================================================= */
+
+.cibil-pagination button {
+  min-width: 32px;
+
+  height: 30px;
+
+  padding: 0 8px;
+
+  border: 1px solid #e1e1e1;
+
+  background: #fff;
+
+  color: #777;
+
+  font-size: 11px;
+
+  cursor: pointer;
+}
+
+
+/* =========================================================
+   ACTIVE
+========================================================= */
+
+.cibil-pagination .cibil-page-active {
+  background: #239bc1;
+
+  border-color: #239bc1;
+
+  color: #fff;
+
+  font-weight: 700;
+}
+
+
+/* =========================================================
+   HOVER
+========================================================= */
+
+.cibil-pagination button:not(:disabled):hover {
+  background: #eef7fa;
+
+  color: #1683a7;
+}
+
+
+/* =========================================================
+   DISABLED
+========================================================= */
+
+.cibil-pagination button:disabled {
+  cursor: not-allowed;
+
+  opacity: 0.45;
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 768px) {
+
+  .cibil-report-experian-page {
+    padding: 12px;
+  }
+
+
+  .cibil-report-experian-toolbar {
+    flex-direction: column;
+
+    align-items: stretch;
+
+    gap: 10px;
+  }
+
+
+  .cibil-report-experian-search {
+    width: 100%;
+  }
+
+
+  .cibil-report-experian-footer {
+    flex-direction: column;
+
+    align-items: flex-start;
+
+    gap: 12px;
+  }
+
+
+  .cibil-pagination {
+    width: 100%;
+
+    overflow-x: auto;
+  }
+
+}

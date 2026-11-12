@@ -1,0 +1,718 @@
+/* =========================================================
+   PAGE
+========================================================= */
+
+.group-disbursement-page {
+    width: 100%;
+    min-height: 100vh;
+    padding: 18px;
+    box-sizing: border-box;
+    background: #f5f6f7;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+
+/* =========================================================
+   HEADER
+========================================================= */
+
+.group-disbursement-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 12px;
+}
+
+.group-disbursement-header h1 {
+    margin: 0;
+    color: #333;
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.group-disbursement-breadcrumb {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    color: #777;
+    font-size: 9px;
+}
+
+.group-disbursement-breadcrumb strong {
+    color: #333;
+}
+
+
+/* =========================================================
+   SEARCH CARD
+========================================================= */
+
+.group-disbursement-search-card {
+    background: #fff;
+    border: 1px solid #d5d5d5;
+    border-radius: 10px;
+    padding: 14px;
+    box-sizing: border-box;
+    box-shadow:
+        0 2px 8px
+        rgba(0, 0, 0, 0.06);
+    margin-bottom: 14px;
+}
+
+.group-disbursement-search-title {
+    font-size: 13px;
+    color: #444;
+    font-weight: 500;
+    margin-bottom: 15px;
+}
+
+
+/* =========================================================
+   FILTER GRID
+========================================================= */
+
+.group-disbursement-filter-grid {
+    display: grid;
+    grid-template-columns:
+        repeat(4, minmax(180px, 1fr));
+    column-gap: 28px;
+    row-gap: 9px;
+}
+
+.group-disbursement-field {
+    min-width: 0;
+}
+
+.group-disbursement-field label {
+    display: block;
+    margin-bottom: 5px;
+    color: #333;
+    font-size: 10px;
+    font-weight: 700;
+}
+
+.group-disbursement-field input,
+.group-disbursement-field select {
+    width: 100%;
+    height: 34px;
+    box-sizing: border-box;
+    border: 1px solid #c7c7c7;
+    border-radius: 4px;
+    background: #fff;
+    padding: 0 9px;
+    color: #555;
+    font-size: 12px;
+    outline: none;
+}
+
+.group-disbursement-field input:focus,
+.group-disbursement-field select:focus {
+    border-color: #27a3ce;
+}
+
+
+/* =========================================================
+   INPUT WRAPPER
+========================================================= */
+
+.group-disbursement-input-wrapper {
+    position: relative;
+    width: 100%;
+}
+
+.group-disbursement-input-wrapper input,
+.group-disbursement-input-wrapper select {
+    padding-right: 35px;
+}
+
+.group-disbursement-input-wrapper > span {
+    position: absolute;
+    right: 8px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #666;
+    font-size: 12px;
+    pointer-events: none;
+}
+
+.group-disbursement-clear {
+    position: absolute;
+    right: 24px;
+    top: 50%;
+    transform: translateY(-50%);
+    border: none;
+    background: transparent;
+    color: #777;
+    font-size: 17px;
+    cursor: pointer;
+}
+
+
+/* =========================================================
+   BUTTONS
+========================================================= */
+
+.group-disbursement-buttons {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    margin-top: 12px;
+}
+
+.group-disbursement-submit,
+.group-disbursement-print {
+    height: 36px;
+    padding: 0 15px;
+    border-radius: 3px;
+    color: #fff;
+    border: none;
+    font-size: 12px;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.group-disbursement-submit {
+    background: #159dc7;
+}
+
+.group-disbursement-submit:hover {
+    background: #087fa5;
+}
+
+.group-disbursement-print {
+    background: #26acd1;
+}
+
+.group-disbursement-print:hover {
+    background: #138dac;
+}
+
+
+/* =========================================================
+   TABLE CARD
+========================================================= */
+
+.group-disbursement-table-card {
+    width: 100%;
+    background: #fff;
+    border: 1px solid #d5d5d5;
+    border-radius: 10px;
+    box-shadow:
+        0 2px 8px
+        rgba(0, 0, 0, 0.06);
+    overflow: visible;
+}
+
+
+/* =========================================================
+   TABLE TITLE
+========================================================= */
+
+.group-disbursement-table-title {
+    padding: 13px 14px;
+    color: #404040;
+    font-size: 17px;
+    font-weight: 400;
+}
+
+
+/* =========================================================
+   CONTROLS
+========================================================= */
+
+.group-disbursement-controls {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 6px 14px 10px;
+}
+
+.group-disbursement-controls select {
+    height: 30px;
+    min-width: 62px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    background: #fff;
+    padding: 0 8px;
+    font-size: 11px;
+    color: #555;
+}
+
+.group-disbursement-search {
+    display: flex;
+    align-items: center;
+    height: 31px;
+    border: 1px solid #d0d0d0;
+    border-radius: 3px;
+    overflow: hidden;
+}
+
+.group-disbursement-search input {
+    width: 190px;
+    height: 100%;
+    border: none;
+    outline: none;
+    padding: 0 9px;
+    font-size: 11px;
+}
+
+.group-disbursement-search button {
+    width: 35px;
+    height: 100%;
+    border: none;
+    border-left: 1px solid #ddd;
+    background: #fff;
+    cursor: pointer;
+}
+
+
+/* =========================================================
+   TABLE WRAPPER
+========================================================= */
+
+.group-disbursement-table-wrapper {
+    width: 100%;
+    overflow-x: auto;
+    padding: 0 10px 5px;
+    box-sizing: border-box;
+}
+
+
+/* =========================================================
+   TABLE
+========================================================= */
+
+.group-disbursement-table {
+    width: 100%;
+    min-width: 1450px;
+    border-collapse: collapse;
+}
+
+.group-disbursement-table th {
+    height: 48px;
+    background: #edf1f2;
+    border: 1px solid #d1d6d8;
+    padding: 6px;
+    color: #3d4549;
+    font-size: 9px;
+    font-weight: 700;
+    text-align: center;
+    white-space: nowrap;
+    line-height: 1.25;
+}
+
+.group-disbursement-table th span {
+    color: #c63232;
+    font-style: italic;
+}
+
+.group-disbursement-table td {
+    height: 35px;
+    border: 1px solid #e0e2e3;
+    padding: 6px;
+    color: #555;
+    font-size: 10px;
+    text-align: center;
+    white-space: nowrap;
+}
+
+.group-disbursement-table tbody tr:hover td {
+    background: #fafafa;
+}
+
+
+/* =========================================================
+   LOAN NAME
+========================================================= */
+
+.group-loan-name {
+    text-align: left !important;
+}
+
+.group-loan-name strong {
+    color: #444;
+    font-size: 10px;
+}
+
+.group-loan-name span {
+    color: #c63131;
+    font-size: 9px;
+    font-style: italic;
+    font-weight: 600;
+}
+
+.group-member-name {
+    color: #117da8 !important;
+    font-weight: 600;
+}
+
+
+/* =========================================================
+   PAY MODE
+========================================================= */
+
+.group-pay-mode {
+    display: inline-block;
+    padding: 3px 7px;
+    border-radius: 3px;
+    font-size: 9px;
+    font-weight: 700;
+}
+
+.group-pay-mode.cash {
+    background: #e7f5e9;
+    color: #2b813e;
+}
+
+.group-pay-mode.bank {
+    background: #e8f0ff;
+    color: #2b64ad;
+}
+
+.group-pay-mode.upi {
+    background: #f1e7ff;
+    color: #7337a2;
+}
+
+
+/* =========================================================
+   ACTION
+========================================================= */
+
+.group-action-cell {
+    position: relative;
+    overflow: visible !important;
+}
+
+.group-task-wrapper {
+    position: relative;
+    display: inline-block;
+}
+
+.group-task-button {
+    border: none;
+    background: transparent;
+    color: #555;
+    padding: 5px 8px;
+    font-size: 10px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.group-task-button:hover {
+    color: #008ebd;
+}
+
+.group-task-button span {
+    margin-left: 3px;
+}
+
+
+/* =========================================================
+   TASK MENU
+========================================================= */
+
+.group-task-menu {
+    position: absolute;
+    right: 0;
+    top: 28px;
+    z-index: 1000;
+    width: 100px;
+    padding: 5px;
+    background: #fff;
+    border: 1px solid #d5d5d5;
+    border-radius: 4px;
+    box-shadow:
+        0 5px 15px
+        rgba(0, 0, 0, 0.18);
+}
+
+.group-task-menu button {
+    width: 100%;
+    height: 30px;
+    border: none;
+    border-radius: 3px;
+    background: #fff;
+    color: #444;
+    text-align: left;
+    padding: 0 8px;
+    font-size: 11px;
+    cursor: pointer;
+}
+
+.group-task-menu button:hover {
+    background: #eaf7fb;
+    color: #008ebd;
+}
+
+
+/* =========================================================
+   NO DATA
+========================================================= */
+
+.group-no-data {
+    height: 70px !important;
+    color: #888 !important;
+}
+
+
+/* =========================================================
+   FOOTER
+========================================================= */
+
+.group-disbursement-footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 11px 14px;
+    color: #777;
+    font-size: 10px;
+}
+
+.group-pagination {
+    display: flex;
+    gap: 3px;
+}
+
+.group-pagination button {
+    min-width: 30px;
+    height: 28px;
+    border: 1px solid #d0d0d0;
+    border-radius: 3px;
+    background: #fff;
+    color: #555;
+    font-size: 10px;
+    cursor: pointer;
+}
+
+.group-pagination button:hover:not(:disabled),
+.group-pagination button.active {
+    background: #159dc7;
+    border-color: #159dc7;
+    color: #fff;
+}
+
+.group-pagination button:disabled {
+    opacity: 0.45;
+    cursor: not-allowed;
+}
+
+
+/* =========================================================
+   MODAL
+========================================================= */
+
+.group-disbursement-modal-overlay {
+    position: fixed;
+    inset: 0;
+    z-index: 5000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    box-sizing: border-box;
+    background: rgba(0, 0, 0, 0.48);
+}
+
+.group-disbursement-modal {
+    width: 850px;
+    max-width: 95vw;
+    max-height: 90vh;
+    display: flex;
+    flex-direction: column;
+    background: #fff;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow:
+        0 15px 45px
+        rgba(0, 0, 0, 0.3);
+}
+
+
+/* =========================================================
+   MODAL HEADER
+========================================================= */
+
+.group-modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 18px;
+    background: #159dc7;
+    color: #fff;
+}
+
+.group-modal-header h2 {
+    margin: 0;
+    font-size: 16px;
+}
+
+.group-modal-header p {
+    margin: 4px 0 0;
+    font-size: 10px;
+}
+
+.group-modal-close {
+    width: 31px;
+    height: 31px;
+    border: none;
+    border-radius: 4px;
+    background: rgba(255,255,255,.18);
+    color: #fff;
+    font-size: 22px;
+    cursor: pointer;
+}
+
+
+/* =========================================================
+   MODAL BODY
+========================================================= */
+
+.group-modal-body {
+    padding: 18px;
+    overflow-y: auto;
+    background: #f8f9fa;
+}
+
+.group-modal-section {
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    overflow: hidden;
+    background: #fff;
+}
+
+.group-modal-section-title {
+    padding: 9px 12px;
+    background: #edf5f7;
+    border-bottom: 1px solid #dce4e6;
+    color: #333;
+    font-size: 11px;
+    font-weight: 700;
+}
+
+
+/* =========================================================
+   DETAILS
+========================================================= */
+
+.group-details-grid {
+    display: grid;
+    grid-template-columns:
+        repeat(2, minmax(0, 1fr));
+}
+
+.group-detail-item {
+    display: flex;
+    align-items: center;
+    min-height: 45px;
+    padding: 7px 12px;
+    border-bottom: 1px solid #eee;
+}
+
+.group-detail-item:nth-child(odd) {
+    border-right: 1px solid #eee;
+}
+
+.group-detail-item label {
+    width: 45%;
+    color: #777;
+    font-size: 10px;
+    font-weight: 600;
+}
+
+.group-detail-item span {
+    width: 55%;
+    color: #333;
+    font-size: 11px;
+    font-weight: 600;
+}
+
+
+/* =========================================================
+   MODAL FOOTER
+========================================================= */
+
+.group-modal-footer {
+    display: flex;
+    justify-content: flex-end;
+    padding: 11px 18px;
+    border-top: 1px solid #ddd;
+    background: #fff;
+}
+
+.group-modal-footer button {
+    height: 34px;
+    padding: 0 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    background: #fff;
+    color: #555;
+    cursor: pointer;
+    font-size: 11px;
+}
+
+.group-modal-footer button:hover {
+    background: #f1f1f1;
+}
+
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media (max-width: 1100px) {
+
+    .group-disbursement-filter-grid {
+        grid-template-columns:
+            repeat(2, minmax(180px, 1fr));
+    }
+
+}
+
+
+@media (max-width: 700px) {
+
+    .group-disbursement-page {
+        padding: 10px;
+    }
+
+    .group-disbursement-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 6px;
+    }
+
+    .group-disbursement-filter-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .group-disbursement-controls {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 8px;
+    }
+
+    .group-disbursement-search {
+        width: 100%;
+    }
+
+    .group-disbursement-search input {
+        width: 100%;
+    }
+
+    .group-disbursement-footer {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+    }
+
+    .group-details-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .group-detail-item:nth-child(odd) {
+        border-right: none;
+    }
+
+}

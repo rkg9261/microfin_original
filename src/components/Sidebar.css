@@ -1,0 +1,1100 @@
+/* ===========================
+   SIDEBAR
+=========================== */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 255px;
+  height: 100vh;
+  background: #ffffff;
+  border-right: 1px solid #e4e4e4;
+  overflow-y: auto;
+  overflow-x: hidden;
+  transition: width .35s ease;
+  z-index: 99999;
+  box-shadow: 0 2px 15px rgba(0,0,0,.05);
+}
+
+.sidebar.close {
+  width: 72px;
+}
+
+.sidebar::-webkit-scrollbar {
+  width: 5px;
+}
+
+.sidebar::-webkit-scrollbar-thumb {
+  background: #d5d5d5;
+  border-radius: 20px;
+}
+
+/* ===========================
+   LOGO
+=========================== */
+
+.sidebar-logo {
+  width: 100%;
+  height: 58px;
+  border-bottom: 1px solid #ececec;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #fff;
+}
+
+.sidebar-logo img {
+  width: 175px;
+  transition: .3s; 
+}
+
+.sidebar.close .sidebar-logo img {
+  width: 42px;
+}
+
+/* ===========================
+   USER
+=========================== */
+
+.sidebar-user {
+  padding: 14px 10px;
+  text-align: center;
+  border-bottom: 1px solid #efefef;
+}
+
+.sidebar-user img {
+  width: 58px;
+  height: 58px;
+  border: 2px solid #d9d9d9;
+  object-fit: cover;
+  background: white;
+}
+
+.user-details {
+  margin-top: 8px;
+  transition: .3s;
+}
+
+.user-details h4 {
+  font-size: 20px;
+  color: #444;
+  margin-bottom: 8px;
+}
+
+.user-details span {
+  display: block;
+  font-size: 15px;
+  color: #333;
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+
+.user-details p {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+  font-size: 13px;
+  color: #555;
+}
+
+.online-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: #1dbb39;
+}
+
+.sidebar.close .user-details {
+  opacity: 0;
+  transform: scale(.8);
+  height: 0;
+  overflow: hidden;
+}
+
+/* ===========================
+   MENU
+=========================== */
+
+.menu-block {
+  width: 100%;
+}
+
+.sidebar-item {
+  height: 52px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+  transition: .3s;
+  padding: 0 18px;
+  color: #333;
+  user-select: none;
+}
+
+.sidebar-item:hover {
+  background: #f6f7fb;
+}
+
+.sidebar-left {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.sidebar-left svg {
+  width: 18px;
+  min-width: 18px;
+  font-size: 18px;
+}
+
+.sidebar-left span {
+  white-space: nowrap;
+  font-size: 14px;
+  font-weight: 600;
+  transition: .25s;
+}
+
+.sidebar.close .sidebar-left span {
+  opacity: 0;
+  width: 0;
+  overflow: hidden;
+}
+
+/* ===========================
+   ACTIVE
+=========================== */
+
+.sidebar-item.active {
+  background: #f3f8f3;
+  color: #0d7738;
+  border-left: 4px solid #1b9448;
+}
+
+.sidebar-item.active svg {
+  color: #1b9448;
+}
+
+/* ===========================
+   ARROW
+=========================== */
+
+.arrow {
+  font-size: 11px;
+  transition: .35s;
+}
+
+.rotate {
+  transform: rotate(90deg);
+}
+
+.sidebar.close .arrow {
+  display: none;
+}
+
+/* ===========================
+   SUBMENU
+=========================== */
+
+.submenu {
+  max-height: 0;
+  overflow: hidden;
+  opacity: 0;
+  transform: translateY(-10px);
+
+  transition:
+    max-height 0.9s ease-in-out,
+    opacity 0.6s ease,
+    transform 0.6s ease;
+}
+
+.submenu.show {
+  max-height: 700px;
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.submenu-item {
+  height: 42px;
+  display: flex;
+  align-items: center;
+  padding-left: 55px;
+  font-size: 14px;
+  color: #555;
+  transition: .3s;
+  animation: submenu .35s ease;
+}
+
+.submenu-item:hover {
+  background: #ececec;
+  color: #0d7738;
+}
+
+@keyframes submenu {
+  from {
+    opacity: 0;
+    transform: translateY(-12px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.sidebar.close .submenu {
+  display: none;
+}
+
+/* ===========================
+   COLLAPSED
+=========================== */
+
+.sidebar.close .sidebar-item {
+  justify-content: center;
+  padding: 0;
+}
+
+.sidebar.close .sidebar-left {
+  width: 100%;
+  justify-content: center;
+}
+
+.sidebar.close .sidebar-left svg {
+  font-size: 21px;
+}
+
+/* ===========================
+   ICON COLORS
+=========================== */
+
+.icon-blue{
+  color:#1976d2;
+}
+
+.icon-orange{
+  color:#fb8c00;
+}
+
+.icon-purple{
+  color:#8e24aa;
+}
+
+.icon-cyan{
+  color:#29b6f6;
+}
+
+.icon-red{
+  color:#e53935;
+}
+
+.icon-green{
+  color:#43a047;
+}
+
+.icon-teal{
+  color:#00897b;
+}
+
+.icon-indigo{
+  color:#3949ab;
+}
+
+.icon-yellow{
+  color:#f9a825;
+}
+
+.icon-pink{
+  color:#d81b60;
+}
+
+.icon-brown{
+  color:#6d4c41;
+}
+
+/* =========================================================
+   ACCOUNTING SECTION
+========================================================= */
+
+
+/* ===========================
+   ACCOUNTING TITLE
+=========================== */
+
+.sidebar-section-title {
+  width: 100%;
+  padding: 14px 18px 8px;
+
+  font-size: 13px;
+  font-weight: 500;
+
+  color: #999;
+
+  white-space: nowrap;
+
+  transition: .25s;
+}
+
+
+/* ===========================
+   ACCOUNTING BLOCK
+=========================== */
+
+.accounting-block {
+  width: 100%;
+}
+
+
+/* ===========================
+   ACCOUNTING ITEM
+=========================== */
+
+.accounting-item {
+  height: 52px;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  cursor: pointer;
+
+  transition: .3s;
+
+  padding: 0 18px;
+
+  color: #333;
+
+  user-select: none;
+
+  text-decoration: none;
+}
+
+
+/* ===========================
+   ACCOUNTING HOVER
+=========================== */
+
+.accounting-item:hover {
+  background: #f6f7fb;
+}
+
+
+/* ===========================
+   ACCOUNTING LEFT
+=========================== */
+
+.accounting-item .sidebar-left {
+  display: flex;
+  align-items: center;
+
+  gap: 15px;
+}
+
+
+/* ===========================
+   ACCOUNTING ICON
+=========================== */
+
+.accounting-item .sidebar-left svg {
+  width: 18px;
+  min-width: 18px;
+
+  font-size: 18px;
+}
+
+
+/* ===========================
+   ACCOUNTING TEXT
+=========================== */
+
+.accounting-item .sidebar-left span {
+  white-space: nowrap;
+
+  font-size: 14px;
+
+  font-weight: 600;
+
+  transition: .25s;
+}
+
+
+/* ===========================
+   ACCOUNTING ARROW
+=========================== */
+
+.accounting-arrow {
+  font-size: 11px;
+
+  transition: .35s;
+}
+
+
+/* Arrow rotate */
+
+.accounting-arrow.rotate {
+  transform: rotate(90deg);
+}
+
+
+/* ===========================
+   ACCOUNTING SUBMENU
+=========================== */
+
+.accounting-submenu {
+  max-height: 0;
+
+  overflow: hidden;
+
+  opacity: 0;
+
+  transform: translateY(-10px);
+
+  transition:
+    max-height 0.9s ease-in-out,
+    opacity 0.6s ease,
+    transform 0.6s ease;
+}
+
+
+/* ===========================
+   ACCOUNTING SUBMENU SHOW
+=========================== */
+
+.accounting-submenu.show {
+  max-height: 650px;
+
+  opacity: 1;
+
+  transform: translateY(0);
+}
+
+
+/* ===========================
+   ACCOUNTING SUBMENU ITEM
+=========================== */
+
+.accounting-submenu-item {
+  height: 42px;
+
+  display: flex;
+
+  align-items: center;
+
+  padding-left: 55px;
+
+  font-size: 14px;
+
+  color: #555;
+
+  transition: .3s;
+
+  animation: accountingSubmenu .35s ease;
+
+  text-decoration: none;
+
+  white-space: nowrap;
+}
+
+
+/* ===========================
+   ACCOUNTING SUBMENU HOVER
+=========================== */
+
+.accounting-submenu-item:hover {
+  background: #ececec;
+
+  color: #0d7738;
+}
+
+
+/* ===========================
+   ACCOUNTING RADIO / CIRCLE
+=========================== */
+
+.accounting-radio {
+  width: 20px;
+
+  min-width: 20px;
+
+  margin-right: 5px;
+
+  font-size: 17px;
+
+  color: #888;
+
+  line-height: 1;
+
+  transition: .25s;
+}
+
+
+/* ===========================
+   ACCOUNTING SUBMENU ACTIVE
+=========================== */
+
+.accounting-submenu-item.accounting-submenu-active {
+  background: #f3f8f3;
+
+  color: #0d7738;
+
+  font-weight: 600;
+
+  border-left: 4px solid #1b9448;
+}
+
+
+/* Active circle */
+
+.accounting-submenu-item.accounting-submenu-active
+.accounting-radio {
+  color: #1b9448;
+}
+
+
+/* ===========================
+   ACCOUNTING ACTIVE ITEM
+=========================== */
+
+.accounting-item.accounting-active {
+  background: #f3f8f3;
+
+  color: #0d7738;
+
+  border-left: 4px solid #1b9448;
+}
+
+
+/* ===========================
+   ACCOUNTING ICON COLORS
+=========================== */
+
+.accounting-icon-green {
+  color: #4d9b65;
+}
+
+.accounting-icon-blue {
+  color: #3b9bc3;
+}
+
+.accounting-icon-purple {
+  color: #6c73c8;
+}
+
+.accounting-icon-yellow {
+  color: #a09538;
+}
+
+.accounting-icon-brown {
+  color: #94783d;
+}
+
+
+/* ===========================
+   ACCOUNTING SUBMENU ANIMATION
+=========================== */
+
+@keyframes accountingSubmenu {
+
+  from {
+    opacity: 0;
+
+    transform: translateY(-12px);
+  }
+
+  to {
+    opacity: 1;
+
+    transform: translateY(0);
+  }
+
+}
+
+
+/* ===========================
+   COLLAPSED SIDEBAR
+=========================== */
+
+.sidebar.close .sidebar-section-title {
+  opacity: 0;
+
+  height: 0;
+
+  padding: 0;
+
+  overflow: hidden;
+}
+
+
+/* Hide accounting text */
+
+.sidebar.close .accounting-item
+.sidebar-left span {
+  opacity: 0;
+
+  width: 0;
+
+  overflow: hidden;
+}
+
+
+/* Center accounting icons */
+
+.sidebar.close .accounting-item {
+  justify-content: center;
+
+  padding: 0;
+}
+
+
+.sidebar.close .accounting-item
+.sidebar-left {
+  width: 100%;
+
+  justify-content: center;
+}
+
+
+/* Hide accounting arrows */
+
+.sidebar.close .accounting-arrow {
+  display: none;
+}
+
+
+/* Hide accounting submenu */
+
+.sidebar.close .accounting-submenu {
+  display: none;
+}
+
+
+/* ===========================
+   ACCOUNTING ICON SIZE
+=========================== */
+
+.accounting-item
+.sidebar-left svg {
+  font-size: 18px;
+
+  width: 18px;
+
+  min-width: 18px;
+}
+
+/* =========================================================
+   REMOVE UNDERLINE FROM SIDEBAR NAVLINKS
+========================================================= */
+
+.sidebar-item,
+.sidebar-item:visited,
+.sidebar-item:hover,
+.sidebar-item:active {
+  text-decoration: none;
+}
+
+/* Keep sidebar text normal */
+.sidebar-item span {
+  text-decoration: none;
+}
+
+/* =========================================================
+   MAIN SIDEBAR NAVLINK
+========================================================= */
+
+.sidebar > .menu-block > .sidebar-item {
+  text-decoration: none;
+}
+
+/* =========================================================
+   REMOVE UNDERLINE FROM ALL SIDEBAR LINKS
+========================================================= */
+
+.sidebar a {
+  text-decoration: none;
+}
+
+/* Hover should also remain without underline */
+.sidebar a:hover {
+  text-decoration: none;
+}
+
+
+
+/* reporting */
+
+/* =========================================================
+   REPORTING SECTION
+========================================================= */
+
+
+/* ===========================
+   REPORTING BLOCK
+=========================== */
+
+.reporting-menu {
+  width: 100%;
+}
+
+.reporting-block {
+  width: 100%;
+}
+
+
+/* ===========================
+   REPORTING MAIN ITEM
+=========================== */
+
+.reporting-item {
+  height: 52px;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  cursor: pointer;
+
+  transition: .3s;
+
+  padding: 0 18px;
+
+  color: #333;
+
+  user-select: none;
+
+  text-decoration: none;
+}
+
+
+/* ===========================
+   REPORTING HOVER
+=========================== */
+
+.reporting-item:hover {
+  background: #f6f7fb;
+}
+
+
+/* ===========================
+   REPORTING LEFT
+=========================== */
+
+.reporting-item .sidebar-left {
+  display: flex;
+  align-items: center;
+
+  gap: 15px;
+}
+
+
+/* ===========================
+   REPORTING ICON
+=========================== */
+
+.reporting-item .sidebar-left svg {
+  width: 18px;
+  min-width: 18px;
+
+  font-size: 18px;
+}
+
+
+/* ===========================
+   REPORTING TEXT
+=========================== */
+
+.reporting-item .sidebar-left span {
+  white-space: nowrap;
+
+  font-size: 14px;
+
+  font-weight: 600;
+
+  transition: .25s;
+}
+
+
+/* ===========================
+   REPORTING ARROW
+=========================== */
+
+.reporting-arrow {
+  font-size: 11px;
+
+  transition: .35s;
+}
+
+.reporting-arrow.rotate {
+  transform: rotate(90deg);
+}
+
+
+/* ===========================
+   REPORTING SUBMENU
+=========================== */
+
+.reporting-submenu {
+  max-height: 0;
+
+  overflow: hidden;
+
+  opacity: 0;
+
+  transform: translateY(-10px);
+
+  transition:
+    max-height 0.9s ease-in-out,
+    opacity 0.6s ease,
+    transform 0.6s ease;
+}
+
+
+/* ===========================
+   REPORTING SUBMENU SHOW
+=========================== */
+
+.reporting-submenu.show {
+  max-height: 600px;
+
+  opacity: 1;
+
+  transform: translateY(0);
+}
+
+
+/* ===========================
+   REPORTING SUBMENU ITEM
+=========================== */
+
+.reporting-submenu-item {
+  height: 42px;
+
+  display: flex;
+
+  align-items: center;
+
+  padding-left: 55px;
+
+  font-size: 14px;
+
+  color: #555;
+
+  transition: .3s;
+
+  animation: reportingSubmenu .35s ease;
+
+  text-decoration: none;
+
+  white-space: nowrap;
+}
+
+
+/* ===========================
+   REPORTING SUBMENU HOVER
+=========================== */
+
+.reporting-submenu-item:hover {
+  background: #ececec;
+
+  color: #0d7738;
+}
+
+
+/* ===========================
+   REPORTING RADIO / CIRCLE
+=========================== */
+
+.reporting-radio {
+  width: 20px;
+
+  min-width: 20px;
+
+  margin-right: 5px;
+
+  font-size: 17px;
+
+  color: #888;
+
+  line-height: 1;
+
+  transition: .25s;
+}
+
+
+/* ===========================
+   REPORTING ACTIVE ITEM
+=========================== */
+
+.reporting-submenu-item.reporting-submenu-active {
+  background: #f3f8f3;
+
+  color: #0d7738;
+
+  font-weight: 600;
+
+  border-left: 4px solid #1b9448;
+}
+
+
+/* ===========================
+   ACTIVE CIRCLE
+=========================== */
+
+.reporting-submenu-item.reporting-submenu-active
+.reporting-radio {
+  color: #1b9448;
+}
+
+
+/* ===========================
+   REPORTING ANIMATION
+=========================== */
+
+@keyframes reportingSubmenu {
+
+  from {
+    opacity: 0;
+
+    transform: translateY(-12px);
+  }
+
+  to {
+    opacity: 1;
+
+    transform: translateY(0);
+  }
+
+}
+
+
+/* =========================================================
+   REPORTING ICON
+========================================================= */
+
+.reporting-item .accounting-icon-blue {
+  color: #3b9bc3;
+}
+
+
+/* =========================================================
+   COLLAPSED SIDEBAR - REPORTING
+========================================================= */
+
+
+/* Hide reporting text */
+
+.sidebar.close .reporting-item
+.sidebar-left span {
+  opacity: 0;
+
+  width: 0;
+
+  overflow: hidden;
+}
+
+
+/* Center reporting icon */
+
+.sidebar.close .reporting-item {
+  justify-content: center;
+
+  padding: 0;
+}
+
+
+.sidebar.close .reporting-item
+.sidebar-left {
+  width: 100%;
+
+  justify-content: center;
+}
+
+
+/* Hide reporting arrow */
+
+.sidebar.close .reporting-arrow {
+  display: none;
+}
+
+
+/* Hide reporting submenu */
+
+.sidebar.close .reporting-submenu {
+  display: none;
+}
+
+
+/* =========================================================
+   REPORTING ICON SIZE
+========================================================= */
+
+.reporting-item
+.sidebar-left svg {
+  font-size: 18px;
+
+  width: 18px;
+
+  min-width: 18px;
+}
+
+
+/* =========================================================
+   REPORTING LINK
+========================================================= */
+
+.reporting-submenu-item,
+.reporting-submenu-item:visited,
+.reporting-submenu-item:hover,
+.reporting-submenu-item:active {
+  text-decoration: none;
+}
+
+
+/* =========================================================
+   REPORTING MOBILE
+========================================================= */
+
+@media (max-width: 768px) {
+
+  .reporting-item {
+    height: 50px;
+  }
+
+  .reporting-submenu-item {
+    padding-left: 50px;
+  }
+
+}
+
+/* ===========================
+   RESPONSIVE
+=========================== */
+
+@media (max-width: 768px) {
+
+  .sidebar-section-title {
+    padding-left: 18px;
+  }
+
+}
+/* ===========================
+   RESPONSIVE
+=========================== */
+
+@media (max-width:768px) {
+
+  .sidebar {
+    width: 250px;
+  }
+
+  .sidebar.close {
+    width: 0;
+  }
+
+}

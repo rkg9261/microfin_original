@@ -1,0 +1,682 @@
+/* =========================================================
+   AREA SUMMARY PAGE
+========================================================= */
+
+.area-summary-page {
+  width: 100%;
+  min-height: 100vh;
+  padding: 20px;
+  background: #f7f8fa;
+  color: #333;
+  box-sizing: border-box;
+}
+
+
+/* =========================================================
+   PAGE HEADER
+========================================================= */
+
+.area-summary-page-header {
+  width: 100%;
+  margin-bottom: 16px;
+}
+
+.area-summary-page-header h1 {
+  margin: 0;
+  font-size: 17px;
+  font-weight: 700;
+  color: #303030;
+}
+
+.area-summary-breadcrumb {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 7px;
+  font-size: 11px;
+  color: #777;
+}
+
+.area-summary-breadcrumb strong {
+  color: #333;
+}
+
+
+/* =========================================================
+   FILTER CARD
+========================================================= */
+
+.area-summary-filter-card {
+  width: 100%;
+  min-height: 120px;
+  background: #fff;
+  border: 1px solid #dedede;
+  border-radius: 9px;
+  padding: 16px;
+  margin-bottom: 15px;
+  box-shadow: 0 1px 5px rgba(0, 0, 0, .04);
+}
+
+.area-summary-filter-title {
+  font-size: 13px;
+  font-weight: 600;
+  margin-bottom: 17px;
+  color: #444;
+}
+
+.area-summary-filter-row {
+  display: flex;
+  align-items: flex-end;
+  gap: 20px;
+}
+
+.area-summary-filter-field {
+  width: 310px;
+}
+
+.area-summary-filter-field label {
+  display: block;
+  margin-bottom: 6px;
+  font-size: 12px;
+  font-weight: 700;
+  color: #333;
+}
+
+.area-summary-select-wrapper {
+  position: relative;
+}
+
+.area-summary-select-wrapper select {
+  width: 100%;
+  height: 39px;
+  border: 1px solid #d5d5d5;
+  border-radius: 5px;
+  background: #fff;
+  padding: 0 35px 0 12px;
+  font-size: 13px;
+  color: #555;
+  outline: none;
+}
+
+.area-summary-select-wrapper select:focus {
+  border-color: #29a9d0;
+}
+
+.area-summary-clear-filter {
+  position: absolute;
+  right: 25px;
+  top: 50%;
+  transform: translateY(-50%);
+  border: 0;
+  background: transparent;
+  color: #777;
+  font-size: 18px;
+  cursor: pointer;
+}
+
+
+/* =========================================================
+   LIST CONTAINER
+========================================================= */
+
+.area-summary-list-container {
+  width: 100%;
+  background: #fff;
+  border: 1px solid #dedede;
+  border-radius: 9px;
+  padding: 14px;
+  box-sizing: border-box;
+}
+
+
+/* =========================================================
+   LIST HEADER
+========================================================= */
+
+.area-summary-list-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+}
+
+.area-summary-list-header h2 {
+  margin: 0;
+  font-size: 17px;
+  font-weight: 500;
+  color: #333;
+}
+
+
+/* =========================================================
+   TOOLBAR
+========================================================= */
+
+.area-summary-table-toolbar {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.area-summary-search {
+  width: 150px;
+  height: 32px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  background: #fff;
+}
+
+.area-summary-search input {
+  width: 115px;
+  height: 100%;
+  border: 0;
+  outline: 0;
+  padding: 0 8px;
+  font-size: 12px;
+  background: transparent;
+}
+
+.area-summary-search span {
+  font-size: 16px;
+  color: #555;
+}
+
+
+/* =========================================================
+   TABLE
+========================================================= */
+
+.area-summary-table {
+  width: 100%;
+  min-width: 850px;
+  border-collapse: collapse;
+}
+
+.area-summary-table th {
+  background: #e9eef1;
+  color: #333;
+  font-size: 11px;
+  font-weight: 700;
+  padding: 11px 8px;
+  text-align: left;
+  white-space: nowrap;
+}
+
+.area-summary-table td {
+  padding: 11px 8px;
+  font-size: 12px;
+  color: #555;
+  border-bottom: 1px solid #eeeeee;
+  white-space: nowrap;
+}
+
+.area-summary-table tr:hover td {
+  background: #fafafa;
+}
+
+
+/* =========================================================
+   STATUS
+========================================================= */
+
+.area-summary-status {
+  display: inline-block;
+  padding: 4px 8px;
+  border-radius: 3px;
+  font-size: 10px;
+  font-weight: 700;
+}
+
+.area-summary-status.approved {
+  color: #17843c;
+  background: #e9f8ee;
+}
+
+.area-summary-status.pending {
+  color: #c28b00;
+  background: #fff7dd;
+}
+
+
+/* =========================================================
+   ACTION
+========================================================= */
+
+.area-summary-action-cell {
+  position: relative;
+  min-width: 95px;
+}
+
+.area-summary-task-button {
+  border: 0;
+  background: transparent;
+  color: #555;
+  font-size: 12px;
+  cursor: pointer;
+  padding: 6px 8px;
+}
+
+.area-summary-task-button:hover {
+  color: #008fc1;
+}
+
+.area-summary-task-menu {
+  position: absolute;
+  top: 34px;
+  right: 0;
+  width: 180px;
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  box-shadow: 0 5px 18px rgba(0, 0, 0, .15);
+  z-index: 99999;
+  overflow: hidden;
+}
+
+.area-summary-task-menu button {
+  width: 100%;
+  min-height: 40px;
+  border: 0;
+  background: #fff;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 0 14px;
+  cursor: pointer;
+  text-align: left;
+  font-size: 12px;
+  color: #444;
+}
+
+.area-summary-task-menu button:hover {
+  background: #f4f7f9;
+  color: #008fc1;
+}
+
+.area-summary-task-menu button span {
+  width: 18px;
+  font-size: 15px;
+}
+
+
+/* =========================================================
+   NO DATA
+========================================================= */
+
+.area-summary-no-data {
+  text-align: center !important;
+  padding: 30px !important;
+  color: #888 !important;
+}
+
+
+/* =========================================================
+   FOOTER
+========================================================= */
+
+.area-summary-table-footer {
+  padding: 15px 4px 5px;
+  color: #666;
+  font-size: 12px;
+}
+
+
+/* =========================================================
+   MODAL OVERLAY
+========================================================= */
+
+.area-summary-modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, .52);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  z-index: 99999;
+}
+
+
+/* =========================================================
+   FORM MODAL
+========================================================= */
+
+.area-summary-form-modal {
+  width: min(1000px, 95vw);
+  max-height: 92vh;
+  background: #fff;
+  border-radius: 4px;
+  overflow: hidden;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, .3);
+  display: flex;
+  flex-direction: column;
+}
+
+
+/* =========================================================
+   MODAL HEADER
+========================================================= */
+
+.area-summary-modal-header {
+  height: 57px;
+  min-height: 57px;
+  background: #16add0;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 18px;
+}
+
+.area-summary-modal-header h2 {
+  margin: 0;
+  font-size: 20px;
+  font-weight: 500;
+}
+
+.area-summary-modal-close {
+  width: 32px;
+  height: 32px;
+  border: 0;
+  background: transparent;
+  color: #fff;
+  font-size: 27px;
+  line-height: 1;
+  cursor: pointer;
+}
+
+
+/* =========================================================
+   FORM
+========================================================= */
+
+.area-summary-form {
+  overflow-y: auto;
+  padding: 20px;
+}
+
+.area-summary-form-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  column-gap: 28px;
+  row-gap: 17px;
+}
+
+.area-summary-form-field {
+  width: 100%;
+}
+
+.area-summary-form-field label {
+  display: block;
+  font-size: 12px;
+  font-weight: 700;
+  margin-bottom: 7px;
+  color: #333;
+  text-transform: uppercase;
+}
+
+.required-star {
+  color: #d32f2f;
+  margin-left: 3px;
+}
+
+.area-summary-input {
+  width: 100%;
+  height: 39px;
+  border: 1px solid #d7d7d7;
+  border-radius: 3px;
+  outline: none;
+  padding: 0 11px;
+  font-size: 13px;
+  color: #555;
+  background: #fff;
+}
+
+.area-summary-input:focus {
+  border-color: #18a8cc;
+}
+
+.area-summary-input.error {
+  border-color: #dc3545;
+}
+
+.area-summary-error {
+  display: block;
+  margin-top: 4px;
+  font-size: 10px;
+  color: #dc3545;
+}
+
+
+/* =========================================================
+   FORM BUTTONS
+========================================================= */
+
+.area-summary-form-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 8px;
+  margin-top: 25px;
+  padding-top: 10px;
+}
+
+.area-summary-save-button,
+.area-summary-cancel-button {
+  min-width: 80px;
+  height: 38px;
+  border: 0;
+  border-radius: 4px;
+  color: #fff;
+  font-size: 12px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.area-summary-save-button {
+  background: #19a85a;
+}
+
+.area-summary-save-button:hover {
+  background: #148d4b;
+}
+
+.area-summary-cancel-button {
+  background: #d84c57;
+}
+
+.area-summary-cancel-button:hover {
+  background: #bd3944;
+}
+
+
+/* =========================================================
+   VIEW MODAL
+========================================================= */
+
+.area-summary-view-modal {
+  width: min(920px, 95vw);
+  max-height: 90vh;
+  background: #fff;
+  border-radius: 4px;
+  overflow: hidden;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, .35);
+  display: flex;
+  flex-direction: column;
+}
+
+
+/* =========================================================
+   VIEW CONTENT
+========================================================= */
+
+.area-summary-view-content {
+  padding: 20px;
+  overflow-y: auto;
+}
+
+.area-summary-view-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 35px;
+}
+
+.area-summary-view-column {
+  width: 100%;
+}
+
+.area-summary-detail-row {
+  display: grid;
+  grid-template-columns: 190px 15px 1fr;
+  min-height: 34px;
+  align-items: center;
+  border-bottom: 1px solid #eeeeee;
+  font-size: 12px;
+}
+
+.area-summary-detail-label {
+  font-weight: 700;
+  color: #444;
+}
+
+.area-summary-detail-colon {
+  color: #777;
+}
+
+.area-summary-detail-value {
+  color: #666;
+  word-break: break-word;
+}
+
+
+/* =========================================================
+   VIEW REMARK
+========================================================= */
+
+.area-summary-view-remark {
+  margin-top: 20px;
+  padding-top: 14px;
+  border-top: 1px solid #ddd;
+}
+
+.area-summary-view-remark strong {
+  font-size: 12px;
+  color: #444;
+}
+
+.area-summary-view-remark p {
+  margin: 8px 0 0;
+  font-size: 13px;
+  color: #666;
+}
+
+
+/* =========================================================
+   VIEW FOOTER
+========================================================= */
+
+.area-summary-view-footer {
+  display: flex;
+  justify-content: flex-end;
+  padding: 12px 20px;
+  border-top: 1px solid #eeeeee;
+}
+
+.area-summary-close-button {
+  min-width: 75px;
+  height: 36px;
+  border: 0;
+  border-radius: 4px;
+  background: #19a8c9;
+  color: #fff;
+  font-size: 12px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.area-summary-close-button:hover {
+  background: #118fac;
+}
+
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media (max-width: 900px) {
+
+  .area-summary-page {
+    padding: 15px;
+  }
+
+  .area-summary-form-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .area-summary-view-grid {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+
+  .area-summary-filter-field {
+    width: 100%;
+  }
+
+}
+
+
+@media (max-width: 600px) {
+
+  .area-summary-page {
+    padding: 10px;
+  }
+
+  .area-summary-list-header {
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  .area-summary-list-header h2 {
+    font-size: 15px;
+  }
+
+  .area-summary-table-toolbar {
+    gap: 10px;
+  }
+
+  .area-summary-search {
+    width: 130px;
+  }
+
+  .area-summary-modal-overlay {
+    padding: 8px;
+  }
+
+  .area-summary-form-modal,
+  .area-summary-view-modal {
+    width: 100%;
+    max-height: 95vh;
+  }
+
+  .area-summary-modal-header {
+    height: 52px;
+    min-height: 52px;
+  }
+
+  .area-summary-modal-header h2 {
+    font-size: 16px;
+  }
+
+  .area-summary-form {
+    padding: 15px;
+  }
+
+  .area-summary-detail-row {
+    grid-template-columns: 145px 12px 1fr;
+    font-size: 11px;
+  }
+
+}

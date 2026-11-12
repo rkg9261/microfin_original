@@ -1,0 +1,1073 @@
+/* =========================================================
+   LOAN APPROVAL PAGE
+========================================================= */
+
+.loan-approval-page {
+  width: 100%;
+  min-height: 100vh;
+  padding: 20px;
+  background: #f7f8fa;
+  color: #333;
+}
+
+
+/* =========================================================
+   PAGE HEADER
+========================================================= */
+
+.loan-approval-page-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+}
+
+
+.loan-approval-page-header h2 {
+  margin: 0 0 8px;
+  font-size: 15px;
+  font-weight: 700;
+  color: #333;
+}
+
+
+.loan-approval-breadcrumb {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  font-size: 11px;
+  color: #777;
+}
+
+
+.loan-approval-breadcrumb strong {
+  color: #333;
+}
+
+
+.breadcrumb-arrow {
+  font-size: 15px;
+}
+
+
+/* =========================================================
+   FILTER CARD
+========================================================= */
+
+.loan-approval-filter-card {
+  width: 100%;
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  padding: 15px 18px 18px;
+  margin-bottom: 12px;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, .04);
+}
+
+
+.loan-approval-section-title {
+  font-size: 14px;
+  font-weight: 600;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+
+/* =========================================================
+   FILTER FORM
+========================================================= */
+
+.loan-approval-filter-form {
+  display: grid;
+  grid-template-columns:
+    repeat(4, minmax(180px, 1fr));
+
+  gap: 15px 28px;
+
+  align-items: end;
+}
+
+
+.loan-approval-field {
+  width: 100%;
+}
+
+
+.loan-approval-field label {
+  display: block;
+
+  margin-bottom: 7px;
+
+  font-size: 12px;
+
+  font-weight: 700;
+
+  color: #292929;
+}
+
+
+.loan-approval-field input,
+.loan-approval-field select {
+  width: 100%;
+
+  height: 38px;
+
+  border: 1px solid #cfcfcf;
+
+  border-radius: 4px;
+
+  background: #fff;
+
+  padding: 0 12px;
+
+  font-size: 13px;
+
+  color: #555;
+
+  outline: none;
+}
+
+
+.loan-approval-field input:focus,
+.loan-approval-field select:focus {
+  border-color: #28a9d1;
+}
+
+
+/* =========================================================
+   INPUT WITH CLEAR
+========================================================= */
+
+.loan-approval-input-with-clear {
+  position: relative;
+  width: 100%;
+}
+
+
+.loan-approval-input-with-clear input,
+.loan-approval-input-with-clear select {
+  padding-right: 40px;
+}
+
+
+.loan-approval-clear {
+  position: absolute;
+
+  right: 23px;
+
+  top: 50%;
+
+  transform: translateY(-50%);
+
+  border: 0;
+
+  background: transparent;
+
+  color: #777;
+
+  font-size: 18px;
+
+  cursor: pointer;
+}
+
+
+.loan-approval-dropdown-arrow {
+  position: absolute;
+
+  right: 8px;
+
+  top: 50%;
+
+  transform: translateY(-50%);
+
+  color: #777;
+
+  font-size: 10px;
+
+  pointer-events: none;
+}
+
+
+/* =========================================================
+   FILTER BUTTONS
+========================================================= */
+
+.loan-approval-filter-buttons {
+  grid-column: 1 / -1;
+
+  display: flex;
+
+  gap: 8px;
+
+  margin-top: 2px;
+}
+
+
+.loan-approval-submit-button,
+.loan-approval-print-button {
+  height: 37px;
+
+  border: 0;
+
+  border-radius: 4px;
+
+  padding: 0 20px;
+
+  color: #fff;
+
+  font-size: 13px;
+
+  font-weight: 600;
+
+  cursor: pointer;
+
+  transition: .25s;
+}
+
+
+.loan-approval-submit-button {
+  background: #29a8d2;
+}
+
+
+.loan-approval-submit-button:hover {
+  background: #188db6;
+}
+
+
+.loan-approval-print-button {
+  background: #20a9d1;
+}
+
+
+.loan-approval-print-button:hover {
+  background: #168fb5;
+}
+
+
+/* =========================================================
+   LIST CARD
+========================================================= */
+
+.loan-approval-list-card {
+  width: 100%;
+
+  background: #fff;
+
+  border: 1px solid #ddd;
+
+  border-radius: 10px;
+
+  overflow: hidden;
+
+  box-shadow: 0 1px 4px rgba(0, 0, 0, .04);
+}
+
+
+/* =========================================================
+   LIST HEADER
+========================================================= */
+
+.loan-approval-list-header {
+  min-height: 58px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  padding: 0 16px;
+
+  border-bottom: 1px solid #eee;
+}
+
+
+.loan-approval-list-header h2 {
+  margin: 0;
+
+  font-size: 17px;
+
+  font-weight: 500;
+
+  color: #444;
+}
+
+
+/* =========================================================
+   TOP PAGINATION
+========================================================= */
+
+.loan-approval-pagination-top {
+  display: flex;
+
+  align-items: center;
+
+  gap: 4px;
+}
+
+
+.loan-approval-pagination-top button {
+  width: 28px;
+
+  height: 28px;
+
+  border: 0;
+
+  background: transparent;
+
+  color: #777;
+
+  cursor: pointer;
+}
+
+
+.loan-approval-pagination-top button.active {
+  background: #238dc0;
+
+  color: #fff;
+
+  border-radius: 2px;
+}
+
+
+.loan-approval-pagination-top button:disabled {
+  opacity: .5;
+
+  cursor: default;
+}
+
+
+/* =========================================================
+   TABLE TOOLBAR
+========================================================= */
+
+.loan-approval-table-toolbar {
+  min-height: 65px;
+
+  padding: 10px 16px;
+
+  display: flex;
+
+  justify-content: space-between;
+
+  align-items: center;
+
+  gap: 15px;
+}
+
+
+.loan-approval-showing-top {
+  color: #666;
+
+  font-size: 12px;
+}
+
+
+.loan-approval-toolbar-right {
+  display: flex;
+
+  align-items: center;
+
+  gap: 15px;
+}
+
+
+/* =========================================================
+   TABLE SEARCH
+========================================================= */
+
+.loan-approval-table-search {
+  display: flex;
+
+  align-items: center;
+
+  border: 1px solid #ddd;
+
+  height: 34px;
+
+  width: 220px;
+
+  border-radius: 3px;
+
+  overflow: hidden;
+}
+
+
+.loan-approval-table-search input {
+  flex: 1;
+
+  height: 100%;
+
+  border: 0;
+
+  outline: 0;
+
+  padding: 0 10px;
+
+  font-size: 12px;
+}
+
+
+.loan-approval-table-search button {
+  width: 35px;
+
+  height: 100%;
+
+  border: 0;
+
+  background: #fff;
+
+  color: #555;
+
+  cursor: pointer;
+}
+
+
+/* =========================================================
+   TABLE
+========================================================= */
+
+.loan-approval-table-wrapper {
+  width: 100%;
+
+  overflow-x: auto;
+}
+
+
+.loan-approval-table {
+  width: 100%;
+
+  min-width: 1250px;
+
+  border-collapse: collapse;
+
+  font-size: 11px;
+}
+
+
+.loan-approval-table thead th {
+  background: #dfe8eb;
+
+  color: #303b40;
+
+  font-size: 11px;
+
+  font-weight: 700;
+
+  padding: 12px 8px;
+
+  text-align: left;
+
+  white-space: nowrap;
+
+  border-bottom: 1px solid #cbd4d7;
+}
+
+
+.loan-approval-table tbody td {
+  padding: 13px 8px;
+
+  color: #555;
+
+  border-bottom: 1px solid #eee;
+
+  vertical-align: middle;
+
+  white-space: nowrap;
+}
+
+
+.loan-approval-table tbody tr:hover {
+  background: #fafafa;
+}
+
+
+.loan-approval-table tbody td strong {
+  display: block;
+
+  color: #4b555a;
+
+  font-weight: 700;
+}
+
+
+.loan-approval-table tbody td small {
+  display: block;
+
+  color: #777;
+
+  margin-top: 3px;
+}
+
+
+/* =========================================================
+   ACTION BUTTONS
+========================================================= */
+
+.loan-approval-action-buttons {
+  display: flex;
+
+  align-items: center;
+
+  gap: 6px;
+}
+
+
+.loan-approval-view-button,
+.loan-approval-delete-button {
+  width: 34px;
+
+  height: 30px;
+
+  border: 0;
+
+  border-radius: 4px;
+
+  color: #fff;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  cursor: pointer;
+
+  transition: .25s;
+}
+
+
+.loan-approval-view-button {
+  background: #287fd4;
+}
+
+
+.loan-approval-view-button:hover {
+  background: #176bc0;
+}
+
+
+.loan-approval-delete-button {
+  background: #df4c4c;
+}
+
+
+.loan-approval-delete-button:hover {
+  background: #c83737;
+}
+
+
+/* =========================================================
+   NO DATA
+========================================================= */
+
+.loan-approval-no-data {
+  text-align: center !important;
+
+  padding: 40px !important;
+
+  color: #777 !important;
+}
+
+
+/* =========================================================
+   TABLE FOOTER
+========================================================= */
+
+.loan-approval-table-footer {
+  min-height: 55px;
+
+  padding: 10px 16px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  font-size: 12px;
+
+  color: #777;
+}
+
+
+.loan-approval-pagination {
+  display: flex;
+
+  align-items: center;
+
+  gap: 5px;
+}
+
+
+.loan-approval-pagination button {
+  border: 0;
+
+  background: transparent;
+
+  color: #777;
+
+  padding: 6px 10px;
+
+  cursor: pointer;
+}
+
+
+.loan-approval-pagination button.active {
+  background: #278fc0;
+
+  color: #fff;
+
+  border-radius: 3px;
+}
+
+
+.loan-approval-pagination button:disabled {
+  opacity: .5;
+
+  cursor: default;
+}
+
+
+/* =========================================================
+   POPUP OVERLAY
+========================================================= */
+
+.loan-approval-popup-overlay {
+  position: fixed;
+
+  inset: 0;
+
+  background: rgba(0, 0, 0, .55);
+
+  z-index: 9999;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  padding: 20px;
+
+  animation: loanApprovalOverlay .2s ease;
+}
+
+
+@keyframes loanApprovalOverlay {
+
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+
+}
+
+
+/* =========================================================
+   DETAILS POPUP
+========================================================= */
+
+.loan-approval-details-popup {
+  width: 850px;
+
+  max-width: 100%;
+
+  max-height: 90vh;
+
+  background: #fff;
+
+  border-radius: 4px;
+
+  overflow: hidden;
+
+  box-shadow: 0 15px 50px rgba(0, 0, 0, .35);
+
+  animation: loanApprovalPopup .25s ease;
+}
+
+
+@keyframes loanApprovalPopup {
+
+  from {
+    opacity: 0;
+
+    transform: translateY(-25px) scale(.98);
+  }
+
+  to {
+    opacity: 1;
+
+    transform: translateY(0) scale(1);
+  }
+
+}
+
+
+/* =========================================================
+   POPUP HEADER
+========================================================= */
+
+.loan-approval-popup-header {
+  height: 62px;
+
+  background: #20a8d3;
+
+  color: #fff;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  padding: 0 20px;
+}
+
+
+.loan-approval-popup-header h2 {
+  margin: 0;
+
+  font-size: 19px;
+
+  font-weight: 500;
+}
+
+
+.loan-approval-popup-close {
+  width: 35px;
+
+  height: 35px;
+
+  border: 0;
+
+  background: transparent;
+
+  color: #fff;
+
+  font-size: 17px;
+
+  cursor: pointer;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+}
+
+
+.loan-approval-popup-close:hover {
+  opacity: .7;
+}
+
+
+/* =========================================================
+   POPUP BODY
+========================================================= */
+
+.loan-approval-popup-body {
+  display: grid;
+
+  grid-template-columns: 1fr 1fr;
+
+  gap: 35px;
+
+  padding: 20px 25px;
+
+  max-height: 65vh;
+
+  overflow-y: auto;
+}
+
+
+/* =========================================================
+   DETAIL SECTION
+========================================================= */
+
+.loan-approval-detail-column {
+  min-width: 0;
+}
+
+
+.loan-approval-detail-section-title {
+  font-size: 13px;
+
+  font-weight: 700;
+
+  color: #333;
+
+  margin-bottom: 8px;
+
+  padding-bottom: 8px;
+
+  border-bottom: 2px solid #20a8d3;
+}
+
+
+/* =========================================================
+   DETAIL ROW
+========================================================= */
+
+.loan-approval-detail-row {
+  min-height: 45px;
+
+  display: grid;
+
+  grid-template-columns: 180px 1fr;
+
+  align-items: center;
+
+  gap: 10px;
+
+  border-bottom: 1px solid #eee;
+}
+
+
+.loan-approval-detail-row span {
+  font-size: 11px;
+
+  font-weight: 700;
+
+  color: #333;
+}
+
+
+.loan-approval-detail-row strong {
+  font-size: 12px;
+
+  font-weight: 500;
+
+  color: #666;
+
+  word-break: break-word;
+}
+
+
+/* =========================================================
+   STATUS
+========================================================= */
+
+.loan-approval-status {
+  color: #e19b24 !important;
+
+  font-weight: 700 !important;
+}
+
+
+/* =========================================================
+   POPUP FOOTER
+========================================================= */
+
+.loan-approval-popup-footer {
+  min-height: 65px;
+
+  padding: 12px 20px;
+
+  border-top: 1px solid #eee;
+
+  background: #fafafa;
+
+  display: flex;
+
+  justify-content: flex-end;
+
+  align-items: center;
+
+  gap: 10px;
+}
+
+
+/* =========================================================
+   POPUP DELETE
+========================================================= */
+
+.loan-approval-popup-delete {
+  height: 36px;
+
+  padding: 0 17px;
+
+  border: 0;
+
+  border-radius: 4px;
+
+  background: #dc4b4b;
+
+  color: #fff;
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 7px;
+
+  cursor: pointer;
+}
+
+
+.loan-approval-popup-delete:hover {
+  background: #c93636;
+}
+
+
+/* =========================================================
+   POPUP CLOSE
+========================================================= */
+
+.loan-approval-popup-close-button {
+  height: 36px;
+
+  padding: 0 20px;
+
+  border: 0;
+
+  border-radius: 4px;
+
+  background: #20a8d3;
+
+  color: #fff;
+
+  cursor: pointer;
+}
+
+
+.loan-approval-popup-close-button:hover {
+  background: #168fb8;
+}
+
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media (max-width: 1100px) {
+
+  .loan-approval-filter-form {
+    grid-template-columns:
+      repeat(2, minmax(200px, 1fr));
+  }
+
+}
+
+
+@media (max-width: 768px) {
+
+  .loan-approval-page {
+    padding: 12px;
+  }
+
+
+  .loan-approval-filter-form {
+    grid-template-columns: 1fr;
+  }
+
+
+  .loan-approval-filter-buttons {
+    grid-column: auto;
+  }
+
+
+  .loan-approval-table-toolbar {
+    flex-direction: column;
+
+    align-items: flex-start;
+  }
+
+
+  .loan-approval-toolbar-right {
+    width: 100%;
+
+    justify-content: space-between;
+  }
+
+
+  .loan-approval-table-search {
+    width: 200px;
+  }
+
+
+  .loan-approval-popup-body {
+    grid-template-columns: 1fr;
+
+    gap: 20px;
+  }
+
+
+  .loan-approval-detail-row {
+    grid-template-columns: 150px 1fr;
+  }
+
+}
+
+
+@media (max-width: 500px) {
+
+  .loan-approval-list-header {
+    align-items: flex-start;
+
+    flex-direction: column;
+
+    gap: 10px;
+
+    padding: 12px 15px;
+  }
+
+
+  .loan-approval-toolbar-right {
+    flex-direction: column;
+
+    align-items: flex-start;
+  }
+
+
+  .loan-approval-table-search {
+    width: 100%;
+  }
+
+
+  .loan-approval-detail-row {
+    grid-template-columns: 1fr;
+
+    gap: 4px;
+
+    padding: 9px 0;
+  }
+
+
+  .loan-approval-popup-footer {
+    justify-content: space-between;
+  }
+
+}
+
+
+/* =========================================================
+   PRINT
+========================================================= */
+
+@media print {
+
+  .loan-approval-filter-card {
+    display: none;
+  }
+
+
+  .loan-approval-page-header {
+    display: none;
+  }
+
+
+  .loan-approval-action-buttons {
+    display: none;
+  }
+
+
+  .loan-approval-popup-overlay {
+    display: none;
+  }
+
+}

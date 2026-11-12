@@ -1,0 +1,349 @@
+/* ===========================
+   PAGE
+=========================== */
+
+.group-page{
+    width:100%;
+    padding:20px;
+    background:#f4f7fb;
+    min-height:100vh;
+}
+
+.group-header{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    margin-bottom:20px;
+}
+
+.group-header h2{
+    margin:0;
+    color:#1e293b;
+    font-size:28px;
+    font-weight:700;
+}
+
+/* ===========================
+   FILTER
+=========================== */
+
+.group-filter-card{
+    background:#fff;
+    border-radius:12px;
+    padding:20px;
+    margin-bottom:20px;
+    box-shadow:0 4px 18px rgba(0,0,0,.08);
+}
+
+.group-filter-item{
+    display:flex;
+    flex-direction:column;
+    width:280px;
+}
+
+.group-filter-item label{
+    margin-bottom:8px;
+    font-weight:600;
+    color:#374151;
+}
+
+.group-filter-item select{
+    height:44px;
+    border:1px solid #dcdfe6;
+    border-radius:8px;
+    padding:0 12px;
+    font-size:15px;
+    outline:none;
+    background:#fff;
+}
+
+/* ===========================
+   MODAL
+=========================== */
+
+.group-modal{
+    position:fixed;
+    inset:0;
+    background:rgba(0,0,0,.45);
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    z-index:99999;
+}
+
+.group-modal-content{
+    width:900px;
+    max-width:95%;
+    background:#fff;
+    border-radius:14px;
+    overflow:hidden;
+    animation:popup .25s ease;
+}
+
+@keyframes popup{
+
+    from{
+        transform:scale(.9);
+        opacity:0;
+    }
+
+    to{
+        transform:scale(1);
+        opacity:1;
+    }
+
+}
+
+.group-modal-header{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    background:#2563eb;
+    color:#fff;
+    padding:16px 22px;
+}
+
+.group-modal-header h2{
+    margin:0;
+    font-size:22px;
+    font-weight:700;
+}
+
+/* ===========================
+   FORM
+=========================== */
+
+.group-form{
+    padding:25px;
+}
+
+.group-form-grid{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:20px;
+}
+
+.group-form-group{
+    display:flex;
+    flex-direction:column;
+}
+
+.group-form-group label{
+    font-size:14px;
+    font-weight:600;
+    color:#374151;
+    margin-bottom:7px;
+}
+
+.group-form-group input,
+.group-form-group select{
+    width:100%;
+    height:44px;
+    border:1px solid #d7dce3;
+    border-radius:8px;
+    padding:0 14px;
+    font-size:15px;
+    outline:none;
+    transition:.25s;
+    background:#fff;
+}
+
+.group-form-group input:focus,
+.group-form-group select:focus{
+    border-color:#2563eb;
+    box-shadow:0 0 0 3px rgba(37,99,235,.15);
+}
+
+.group-form-buttons{
+    margin-top:30px;
+    display:flex;
+    gap:12px;
+    justify-content:flex-end;
+}
+
+.btn-reset{
+    border:none;
+    background:#f59e0b;
+    color:#fff;
+    padding:10px 24px;
+    border-radius:8px;
+    cursor:pointer;
+    font-size:15px;
+    font-weight:600;
+    transition:.3s;
+}
+
+.btn-reset:hover{
+    background:#d97706;
+}
+
+/* ===========================
+   TABLE
+=========================== */
+/* 
+.table-card{
+    background:#fff;
+    border-radius:12px;
+    padding:20px;
+    box-shadow:0 4px 18px rgba(0,0,0,.08);
+    overflow-x:auto;
+}
+
+.table-toolbar{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    margin-bottom:18px;
+    gap:15px;
+    flex-wrap:wrap;
+}
+
+.table-toolbar select{
+    height:40px;
+    padding:0 12px;
+    border:1px solid #d7dce3;
+    border-radius:8px;
+    background:#fff;
+}
+
+.table-search input{
+    width:260px;
+    height:40px;
+    border:1px solid #d7dce3;
+    border-radius:8px;
+    padding:0 14px;
+    outline:none;
+}
+
+.table-search input:focus{
+    border-color:#2563eb;
+} */
+
+/* ===========================
+   STATUS
+=========================== */
+
+.status-active{
+    background:#dcfce7;
+    color:#15803d;
+    padding:5px 12px;
+    border-radius:20px;
+    font-size:12px;
+    font-weight:700;
+}
+
+.status-inactive{
+    background:#fee2e2;
+    color:#dc2626;
+    padding:5px 12px;
+    border-radius:20px;
+    font-size:12px;
+    font-weight:700;
+}
+
+/* ===========================
+   ACTION BUTTONS
+=========================== */
+
+.action-btn{
+    width:36px;
+    height:36px;
+    border:none;
+    border-radius:8px;
+    cursor:pointer;
+    margin-right:8px;
+    transition:.3s;
+}
+
+.edit-btn{
+    background:#2563eb;
+    color:#fff;
+}
+
+.edit-btn:hover{
+    background:#1d4ed8;
+}
+
+.delete-btn{
+    background:#ef4444;
+    color:#fff;
+}
+
+.delete-btn:hover{
+    background:#dc2626;
+}
+
+/* ===========================
+   RESPONSIVE
+=========================== */
+
+@media(max-width:992px){
+
+    .group-form-grid{
+
+        grid-template-columns:1fr;
+
+    }
+
+    .group-filter-item{
+
+        width:100%;
+
+    }
+
+}
+
+@media(max-width:768px){
+
+    .group-page{
+
+        padding:15px;
+
+    }
+
+    .group-header{
+
+        flex-direction:column;
+        align-items:flex-start;
+        gap:15px;
+
+    }
+
+    .table-toolbar{
+
+        flex-direction:column;
+        align-items:flex-start;
+
+    }
+
+    .table-search input{
+
+        width:100%;
+
+    }
+
+    .group-modal-content{
+
+        width:96%;
+
+    }
+
+    .group-form{
+
+        padding:18px;
+
+    }
+
+    .group-form-buttons{
+
+        flex-direction:column;
+
+    }
+
+    .group-form-buttons button{
+
+        width:100%;
+
+    }
+
+}

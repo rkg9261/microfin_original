@@ -1,0 +1,719 @@
+/* =========================================================
+   LEDGER PAGE
+========================================================= */
+
+.ledger-page {
+  width: 100%;
+  min-height: 100vh;
+  padding: 24px;
+  box-sizing: border-box;
+  background: #f8fafc;
+  color: #30343b;
+}
+
+
+/* =========================================================
+   PAGE HEADER
+========================================================= */
+
+.ledger-page-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+}
+
+.ledger-page-title {
+  font-size: 14px;
+  font-weight: 700;
+  color: #292d35;
+}
+
+.ledger-breadcrumb {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 11px;
+  color: #777;
+  text-transform: uppercase;
+}
+
+.ledger-breadcrumb strong {
+  color: #252932;
+}
+
+.ledger-breadcrumb-arrow {
+  font-size: 16px;
+  color: #999;
+}
+
+
+/* =========================================================
+   BLUE LINE
+========================================================= */
+
+.ledger-blue-line {
+  width: 100%;
+  height: 3px;
+  background: #20a8d8;
+  margin-bottom: 18px;
+}
+
+
+/* =========================================================
+   MAIN SECTION
+========================================================= */
+
+.ledger-section {
+  width: 100%;
+  background: #ffffff;
+  border: 1px solid #e0e5e9;
+  border-radius: 5px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+}
+
+
+/* =========================================================
+   SECTION HEADER
+========================================================= */
+
+.ledger-section-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 20px 25px 15px;
+}
+
+.ledger-section-header h2 {
+  margin: 0;
+  font-size: 22px;
+  font-weight: 400;
+  color: #3d454d;
+}
+
+
+/* =========================================================
+   ADD BUTTON
+========================================================= */
+
+.ledger-add-button {
+  width: 27px;
+  height: 27px;
+
+  border: none;
+  border-radius: 3px;
+
+  background: #28ad61;
+  color: #ffffff;
+
+  font-size: 24px;
+  line-height: 25px;
+
+  cursor: pointer;
+
+  transition: all 0.2s ease;
+}
+
+.ledger-add-button:hover {
+  background: #208f50;
+  transform: scale(1.04);
+}
+
+
+/* =========================================================
+   TABLE CONTAINER
+========================================================= */
+
+.ledger-table-container {
+  padding: 10px 20px 20px;
+}
+
+
+/* =========================================================
+   SEARCH
+========================================================= */
+
+.ledger-search-box {
+  position: relative;
+  width: 100%;
+  margin-bottom: 12px;
+}
+
+.ledger-search-box input {
+  width: 100%;
+  height: 42px;
+
+  box-sizing: border-box;
+
+  padding: 0 45px;
+
+  border: 1px solid #dce2e6;
+  border-radius: 4px;
+
+  outline: none;
+
+  font-size: 13px;
+  color: #555;
+
+  background: #ffffff;
+}
+
+.ledger-search-box input:focus {
+  border-color: #20a8d8;
+}
+
+.ledger-search-icon {
+  position: absolute;
+  left: 15px;
+  top: 11px;
+
+  font-size: 14px;
+  color: #999;
+}
+
+
+/* =========================================================
+   TABLE
+========================================================= */
+
+.ledger-table-scroll {
+  width: 100%;
+  overflow-x: auto;
+}
+
+.ledger-table {
+  width: 100%;
+  min-width: 850px;
+
+  border-collapse: collapse;
+}
+
+
+/* HEADER */
+
+.ledger-table thead th {
+  height: 50px;
+
+  padding: 0 15px;
+
+  background: #eef3f7;
+
+  border-bottom: 1px solid #dce2e6;
+
+  color: #30363c;
+
+  font-size: 13px;
+  font-weight: 700;
+
+  text-align: left;
+
+  white-space: nowrap;
+}
+
+
+/* BODY */
+
+.ledger-table tbody td {
+  height: 54px;
+
+  padding: 0 15px;
+
+  border-bottom: 1px solid #edf0f2;
+
+  color: #555d66;
+
+  font-size: 14px;
+
+  white-space: nowrap;
+}
+
+.ledger-table tbody tr:hover {
+  background: #f8fbfd;
+}
+
+
+/* LEDGER NAME */
+
+.ledger-name {
+  color: #424951 !important;
+  font-weight: 500;
+}
+
+
+/* =========================================================
+   STATUS
+========================================================= */
+
+.ledger-status {
+  display: inline-flex;
+
+  align-items: center;
+  justify-content: center;
+
+  min-width: 59px;
+
+  padding: 5px 9px;
+
+  border-radius: 3px;
+
+  color: #ffffff;
+
+  font-size: 10px;
+  font-weight: 700;
+}
+
+.ledger-status.active {
+  background: #29aa61;
+}
+
+.ledger-status.inactive {
+  background: #df625d;
+}
+
+
+/* =========================================================
+   ACTION
+========================================================= */
+
+.ledger-actions-heading {
+  text-align: center !important;
+}
+
+.ledger-action-cell {
+  text-align: center;
+}
+
+
+/* EDIT BUTTON */
+
+.ledger-edit-button {
+  width: 31px;
+  height: 31px;
+
+  display: inline-flex;
+
+  align-items: center;
+  justify-content: center;
+
+  border: none;
+  border-radius: 3px;
+
+  background: #28a961;
+
+  color: #ffffff;
+
+  cursor: pointer;
+
+  transition: all 0.2s ease;
+}
+
+.ledger-edit-button:hover {
+  background: #208d50;
+  transform: translateY(-1px);
+}
+
+.ledger-edit-button svg {
+  font-size: 13px;
+}
+
+
+/* =========================================================
+   NO DATA
+========================================================= */
+
+.ledger-no-data {
+  height: 120px !important;
+
+  text-align: center !important;
+
+  color: #999 !important;
+
+  font-size: 13px !important;
+}
+
+
+/* =========================================================
+   FOOTER
+========================================================= */
+
+.ledger-table-footer {
+  display: flex;
+
+  justify-content: space-between;
+  align-items: center;
+
+  padding: 18px 5px 4px;
+
+  color: #777;
+
+  font-size: 12px;
+}
+
+.ledger-pagination {
+  display: flex;
+  gap: 4px;
+}
+
+.ledger-pagination button {
+  width: 30px;
+  height: 30px;
+
+  border: 1px solid #dce2e7;
+
+  background: #ffffff;
+
+  color: #777;
+
+  border-radius: 3px;
+
+  cursor: pointer;
+}
+
+.ledger-pagination button:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+}
+
+.ledger-pagination .ledger-page-active {
+  background: #20a8d8;
+  border-color: #20a8d8;
+  color: #ffffff;
+}
+
+
+/* =========================================================
+   MODAL OVERLAY
+========================================================= */
+
+.ledger-modal-overlay {
+  position: fixed;
+
+  inset: 0;
+
+  z-index: 9999;
+
+  display: flex;
+
+  align-items: flex-start;
+  justify-content: center;
+
+  padding-top: 12vh;
+
+  background: rgba(0, 0, 0, 0.58);
+
+  animation: ledgerOverlay 0.2s ease;
+}
+
+
+/* =========================================================
+   MODAL
+========================================================= */
+
+.ledger-modal {
+  width: min(780px, calc(100% - 30px));
+
+  background: #ffffff;
+
+  border-radius: 4px;
+
+  overflow: hidden;
+
+  box-shadow:
+    0 15px 45px rgba(0, 0, 0, 0.35);
+
+  animation: ledgerModal 0.22s ease;
+}
+
+
+/* =========================================================
+   MODAL HEADER
+========================================================= */
+
+.ledger-modal-header {
+  height: 68px;
+
+  padding: 0 22px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: space-between;
+
+  background: #19acd1;
+
+  color: #ffffff;
+}
+
+.ledger-modal-header h2 {
+  margin: 0;
+
+  font-size: 23px;
+
+  font-weight: 400;
+}
+
+.ledger-close-button {
+  border: none;
+
+  background: transparent;
+
+  color: #ffffff;
+
+  font-size: 16px;
+
+  cursor: pointer;
+
+  opacity: 0.85;
+}
+
+.ledger-close-button:hover {
+  opacity: 1;
+}
+
+
+/* =========================================================
+   FORM
+========================================================= */
+
+.ledger-form {
+  padding: 30px 25px 25px;
+}
+
+.ledger-form-grid {
+  display: grid;
+
+  grid-template-columns: 1fr 1fr;
+
+  column-gap: 38px;
+
+  row-gap: 20px;
+}
+
+
+/* =========================================================
+   FORM FIELD
+========================================================= */
+
+.ledger-form-field {
+  display: flex;
+
+  flex-direction: column;
+}
+
+.ledger-form-field label {
+  margin-bottom: 9px;
+
+  color: #30343a;
+
+  font-size: 14px;
+
+  font-weight: 700;
+}
+
+.ledger-form-field label span {
+  color: #e74c3c;
+}
+
+
+/* INPUT + SELECT */
+
+.ledger-form-field input,
+.ledger-form-field select {
+  width: 100%;
+
+  height: 43px;
+
+  box-sizing: border-box;
+
+  padding: 0 13px;
+
+  border: 1px solid #d4d9de;
+
+  border-radius: 2px;
+
+  background: #ffffff;
+
+  color: #666;
+
+  font-size: 14px;
+
+  outline: none;
+}
+
+.ledger-form-field input:focus,
+.ledger-form-field select:focus {
+  border-color: #1caed3;
+
+  box-shadow:
+    0 0 0 2px rgba(28, 174, 211, 0.08);
+}
+
+.ledger-form-field select {
+  cursor: pointer;
+}
+
+
+/* =========================================================
+   FORM BUTTONS
+========================================================= */
+
+.ledger-form-actions {
+  display: flex;
+
+  justify-content: flex-end;
+
+  gap: 8px;
+
+  margin-top: 30px;
+}
+
+.ledger-save-button,
+.ledger-cancel-button {
+  min-width: 92px;
+
+  height: 42px;
+
+  border: none;
+
+  border-radius: 3px;
+
+  color: #ffffff;
+
+  font-size: 13px;
+
+  font-weight: 600;
+
+  cursor: pointer;
+
+  transition: 0.2s ease;
+}
+
+
+/* GREEN */
+
+.ledger-save-button {
+  background: #28ad61;
+}
+
+.ledger-save-button:hover {
+  background: #208f50;
+}
+
+
+/* RED */
+
+.ledger-cancel-button {
+  background: #dd625c;
+}
+
+.ledger-cancel-button:hover {
+  background: #c94f49;
+}
+
+
+/* =========================================================
+   ANIMATIONS
+========================================================= */
+
+@keyframes ledgerOverlay {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes ledgerModal {
+  from {
+    opacity: 0;
+    transform: translateY(-18px) scale(0.98);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media (max-width: 768px) {
+
+  .ledger-page {
+    padding: 15px;
+  }
+
+  .ledger-page-header {
+    flex-direction: column;
+
+    align-items: flex-start;
+
+    gap: 8px;
+  }
+
+  .ledger-section-header {
+    padding: 16px;
+  }
+
+  .ledger-section-header h2 {
+    font-size: 19px;
+  }
+
+  .ledger-table-container {
+    padding: 8px 12px 16px;
+  }
+
+  .ledger-form-grid {
+    grid-template-columns: 1fr;
+
+    row-gap: 18px;
+  }
+
+  .ledger-modal-overlay {
+    padding-top: 6vh;
+  }
+
+  .ledger-modal {
+    width: calc(100% - 20px);
+  }
+
+  .ledger-modal-header {
+    height: 58px;
+  }
+
+  .ledger-modal-header h2 {
+    font-size: 20px;
+  }
+
+  .ledger-form {
+    padding: 20px 18px;
+  }
+
+}
+
+
+@media (max-width: 480px) {
+
+  .ledger-form-actions {
+    flex-direction: column-reverse;
+  }
+
+  .ledger-save-button,
+  .ledger-cancel-button {
+    width: 100%;
+  }
+
+  .ledger-table-footer {
+    flex-direction: column;
+
+    align-items: flex-start;
+
+    gap: 12px;
+  }
+
+}

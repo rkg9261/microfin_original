@@ -1,0 +1,724 @@
+/* =========================================================
+   COLLECTION REPORT PAGE
+========================================================= */
+
+.collection-report-page {
+  width: 100%;
+  min-height: 100vh;
+  padding: 18px 20px 40px;
+  background: #f8fafc;
+}
+
+
+/* =========================================================
+   PAGE HEADER
+========================================================= */
+
+.collection-report-header {
+  width: 100%;
+  margin-bottom: 15px;
+  padding-bottom: 12px;
+  border-bottom: 3px solid #159bd7;
+}
+
+.collection-report-header h2 {
+  margin: 0;
+  font-size: 18px;
+  font-weight: 700;
+  color: #252525;
+}
+
+.collection-report-header p {
+  margin-top: 5px;
+  font-size: 12px;
+  color: #888;
+}
+
+
+/* =========================================================
+   FORM
+========================================================= */
+
+.collection-report-form {
+  width: 100%;
+  background: #ffffff;
+  border: 1px solid #dedede;
+  border-radius: 7px;
+  padding: 20px;
+  box-shadow: 0 1px 5px rgba(0, 0, 0, 0.04);
+}
+
+
+/* =========================================================
+   FORM GRID
+========================================================= */
+
+.collection-report-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 14px 22px;
+}
+
+
+/* =========================================================
+   FORM GROUP
+========================================================= */
+
+.collection-form-group {
+  position: relative;
+  width: 100%;
+}
+
+.collection-form-group label {
+  display: block;
+  margin-bottom: 7px;
+  font-size: 12px;
+  font-weight: 700;
+  color: #333;
+}
+
+.collection-form-group label span {
+  color: #e53935;
+}
+
+
+/* =========================================================
+   INPUT
+========================================================= */
+
+.collection-form-group input,
+.collection-form-group select {
+  width: 100%;
+  height: 40px;
+  padding: 0 12px;
+
+  border: 1px solid #cfcfcf;
+  border-radius: 6px;
+
+  outline: none;
+
+  background: #fff;
+
+  color: #555;
+
+  font-size: 13px;
+
+  transition: 0.25s;
+}
+
+
+.collection-form-group input:focus,
+.collection-form-group select:focus {
+  border-color: #159bd7;
+
+  box-shadow:
+    0 0 0 2px rgba(21, 155, 215, 0.08);
+}
+
+
+/* =========================================================
+   SELECT
+========================================================= */
+
+.collection-form-group select {
+  cursor: pointer;
+}
+
+
+/* =========================================================
+   DATE
+========================================================= */
+
+.collection-date-wrapper {
+  position: relative;
+  width: 100%;
+}
+
+.collection-date-wrapper input {
+  padding-right: 38px;
+}
+
+.collection-date-wrapper svg {
+  position: absolute;
+
+  right: 12px;
+  top: 50%;
+
+  transform: translateY(-50%);
+
+  color: #555;
+
+  pointer-events: none;
+
+  font-size: 14px;
+}
+
+
+/* =========================================================
+   SELECT WRAPPER
+========================================================= */
+
+.collection-select-wrapper {
+  position: relative;
+  width: 100%;
+}
+
+
+/* =========================================================
+   ERROR
+========================================================= */
+
+.collection-input-error {
+  border-color: #e53935 !important;
+}
+
+.collection-error {
+  display: block;
+
+  margin-top: 4px;
+
+  color: #e53935;
+
+  font-size: 11px;
+}
+
+
+/* =========================================================
+   BUTTON AREA
+========================================================= */
+
+.collection-report-buttons {
+  display: flex;
+  align-items: center;
+
+  gap: 10px;
+
+  margin-top: 18px;
+}
+
+
+/* =========================================================
+   GET RECORD
+========================================================= */
+
+.collection-get-record-btn {
+  height: 38px;
+
+  padding: 0 17px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 8px;
+
+  border: none;
+  border-radius: 4px;
+
+  background: #20ad4b;
+
+  color: #fff;
+
+  font-size: 13px;
+  font-weight: 600;
+
+  cursor: pointer;
+
+  transition: 0.25s;
+}
+
+.collection-get-record-btn:hover {
+  background: #188c3c;
+
+  transform: translateY(-1px);
+}
+
+.collection-get-record-btn svg {
+  font-size: 15px;
+}
+
+
+/* =========================================================
+   RESET
+========================================================= */
+
+.collection-reset-btn {
+  height: 38px;
+
+  padding: 0 18px;
+
+  border: 1px solid #bbb;
+
+  border-radius: 4px;
+
+  background: #fff;
+
+  color: #555;
+
+  font-size: 13px;
+
+  cursor: pointer;
+
+  transition: 0.25s;
+}
+
+.collection-reset-btn:hover {
+  background: #f2f2f2;
+}
+
+
+/* =========================================================
+   TABLE CONTAINER
+========================================================= */
+
+.collection-table-container {
+  width: 100%;
+
+  margin-top: 18px;
+
+  background: #fff;
+
+  border: 1px solid #dedede;
+
+  border-radius: 7px;
+
+  overflow: hidden;
+
+  box-shadow:
+    0 1px 5px rgba(0, 0, 0, 0.04);
+}
+
+
+/* =========================================================
+   TABLE HEADER
+========================================================= */
+
+.collection-table-header {
+  min-height: 58px;
+
+  padding: 10px 15px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  gap: 20px;
+}
+
+.collection-table-header h2 {
+  margin: 0;
+
+  font-size: 18px;
+
+  font-weight: 500;
+
+  color: #444;
+}
+
+
+/* =========================================================
+   TABLE ACTIONS
+========================================================= */
+
+.collection-table-actions {
+  display: flex;
+
+  align-items: center;
+
+  gap: 15px;
+
+  flex-wrap: wrap;
+}
+
+
+/* =========================================================
+   DOWNLOAD BUTTON
+========================================================= */
+
+.collection-download-btn {
+  display: flex;
+
+  align-items: center;
+
+  gap: 5px;
+
+  border: none;
+
+  background: transparent;
+
+  color: #888;
+
+  font-size: 11px;
+
+  cursor: pointer;
+
+  transition: 0.25s;
+}
+
+.collection-download-btn:hover {
+  color: #159bd7;
+}
+
+.collection-download-btn svg {
+  font-size: 12px;
+}
+
+
+/* =========================================================
+   TOTAL
+========================================================= */
+
+.collection-total {
+  display: flex;
+
+  align-items: center;
+
+  gap: 5px;
+
+  font-size: 13px;
+
+  font-weight: 600;
+
+  color: #333;
+}
+
+.collection-total strong {
+  font-size: 14px;
+
+  color: #222;
+}
+
+
+/* =========================================================
+   TOOLBAR
+========================================================= */
+
+.collection-table-toolbar {
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  padding: 10px 15px;
+
+  border-top: 1px solid #eeeeee;
+
+  border-bottom: 1px solid #eeeeee;
+
+  background: #fff;
+}
+
+
+/* =========================================================
+   ENTRIES
+========================================================= */
+
+.collection-entries {
+  display: flex;
+
+  align-items: center;
+}
+
+.collection-entries select {
+  min-width: 70px;
+
+  height: 34px;
+
+  padding: 0 8px;
+
+  border: 1px solid #d1d1d1;
+
+  border-radius: 4px;
+
+  background: #fff;
+
+  outline: none;
+
+  font-size: 13px;
+}
+
+
+/* =========================================================
+   SEARCH
+========================================================= */
+
+.collection-search {
+  width: 280px;
+
+  height: 36px;
+
+  position: relative;
+}
+
+.collection-search input {
+  width: 100%;
+
+  height: 100%;
+
+  padding: 0 38px 0 12px;
+
+  border: 1px solid #d4d4d4;
+
+  border-radius: 4px;
+
+  outline: none;
+
+  font-size: 12px;
+
+  color: #555;
+}
+
+.collection-search input:focus {
+  border-color: #159bd7;
+}
+
+.collection-search svg {
+  position: absolute;
+
+  right: 11px;
+
+  top: 50%;
+
+  transform: translateY(-50%);
+
+  color: #555;
+
+  font-size: 13px;
+
+  pointer-events: none;
+}
+
+
+/* =========================================================
+   TABLE SCROLL
+========================================================= */
+
+.collection-table-scroll {
+  width: 100%;
+
+  overflow-x: auto;
+
+  overflow-y: hidden;
+}
+
+
+/* =========================================================
+   TABLE
+========================================================= */
+
+.collection-report-table {
+  width: 100%;
+
+  min-width: 1250px;
+
+  border-collapse: collapse;
+
+  table-layout: auto;
+}
+
+
+/* =========================================================
+   TABLE HEADER
+========================================================= */
+
+.collection-report-table thead {
+  background: #e9f0f5;
+}
+
+.collection-report-table th {
+  height: 52px;
+
+  padding: 8px 12px;
+
+  border-right: 1px solid #d8dfe4;
+
+  border-bottom: 1px solid #d0d8de;
+
+  color: #444;
+
+  font-size: 12px;
+
+  font-weight: 700;
+
+  text-align: left;
+
+  white-space: nowrap;
+}
+
+
+/* =========================================================
+   TABLE BODY
+========================================================= */
+
+.collection-report-table td {
+  height: 46px;
+
+  padding: 8px 12px;
+
+  border-right: 1px solid #eeeeee;
+
+  border-bottom: 1px solid #eeeeee;
+
+  color: #555;
+
+  font-size: 12px;
+
+  white-space: nowrap;
+}
+
+.collection-report-table tbody tr:hover {
+  background: #f7fbfd;
+}
+
+
+/* =========================================================
+   AMOUNT
+========================================================= */
+
+.collection-amount {
+  font-weight: 600;
+
+  color: #333;
+}
+
+
+/* =========================================================
+   STATUS
+========================================================= */
+
+.collection-status-paid {
+  display: inline-block;
+
+  padding: 4px 9px;
+
+  border-radius: 20px;
+
+  background: #e7f7ec;
+
+  color: #159447;
+
+  font-size: 10px;
+
+  font-weight: 700;
+}
+
+.collection-status-pending {
+  display: inline-block;
+
+  padding: 4px 9px;
+
+  border-radius: 20px;
+
+  background: #fff4df;
+
+  color: #d88900;
+
+  font-size: 10px;
+
+  font-weight: 700;
+}
+
+
+/* =========================================================
+   NO DATA
+========================================================= */
+
+.collection-no-data {
+  height: 100px !important;
+
+  text-align: center !important;
+
+  color: #999 !important;
+
+  font-size: 13px !important;
+}
+
+
+/* =========================================================
+   SCROLLBAR
+========================================================= */
+
+.collection-table-scroll::-webkit-scrollbar {
+  height: 8px;
+}
+
+.collection-table-scroll::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+.collection-table-scroll::-webkit-scrollbar-thumb {
+  background: #aeb7bd;
+
+  border-radius: 20px;
+}
+
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media (max-width: 1100px) {
+
+  .collection-report-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .collection-table-header {
+    align-items: flex-start;
+
+    flex-direction: column;
+  }
+
+}
+
+
+@media (max-width: 768px) {
+
+  .collection-report-page {
+    padding: 12px;
+  }
+
+  .collection-report-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .collection-table-toolbar {
+    align-items: stretch;
+
+    flex-direction: column;
+
+    gap: 10px;
+  }
+
+  .collection-search {
+    width: 100%;
+  }
+
+}
+
+
+@media (max-width: 500px) {
+
+  .collection-report-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .collection-report-form {
+    padding: 14px;
+  }
+
+  .collection-report-buttons {
+    flex-direction: column;
+
+    align-items: stretch;
+  }
+
+  .collection-get-record-btn,
+  .collection-reset-btn {
+    width: 100%;
+  }
+
+}

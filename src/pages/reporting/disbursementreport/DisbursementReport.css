@@ -1,0 +1,757 @@
+/* =========================================================
+   DISBURSEMENT REPORT PAGE
+========================================================= */
+
+.disbursement-report-page {
+  width: 100%;
+  min-height: 100vh;
+
+  padding: 18px 20px 40px;
+
+  background: #f8fafc;
+}
+
+
+/* =========================================================
+   PAGE HEADER
+========================================================= */
+
+.disbursement-report-header {
+  width: 100%;
+
+  margin-bottom: 15px;
+
+  padding-bottom: 12px;
+
+  border-bottom: 3px solid #159bd7;
+}
+
+.disbursement-report-header h2 {
+  margin: 0;
+
+  font-size: 18px;
+
+  font-weight: 700;
+
+  color: #252525;
+}
+
+
+/* =========================================================
+   FORM
+========================================================= */
+
+.disbursement-report-form {
+  width: 100%;
+
+  padding: 20px;
+
+  background: #fff;
+
+  border: 1px solid #dedede;
+
+  border-radius: 7px;
+
+  box-shadow:
+    0 1px 5px rgba(0, 0, 0, 0.04);
+}
+
+
+/* =========================================================
+   FORM GRID
+========================================================= */
+
+.disbursement-report-grid {
+  display: grid;
+
+  grid-template-columns:
+    repeat(4, minmax(0, 1fr));
+
+  gap: 15px 24px;
+}
+
+
+/* =========================================================
+   FORM GROUP
+========================================================= */
+
+.disbursement-form-group {
+  width: 100%;
+
+  position: relative;
+}
+
+.disbursement-form-group label {
+  display: block;
+
+  margin-bottom: 7px;
+
+  font-size: 12px;
+
+  font-weight: 700;
+
+  color: #333;
+}
+
+.disbursement-form-group label span {
+  color: #e53935;
+}
+
+
+/* =========================================================
+   INPUT / SELECT
+========================================================= */
+
+.disbursement-form-group input,
+.disbursement-form-group select {
+  width: 100%;
+
+  height: 40px;
+
+  padding: 0 12px;
+
+  border: 1px solid #cfcfcf;
+
+  border-radius: 6px;
+
+  outline: none;
+
+  background: #fff;
+
+  color: #555;
+
+  font-size: 13px;
+
+  transition: 0.25s;
+}
+
+.disbursement-form-group input:focus,
+.disbursement-form-group select:focus {
+  border-color: #159bd7;
+
+  box-shadow:
+    0 0 0 2px rgba(21, 155, 215, 0.08);
+}
+
+.disbursement-form-group select {
+  cursor: pointer;
+}
+
+
+/* =========================================================
+   DATE
+========================================================= */
+
+.disbursement-date-wrapper {
+  position: relative;
+
+  width: 100%;
+}
+
+.disbursement-date-wrapper input {
+  padding-right: 38px;
+}
+
+.disbursement-date-wrapper svg {
+  position: absolute;
+
+  right: 12px;
+
+  top: 50%;
+
+  transform: translateY(-50%);
+
+  color: #555;
+
+  font-size: 14px;
+
+  pointer-events: none;
+}
+
+
+/* =========================================================
+   ERROR
+========================================================= */
+
+.disbursement-input-error {
+  border-color: #e53935 !important;
+}
+
+.disbursement-error {
+  display: block;
+
+  margin-top: 4px;
+
+  font-size: 11px;
+
+  color: #e53935;
+}
+
+
+/* =========================================================
+   BUTTON AREA
+========================================================= */
+
+.disbursement-report-buttons {
+  display: flex;
+
+  align-items: center;
+
+  gap: 10px;
+
+  margin-top: 18px;
+}
+
+
+/* =========================================================
+   GET RECORD
+========================================================= */
+
+.disbursement-get-record-btn {
+  height: 38px;
+
+  padding: 0 18px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  gap: 8px;
+
+  border: none;
+
+  border-radius: 4px;
+
+  background: #20ad4b;
+
+  color: #fff;
+
+  font-size: 13px;
+
+  font-weight: 600;
+
+  cursor: pointer;
+
+  transition: 0.25s;
+}
+
+.disbursement-get-record-btn:hover {
+  background: #188c3c;
+
+  transform: translateY(-1px);
+}
+
+.disbursement-get-record-btn svg {
+  font-size: 15px;
+}
+
+
+/* =========================================================
+   RESET
+========================================================= */
+
+.disbursement-reset-btn {
+  height: 38px;
+
+  padding: 0 18px;
+
+  border: 1px solid #bbb;
+
+  border-radius: 4px;
+
+  background: #fff;
+
+  color: #555;
+
+  font-size: 13px;
+
+  cursor: pointer;
+
+  transition: 0.25s;
+}
+
+.disbursement-reset-btn:hover {
+  background: #f2f2f2;
+}
+
+
+/* =========================================================
+   TABLE CONTAINER
+========================================================= */
+
+.disbursement-table-container {
+  width: 100%;
+
+  margin-top: 18px;
+
+  background: #fff;
+
+  border: 1px solid #dedede;
+
+  border-radius: 7px;
+
+  overflow: hidden;
+
+  box-shadow:
+    0 1px 5px rgba(0, 0, 0, 0.04);
+}
+
+
+/* =========================================================
+   TABLE HEADER
+========================================================= */
+
+.disbursement-table-header {
+  min-height: 58px;
+
+  padding: 10px 15px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  gap: 20px;
+}
+
+.disbursement-table-header h2 {
+  margin: 0;
+
+  font-size: 18px;
+
+  font-weight: 500;
+
+  color: #444;
+}
+
+
+/* =========================================================
+   TABLE SUMMARY
+========================================================= */
+
+.disbursement-table-summary {
+  display: flex;
+
+  align-items: center;
+
+  gap: 20px;
+}
+
+
+/* =========================================================
+   DOWNLOAD EXCEL
+========================================================= */
+
+.disbursement-download-btn {
+  display: flex;
+
+  align-items: center;
+
+  gap: 5px;
+
+  border: none;
+
+  background: transparent;
+
+  color: #888;
+
+  font-size: 11px;
+
+  cursor: pointer;
+
+  transition: 0.25s;
+}
+
+.disbursement-download-btn:hover {
+  color: #159bd7;
+}
+
+.disbursement-download-btn svg {
+  font-size: 12px;
+}
+
+
+/* =========================================================
+   TOTAL SUMMARY
+========================================================= */
+
+.disbursement-total-summary {
+  display: flex;
+
+  align-items: center;
+
+  gap: 5px;
+
+  font-size: 13px;
+
+  color: #333;
+
+  white-space: nowrap;
+}
+
+.disbursement-total-summary strong {
+  margin-right: 10px;
+
+  font-weight: 700;
+}
+
+
+/* =========================================================
+   TOTAL AMOUNT
+========================================================= */
+
+.disbursement-total-row {
+  display: flex;
+
+  justify-content: flex-end;
+
+  align-items: center;
+
+  gap: 5px;
+
+  padding: 0 15px 8px;
+
+  font-size: 12px;
+
+  color: #555;
+}
+
+.disbursement-total-row strong {
+  color: #333;
+
+  font-weight: 700;
+}
+
+
+/* =========================================================
+   TABLE TOOLBAR
+========================================================= */
+
+.disbursement-table-toolbar {
+  min-height: 50px;
+
+  padding: 8px 15px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  border-top: 1px solid #eee;
+
+  border-bottom: 1px solid #eee;
+}
+
+
+/* =========================================================
+   ENTRIES
+========================================================= */
+
+.disbursement-entries {
+  display: flex;
+
+  align-items: center;
+}
+
+
+/* =========================================================
+   SEARCH
+========================================================= */
+
+.disbursement-search {
+  width: 220px;
+
+  height: 35px;
+
+  position: relative;
+}
+
+.disbursement-search input {
+  width: 100%;
+
+  height: 100%;
+
+  padding: 0 35px 0 12px;
+
+  border: 1px solid #d4d4d4;
+
+  border-radius: 4px;
+
+  outline: none;
+
+  font-size: 12px;
+
+  color: #555;
+}
+
+.disbursement-search input:focus {
+  border-color: #159bd7;
+}
+
+.disbursement-search svg {
+  position: absolute;
+
+  right: 11px;
+
+  top: 50%;
+
+  transform: translateY(-50%);
+
+  color: #555;
+
+  font-size: 13px;
+
+  pointer-events: none;
+}
+
+
+/* =========================================================
+   TABLE SCROLL
+========================================================= */
+
+.disbursement-table-scroll {
+  width: 100%;
+
+  overflow-x: auto;
+
+  overflow-y: hidden;
+}
+
+
+/* =========================================================
+   TABLE
+========================================================= */
+
+.disbursement-report-table {
+  width: 100%;
+
+  min-width: 1450px;
+
+  border-collapse: collapse;
+
+  table-layout: auto;
+}
+
+
+/* =========================================================
+   TABLE HEADER
+========================================================= */
+
+.disbursement-report-table thead {
+  background: #e9f0f5;
+}
+
+.disbursement-report-table th {
+  height: 58px;
+
+  padding: 8px 12px;
+
+  border-right: 1px solid #d8dfe4;
+
+  border-bottom: 1px solid #d0d8de;
+
+  color: #444;
+
+  font-size: 12px;
+
+  font-weight: 700;
+
+  text-align: left;
+
+  white-space: nowrap;
+}
+
+
+/* =========================================================
+   TABLE BODY
+========================================================= */
+
+.disbursement-report-table td {
+  height: 46px;
+
+  padding: 8px 12px;
+
+  border-right: 1px solid #eeeeee;
+
+  border-bottom: 1px solid #eeeeee;
+
+  color: #555;
+
+  font-size: 12px;
+
+  white-space: nowrap;
+}
+
+.disbursement-report-table tbody tr:hover {
+  background: #f7fbfd;
+}
+
+
+/* =========================================================
+   MONEY
+========================================================= */
+
+.disbursement-money {
+  font-weight: 600;
+
+  color: #333;
+}
+
+
+/* =========================================================
+   STATUS
+========================================================= */
+
+.disbursement-status-success {
+  display: inline-block;
+
+  padding: 4px 9px;
+
+  border-radius: 20px;
+
+  background: #e7f7ec;
+
+  color: #159447;
+
+  font-size: 10px;
+
+  font-weight: 700;
+}
+
+.disbursement-status-pending {
+  display: inline-block;
+
+  padding: 4px 9px;
+
+  border-radius: 20px;
+
+  background: #fff4df;
+
+  color: #d88900;
+
+  font-size: 10px;
+
+  font-weight: 700;
+}
+
+
+/* =========================================================
+   NO DATA
+========================================================= */
+
+.disbursement-no-data {
+  height: 100px !important;
+
+  text-align: center !important;
+
+  color: #999 !important;
+
+  font-size: 13px !important;
+}
+
+
+/* =========================================================
+   SCROLLBAR
+========================================================= */
+
+.disbursement-table-scroll::-webkit-scrollbar {
+  height: 8px;
+}
+
+.disbursement-table-scroll::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+.disbursement-table-scroll::-webkit-scrollbar-thumb {
+  background: #aeb7bd;
+
+  border-radius: 20px;
+}
+
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media (max-width: 1100px) {
+
+  .disbursement-report-grid {
+    grid-template-columns:
+      repeat(3, minmax(0, 1fr));
+  }
+
+  .disbursement-table-header {
+    align-items: flex-start;
+
+    flex-direction: column;
+  }
+
+  .disbursement-table-summary {
+    width: 100%;
+
+    justify-content: space-between;
+  }
+
+}
+
+
+@media (max-width: 768px) {
+
+  .disbursement-report-page {
+    padding: 12px;
+  }
+
+  .disbursement-report-grid {
+    grid-template-columns:
+      repeat(2, minmax(0, 1fr));
+  }
+
+  .disbursement-table-toolbar {
+    align-items: stretch;
+
+    flex-direction: column;
+
+    gap: 10px;
+  }
+
+  .disbursement-search {
+    width: 100%;
+  }
+
+  .disbursement-table-summary {
+    align-items: flex-start;
+
+    flex-direction: column;
+
+    gap: 8px;
+  }
+
+}
+
+
+@media (max-width: 500px) {
+
+  .disbursement-report-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .disbursement-report-form {
+    padding: 14px;
+  }
+
+  .disbursement-report-buttons {
+    flex-direction: column;
+
+    align-items: stretch;
+  }
+
+  .disbursement-get-record-btn,
+  .disbursement-reset-btn {
+    width: 100%;
+  }
+
+}

@@ -1,0 +1,923 @@
+/* =========================================================
+   CASH BOOK PAGE
+========================================================= */
+
+.cashbook-page {
+  width: 100%;
+  min-height: 100vh;
+
+  padding: 10px 16px 30px;
+
+  background: #f8f8f5;
+
+  color: #333;
+
+  font-family:
+    Arial,
+    Helvetica,
+    sans-serif;
+}
+
+
+/* =========================================================
+   PAGE HEADER
+========================================================= */
+
+.cashbook-page-header {
+  width: 100%;
+
+  min-height: 38px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+}
+
+
+.cashbook-title {
+  display: flex;
+
+  align-items: center;
+
+  gap: 8px;
+
+  font-size: 14px;
+
+  font-weight: 700;
+}
+
+
+.cashbook-title-icon {
+  color: #315d73;
+
+  font-size: 14px;
+}
+
+
+.cashbook-breadcrumb {
+  display: flex;
+
+  align-items: center;
+
+  gap: 8px;
+
+  font-size: 15px;
+
+  color: #777;
+}
+
+
+.cashbook-breadcrumb strong {
+  color: #333;
+}
+
+
+.cashbook-breadcrumb-arrow {
+  font-size: 15px;
+}
+
+
+/* =========================================================
+   HEADER LINE
+========================================================= */
+
+.cashbook-header-line {
+  width: 100%;
+
+  height: 2px;
+
+  background: #294f68;
+
+  margin-bottom: 10px;
+}
+
+
+/* =========================================================
+   FILTER CARD
+========================================================= */
+
+.cashbook-filter-card {
+  width: 100%;
+
+  background: #fff;
+
+  border: 1px solid #d0d0d0;
+
+  border-radius: 4px;
+
+  padding: 12px 16px 10px;
+
+  box-shadow:
+    0 2px 7px rgba(0, 0, 0, 0.05);
+}
+
+
+/* =========================================================
+   FILTER GRID
+========================================================= */
+
+.cashbook-filter-grid {
+  display: grid;
+
+  grid-template-columns:
+    1.1fr
+    0.9fr
+    1.1fr
+    160px;
+
+  gap: 28px;
+
+  align-items: end;
+}
+
+
+/* =========================================================
+   FILTER ITEM
+========================================================= */
+
+.cashbook-filter-item {
+  position: relative;
+
+  width: 100%;
+}
+
+
+.cashbook-filter-item label {
+  display: block;
+
+  margin-bottom: 4px;
+
+  font-size: 15px;
+
+  font-weight: 700;
+
+  color: #333;
+}
+
+
+/* =========================================================
+   SELECT BOX
+========================================================= */
+
+.cashbook-select-box {
+  position: relative;
+
+  width: 100%;
+
+  height: 34px;
+}
+
+
+.cashbook-select-box input {
+  width: 100%;
+
+  height: 34px;
+
+  border: 1px solid #bcbcbc;
+
+  border-radius: 2px;
+
+  outline: none;
+
+  padding:
+    0 58px
+    0 9px;
+
+  font-size: 18px;
+
+  color: #555;
+
+  background: #fff;
+}
+
+
+.cashbook-select-box input:focus {
+  border-color: #3d829e;
+}
+
+
+/* =========================================================
+   CLEAR BUTTON
+========================================================= */
+
+.cashbook-clear-btn {
+  position: absolute;
+
+  right: 27px;
+
+  top: 50%;
+
+  transform: translateY(-50%);
+
+  width: 20px;
+
+  height: 28px;
+
+  border: none;
+
+  background: transparent;
+
+  color: #666;
+
+  cursor: pointer;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+}
+
+
+.cashbook-clear-btn:hover {
+  color: #222;
+}
+
+
+/* =========================================================
+   ARROW BUTTON
+========================================================= */
+
+.cashbook-arrow-btn {
+  position: absolute;
+
+  right: 2px;
+
+  top: 50%;
+
+  transform: translateY(-50%);
+
+  width: 25px;
+
+  height: 28px;
+
+  border: none;
+
+  background: transparent;
+
+  color: #555;
+
+  cursor: pointer;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+}
+
+
+.cashbook-arrow-btn svg {
+  font-size: 10px;
+}
+
+
+/* =========================================================
+   DATE
+========================================================= */
+
+.cashbook-date-box {
+  position: relative;
+
+  width: 100%;
+
+  height: 34px;
+}
+
+
+.cashbook-date-box input {
+  width: 100%;
+
+  height: 34px;
+
+  border: 1px solid #bcbcbc;
+
+  border-radius: 2px;
+
+  outline: none;
+
+  padding: 0 35px 0 10px;
+
+  font-size: 18px;
+
+  color: #555;
+
+  background: #fff;
+}
+
+
+.cashbook-date-box input:focus {
+  border-color: #3d829e;
+}
+
+
+.cashbook-date-box svg {
+  position: absolute;
+
+  right: 10px;
+
+  top: 50%;
+
+  transform: translateY(-50%);
+
+  color: #444;
+
+  font-size: 12px;
+
+  pointer-events: none;
+}
+
+
+/* =========================================================
+   DROPDOWN
+========================================================= */
+
+.cashbook-dropdown {
+  position: absolute;
+
+  left: 0;
+
+  top: 55px;
+
+  width: 100%;
+
+  max-height: 220px;
+
+  overflow-y: auto;
+
+  background: #fff;
+
+  border: 1px solid #c8c8c8;
+
+  box-shadow:
+    0 5px 12px rgba(0, 0, 0, 0.15);
+
+  z-index: 1000;
+}
+
+
+.cashbook-dropdown-item {
+  min-height: 38px;
+
+  display: flex;
+
+  align-items: center;
+
+  padding: 0 10px;
+
+  border-bottom: 1px solid #eee;
+
+  font-size: 15px;
+
+  color: #444;
+
+  cursor: pointer;
+}
+
+
+.cashbook-dropdown-item:hover {
+  background: #edf6fa;
+
+  color: #27718e;
+}
+
+
+.cashbook-no-option {
+  padding: 12px;
+
+  text-align: center;
+
+  color: #888;
+
+  font-size: 15px;
+}
+
+
+/* =========================================================
+   GET RECORD AREA
+========================================================= */
+
+.cashbook-get-record-area {
+  display: flex;
+
+  align-items: flex-end;
+}
+
+
+.cashbook-get-record-btn {
+  width: 160px;
+
+  height: 35px;
+
+  border: none;
+
+  border-radius: 2px;
+
+  background: #2785a5;
+
+  color: #fff;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  gap: 7px;
+
+  font-size: 11px;
+
+  font-weight: 600;
+
+  cursor: pointer;
+
+  transition: 0.2s;
+}
+
+
+.cashbook-get-record-btn:hover {
+  background: #1e708d;
+}
+
+
+/* =========================================================
+   GREEN ACTION BAR
+========================================================= */
+
+.cashbook-action-bar {
+  width: 100%;
+
+  height: 35px;
+
+  margin-top: 5px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: flex-end;
+
+  background:
+    linear-gradient(
+      90deg,
+      #08a52f,
+      #00a629
+    );
+
+  padding-right: 12px;
+}
+
+
+.cashbook-action-title {
+  height: 100%;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  padding: 0 12px;
+
+  color: #fff;
+
+  font-size: 12px;
+
+  font-weight: 700;
+}
+
+
+.cashbook-action-btn {
+  height: 29px;
+
+  border: none;
+
+  border-left: 1px solid
+    rgba(255, 255, 255, 0.2);
+
+  padding: 0 10px;
+
+  background: #279bc0;
+
+  color: #fff;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  gap: 5px;
+
+  font-size: 10px;
+
+  cursor: pointer;
+
+  transition: 0.2s;
+}
+
+
+.cashbook-action-btn:hover {
+  background: #1984a7;
+}
+
+
+.cashbook-action-btn svg {
+  font-size: 10px;
+}
+
+
+/* =========================================================
+   RECORD CONTAINER
+========================================================= */
+
+.cashbook-records-container {
+  width: 100%;
+
+  display: grid;
+
+  grid-template-columns:
+    1fr
+    1fr;
+
+  gap: 28px;
+
+  padding:
+    15px
+    28px
+    10px;
+
+  background: #fff;
+}
+
+
+/* =========================================================
+   RECORD CARD
+========================================================= */
+
+.cashbook-record-card {
+  width: 100%;
+
+  overflow: hidden;
+}
+
+
+/* =========================================================
+   RECORD TABLE
+========================================================= */
+
+.cashbook-record-table {
+  width: 100%;
+
+  border-collapse: collapse;
+
+  table-layout: fixed;
+
+  font-size: 18px;
+}
+
+
+/* =========================================================
+   ALL CELLS
+========================================================= */
+
+.cashbook-record-table th,
+.cashbook-record-table td {
+  border: 1px solid #777;
+
+  padding: 5px 7px;
+
+  color: #333;
+}
+
+
+/* =========================================================
+   MAIN HEADER
+========================================================= */
+
+.cashbook-main-heading {
+  width: 50%;
+
+  height: 30px;
+
+  background: #f7f7f3;
+
+  text-align: center;
+
+  font-size: 12px;
+
+  font-weight: 700;
+}
+
+
+.cashbook-date-heading {
+  width: 50%;
+
+  background: #f7f7f3;
+
+  text-align: center;
+
+  font-size: 11px;
+
+  font-weight: 700;
+}
+
+
+/* =========================================================
+   DEBIT / CREDIT HEADER
+========================================================= */
+
+.cashbook-side-heading {
+  height: 29px;
+
+  background: #f4f4f0;
+
+  text-align: center;
+
+  font-size: 11px;
+
+  font-weight: 700;
+}
+
+
+/* =========================================================
+   PARTICULAR HEADER
+========================================================= */
+
+.cashbook-record-table thead tr:nth-child(3) th {
+  height: 38px;
+
+  background: #e7ebe7;
+
+  text-align: left;
+
+  font-size: 10px;
+}
+
+
+.cashbook-record-table thead tr:nth-child(3)
+.cashbook-amount-header {
+  text-align: center;
+}
+
+
+/* =========================================================
+   BODY
+========================================================= */
+
+.cashbook-record-table tbody td {
+  min-height: 38px;
+
+  height: 38px;
+
+  vertical-align: top;
+
+  background: #fff;
+}
+
+
+/* =========================================================
+   PARTICULAR
+========================================================= */
+
+.cashbook-particular {
+  min-height: 27px;
+
+  display: flex;
+
+  align-items: center;
+
+  font-size: 13px;
+
+  color: #555;
+
+  border-bottom: 1px solid
+    #ededed;
+}
+
+
+.cashbook-particular:last-child {
+  border-bottom: none;
+}
+
+
+/* =========================================================
+   AMOUNT
+========================================================= */
+
+.cashbook-amount {
+  min-height: 27px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  border-bottom: 1px solid
+    #ededed;
+
+  font-size: 10px;
+
+  font-weight: 600;
+}
+
+
+.cashbook-amount:last-child {
+  border-bottom: none;
+}
+
+
+/* =========================================================
+   DR / CR
+========================================================= */
+
+.cashbook-dr-column {
+  text-align: center;
+
+  color: #9b3939;
+}
+
+
+.cashbook-cr-column {
+  text-align: center;
+
+  color: #277345;
+}
+
+
+/* =========================================================
+   TOTAL
+========================================================= */
+
+.cashbook-total-label {
+  height: 37px;
+
+  background: #f7f7f3 !important;
+
+  font-size: 10px;
+
+  font-weight: 700;
+
+  text-align: left;
+}
+
+
+.cashbook-total-value {
+  height: 37px;
+
+  background: #f7f7f3 !important;
+
+  text-align: center;
+
+  font-size: 10px;
+
+  font-weight: 700;
+}
+
+
+/* =========================================================
+   CLOSING
+========================================================= */
+
+.cashbook-closing {
+  height: 36px;
+
+  background: #f7f7f3 !important;
+
+  text-align: center;
+
+  font-size: 10px;
+
+  font-weight: 700;
+}
+
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media (max-width: 1100px) {
+
+  .cashbook-filter-grid {
+    grid-template-columns:
+      1fr
+      1fr;
+
+    gap: 12px;
+  }
+
+
+  .cashbook-get-record-area {
+    align-items: center;
+  }
+
+
+  .cashbook-get-record-btn {
+    width: 100%;
+  }
+
+
+  .cashbook-records-container {
+    grid-template-columns: 1fr;
+
+    padding:
+      15px
+      10px;
+  }
+
+}
+
+
+@media (max-width: 768px) {
+
+  .cashbook-page {
+    padding: 8px;
+  }
+
+
+  .cashbook-breadcrumb {
+    display: none;
+  }
+
+
+  .cashbook-filter-grid {
+    grid-template-columns: 1fr;
+  }
+
+
+  .cashbook-action-bar {
+    height: auto;
+
+    min-height: 35px;
+
+    flex-wrap: wrap;
+
+    justify-content: flex-start;
+
+    padding: 3px;
+  }
+
+
+  .cashbook-action-title,
+  .cashbook-action-btn {
+    height: 30px;
+  }
+
+
+  .cashbook-records-container {
+    overflow-x: auto;
+
+    padding: 10px;
+  }
+
+
+  .cashbook-record-card {
+    min-width: 600px;
+  }
+
+}
+
+
+/* =========================================================
+   PRINT
+========================================================= */
+
+@media print {
+
+  .cashbook-page {
+    background: #fff;
+
+    padding: 0;
+  }
+
+
+  .cashbook-filter-card {
+    display: none;
+  }
+
+
+  .cashbook-header-line {
+    display: none;
+  }
+
+
+  .cashbook-action-bar {
+    display: none;
+  }
+
+
+  .cashbook-page-header {
+    margin-bottom: 10px;
+  }
+
+
+  .cashbook-records-container {
+    padding: 0;
+
+    gap: 10px;
+  }
+
+}

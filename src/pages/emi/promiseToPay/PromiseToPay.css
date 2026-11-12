@@ -1,0 +1,657 @@
+/* =========================================================
+   PROMISE TO PAY PAGE
+========================================================= */
+
+.promise-to-pay-page {
+  width: 100%;
+  min-height: 100vh;
+
+  padding: 18px 24px 40px;
+
+  box-sizing: border-box;
+
+  background: #f5f7f9;
+
+  color: #3f484f;
+}
+
+
+/* =========================================================
+   PAGE HEADER
+========================================================= */
+
+.promise-to-pay-page-header {
+  min-height: 42px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  border-bottom: 2px solid #31a8c6;
+
+  margin-bottom: 18px;
+}
+
+.promise-to-pay-page-header h2 {
+  margin: 0 0 9px;
+
+  color: #333d43;
+
+  font-size: 11px;
+
+  font-weight: 700;
+}
+
+.promise-to-pay-breadcrumb {
+  display: flex;
+
+  align-items: center;
+
+  gap: 7px;
+
+  margin-bottom: 9px;
+
+  color: #858e94;
+
+  font-size: 9px;
+}
+
+.promise-to-pay-breadcrumb strong {
+  color: #414a50;
+}
+
+
+/* =========================================================
+   FILTER CARD
+========================================================= */
+
+.promise-to-pay-filter-card {
+  width: 100%;
+
+  padding: 18px;
+
+  box-sizing: border-box;
+
+  background: #ffffff;
+
+  border: 1px solid #dce3e6;
+
+  border-radius: 6px;
+
+  margin-bottom: 15px;
+
+  box-shadow:
+    0 2px 8px rgba(0, 0, 0, 0.025);
+}
+
+.promise-to-pay-filter-title {
+  margin-bottom: 22px;
+
+  color: #505b61;
+
+  font-size: 13px;
+
+  font-weight: 500;
+
+  text-transform: uppercase;
+}
+
+.promise-to-pay-filter-grid {
+  display: grid;
+
+  grid-template-columns:
+    minmax(250px, 320px)
+    minmax(250px, 320px);
+
+  gap: 24px;
+}
+
+.promise-to-pay-field {
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 6px;
+}
+
+.promise-to-pay-field label {
+  color: #363f45;
+
+  font-size: 9px;
+
+  font-weight: 700;
+
+  text-transform: uppercase;
+}
+
+.promise-to-pay-field label span {
+  color: #e04c4c;
+}
+
+
+/* =========================================================
+   SELECT
+========================================================= */
+
+.promise-to-pay-select-wrapper {
+  position: relative;
+
+  width: 100%;
+}
+
+.promise-to-pay-field select,
+.promise-to-pay-field input {
+  width: 100%;
+
+  height: 34px;
+
+  box-sizing: border-box;
+
+  padding: 0 10px;
+
+  border: 1px solid #cbd4d8;
+
+  border-radius: 3px;
+
+  background: #ffffff;
+
+  color: #606a70;
+
+  font-size: 10px;
+
+  outline: none;
+}
+
+.promise-to-pay-field select:focus,
+.promise-to-pay-field input:focus {
+  border-color: #31a8c6;
+}
+
+.promise-to-pay-clear-select {
+  position: absolute;
+
+  right: 25px;
+
+  top: 50%;
+
+  transform: translateY(-50%);
+
+  width: 20px;
+
+  height: 20px;
+
+  border: none;
+
+  background: transparent;
+
+  color: #899399;
+
+  font-size: 18px;
+
+  cursor: pointer;
+}
+
+
+/* =========================================================
+   FILTER BUTTONS
+========================================================= */
+
+.promise-to-pay-form-buttons {
+  display: flex;
+
+  align-items: center;
+
+  gap: 6px;
+
+  margin-top: 18px;
+}
+
+.promise-to-pay-form-buttons button {
+  height: 34px;
+
+  padding: 0 18px;
+
+  border: none;
+
+  border-radius: 3px;
+
+  color: #ffffff;
+
+  font-size: 9px;
+
+  font-weight: 700;
+
+  cursor: pointer;
+}
+
+.promise-to-pay-get-btn {
+  background: #31a6c3;
+}
+
+.promise-to-pay-get-btn:hover {
+  background: #258fa9;
+}
+
+.promise-to-pay-clear-btn {
+  background: #737d83;
+}
+
+.promise-to-pay-clear-btn:hover {
+  background: #5f686d;
+}
+
+
+/* =========================================================
+   TABLE CARD
+========================================================= */
+
+.promise-to-pay-table-card {
+  width: 100%;
+
+  background: #ffffff;
+
+  border: 1px solid #dce3e6;
+
+  border-radius: 6px;
+
+  overflow: hidden;
+}
+
+
+/* =========================================================
+   TABLE HEADER
+========================================================= */
+
+.promise-to-pay-table-header {
+  padding: 14px 16px 7px;
+}
+
+.promise-to-pay-table-header h3 {
+  margin: 0;
+
+  color: #4b555b;
+
+  font-size: 16px;
+
+  font-weight: 500;
+
+  text-transform: uppercase;
+}
+
+
+/* =========================================================
+   TABLE TOP
+========================================================= */
+
+.promise-to-pay-table-top {
+  min-height: 48px;
+
+  padding: 0 16px 8px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+}
+
+.promise-to-pay-entries select {
+  width: 58px;
+
+  height: 29px;
+
+  padding: 0 7px;
+
+  border: 1px solid #ccd5d9;
+
+  border-radius: 3px;
+
+  background: #ffffff;
+
+  font-size: 10px;
+
+  color: #555f65;
+
+  outline: none;
+}
+
+
+/* =========================================================
+   SEARCH
+========================================================= */
+
+.promise-to-pay-search {
+  width: 170px;
+
+  height: 30px;
+
+  display: flex;
+
+  align-items: center;
+
+  border: 1px solid #d4dcdf;
+
+  border-radius: 3px;
+
+  background: #ffffff;
+}
+
+.promise-to-pay-search input {
+  flex: 1;
+
+  width: 100%;
+
+  height: 100%;
+
+  padding: 0 8px;
+
+  border: none;
+
+  outline: none;
+
+  font-size: 9px;
+
+  color: #59646a;
+}
+
+.promise-to-pay-search span {
+  width: 28px;
+
+  text-align: center;
+
+  color: #69757b;
+
+  font-size: 15px;
+}
+
+
+/* =========================================================
+   TABLE
+========================================================= */
+
+.promise-to-pay-table-wrapper {
+  width: 100%;
+
+  overflow-x: auto;
+}
+
+.promise-to-pay-table {
+  width: 100%;
+
+  min-width: 1150px;
+
+  border-collapse: collapse;
+}
+
+.promise-to-pay-table thead {
+  background: #e8eef1;
+}
+
+.promise-to-pay-table th {
+  height: 46px;
+
+  padding: 7px 9px;
+
+  border-bottom: 1px solid #d1dade;
+
+  color: #414b52;
+
+  text-align: left;
+
+  font-size: 8px;
+
+  font-weight: 700;
+
+  white-space: nowrap;
+
+  vertical-align: middle;
+
+  text-transform: uppercase;
+}
+
+.promise-to-pay-table td {
+  padding: 12px 9px;
+
+  border-bottom: 1px solid #edf0f2;
+
+  color: #626c72;
+
+  font-size: 9px;
+
+  white-space: nowrap;
+
+  vertical-align: middle;
+}
+
+.promise-to-pay-table tbody tr:hover {
+  background: #fafcfd;
+}
+
+
+/* =========================================================
+   NAME
+========================================================= */
+
+.promise-to-pay-name {
+  min-width: 180px;
+
+  white-space: normal;
+}
+
+.promise-to-pay-name strong {
+  color: #505a60;
+
+  font-size: 9px;
+
+  font-weight: 500;
+}
+
+
+/* =========================================================
+   AMOUNT
+========================================================= */
+
+.promise-to-pay-amount {
+  color: #4d5960;
+
+  font-size: 9px;
+}
+
+
+/* =========================================================
+   NOTE
+========================================================= */
+
+.promise-to-pay-note {
+  color: #59656b;
+
+  font-size: 9px;
+}
+
+
+/* =========================================================
+   STATUS
+========================================================= */
+
+.promise-to-pay-status {
+  display: inline-flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  min-width: 58px;
+
+  padding: 4px 8px;
+
+  border-radius: 10px;
+
+  font-size: 7px;
+
+  font-weight: 700;
+}
+
+.promise-to-pay-status.pending {
+  color: #ba5252;
+
+  background: #fff0f0;
+
+  border: 1px solid #efd0d0;
+}
+
+.promise-to-pay-status.paid {
+  color: #2d8950;
+
+  background: #eaf7ee;
+
+  border: 1px solid #cbe7d4;
+}
+
+
+/* =========================================================
+   NO DATA
+========================================================= */
+
+.promise-to-pay-no-data {
+  height: 120px;
+
+  text-align: center !important;
+
+  color: #999 !important;
+}
+
+
+/* =========================================================
+   FOOTER
+========================================================= */
+
+.promise-to-pay-footer {
+  min-height: 50px;
+
+  padding: 0 16px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  color: #7c868c;
+
+  font-size: 8px;
+}
+
+.promise-to-pay-pagination {
+  display: flex;
+
+  gap: 3px;
+}
+
+.promise-to-pay-pagination button {
+  width: 27px;
+
+  height: 26px;
+
+  border: 1px solid #d5dde0;
+
+  border-radius: 3px;
+
+  background: #ffffff;
+
+  color: #5f696f;
+
+  cursor: pointer;
+}
+
+.promise-to-pay-pagination button.active {
+  background: #31a6c4;
+
+  border-color: #31a6c4;
+
+  color: #ffffff;
+}
+
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media (max-width: 800px) {
+
+  .promise-to-pay-page {
+    padding: 12px;
+  }
+
+  .promise-to-pay-page-header {
+    flex-direction: column;
+
+    align-items: flex-start;
+  }
+
+  .promise-to-pay-filter-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .promise-to-pay-table-top {
+    gap: 10px;
+  }
+
+  .promise-to-pay-search {
+    width: 200px;
+  }
+}
+
+
+@media (max-width: 500px) {
+
+  .promise-to-pay-filter-card {
+    padding: 13px;
+  }
+
+  .promise-to-pay-table-top {
+    flex-direction: column;
+
+    align-items: stretch;
+
+    padding-bottom: 12px;
+  }
+
+  .promise-to-pay-search {
+    width: 100%;
+  }
+
+  .promise-to-pay-form-buttons {
+    flex-wrap: wrap;
+  }
+
+  .promise-to-pay-form-buttons button {
+    flex: 1;
+  }
+}
+
+
+/* =========================================================
+   PRINT
+========================================================= */
+
+@media print {
+
+  .promise-to-pay-page {
+    padding: 0;
+
+    background: #ffffff;
+  }
+
+  .promise-to-pay-form-buttons,
+  .promise-to-pay-search,
+  .promise-to-pay-pagination {
+    display: none;
+  }
+
+  .promise-to-pay-filter-card,
+  .promise-to-pay-table-card {
+    box-shadow: none;
+  }
+}

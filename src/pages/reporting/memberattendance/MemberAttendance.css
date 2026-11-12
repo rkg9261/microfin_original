@@ -1,0 +1,831 @@
+/* =========================================================
+   MEMBER ATTENDANCE PAGE
+========================================================= */
+
+.member-attendance-page {
+  width: 100%;
+  min-height: 100vh;
+  padding: 20px;
+  background: #f7f8fa;
+}
+
+
+/* =========================================================
+   PAGE HEADER
+========================================================= */
+
+.member-attendance-page-header {
+  width: 100%;
+  padding: 10px 0 15px;
+  border-bottom: 2px solid #239bc1;
+  margin-bottom: 18px;
+}
+
+.member-attendance-page-header h2 {
+  font-size: 15px;
+  font-weight: 700;
+  color: #222;
+}
+
+
+/* =========================================================
+   FILTER CARD
+========================================================= */
+
+.member-attendance-filter-card {
+  width: 100%;
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 18px 20px;
+  margin-bottom: 15px;
+  box-shadow: 0 1px 5px rgba(0, 0, 0, 0.04);
+}
+
+
+/* =========================================================
+   FILTER TITLE
+========================================================= */
+
+.member-attendance-filter-title {
+  font-size: 16px;
+  font-weight: 500;
+  color: #444;
+  margin-bottom: 20px;
+}
+
+
+/* =========================================================
+   FILTER GRID
+========================================================= */
+
+.member-attendance-filter-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 18px;
+}
+
+
+/* =========================================================
+   FORM GROUP
+========================================================= */
+
+.member-attendance-form-group {
+  position: relative;
+}
+
+.member-attendance-form-group label {
+  display: block;
+  font-size: 13px;
+  font-weight: 700;
+  color: #333;
+  margin-bottom: 8px;
+}
+
+
+/* =========================================================
+   SELECT
+========================================================= */
+
+.member-attendance-select-wrapper {
+  position: relative;
+  width: 100%;
+}
+
+.member-attendance-select-wrapper select {
+  width: 100%;
+  height: 40px;
+
+  appearance: none;
+
+  border: 1px solid #cfcfcf;
+  border-radius: 5px;
+
+  background: #fff;
+
+  padding: 0 65px 0 12px;
+
+  font-size: 14px;
+  color: #555;
+
+  outline: none;
+}
+
+.member-attendance-select-wrapper select:focus {
+  border-color: #239bc1;
+}
+
+
+/* =========================================================
+   SELECT ARROW
+========================================================= */
+
+.member-attendance-select-arrow {
+  position: absolute;
+
+  right: 10px;
+  top: 50%;
+
+  transform: translateY(-50%);
+
+  font-size: 13px;
+
+  color: #666;
+
+  pointer-events: none;
+}
+
+
+/* =========================================================
+   CLEAR BUTTON
+========================================================= */
+
+.member-attendance-clear-btn {
+  position: absolute;
+
+  right: 32px;
+  top: 50%;
+
+  transform: translateY(-50%);
+
+  border: none;
+  background: transparent;
+
+  color: #888;
+
+  cursor: pointer;
+
+  font-size: 12px;
+
+  z-index: 2;
+}
+
+.member-attendance-clear-btn:hover {
+  color: #d33;
+}
+
+
+/* =========================================================
+   ERROR
+========================================================= */
+
+.member-attendance-error {
+  display: block;
+
+  margin-top: 5px;
+
+  color: #dc3545;
+
+  font-size: 11px;
+}
+
+
+/* =========================================================
+   FORM BUTTON
+========================================================= */
+
+.member-attendance-form-actions {
+  margin-top: 18px;
+}
+
+.member-attendance-get-record-btn {
+  height: 36px;
+
+  padding: 0 18px;
+
+  border: none;
+  border-radius: 4px;
+
+  background: #18b957;
+
+  color: #fff;
+
+  font-size: 13px;
+  font-weight: 600;
+
+  cursor: pointer;
+
+  transition: 0.25s;
+}
+
+.member-attendance-get-record-btn:hover {
+  background: #129945;
+}
+
+
+/* =========================================================
+   TABLE CARD
+========================================================= */
+
+.member-attendance-table-card {
+  width: 100%;
+
+  background: #fff;
+
+  border: 1px solid #ddd;
+
+  border-radius: 8px;
+
+  padding: 14px 15px 18px;
+
+  box-shadow: 0 1px 5px rgba(0, 0, 0, 0.04);
+}
+
+
+/* =========================================================
+   TABLE TITLE
+========================================================= */
+
+.member-attendance-table-title {
+  font-size: 17px;
+
+  font-weight: 500;
+
+  color: #444;
+
+  margin-bottom: 18px;
+}
+
+
+/* =========================================================
+   TOOLBAR
+========================================================= */
+
+.member-attendance-table-toolbar {
+  display: flex;
+
+  justify-content: space-between;
+
+  align-items: center;
+
+  margin-bottom: 15px;
+}
+
+
+/* =========================================================
+   ENTRIES
+========================================================= */
+
+.member-attendance-entries {
+  display: flex;
+
+  align-items: center;
+}
+
+
+/* =========================================================
+   SEARCH
+========================================================= */
+
+.member-attendance-search {
+  width: 220px;
+
+  height: 38px;
+
+  display: flex;
+
+  align-items: center;
+
+  border: 1px solid #ddd;
+
+  border-radius: 4px;
+
+  background: #fff;
+}
+
+.member-attendance-search input {
+  width: 100%;
+
+  height: 100%;
+
+  border: none;
+
+  outline: none;
+
+  padding: 0 10px;
+
+  font-size: 13px;
+}
+
+.member-attendance-search svg {
+  margin-right: 10px;
+
+  color: #555;
+
+  font-size: 13px;
+}
+
+
+/* =========================================================
+   TABLE SCROLL
+========================================================= */
+
+.member-attendance-table-scroll {
+  width: 100%;
+
+  overflow-x: auto;
+
+  overflow-y: hidden;
+}
+
+
+/* =========================================================
+   TABLE
+========================================================= */
+
+.member-attendance-table {
+  width: 100%;
+
+  min-width: 1250px;
+
+  border-collapse: collapse;
+
+  table-layout: auto;
+}
+
+
+/* =========================================================
+   TABLE HEADER
+========================================================= */
+
+.member-attendance-table thead th {
+  background: #e9f0f4;
+
+  color: #303b43;
+
+  font-size: 13px;
+
+  font-weight: 700;
+
+  text-align: left;
+
+  padding: 13px 10px;
+
+  border-bottom: 1px solid #d5dde1;
+
+  white-space: nowrap;
+}
+
+
+/* =========================================================
+   TABLE BODY
+========================================================= */
+
+.member-attendance-table tbody td {
+  padding: 12px 10px;
+
+  font-size: 13px;
+
+  color: #555;
+
+  border-bottom: 1px solid #eee;
+
+  vertical-align: middle;
+
+  white-space: nowrap;
+}
+
+.member-attendance-table tbody tr:hover {
+  background: #fafafa;
+}
+
+
+/* =========================================================
+   NAME
+========================================================= */
+
+.member-attendance-name {
+  min-width: 220px;
+}
+
+.member-attendance-name strong {
+  font-weight: 600;
+
+  color: #444;
+}
+
+.member-attendance-name span {
+  margin-left: 3px;
+
+  color: #666;
+}
+
+
+/* =========================================================
+   PRESENT
+========================================================= */
+
+.attendance-present {
+  display: inline-block;
+
+  padding: 4px 9px;
+
+  border-radius: 3px;
+
+  background: #e5f7ea;
+
+  color: #269449;
+
+  font-size: 11px;
+
+  font-weight: 700;
+}
+
+
+/* =========================================================
+   ABSENT
+========================================================= */
+
+.attendance-absent {
+  display: inline-block;
+
+  padding: 4px 9px;
+
+  border-radius: 3px;
+
+  background: #fde8e8;
+
+  color: #d33;
+
+  font-size: 11px;
+
+  font-weight: 700;
+}
+
+
+/* =========================================================
+   ACTION
+========================================================= */
+
+.member-attendance-action-heading {
+  text-align: center !important;
+}
+
+.member-attendance-action-cell {
+  min-width: 160px;
+
+  width: 160px;
+
+  text-align: center;
+
+  white-space: nowrap !important;
+}
+
+.member-attendance-action-buttons {
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  gap: 7px;
+}
+
+
+/* =========================================================
+   NO DATA
+========================================================= */
+
+.member-attendance-no-data {
+  text-align: center !important;
+
+  padding: 30px !important;
+
+  color: #888 !important;
+}
+
+
+/* =========================================================
+   VIEW MODAL OVERLAY
+========================================================= */
+
+.member-attendance-view-overlay {
+  position: fixed;
+
+  inset: 0;
+
+  z-index: 5000;
+
+  background: rgba(0, 0, 0, 0.45);
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  padding: 20px;
+}
+
+
+/* =========================================================
+   VIEW MODAL
+========================================================= */
+
+.member-attendance-view-modal {
+  width: 850px;
+
+  max-width: 95vw;
+
+  max-height: 90vh;
+
+  overflow-y: auto;
+
+  background: #fff;
+
+  border-radius: 6px;
+
+  box-shadow:
+    0 15px 40px rgba(0, 0, 0, 0.25);
+
+  animation: attendanceModal 0.25s ease;
+}
+
+
+@keyframes attendanceModal {
+
+  from {
+    opacity: 0;
+    transform: translateY(-20px) scale(0.98);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+
+}
+
+
+/* =========================================================
+   MODAL HEADER
+========================================================= */
+
+.member-attendance-view-header {
+  min-height: 70px;
+
+  padding: 15px 20px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  border-bottom: 1px solid #e5e5e5;
+
+  background: #f8fafb;
+}
+
+.member-attendance-view-header h2 {
+  margin: 0;
+
+  font-size: 17px;
+
+  color: #333;
+}
+
+.member-attendance-view-header p {
+  margin-top: 4px;
+
+  font-size: 12px;
+
+  color: #888;
+}
+
+
+/* =========================================================
+   CLOSE ICON
+========================================================= */
+
+.member-attendance-view-close {
+  width: 34px;
+
+  height: 34px;
+
+  border: none;
+
+  border-radius: 4px;
+
+  background: #dc3545;
+
+  color: #fff;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  cursor: pointer;
+}
+
+.member-attendance-view-close:hover {
+  background: #c82333;
+}
+
+
+/* =========================================================
+   DETAILS
+========================================================= */
+
+.member-attendance-details {
+  padding: 20px;
+
+  display: grid;
+
+  grid-template-columns: repeat(2, 1fr);
+
+  gap: 0;
+}
+
+
+/* =========================================================
+   DETAIL ITEM
+========================================================= */
+
+.member-attendance-detail-item {
+  min-height: 75px;
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 12px;
+
+  padding: 12px;
+
+  border-bottom: 1px solid #ededed;
+}
+
+
+/* =========================================================
+   DETAIL ICON
+========================================================= */
+
+.member-attendance-detail-icon {
+  width: 36px;
+
+  min-width: 36px;
+
+  height: 36px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  border-radius: 50%;
+
+  background: #e9f5f9;
+
+  color: #1688b5;
+
+  font-size: 14px;
+}
+
+
+/* =========================================================
+   DETAIL LABEL
+========================================================= */
+
+.member-attendance-detail-item label {
+  display: block;
+
+  font-size: 10px;
+
+  font-weight: 700;
+
+  color: #888;
+
+  margin-bottom: 5px;
+}
+
+
+/* =========================================================
+   DETAIL VALUE
+========================================================= */
+
+.member-attendance-detail-item strong {
+  display: block;
+
+  font-size: 14px;
+
+  color: #333;
+
+  font-weight: 600;
+}
+
+
+/* =========================================================
+   DETAIL PRESENT
+========================================================= */
+
+.detail-present {
+  color: #269449 !important;
+}
+
+
+/* =========================================================
+   DETAIL ABSENT
+========================================================= */
+
+.detail-absent {
+  color: #dc3545 !important;
+}
+
+
+/* =========================================================
+   MODAL FOOTER
+========================================================= */
+
+.member-attendance-view-footer {
+  padding: 12px 20px;
+
+  display: flex;
+
+  justify-content: flex-end;
+
+  border-top: 1px solid #e5e5e5;
+}
+
+
+/* =========================================================
+   CLOSE BUTTON
+========================================================= */
+
+.member-attendance-close-btn {
+  height: 36px;
+
+  padding: 0 20px;
+
+  border: none;
+
+  border-radius: 4px;
+
+  background: #dc3545;
+
+  color: #fff;
+
+  font-size: 12px;
+
+  font-weight: 600;
+
+  cursor: pointer;
+}
+
+.member-attendance-close-btn:hover {
+  background: #c82333;
+}
+
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media (max-width: 900px) {
+
+  .member-attendance-filter-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+}
+
+
+@media (max-width: 600px) {
+
+  .member-attendance-page {
+    padding: 10px;
+  }
+
+
+  .member-attendance-filter-grid {
+    grid-template-columns: 1fr;
+  }
+
+
+  .member-attendance-table-toolbar {
+    flex-direction: column;
+
+    align-items: stretch;
+
+    gap: 10px;
+  }
+
+
+  .member-attendance-search {
+    width: 100%;
+  }
+
+
+  .member-attendance-details {
+    grid-template-columns: 1fr;
+  }
+
+
+  .member-attendance-view-modal {
+    max-height: 95vh;
+  }
+
+}

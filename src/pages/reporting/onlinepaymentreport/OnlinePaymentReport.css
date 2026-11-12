@@ -1,0 +1,702 @@
+/* =========================================================
+   ONLINE PAYMENT REPORT PAGE
+========================================================= */
+
+.online-payment-report-page {
+  width: 100%;
+  min-height: 100vh;
+  padding: 20px;
+  background: #f7f8fa;
+}
+
+
+/* =========================================================
+   PAGE HEADER
+========================================================= */
+
+.online-payment-report-header {
+  width: 100%;
+
+  padding: 10px 0 14px;
+
+  margin-bottom: 15px;
+
+  border-bottom: 2px solid #239bc1;
+}
+
+.online-payment-report-header h2 {
+  margin: 0;
+
+  font-size: 14px;
+
+  font-weight: 700;
+
+  color: #222;
+}
+
+
+/* =========================================================
+   TABLE CARD
+========================================================= */
+
+.online-payment-report-table-card {
+  width: 100%;
+
+  background: #fff;
+
+  border: 1px solid #ddd;
+
+  border-radius: 8px;
+
+  padding: 15px;
+
+  box-shadow: 0 1px 5px rgba(0, 0, 0, 0.04);
+}
+
+
+/* =========================================================
+   TABLE HEADING
+========================================================= */
+
+.online-payment-report-table-heading {
+  margin-bottom: 15px;
+}
+
+.online-payment-report-table-heading h3 {
+  margin: 0;
+
+  font-size: 17px;
+
+  font-weight: 500;
+
+  color: #444;
+}
+
+
+/* =========================================================
+   TOOLBAR
+========================================================= */
+
+.online-payment-report-toolbar {
+  width: 100%;
+
+  display: flex;
+
+  justify-content: space-between;
+
+  align-items: center;
+
+  margin-bottom: 15px;
+}
+
+
+/* =========================================================
+   SEARCH
+========================================================= */
+
+.online-payment-report-search {
+  width: 220px;
+
+  height: 38px;
+
+  display: flex;
+
+  align-items: center;
+
+  border: 1px solid #ddd;
+
+  border-radius: 4px;
+
+  background: #fff;
+}
+
+.online-payment-report-search input {
+  width: 100%;
+
+  height: 100%;
+
+  padding: 0 10px;
+
+  border: none;
+
+  outline: none;
+
+  font-size: 13px;
+}
+
+.online-payment-report-search svg {
+  margin-right: 10px;
+
+  color: #555;
+
+  font-size: 13px;
+}
+
+
+/* =========================================================
+   TABLE SCROLL
+========================================================= */
+
+.online-payment-report-table-scroll {
+  width: 100%;
+
+  overflow-x: auto;
+
+  overflow-y: hidden;
+}
+
+
+/* =========================================================
+   TABLE
+========================================================= */
+
+.online-payment-report-table {
+  width: 100%;
+
+  min-width: 1250px;
+
+  border-collapse: collapse;
+}
+
+
+/* =========================================================
+   TABLE HEADER
+========================================================= */
+
+.online-payment-report-table thead th {
+  background: #e8f0f4;
+
+  color: #303b43;
+
+  font-size: 12px;
+
+  font-weight: 700;
+
+  text-align: left;
+
+  padding: 13px 10px;
+
+  border-bottom: 1px solid #d5dde1;
+
+  white-space: nowrap;
+}
+
+
+/* =========================================================
+   TABLE BODY
+========================================================= */
+
+.online-payment-report-table tbody td {
+  padding: 13px 10px;
+
+  font-size: 13px;
+
+  color: #555;
+
+  border-bottom: 1px solid #eee;
+
+  vertical-align: middle;
+
+  white-space: nowrap;
+}
+
+.online-payment-report-table tbody tr:hover {
+  background: #fafafa;
+}
+
+
+/* =========================================================
+   NAME
+========================================================= */
+
+.online-payment-name {
+  font-weight: 600;
+
+  color: #444 !important;
+}
+
+
+/* =========================================================
+   EMAIL
+========================================================= */
+
+.online-payment-email {
+  text-transform: uppercase;
+}
+
+
+/* =========================================================
+   AMOUNT
+========================================================= */
+
+.online-payment-amount {
+  font-weight: 700;
+
+  color: #333 !important;
+}
+
+
+/* =========================================================
+   DATE
+========================================================= */
+
+.online-payment-date {
+  min-width: 150px;
+}
+
+
+/* =========================================================
+   SUCCESS
+========================================================= */
+
+.online-payment-success {
+  display: inline-block;
+
+  padding: 4px 9px;
+
+  border-radius: 3px;
+
+  background: #e4f7e9;
+
+  color: #24934a;
+
+  font-size: 11px;
+
+  font-weight: 700;
+}
+
+
+/* =========================================================
+   ACTION
+========================================================= */
+
+.online-payment-action-heading {
+  text-align: center !important;
+}
+
+.online-payment-action-cell {
+  width: 100px;
+
+  min-width: 100px;
+
+  text-align: center;
+
+  white-space: nowrap !important;
+}
+
+.online-payment-action-buttons {
+  display: flex;
+
+  justify-content: center;
+
+  align-items: center;
+}
+
+
+/* =========================================================
+   NO DATA
+========================================================= */
+
+.online-payment-no-data {
+  text-align: center !important;
+
+  padding: 35px !important;
+
+  color: #888 !important;
+}
+
+
+/* =========================================================
+   TOTAL
+========================================================= */
+
+.online-payment-report-total {
+  display: flex;
+
+  justify-content: flex-end;
+
+  align-items: center;
+
+  gap: 6px;
+
+  padding: 15px 5px 3px;
+
+  font-size: 13px;
+
+  font-weight: 600;
+
+  color: #555;
+}
+
+.online-payment-report-total strong {
+  color: #222;
+
+  font-size: 15px;
+}
+
+
+/* =========================================================
+   VIEW OVERLAY
+========================================================= */
+
+.online-payment-view-overlay {
+  position: fixed;
+
+  inset: 0;
+
+  z-index: 5000;
+
+  background: rgba(0, 0, 0, 0.45);
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  padding: 20px;
+}
+
+
+/* =========================================================
+   VIEW MODAL
+========================================================= */
+
+.online-payment-view-modal {
+  width: 800px;
+
+  max-width: 95vw;
+
+  max-height: 90vh;
+
+  overflow-y: auto;
+
+  background: #fff;
+
+  border-radius: 7px;
+
+  box-shadow: 0 15px 45px rgba(0, 0, 0, 0.25);
+
+  animation: onlinePaymentModal 0.25s ease;
+}
+
+
+@keyframes onlinePaymentModal {
+
+  from {
+    opacity: 0;
+
+    transform: translateY(-20px) scale(0.98);
+  }
+
+  to {
+    opacity: 1;
+
+    transform: translateY(0) scale(1);
+  }
+
+}
+
+
+/* =========================================================
+   MODAL HEADER
+========================================================= */
+
+.online-payment-view-header {
+  min-height: 70px;
+
+  padding: 15px 20px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  background: #f8fafb;
+
+  border-bottom: 1px solid #e5e5e5;
+}
+
+.online-payment-view-header h2 {
+  margin: 0;
+
+  font-size: 17px;
+
+  font-weight: 600;
+
+  color: #333;
+}
+
+.online-payment-view-header p {
+  margin: 5px 0 0;
+
+  font-size: 12px;
+
+  color: #888;
+}
+
+
+/* =========================================================
+   CLOSE ICON
+========================================================= */
+
+.online-payment-view-close {
+  width: 34px;
+
+  height: 34px;
+
+  border: none;
+
+  border-radius: 4px;
+
+  background: #dc3545;
+
+  color: #fff;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  cursor: pointer;
+}
+
+.online-payment-view-close:hover {
+  background: #c82333;
+}
+
+
+/* =========================================================
+   PAYMENT STATUS
+========================================================= */
+
+.online-payment-status-box {
+  margin: 20px;
+
+  padding: 13px 16px;
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 12px;
+
+  border: 1px solid #ccebd5;
+
+  border-radius: 5px;
+
+  background: #f0fbf3;
+}
+
+.online-payment-status-box > svg {
+  font-size: 22px;
+
+  color: #28a745;
+}
+
+.online-payment-status-box span {
+  display: block;
+
+  font-size: 10px;
+
+  font-weight: 700;
+
+  color: #888;
+
+  margin-bottom: 3px;
+}
+
+.online-payment-status-box strong {
+  font-size: 14px;
+
+  color: #269449;
+}
+
+
+/* =========================================================
+   DETAILS GRID
+========================================================= */
+
+.online-payment-details-grid {
+  padding: 0 20px 20px;
+
+  display: grid;
+
+  grid-template-columns: repeat(2, 1fr);
+
+  gap: 0 15px;
+}
+
+
+/* =========================================================
+   DETAIL ITEM
+========================================================= */
+
+.online-payment-detail-item {
+  min-height: 75px;
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 12px;
+
+  padding: 12px;
+
+  border-bottom: 1px solid #eee;
+}
+
+
+/* =========================================================
+   DETAIL ICON
+========================================================= */
+
+.online-payment-detail-icon {
+  width: 36px;
+
+  min-width: 36px;
+
+  height: 36px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  border-radius: 50%;
+
+  background: #e9f5f9;
+
+  color: #1688b5;
+
+  font-size: 14px;
+}
+
+
+/* =========================================================
+   DETAIL LABEL
+========================================================= */
+
+.online-payment-detail-item label {
+  display: block;
+
+  margin-bottom: 5px;
+
+  font-size: 10px;
+
+  font-weight: 700;
+
+  color: #888;
+}
+
+
+/* =========================================================
+   DETAIL VALUE
+========================================================= */
+
+.online-payment-detail-item strong {
+  display: block;
+
+  font-size: 13px;
+
+  font-weight: 600;
+
+  color: #333;
+
+  word-break: break-word;
+}
+
+
+/* =========================================================
+   DETAIL AMOUNT
+========================================================= */
+
+.online-payment-detail-amount {
+  color: #24934a !important;
+
+  font-size: 16px !important;
+}
+
+
+/* =========================================================
+   FOOTER
+========================================================= */
+
+.online-payment-view-footer {
+  display: flex;
+
+  justify-content: flex-end;
+
+  padding: 12px 20px;
+
+  border-top: 1px solid #e5e5e5;
+}
+
+
+/* =========================================================
+   CLOSE BUTTON
+========================================================= */
+
+.online-payment-close-btn {
+  height: 36px;
+
+  padding: 0 20px;
+
+  border: none;
+
+  border-radius: 4px;
+
+  background: #dc3545;
+
+  color: #fff;
+
+  font-size: 12px;
+
+  font-weight: 600;
+
+  cursor: pointer;
+}
+
+.online-payment-close-btn:hover {
+  background: #c82333;
+}
+
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media (max-width: 700px) {
+
+  .online-payment-report-page {
+    padding: 10px;
+  }
+
+
+  .online-payment-report-toolbar {
+    flex-direction: column;
+
+    align-items: stretch;
+
+    gap: 10px;
+  }
+
+
+  .online-payment-report-search {
+    width: 100%;
+  }
+
+
+  .online-payment-details-grid {
+    grid-template-columns: 1fr;
+  }
+
+
+  .online-payment-view-modal {
+    max-height: 95vh;
+  }
+
+}

@@ -1,0 +1,1161 @@
+/* =========================================================
+   FUTURE DUE EMI PAGE
+========================================================= */
+
+.future-due-emi-page {
+  width: 100%;
+  min-height: 100vh;
+
+  padding: 18px 24px 40px;
+
+  box-sizing: border-box;
+
+  background: #f5f7f9;
+
+  color: #3d474e;
+}
+
+
+/* =========================================================
+   HEADER
+========================================================= */
+
+.future-due-emi-page-header {
+  min-height: 42px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  border-bottom: 2px solid #31a8c6;
+
+  margin-bottom: 18px;
+}
+
+.future-due-emi-page-header h2 {
+  margin: 0 0 9px;
+
+  font-size: 11px;
+
+  font-weight: 700;
+
+  color: #293239;
+}
+
+.future-due-emi-breadcrumb {
+  display: flex;
+
+  align-items: center;
+
+  gap: 7px;
+
+  margin-bottom: 9px;
+
+  color: #858f96;
+
+  font-size: 9px;
+}
+
+.future-due-emi-breadcrumb strong {
+  color: #414b52;
+}
+
+
+/* =========================================================
+   FILTER
+========================================================= */
+
+.future-due-emi-filter-card {
+  width: 100%;
+
+  padding: 18px;
+
+  box-sizing: border-box;
+
+  background: #ffffff;
+
+  border: 1px solid #dce3e6;
+
+  border-radius: 6px;
+
+  box-shadow:
+    0 2px 8px rgba(0, 0, 0, 0.025);
+
+  margin-bottom: 15px;
+}
+
+.future-due-emi-filter-grid {
+  display: grid;
+
+  grid-template-columns:
+    repeat(4, minmax(160px, 1fr));
+
+  gap: 14px 22px;
+}
+
+.future-due-emi-field {
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 6px;
+}
+
+.future-due-emi-field label {
+  font-size: 9px;
+
+  font-weight: 700;
+
+  color: #353f46;
+
+  text-transform: uppercase;
+}
+
+.future-due-emi-field label span {
+  color: #e04f4f;
+}
+
+.future-due-emi-field input,
+.future-due-emi-field select {
+  width: 100%;
+
+  height: 34px;
+
+  box-sizing: border-box;
+
+  padding: 0 9px;
+
+  border: 1px solid #cbd4d8;
+
+  border-radius: 3px;
+
+  background: #ffffff;
+
+  color: #616b72;
+
+  font-size: 10px;
+
+  outline: none;
+}
+
+.future-due-emi-field input:focus,
+.future-due-emi-field select:focus {
+  border-color: #35a8c4;
+}
+
+
+/* =========================================================
+   CITY SEARCH
+========================================================= */
+
+.future-due-emi-city-search {
+  width: 100%;
+
+  height: 34px;
+
+  display: flex;
+
+  align-items: center;
+
+  border: 1px solid #cbd4d8;
+
+  border-radius: 3px;
+
+  box-sizing: border-box;
+}
+
+.future-due-emi-city-search input {
+  flex: 1;
+
+  width: 100%;
+
+  height: 100%;
+
+  border: none;
+
+  outline: none;
+
+  padding: 0 9px;
+
+  font-size: 10px;
+}
+
+.future-due-emi-city-search span {
+  width: 30px;
+
+  text-align: center;
+
+  color: #69757b;
+
+  font-size: 15px;
+}
+
+
+/* =========================================================
+   BUTTONS
+========================================================= */
+
+.future-due-emi-buttons {
+  display: flex;
+
+  align-items: center;
+
+  gap: 5px;
+
+  margin-top: 17px;
+}
+
+.future-due-emi-buttons button {
+  height: 34px;
+
+  padding: 0 15px;
+
+  border: none;
+
+  border-radius: 3px;
+
+  color: #ffffff;
+
+  font-size: 9px;
+
+  font-weight: 700;
+
+  cursor: pointer;
+}
+
+.future-due-emi-get {
+  background: #28aa68;
+}
+
+.future-due-emi-print {
+  background: #2ca5c3;
+}
+
+.future-due-emi-download {
+  background: #398faf;
+}
+
+.future-due-emi-clear {
+  background: #6c777d;
+}
+
+
+/* =========================================================
+   TABLE CARD
+========================================================= */
+
+.future-due-emi-table-card {
+  width: 100%;
+
+  background: #ffffff;
+
+  border: 1px solid #dce3e6;
+
+  border-radius: 6px;
+
+  overflow: hidden;
+}
+
+
+/* =========================================================
+   TABLE HEADER
+========================================================= */
+
+.future-due-emi-table-heading {
+  padding: 15px 16px 7px;
+}
+
+.future-due-emi-table-heading h3 {
+  margin: 0 0 8px;
+
+  color: #404b52;
+
+  font-size: 16px;
+
+  font-weight: 500;
+
+  text-transform: uppercase;
+}
+
+.future-due-emi-summary {
+  display: flex;
+
+  align-items: center;
+
+  gap: 5px;
+
+  font-size: 10px;
+
+  color: #687278;
+}
+
+.future-due-emi-summary strong {
+  color: #476873;
+}
+
+
+/* =========================================================
+   SEARCH ROW
+========================================================= */
+
+.future-due-emi-search-row {
+  min-height: 48px;
+
+  padding: 0 16px 8px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  gap: 12px;
+}
+
+.future-due-emi-entries {
+  display: flex;
+
+  align-items: center;
+
+  gap: 5px;
+
+  color: #7b858b;
+
+  font-size: 9px;
+}
+
+.future-due-emi-entries select {
+  width: 52px;
+
+  height: 28px;
+
+  border: 1px solid #d1d9dc;
+
+  border-radius: 3px;
+
+  background: #ffffff;
+
+  outline: none;
+
+  font-size: 10px;
+}
+
+.future-due-emi-search-box {
+  width: 180px;
+
+  height: 30px;
+
+  display: flex;
+
+  align-items: center;
+
+  border: 1px solid #d4dce0;
+
+  border-radius: 3px;
+}
+
+.future-due-emi-search-box.member {
+  width: 260px;
+}
+
+.future-due-emi-search-box input {
+  flex: 1;
+
+  width: 100%;
+
+  height: 100%;
+
+  border: none;
+
+  outline: none;
+
+  padding: 0 8px;
+
+  font-size: 9px;
+}
+
+.future-due-emi-search-box span {
+  width: 28px;
+
+  text-align: center;
+
+  color: #707b81;
+}
+
+
+/* =========================================================
+   TABLE
+========================================================= */
+
+.future-due-emi-table-wrapper {
+  width: 100%;
+
+  overflow-x: auto;
+}
+
+.future-due-emi-table {
+  width: 100%;
+
+  min-width: 1500px;
+
+  border-collapse: collapse;
+}
+
+.future-due-emi-table thead {
+  background: #e8eef1;
+}
+
+.future-due-emi-table th {
+  height: 48px;
+
+  padding: 7px 9px;
+
+  border-bottom: 1px solid #d1dade;
+
+  color: #424c53;
+
+  text-align: left;
+
+  vertical-align: middle;
+
+  font-size: 8px;
+
+  font-weight: 700;
+
+  white-space: nowrap;
+
+  text-transform: uppercase;
+}
+
+.future-due-emi-table td {
+  padding: 11px 9px;
+
+  border-bottom: 1px solid #edf0f2;
+
+  color: #606b72;
+
+  font-size: 9px;
+
+  white-space: nowrap;
+
+  vertical-align: middle;
+}
+
+.future-due-emi-table tbody tr:hover {
+  background: #fafcfd;
+}
+
+
+/* =========================================================
+   LOAN
+========================================================= */
+
+.future-due-emi-loan {
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 3px;
+}
+
+.future-due-emi-loan strong {
+  color: #47788f;
+}
+
+.future-due-emi-loan small {
+  color: #7b858c;
+
+  font-size: 8px;
+}
+
+
+/* =========================================================
+   MEMBER
+========================================================= */
+
+.future-due-emi-member {
+  min-width: 120px;
+
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 3px;
+
+  white-space: normal;
+}
+
+.future-due-emi-member strong {
+  color: #4c565d;
+
+  font-size: 9px;
+}
+
+.future-due-emi-member small {
+  color: #899298;
+
+  font-size: 8px;
+}
+
+
+/* =========================================================
+   STAFF
+========================================================= */
+
+.future-due-emi-staff {
+  min-width: 100px;
+
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 3px;
+
+  white-space: normal;
+}
+
+.future-due-emi-staff strong {
+  color: #4f5960;
+
+  font-size: 8px;
+}
+
+.future-due-emi-staff small {
+  color: #899197;
+
+  font-size: 8px;
+}
+
+
+/* =========================================================
+   TYPE
+========================================================= */
+
+.future-due-emi-type {
+  color: #68747a;
+
+  font-size: 8px;
+
+  font-style: italic;
+}
+
+
+/* =========================================================
+   PAYABLE
+========================================================= */
+
+.future-due-emi-payable {
+  color: #397f55;
+
+  font-size: 9px;
+}
+
+
+/* =========================================================
+   STATUS
+========================================================= */
+
+.future-due-emi-status {
+  display: inline-flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  padding: 4px 7px;
+
+  border-radius: 10px;
+
+  font-size: 7px;
+
+  font-weight: 700;
+}
+
+.future-due-emi-status.pending {
+  color: #bd4a4a;
+
+  background: #fff0f0;
+
+  border: 1px solid #edcece;
+}
+
+.future-due-emi-status.approved {
+  color: #2d8750;
+
+  background: #eaf7ee;
+
+  border: 1px solid #c9e8d3;
+}
+
+
+/* =========================================================
+   ACTION
+========================================================= */
+
+.future-due-emi-action {
+  position: relative;
+}
+
+.future-due-emi-task-btn {
+  height: 27px;
+
+  padding: 0 9px;
+
+  display: inline-flex;
+
+  align-items: center;
+
+  gap: 5px;
+
+  border: none;
+
+  border-radius: 3px;
+
+  background: #2fa5a7;
+
+  color: #ffffff;
+
+  font-size: 8px;
+
+  cursor: pointer;
+}
+
+.future-due-emi-task-menu {
+  position: absolute;
+
+  top: 31px;
+
+  right: 0;
+
+  z-index: 100;
+
+  width: 120px;
+
+  padding: 5px;
+
+  background: #ffffff;
+
+  border: 1px solid #dce2e5;
+
+  border-radius: 4px;
+
+  box-shadow:
+    0 7px 18px rgba(0, 0, 0, 0.15);
+}
+
+.future-due-emi-task-menu button {
+  width: 100%;
+
+  height: 30px;
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 7px;
+
+  padding: 0 8px;
+
+  border: none;
+
+  border-radius: 3px;
+
+  background: transparent;
+
+  color: #555f66;
+
+  font-size: 9px;
+
+  cursor: pointer;
+
+  text-align: left;
+}
+
+.future-due-emi-task-menu button:hover {
+  background: #f1f4f5;
+}
+
+.future-due-emi-task-menu .future-due-emi-pay-option {
+  color: #2e8c55;
+}
+
+
+/* =========================================================
+   NO DATA
+========================================================= */
+
+.future-due-emi-no-data {
+  height: 120px;
+
+  text-align: center !important;
+
+  color: #999 !important;
+}
+
+
+/* =========================================================
+   FOOTER
+========================================================= */
+
+.future-due-emi-footer {
+  min-height: 50px;
+
+  padding: 0 16px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  color: #7c868c;
+
+  font-size: 8px;
+}
+
+.future-due-emi-pagination {
+  display: flex;
+
+  gap: 3px;
+}
+
+.future-due-emi-pagination button {
+  width: 27px;
+
+  height: 26px;
+
+  border: 1px solid #d5dde0;
+
+  border-radius: 3px;
+
+  background: #ffffff;
+
+  cursor: pointer;
+}
+
+.future-due-emi-pagination .active {
+  background: #31a6c4;
+
+  border-color: #31a6c4;
+
+  color: #ffffff;
+}
+
+
+/* =========================================================
+   VIEW MODAL
+========================================================= */
+
+.future-due-emi-view-overlay {
+  position: fixed;
+
+  inset: 0;
+
+  z-index: 9999;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  padding: 20px;
+
+  background: rgba(20, 28, 34, 0.55);
+}
+
+.future-due-emi-view-modal {
+  width: min(850px, 100%);
+
+  max-height: 90vh;
+
+  overflow-y: auto;
+
+  background: #ffffff;
+
+  border-radius: 7px;
+
+  box-shadow:
+    0 20px 55px rgba(0, 0, 0, 0.25);
+}
+
+
+/* =========================================================
+   VIEW HEADER
+========================================================= */
+
+.future-due-emi-view-header {
+  min-height: 70px;
+
+  padding: 0 20px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  background: #f4f8fa;
+
+  border-bottom: 1px solid #e0e7ea;
+}
+
+.future-due-emi-view-title {
+  display: flex;
+
+  align-items: center;
+
+  gap: 12px;
+}
+
+.future-due-emi-view-icon {
+  width: 40px;
+
+  height: 40px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  border-radius: 50%;
+
+  background: #e4f3f7;
+
+  color: #299ab3;
+}
+
+.future-due-emi-view-title h3 {
+  margin: 0 0 3px;
+
+  font-size: 14px;
+
+  color: #39434a;
+}
+
+.future-due-emi-view-title p {
+  margin: 0;
+
+  font-size: 9px;
+
+  color: #8a949a;
+}
+
+.future-due-emi-view-close {
+  width: 31px;
+
+  height: 31px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  border: none;
+
+  border-radius: 50%;
+
+  background: #df5b5b;
+
+  color: #ffffff;
+
+  cursor: pointer;
+}
+
+
+/* =========================================================
+   VIEW BODY
+========================================================= */
+
+.future-due-emi-view-body {
+  padding: 20px;
+}
+
+.future-due-emi-view-section {
+  padding: 15px;
+
+  margin-bottom: 14px;
+
+  border: 1px solid #e0e6e9;
+
+  border-radius: 5px;
+}
+
+.future-due-emi-view-section-title {
+  display: flex;
+
+  align-items: center;
+
+  gap: 8px;
+
+  padding-bottom: 10px;
+
+  margin-bottom: 15px;
+
+  border-bottom: 1px solid #edf0f2;
+
+  color: #319bb2;
+}
+
+.future-due-emi-view-section-title h4 {
+  margin: 0;
+
+  font-size: 10px;
+
+  color: #475159;
+}
+
+.future-due-emi-view-grid {
+  display: grid;
+
+  grid-template-columns:
+    repeat(4, 1fr);
+
+  gap: 17px;
+}
+
+.future-due-emi-view-grid > div {
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 5px;
+}
+
+.future-due-emi-view-grid span,
+.future-due-emi-view-status span {
+  color: #8c969c;
+
+  font-size: 8px;
+
+  font-weight: 700;
+
+  text-transform: uppercase;
+}
+
+.future-due-emi-view-grid strong {
+  display: flex;
+
+  align-items: center;
+
+  gap: 6px;
+
+  color: #404a51;
+
+  font-size: 10px;
+}
+
+.future-due-emi-view-grid strong svg {
+  color: #369bb0;
+}
+
+.future-due-emi-view-amount strong {
+  color: #348150 !important;
+
+  font-size: 13px !important;
+}
+
+
+/* =========================================================
+   STATUS
+========================================================= */
+
+.future-due-emi-view-status {
+  display: grid;
+
+  grid-template-columns: 1fr 1fr;
+
+  gap: 20px;
+
+  padding: 14px;
+
+  border-radius: 5px;
+
+  background: #f7f9fa;
+
+  border: 1px solid #e0e6e9;
+}
+
+.future-due-emi-view-status > div {
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 5px;
+}
+
+.future-due-emi-view-status strong {
+  font-size: 11px;
+}
+
+.future-due-emi-view-status strong.pending {
+  color: #c04d4d;
+}
+
+.future-due-emi-view-status strong.unpaid {
+  color: #c04d4d;
+}
+
+.future-due-emi-view-status strong.paid {
+  color: #2d8950;
+}
+
+
+/* =========================================================
+   VIEW FOOTER
+========================================================= */
+
+.future-due-emi-view-footer {
+  min-height: 60px;
+
+  padding: 0 20px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: flex-end;
+
+  gap: 7px;
+
+  background: #fafbfc;
+
+  border-top: 1px solid #e1e7e9;
+}
+
+.future-due-emi-pay-btn,
+.future-due-emi-close-btn {
+  height: 34px;
+
+  padding: 0 15px;
+
+  display: inline-flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  gap: 7px;
+
+  border: none;
+
+  border-radius: 3px;
+
+  color: #ffffff;
+
+  font-size: 9px;
+
+  font-weight: 700;
+
+  cursor: pointer;
+}
+
+.future-due-emi-pay-btn {
+  background: #2ca969;
+}
+
+.future-due-emi-close-btn {
+  background: #68747b;
+}
+
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media (max-width: 1100px) {
+
+  .future-due-emi-filter-grid {
+    grid-template-columns:
+      repeat(3, minmax(160px, 1fr));
+  }
+
+  .future-due-emi-view-grid {
+    grid-template-columns:
+      repeat(2, 1fr);
+  }
+}
+
+
+@media (max-width: 700px) {
+
+  .future-due-emi-page {
+    padding: 12px;
+  }
+
+  .future-due-emi-page-header {
+    flex-direction: column;
+
+    align-items: flex-start;
+  }
+
+  .future-due-emi-filter-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .future-due-emi-buttons {
+    flex-wrap: wrap;
+  }
+
+  .future-due-emi-buttons button {
+    flex: 1;
+
+    min-width: 110px;
+  }
+
+  .future-due-emi-search-row {
+    flex-direction: column;
+
+    align-items: stretch;
+  }
+
+  .future-due-emi-search-box,
+  .future-due-emi-search-box.member {
+    width: 100%;
+  }
+
+  .future-due-emi-view-overlay {
+    padding: 10px;
+  }
+
+  .future-due-emi-view-body {
+    padding: 12px;
+  }
+
+  .future-due-emi-view-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .future-due-emi-view-status {
+    grid-template-columns: 1fr;
+  }
+}
+
+
+/* =========================================================
+   PRINT
+========================================================= */
+
+@media print {
+
+  .future-due-emi-page {
+    background: #ffffff;
+    padding: 0;
+  }
+
+  .future-due-emi-buttons,
+  .future-due-emi-view-overlay,
+  .future-due-emi-task-menu {
+    display: none !important;
+  }
+
+  .future-due-emi-filter-card {
+    box-shadow: none;
+  }
+
+  .future-due-emi-table-card {
+    border: 1px solid #999;
+  }
+}

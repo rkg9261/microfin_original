@@ -1,0 +1,722 @@
+/* =========================================================
+   PRODUCT LOAN PAGE
+========================================================= */
+
+.product-loan-page {
+
+    width: 100%;
+
+    min-height: 100vh;
+
+    padding: 28px 30px;
+
+    background: #f7f9fc;
+
+}
+
+
+/* =========================================================
+   PAGE HEADER
+========================================================= */
+
+.product-loan-page-header {
+
+    margin-bottom: 22px;
+
+}
+
+.product-loan-page-header h1 {
+
+    margin: 0;
+
+    font-size: 27px;
+
+    font-weight: 700;
+
+    color: #111827;
+
+}
+
+.product-loan-page-header p {
+
+    margin: 6px 0 0;
+
+    font-size: 15px;
+
+    color: #64748b;
+
+}
+
+
+/* =========================================================
+   SEARCH CARD
+========================================================= */
+
+.product-loan-search-card {
+
+    background: #fff;
+
+    border-radius: 12px;
+
+    padding: 20px;
+
+    margin-bottom: 22px;
+
+    box-shadow:
+        0 3px 15px rgba(0, 0, 0, .06);
+
+}
+
+.product-loan-search-card h2 {
+
+    margin: 0 0 20px;
+
+    font-size: 18px;
+
+    font-weight: 600;
+
+    color: #333;
+
+}
+
+
+/* =========================================================
+   SEARCH GRID
+========================================================= */
+
+.product-loan-search-grid {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, 1fr);
+
+    gap: 22px;
+
+}
+
+.product-loan-search-group {
+
+    display: flex;
+
+    flex-direction: column;
+
+}
+
+.product-loan-search-group label {
+
+    font-size: 14px;
+
+    font-weight: 600;
+
+    color: #333;
+
+    margin-bottom: 8px;
+
+}
+
+.product-loan-search-group label span {
+
+    color: #e53935;
+
+}
+
+.product-loan-search-group input,
+
+.product-loan-search-group select {
+
+    width: 100%;
+
+    height: 44px;
+
+    border: 1px solid #d8dce6;
+
+    border-radius: 8px;
+
+    padding: 0 12px;
+
+    outline: none;
+
+    background: #fff;
+
+    font-size: 14px;
+
+}
+
+.product-loan-search-group input:focus,
+
+.product-loan-search-group select:focus {
+
+    border-color: #2563eb;
+
+    box-shadow:
+        0 0 0 3px
+        rgba(37, 99, 235, .10);
+
+}
+
+
+/* =========================================================
+   CARD
+========================================================= */
+
+.product-loan-card {
+
+    background: #fff;
+
+    border-radius: 12px;
+
+    padding: 18px 20px 22px;
+
+    box-shadow:
+        0 3px 15px rgba(0, 0, 0, .06);
+
+}
+
+
+/* =========================================================
+   CARD HEADER
+========================================================= */
+
+.product-loan-card-header {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    margin-bottom: 5px;
+
+}
+
+.product-loan-card-header h2 {
+
+    margin: 0;
+
+    font-size: 19px;
+
+    font-weight: 600;
+
+    color: #333;
+
+}
+
+.product-loan-card-actions {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+
+}
+
+
+/* =========================================================
+   DOWNLOAD BUTTON
+========================================================= */
+
+.product-loan-download-btn {
+
+    border: none;
+
+    background: transparent;
+
+    color: #64748b;
+
+    font-size: 13px;
+
+    cursor: pointer;
+
+}
+
+.product-loan-download-btn:hover {
+
+    color: #2563eb;
+
+}
+
+
+/* =========================================================
+   CONTROLS
+========================================================= */
+
+.product-loan-controls {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    gap: 20px;
+
+    margin-bottom: 12px;
+
+}
+
+.product-loan-controls .common-search {
+
+    margin-bottom: 0;
+
+}
+
+
+/* =========================================================
+   TABLE
+========================================================= */
+
+.product-loan-card .table-wrapper {
+
+    width: 100%;
+
+    overflow-x: auto;
+
+}
+
+.product-loan-card .common-table {
+
+    min-width: 1800px;
+
+}
+
+.product-loan-card .common-table th {
+
+    white-space: nowrap;
+
+}
+
+.product-loan-card .common-table td {
+
+    vertical-align: middle;
+
+}
+
+
+/* =========================================================
+   LOAN ID
+========================================================= */
+
+.product-loan-card
+.common-table td:nth-child(2) {
+
+    min-width: 100px;
+
+}
+
+
+/* =========================================================
+   MEMBER
+========================================================= */
+
+.product-loan-card
+.common-table td:nth-child(3) {
+
+    min-width: 180px;
+
+    max-width: 240px;
+
+}
+
+
+/* =========================================================
+   PRODUCT
+========================================================= */
+
+.product-loan-card
+.common-table td:nth-child(8) {
+
+    min-width: 150px;
+
+    max-width: 220px;
+
+}
+
+
+/* =========================================================
+   ACTION
+========================================================= */
+
+.product-loan-card .table-action {
+
+    min-width: 120px;
+
+}
+
+
+/* =========================================================
+   FOOTER
+========================================================= */
+
+.product-loan-table-footer {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    padding: 18px 5px 2px;
+
+    font-size: 14px;
+
+    color: #64748b;
+
+}
+
+
+/* =========================================================
+   PAGINATION
+========================================================= */
+
+.product-loan-pagination {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 5px;
+
+}
+
+.product-loan-pagination button {
+
+    min-width: 38px;
+
+    height: 34px;
+
+    padding: 0 10px;
+
+    border: none;
+
+    border-radius: 5px;
+
+    background: transparent;
+
+    color: #64748b;
+
+    cursor: pointer;
+
+    font-size: 13px;
+
+}
+
+.product-loan-pagination button:hover {
+
+    background: #eaf2ff;
+
+    color: #2563eb;
+
+}
+
+.product-loan-pagination button.active {
+
+    background: #2563eb;
+
+    color: #fff;
+
+}
+
+
+/* =========================================================
+   PRODUCT LOAN FORM
+========================================================= */
+
+.product-loan-form-modal {
+
+    width: 1050px;
+
+    max-width: 95%;
+
+    margin-top: 70px;
+
+}
+
+
+
+
+
+/* =========================================================
+   FORM SCROLLBAR
+========================================================= */
+
+.product-loan-form-modal
+.common-form::-webkit-scrollbar {
+
+    width: 7px;
+
+}
+
+.product-loan-form-modal
+.common-form::-webkit-scrollbar-track {
+
+    background: #f1f5f9;
+
+    border-radius: 10px;
+
+}
+
+.product-loan-form-modal
+.common-form::-webkit-scrollbar-thumb {
+
+    background: #cbd5e1;
+
+    border-radius: 10px;
+
+}
+
+.product-loan-form-modal
+.common-form::-webkit-scrollbar-thumb:hover {
+
+    background: #94a3b8;
+
+}
+
+
+/* =========================================================
+   PRODUCT LOAN VIEW
+========================================================= */
+
+.product-loan-view-modal {
+
+    width: 1000px;
+
+    max-width: 95%;
+
+    margin-top: 50px;
+
+}
+
+
+/* =========================================================
+   VIEW SCROLL
+========================================================= */
+
+.product-loan-view-modal
+.common-view-body {
+
+    max-height: 550px;
+
+    overflow-y: auto;
+
+}
+
+
+/* =========================================================
+   VIEW SCROLLBAR
+========================================================= */
+
+.product-loan-view-modal
+.common-view-body::-webkit-scrollbar {
+
+    width: 7px;
+
+}
+
+.product-loan-view-modal
+.common-view-body::-webkit-scrollbar-track {
+
+    background: #f1f5f9;
+
+    border-radius: 10px;
+
+}
+
+.product-loan-view-modal
+.common-view-body::-webkit-scrollbar-thumb {
+
+    background: #cbd5e1;
+
+    border-radius: 10px;
+
+}
+
+.product-loan-view-modal
+.common-view-body::-webkit-scrollbar-thumb:hover {
+
+    background: #94a3b8;
+
+}
+
+
+/* =========================================================
+   VIEW VALUE
+========================================================= */
+
+.product-loan-view-modal
+.common-view-value {
+
+    word-break: break-word;
+
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 1100px) {
+
+    .product-loan-search-grid {
+
+        grid-template-columns:
+            repeat(2, 1fr);
+
+    }
+
+    .product-loan-form-modal {
+
+        width: 96%;
+
+    }
+
+}
+
+
+@media (max-width: 768px) {
+
+    .product-loan-page {
+
+        padding: 15px;
+
+    }
+
+
+    .product-loan-search-grid {
+
+        grid-template-columns: 1fr;
+
+    }
+
+
+    .product-loan-card {
+
+        padding: 14px;
+
+    }
+
+
+    .product-loan-card-header {
+
+        align-items: flex-start;
+
+        gap: 15px;
+
+    }
+
+
+    .product-loan-card-actions {
+
+        flex-direction: column;
+
+        align-items: flex-end;
+
+    }
+
+
+    .product-loan-controls {
+
+        flex-direction: column;
+
+        align-items: stretch;
+
+        gap: 12px;
+
+    }
+
+
+    .product-loan-controls
+    .common-search {
+
+        width: 100%;
+
+    }
+
+
+    .product-loan-controls
+    .common-search input {
+
+        width: 100%;
+
+    }
+
+
+    .product-loan-table-footer {
+
+        flex-direction: column;
+
+        align-items: flex-start;
+
+        gap: 15px;
+
+    }
+
+
+    .product-loan-pagination {
+
+        width: 100%;
+
+        justify-content: flex-end;
+
+    }
+
+
+    .product-loan-view-modal {
+
+        width: 96%;
+
+    }
+
+
+    .product-loan-view-modal
+    .common-view-body {
+
+        grid-template-columns: 1fr;
+
+        max-height: 500px;
+
+    }
+
+}
+
+
+@media (max-width: 480px) {
+
+    .product-loan-page {
+
+        padding: 10px;
+
+    }
+
+
+    .product-loan-card {
+
+        padding: 10px;
+
+    }
+
+
+    .product-loan-card-header {
+
+        flex-direction: column;
+
+        align-items: stretch;
+
+    }
+
+
+    .product-loan-card-actions {
+
+        align-items: stretch;
+
+    }
+
+
+    .product-loan-view-modal {
+
+        width: 98%;
+
+    }
+
+}

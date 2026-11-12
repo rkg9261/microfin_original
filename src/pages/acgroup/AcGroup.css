@@ -1,0 +1,596 @@
+/* =========================================================
+   AC GROUP PAGE
+========================================================= */
+
+.acgroup-page {
+  width: 100%;
+  min-height: 100vh;
+  padding: 24px;
+  box-sizing: border-box;
+  background: #f8fafc;
+  color: #30343b;
+}
+
+
+/* =========================================================
+   PAGE HEADER
+========================================================= */
+
+.acgroup-page-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 16px;
+}
+
+.acgroup-page-title {
+  font-size: 14px;
+  font-weight: 700;
+  color: #292d35;
+  letter-spacing: 0.3px;
+}
+
+.acgroup-breadcrumb {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 11px;
+  color: #777;
+  text-transform: uppercase;
+}
+
+.acgroup-breadcrumb strong {
+  color: #252932;
+}
+
+.acgroup-breadcrumb-arrow {
+  font-size: 16px;
+  color: #999;
+}
+
+
+/* =========================================================
+   BLUE LINE
+========================================================= */
+
+.acgroup-blue-line {
+  width: 100%;
+  height: 3px;
+  background: #20a8d8;
+  margin-bottom: 18px;
+}
+
+
+/* =========================================================
+   SECTION
+========================================================= */
+
+.acgroup-section {
+  width: 100%;
+  background: #ffffff;
+  border-radius: 6px;
+  border: 1px solid #e2e7ec;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+  overflow: hidden;
+}
+
+
+/* =========================================================
+   SECTION HEADER
+========================================================= */
+
+.acgroup-section-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 20px 24px;
+}
+
+.acgroup-section-header h2 {
+  margin: 0;
+  font-size: 20px;
+  font-weight: 400;
+  color: #3c434b;
+}
+
+
+/* =========================================================
+   ADD BUTTON
+========================================================= */
+
+.acgroup-add-button {
+  width: 28px;
+  height: 28px;
+  border: none;
+  border-radius: 4px;
+  background: #27ae60;
+  color: #ffffff;
+  font-size: 24px;
+  font-weight: 400;
+  line-height: 24px;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.acgroup-add-button:hover {
+  background: #219653;
+  transform: translateY(-1px);
+}
+
+
+/* =========================================================
+   TABLE
+========================================================= */
+
+.acgroup-table-wrapper {
+  position: relative;
+  padding: 0 18px 18px;
+}
+
+.acgroup-table-scroll {
+  width: 100%;
+  overflow-x: auto;
+}
+
+.acgroup-table {
+  width: 100%;
+  min-width: 750px;
+  border-collapse: collapse;
+}
+
+.acgroup-table thead th {
+  background: #eef3f7;
+  color: #343a40;
+  text-align: left;
+  font-size: 13px;
+  font-weight: 700;
+  padding: 15px 18px;
+  border-bottom: 1px solid #dce3e8;
+  white-space: nowrap;
+}
+
+.acgroup-table tbody td {
+  padding: 14px 18px;
+  border-bottom: 1px solid #edf0f2;
+  font-size: 14px;
+  color: #555d66;
+  white-space: nowrap;
+}
+
+.acgroup-table tbody tr {
+  transition: background 0.2s ease;
+}
+
+.acgroup-table tbody tr:hover {
+  background: #f8fbfd;
+}
+
+.acgroup-name {
+  font-weight: 500;
+  color: #424951 !important;
+}
+
+.acgroup-action-header {
+  text-align: center !important;
+}
+
+.acgroup-action-cell {
+  text-align: center;
+}
+
+
+/* =========================================================
+   STATUS
+========================================================= */
+
+.acgroup-status {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 58px;
+  padding: 5px 10px;
+  border-radius: 3px;
+  color: #ffffff;
+  font-size: 10px;
+  font-weight: 700;
+}
+
+.acgroup-status.active {
+  background: #2fb879;
+}
+
+.acgroup-status.inactive {
+  background: #e35d6a;
+}
+
+
+/* =========================================================
+   EDIT BUTTON
+========================================================= */
+
+.acgroup-edit-button {
+  width: 30px;
+  height: 30px;
+  border: none;
+  border-radius: 3px;
+  background: #27ae60;
+  color: #ffffff;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.acgroup-edit-button svg {
+  font-size: 13px;
+}
+
+.acgroup-edit-button:hover {
+  background: #1e9250;
+  transform: translateY(-1px);
+}
+
+
+/* =========================================================
+   SEARCH
+========================================================= */
+
+.acgroup-table-search {
+  position: absolute;
+  right: 20px;
+  top: -45px;
+  width: 190px;
+}
+
+.acgroup-table-search input {
+  width: 100%;
+  height: 34px;
+  padding: 0 32px 0 12px;
+  box-sizing: border-box;
+  border: 1px solid #e0e5e9;
+  border-radius: 3px;
+  outline: none;
+  font-size: 12px;
+  color: #555;
+}
+
+.acgroup-table-search input:focus {
+  border-color: #20a8d8;
+}
+
+.acgroup-search-icon {
+  position: absolute;
+  right: 10px;
+  top: 8px;
+  font-size: 13px;
+}
+
+
+/* =========================================================
+   NO DATA
+========================================================= */
+
+.acgroup-no-data {
+  height: 120px;
+  text-align: center !important;
+  color: #999 !important;
+  font-size: 13px !important;
+}
+
+
+/* =========================================================
+   TABLE FOOTER
+========================================================= */
+
+.acgroup-table-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 8px 4px;
+  color: #777;
+  font-size: 12px;
+}
+
+.acgroup-pagination {
+  display: flex;
+  gap: 4px;
+}
+
+.acgroup-pagination button {
+  min-width: 30px;
+  height: 30px;
+  border: 1px solid #dce2e7;
+  background: #ffffff;
+  color: #777;
+  cursor: pointer;
+  border-radius: 3px;
+}
+
+.acgroup-pagination button.active {
+  background: #20a8d8;
+  border-color: #20a8d8;
+  color: #ffffff;
+}
+
+.acgroup-pagination button:disabled {
+  cursor: not-allowed;
+  opacity: 0.5;
+}
+
+
+/* =========================================================
+   MODAL OVERLAY
+========================================================= */
+
+.acgroup-modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.55);
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding-top: 13vh;
+  z-index: 9999;
+  animation: acgroupFadeIn 0.2s ease;
+}
+
+
+/* =========================================================
+   MODAL
+========================================================= */
+
+.acgroup-modal {
+  width: min(780px, calc(100% - 30px));
+  background: #ffffff;
+  border-radius: 4px;
+  overflow: hidden;
+  box-shadow: 0 15px 50px rgba(0, 0, 0, 0.3);
+  animation: acgroupModalIn 0.22s ease;
+}
+
+
+/* =========================================================
+   MODAL HEADER
+========================================================= */
+
+.acgroup-modal-header {
+  height: 68px;
+  padding: 0 20px;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: linear-gradient(
+    90deg,
+    #16b8d5,
+    #1db5d5
+  );
+  color: #ffffff;
+}
+
+.acgroup-modal-header h2 {
+  margin: 0;
+  font-size: 24px;
+  font-weight: 400;
+}
+
+.acgroup-modal-close {
+  border: none;
+  background: transparent;
+  color: #ffffff;
+  cursor: pointer;
+  font-size: 17px;
+  opacity: 0.8;
+}
+
+.acgroup-modal-close:hover {
+  opacity: 1;
+}
+
+
+/* =========================================================
+   FORM
+========================================================= */
+
+.acgroup-form {
+  padding: 28px 26px 24px;
+}
+
+.acgroup-form-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  column-gap: 38px;
+  row-gap: 22px;
+}
+
+.acgroup-form-field {
+  display: flex;
+  flex-direction: column;
+}
+
+.acgroup-form-field:nth-child(3) {
+  width: calc(50% - 19px);
+}
+
+.acgroup-form-field label {
+  margin-bottom: 9px;
+  color: #30343a;
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.acgroup-form-field label span {
+  color: #e74c3c;
+}
+
+.acgroup-form-field input,
+.acgroup-form-field select {
+  width: 100%;
+  height: 43px;
+  box-sizing: border-box;
+  padding: 0 13px;
+  border: 1px solid #d7dce1;
+  border-radius: 3px;
+  background: #ffffff;
+  color: #666;
+  font-size: 14px;
+  outline: none;
+}
+
+.acgroup-form-field input:focus,
+.acgroup-form-field select:focus {
+  border-color: #20a8d8;
+  box-shadow: 0 0 0 2px rgba(32, 168, 216, 0.08);
+}
+
+.acgroup-form-field select {
+  cursor: pointer;
+}
+
+
+/* =========================================================
+   FORM BUTTONS
+========================================================= */
+
+.acgroup-form-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 8px;
+  margin-top: 32px;
+}
+
+.acgroup-update-button,
+.acgroup-cancel-button {
+  min-width: 92px;
+  height: 42px;
+  border: none;
+  border-radius: 3px;
+  color: #ffffff;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.acgroup-update-button {
+  background: #27ae60;
+}
+
+.acgroup-update-button:hover {
+  background: #219653;
+}
+
+.acgroup-cancel-button {
+  background: #df655d;
+}
+
+.acgroup-cancel-button:hover {
+  background: #c9524a;
+}
+
+
+/* =========================================================
+   ANIMATIONS
+========================================================= */
+
+@keyframes acgroupFadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes acgroupModalIn {
+  from {
+    opacity: 0;
+    transform: translateY(-20px) scale(0.98);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media (max-width: 768px) {
+
+  .acgroup-page {
+    padding: 15px;
+  }
+
+  .acgroup-page-header {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .acgroup-section-header {
+    padding: 16px;
+  }
+
+  .acgroup-section-header h2 {
+    font-size: 18px;
+  }
+
+  .acgroup-table-search {
+    position: static;
+    width: 100%;
+    margin-bottom: 15px;
+  }
+
+  .acgroup-form-grid {
+    grid-template-columns: 1fr;
+    row-gap: 18px;
+  }
+
+  .acgroup-form-field:nth-child(3) {
+    width: 100%;
+  }
+
+  .acgroup-modal {
+    width: calc(100% - 20px);
+  }
+
+  .acgroup-modal-overlay {
+    padding-top: 6vh;
+  }
+
+  .acgroup-modal-header {
+    height: 58px;
+  }
+
+  .acgroup-modal-header h2 {
+    font-size: 20px;
+  }
+
+  .acgroup-form {
+    padding: 20px 18px;
+  }
+
+  .acgroup-form-actions {
+    margin-top: 24px;
+  }
+
+}
+
+@media (max-width: 480px) {
+
+  .acgroup-form-actions {
+    flex-direction: column-reverse;
+  }
+
+  .acgroup-update-button,
+  .acgroup-cancel-button {
+    width: 100%;
+  }
+
+}

@@ -1,0 +1,514 @@
+/* =========================================================
+   NEW MEMBER COLLECTION PAGE
+========================================================= */
+
+.new-member-collection-page {
+  width: 100%;
+  min-height: 100vh;
+  padding: 22px 25px 40px;
+  box-sizing: border-box;
+  background: #f4f7f9;
+  color: #303842;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* =========================================================
+   PAGE TITLE
+========================================================= */
+
+.new-member-page-title {
+  font-size: 14px;
+  font-weight: 700;
+  color: #303740;
+  margin-bottom: 18px;
+  text-transform: uppercase;
+}
+
+/* =========================================================
+   SEARCH CARD
+========================================================= */
+
+.new-member-search-card {
+  width: 100%;
+  background: #ffffff;
+  border-radius: 8px;
+  border: 1px solid #e2e7ea;
+  box-shadow: 0 3px 12px rgba(31, 55, 70, 0.06);
+  overflow: hidden;
+}
+
+/* =========================================================
+   SEARCH HEADER
+========================================================= */
+
+.new-member-search-header {
+  height: 48px;
+  display: flex;
+  align-items: center;
+  padding: 0 20px;
+  background: linear-gradient(
+    90deg,
+    #eaf8fb,
+    #ffffff
+  );
+  border-bottom: 1px solid #e1e8eb;
+}
+
+.new-member-search-header span {
+  font-size: 13px;
+  font-weight: 700;
+  color: #37414a;
+}
+
+/* =========================================================
+   SEARCH FORM
+========================================================= */
+
+.new-member-search-form {
+  display: grid;
+  grid-template-columns:
+    1fr
+    1.25fr
+    1fr
+    0.9fr
+    1fr
+    auto;
+
+  gap: 18px;
+  padding: 22px 20px 24px;
+  align-items: end;
+}
+
+/* =========================================================
+   FIELD
+========================================================= */
+
+.new-member-field {
+  width: 100%;
+}
+
+.new-member-field label {
+  display: block;
+  margin-bottom: 8px;
+  font-size: 11px;
+  font-weight: 700;
+  color: #444c55;
+  text-transform: uppercase;
+}
+
+.new-member-field label span {
+  color: #e15252;
+}
+
+.new-member-field input,
+.new-member-field select {
+  width: 100%;
+  height: 40px;
+  border: 1px solid #d6dde1;
+  border-radius: 5px;
+  padding: 0 12px;
+  box-sizing: border-box;
+  background: #fff;
+  color: #555e66;
+  font-size: 12px;
+  outline: none;
+  transition: 0.2s ease;
+}
+
+.new-member-field input:hover,
+.new-member-field select:hover {
+  border-color: #b9c5cb;
+}
+
+.new-member-field input:focus,
+.new-member-field select:focus {
+  border-color: #25a8ca;
+  box-shadow: 0 0 0 3px rgba(37, 168, 202, 0.08);
+}
+
+/* =========================================================
+   SELECT
+========================================================= */
+
+.new-member-select-box {
+  width: 100%;
+  position: relative;
+}
+
+.new-member-select-box select {
+  appearance: none;
+  padding-right: 35px;
+}
+
+.new-member-select-icon {
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #8b949b;
+  font-size: 8px;
+  pointer-events: none;
+}
+
+/* =========================================================
+   BUTTONS
+========================================================= */
+
+.new-member-form-buttons {
+  display: flex;
+  gap: 7px;
+  align-items: center;
+}
+
+.new-member-submit-btn,
+.new-member-reset-btn {
+  height: 38px;
+  border: none;
+  border-radius: 5px;
+  padding: 0 16px;
+  font-size: 11px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.new-member-submit-btn {
+  background: #2fac76;
+  color: white;
+}
+
+.new-member-submit-btn:hover {
+  background: #248f60;
+  transform: translateY(-1px);
+}
+
+.new-member-reset-btn {
+  background: #e9edef;
+  color: #5d666e;
+}
+
+.new-member-reset-btn:hover {
+  background: #dce2e5;
+}
+
+/* =========================================================
+   TABLE CARD
+========================================================= */
+
+.new-member-table-card {
+  width: 100%;
+  margin-top: 18px;
+  background: #ffffff;
+  border: 1px solid #e0e6e9;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 3px 12px rgba(31, 55, 70, 0.05);
+}
+
+/* =========================================================
+   TABLE LINE
+========================================================= */
+
+.new-member-table-line {
+  width: 100%;
+  height: 3px;
+  background: linear-gradient(
+    90deg,
+    #2a9c6c,
+    #42b87f
+  );
+}
+
+/* =========================================================
+   TABLE HEADER
+========================================================= */
+
+.new-member-table-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 20px 10px;
+}
+
+.new-member-table-heading h2 {
+  margin: 0;
+  font-size: 19px;
+  font-weight: 500;
+  color: #3d464e;
+}
+
+/* =========================================================
+   SEARCH
+========================================================= */
+
+.new-member-table-search {
+  position: relative;
+  width: 190px;
+}
+
+.new-member-table-search input {
+  width: 100%;
+  height: 34px;
+  border: 1px solid #dce2e5;
+  border-radius: 5px;
+  padding: 0 32px 0 10px;
+  box-sizing: border-box;
+  outline: none;
+  font-size: 11px;
+}
+
+.new-member-table-search input:focus {
+  border-color: #2ca6c8;
+}
+
+.new-member-table-search span {
+  position: absolute;
+  right: 9px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 12px;
+  color: #7e878d;
+}
+
+/* =========================================================
+   ENTRIES
+========================================================= */
+
+.new-member-entry-row {
+  padding: 5px 20px 10px;
+}
+
+.new-member-entry-row select {
+  width: 60px;
+  height: 30px;
+  border: 1px solid #d9dfe2;
+  border-radius: 4px;
+  background: #fff;
+  padding: 0 5px;
+  font-size: 11px;
+  color: #555;
+}
+
+/* =========================================================
+   TABLE
+========================================================= */
+
+.new-member-table-wrapper {
+  width: 100%;
+  overflow-x: auto;
+}
+
+.new-member-table {
+  width: 100%;
+  min-width: 1250px;
+  border-collapse: collapse;
+}
+
+.new-member-table thead {
+  background: #edf4f6;
+}
+
+.new-member-table th {
+  height: 43px;
+  padding: 7px 10px;
+  text-align: left;
+  white-space: nowrap;
+  border-bottom: 1px solid #dce4e7;
+  color: #414a53;
+  font-size: 10px;
+  font-weight: 700;
+}
+
+.new-member-table td {
+  height: 45px;
+  padding: 7px 10px;
+  border-bottom: 1px solid #edf0f2;
+  color: #555d64;
+  font-size: 11px;
+  white-space: nowrap;
+}
+
+.new-member-table tbody tr:hover {
+  background: #f8fbfc;
+}
+
+/* =========================================================
+   NO DATA
+========================================================= */
+
+.new-member-no-data {
+  height: 100px !important;
+  text-align: center !important;
+  color: #a2a7ab !important;
+  font-size: 12px !important;
+}
+
+/* =========================================================
+   STATUS
+========================================================= */
+
+.new-member-approved,
+.new-member-pending,
+.new-member-rejected {
+  display: inline-block;
+  min-width: 55px;
+  text-align: center;
+  padding: 4px 8px;
+  border-radius: 12px;
+  font-size: 9px;
+  font-weight: 700;
+}
+
+.new-member-approved {
+  color: #177548;
+  background: #dff5e9;
+}
+
+.new-member-pending {
+  color: #996c00;
+  background: #fff1c9;
+}
+
+.new-member-rejected {
+  color: #a33d3d;
+  background: #fde2e2;
+}
+
+/* =========================================================
+   ACTION
+========================================================= */
+
+.new-member-action-btn {
+  border: none;
+  background: #31a99d;
+  color: white;
+  border-radius: 4px;
+  padding: 6px 11px;
+  font-size: 10px;
+  cursor: pointer;
+}
+
+.new-member-action-btn:hover {
+  background: #268d84;
+}
+
+/* =========================================================
+   FOOTER
+========================================================= */
+
+.new-member-table-footer {
+  min-height: 55px;
+  padding: 10px 20px;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-top: 1px solid #edf0f1;
+}
+
+.new-member-rows {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+}
+
+.new-member-rows span {
+  font-size: 10px;
+  color: #858c91;
+  font-weight: 600;
+}
+
+.new-member-rows select {
+  height: 30px;
+  min-width: 55px;
+  border: 1px solid #d8dfe2;
+  border-radius: 4px;
+  font-size: 11px;
+  padding: 0 5px;
+}
+
+.new-member-pagination {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  color: #92999e;
+  font-size: 10px;
+}
+
+.new-member-pagination span {
+  white-space: nowrap;
+}
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media (max-width: 1200px) {
+
+  .new-member-search-form {
+    grid-template-columns:
+      1fr
+      1fr
+      1fr;
+  }
+
+  .new-member-form-buttons {
+    grid-column: 1 / -1;
+  }
+
+}
+
+@media (max-width: 800px) {
+
+  .new-member-collection-page {
+    padding: 15px 10px 30px;
+  }
+
+  .new-member-search-form {
+    grid-template-columns: 1fr 1fr;
+    gap: 14px;
+  }
+
+  .new-member-form-buttons {
+    grid-column: 1 / -1;
+  }
+
+  .new-member-table-heading {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .new-member-table-search {
+    width: 100%;
+  }
+
+}
+
+@media (max-width: 550px) {
+
+  .new-member-search-form {
+    grid-template-columns: 1fr;
+  }
+
+  .new-member-form-buttons {
+    grid-column: auto;
+  }
+
+  .new-member-submit-btn,
+  .new-member-reset-btn {
+    flex: 1;
+  }
+
+  .new-member-table-footer {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .new-member-pagination {
+    width: 100%;
+    justify-content: space-between;
+  }
+
+}

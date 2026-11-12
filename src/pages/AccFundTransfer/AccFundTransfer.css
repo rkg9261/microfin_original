@@ -1,0 +1,720 @@
+/* =========================================================
+   FUND TRANSFER PAGE
+========================================================= */
+
+.fund-transfer-page {
+  width: 100%;
+  min-height: 100vh;
+  padding: 20px;
+  box-sizing: border-box;
+  background: #f5f7f8;
+  color: #343a40;
+}
+
+/* =========================================================
+   HEADER
+========================================================= */
+
+.fund-transfer-page-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  padding: 0 0 14px;
+
+  border-bottom: 3px solid #2ca8c3;
+
+  margin-bottom: 12px;
+}
+
+.fund-transfer-page-header h2 {
+  margin: 0;
+
+  font-size: 13px;
+  font-weight: 700;
+
+  color: #31383d;
+}
+
+.fund-transfer-breadcrumb {
+  display: flex;
+  gap: 8px;
+
+  font-size: 10px;
+
+  color: #777f84;
+
+  text-transform: uppercase;
+}
+
+.fund-transfer-breadcrumb strong {
+  color: #31383d;
+}
+
+/* =========================================================
+   FORM CARD
+========================================================= */
+
+.fund-transfer-form-card {
+  background: #fff4c9;
+
+  border: 1px solid #e1d69d;
+
+  border-radius: 4px;
+
+  padding: 0 20px 20px;
+
+  margin-bottom: 25px;
+
+  box-shadow:
+    0 2px 8px
+    rgba(0, 0, 0, 0.05);
+}
+
+/* =========================================================
+   GREEN TITLE
+========================================================= */
+
+.fund-transfer-form-title {
+  height: 30px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  padding: 0 12px;
+
+  margin: 0 -20px 15px;
+
+  background: #28a745;
+
+  color: white;
+
+  font-size: 12px;
+
+  font-weight: 700;
+}
+
+.fund-transfer-form-title strong {
+  font-size: 11px;
+}
+
+/* =========================================================
+   PAYMENT TYPE
+========================================================= */
+
+.fund-transfer-payment-type {
+  display: flex;
+  align-items: center;
+
+  gap: 4px;
+
+  margin-left: 15px;
+
+  margin-bottom: 10px;
+}
+
+.fund-transfer-payment-type > label:first-child {
+  margin-right: 10px;
+}
+
+.fund-transfer-payment-type label {
+  font-size: 11px;
+  font-weight: 700;
+}
+
+.fund-transfer-radio {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+  cursor: pointer;
+}
+
+.fund-transfer-radio input {
+  cursor: pointer;
+}
+
+/* =========================================================
+   MAIN GRID
+========================================================= */
+
+.fund-transfer-main-grid {
+  display: grid;
+
+  grid-template-columns:
+    1fr 1fr;
+
+  column-gap: 45px;
+}
+
+.fund-transfer-left,
+.fund-transfer-right {
+  width: 100%;
+}
+
+/* =========================================================
+   FORM ROW
+========================================================= */
+
+.fund-transfer-row {
+  display: grid;
+
+  grid-template-columns:
+    190px 1fr;
+
+  align-items: center;
+
+  margin-bottom: 2px;
+}
+
+.fund-transfer-row label {
+  font-size: 12px;
+
+  font-weight: 700;
+
+  color: #343a40;
+
+  text-transform: uppercase;
+}
+
+.fund-transfer-row label span {
+  color: #e22c2c;
+}
+
+.fund-transfer-row input,
+.fund-transfer-row select {
+  width: 100%;
+
+  height: 35px;
+
+  border: 1px solid #cbd2d5;
+
+  border-radius: 3px;
+
+  background: white;
+
+  padding: 0 10px;
+
+  box-sizing: border-box;
+
+  font-size: 11px;
+
+  outline: none;
+
+  color: #596167;
+}
+
+.fund-transfer-row input:focus,
+.fund-transfer-row select:focus {
+  border-color: #26a8c4;
+}
+
+/* =========================================================
+   NARRATION
+========================================================= */
+
+.fund-transfer-narration {
+  margin-top: 5px;
+}
+
+.fund-transfer-narration label {
+  display: block;
+
+  margin-bottom: 5px;
+
+  font-size: 12px;
+
+  font-weight: 700;
+}
+
+.fund-transfer-narration textarea {
+  width: 100%;
+
+  min-height: 65px;
+
+  resize: vertical;
+
+  border: 1px solid #ccd3d6;
+
+  border-radius: 3px;
+
+  padding: 10px;
+
+  box-sizing: border-box;
+
+  outline: none;
+
+  font-size: 12px;
+
+  background: white;
+}
+
+.fund-transfer-narration textarea:focus {
+  border-color: #25a9c5;
+}
+
+/* =========================================================
+   FORM BUTTONS
+========================================================= */
+
+.fund-transfer-form-actions {
+  display: flex;
+
+  gap: 10px;
+
+  margin-top: 12px;
+}
+
+.fund-transfer-save-btn,
+.fund-transfer-cancel-btn {
+  border: none;
+
+  height: 35px;
+
+  padding: 0 18px;
+
+  border-radius: 3px;
+
+  color: white;
+
+  font-size: 11px;
+
+  font-weight: 700;
+
+  cursor: pointer;
+}
+
+.fund-transfer-save-btn {
+  background: #28a745;
+}
+
+.fund-transfer-save-btn:hover {
+  background: #218838;
+}
+
+.fund-transfer-cancel-btn {
+  background: #dc6259;
+}
+
+.fund-transfer-cancel-btn:hover {
+  background: #bd4d45;
+}
+
+/* =========================================================
+   TABLE CARD
+========================================================= */
+
+.fund-transfer-table-card {
+  background: white;
+
+  border: 1px solid #dfe4e6;
+
+  border-radius: 4px;
+
+  padding: 18px 15px 0;
+
+  box-sizing: border-box;
+
+  box-shadow:
+    0 2px 7px
+    rgba(0, 0, 0, 0.04);
+}
+
+/* =========================================================
+   TABLE TOP
+========================================================= */
+
+.fund-transfer-table-top {
+  display: flex;
+
+  justify-content: space-between;
+
+  align-items: center;
+
+  margin-bottom: 15px;
+}
+
+.fund-transfer-showing {
+  font-size: 13px;
+
+  color: #454d52;
+
+  font-weight: 500;
+}
+
+.fund-transfer-pagination {
+  display: flex;
+
+  align-items: center;
+
+  gap: 2px;
+}
+
+.fund-transfer-pagination button {
+  min-width: 28px;
+
+  height: 28px;
+
+  border: 1px solid #e1e5e7;
+
+  background: white;
+
+  cursor: pointer;
+
+  font-size: 10px;
+
+  color: #70777c;
+}
+
+.fund-transfer-pagination button.active {
+  background: #31a9c6;
+
+  color: white;
+
+  border-color: #31a9c6;
+}
+
+/* =========================================================
+   TABLE CONTROLS
+========================================================= */
+
+.fund-transfer-table-controls {
+  display: flex;
+
+  justify-content: space-between;
+
+  align-items: center;
+
+  margin-bottom: 12px;
+}
+
+.fund-transfer-entry-control {
+  width: 100px;
+}
+
+/*
+   Existing EntriesDropdown is used here.
+*/
+
+.fund-transfer-search {
+  display: flex;
+
+  align-items: center;
+
+  height: 32px;
+
+  border: 1px solid #dce2e4;
+
+  background: white;
+
+  width: 180px;
+}
+
+.fund-transfer-search button {
+  width: 35px;
+
+  height: 100%;
+
+  border: none;
+
+  background: white;
+
+  border-right: 1px solid #e4e7e8;
+
+  cursor: pointer;
+
+  color: #70777b;
+}
+
+.fund-transfer-search input {
+  flex: 1;
+
+  height: 100%;
+
+  border: none;
+
+  outline: none;
+
+  padding: 0 7px;
+
+  font-size: 11px;
+}
+
+.fund-transfer-search span {
+  padding: 0 7px;
+
+  font-size: 11px;
+}
+
+/* =========================================================
+   TABLE
+========================================================= */
+
+.fund-transfer-table-wrapper {
+  width: 100%;
+
+  overflow-x: auto;
+}
+
+.fund-transfer-table {
+  width: 100%;
+
+  min-width: 1000px;
+
+  border-collapse: collapse;
+}
+
+.fund-transfer-table thead {
+  background: #eaf1f4;
+}
+
+.fund-transfer-table th {
+  padding: 12px 10px;
+
+  text-align: left;
+
+  white-space: nowrap;
+
+  font-size: 10px;
+
+  font-weight: 700;
+
+  color: #343d42;
+
+  border-bottom: 1px solid #d8dfe2;
+}
+
+.fund-transfer-table td {
+  padding: 12px 10px;
+
+  white-space: nowrap;
+
+  font-size: 11px;
+
+  color: #5e666b;
+
+  border-bottom: 1px solid #edf0f1;
+}
+
+.fund-transfer-table tbody tr:hover {
+  background: #f8fbfc;
+}
+
+.fund-transfer-amount {
+  font-weight: 600;
+
+  color: #3e474c !important;
+}
+
+/* =========================================================
+   STATUS
+========================================================= */
+
+.fund-transfer-status {
+  display: inline-block;
+
+  font-size: 10px;
+
+  font-weight: 600;
+}
+
+.fund-transfer-status.pending {
+  color: #777;
+}
+
+.fund-transfer-status.approved {
+  color: #249b65;
+}
+
+.fund-transfer-status.deleted {
+  color: #c95a5a;
+}
+
+/* =========================================================
+   ACTION
+========================================================= */
+
+.fund-transfer-action {
+  position: relative;
+}
+
+.fund-transfer-task-btn {
+  border: none;
+
+  background: transparent;
+
+  color: #5c6468;
+
+  font-size: 10px;
+
+  cursor: pointer;
+
+  padding: 6px 8px;
+}
+
+.fund-transfer-task-btn:hover {
+  color: #1599b4;
+}
+
+/* =========================================================
+   ACTION DROPDOWN
+========================================================= */
+
+.fund-transfer-action-menu {
+  position: absolute;
+
+  right: 0;
+
+  top: 34px;
+
+  z-index: 200;
+
+  width: 125px;
+
+  padding: 5px 0;
+
+  background: white;
+
+  border: 1px solid #d8dfe2;
+
+  border-radius: 4px;
+
+  box-shadow:
+    0 5px 18px
+    rgba(0, 0, 0, 0.16);
+}
+
+.fund-transfer-action-menu button {
+  width: 100%;
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 8px;
+
+  padding: 9px 12px;
+
+  border: none;
+
+  background: white;
+
+  color: #555d62;
+
+  font-size: 11px;
+
+  text-align: left;
+
+  cursor: pointer;
+}
+
+.fund-transfer-action-menu button:hover {
+  background: #f2f8f9;
+
+  color: #159eb8;
+}
+
+.fund-transfer-action-menu button.delete-action {
+  color: #d3544d;
+}
+
+.fund-transfer-action-menu button.delete-action:hover {
+  background: #fff2f1;
+
+  color: #c53f38;
+}
+
+.fund-transfer-action-menu span {
+  width: 18px;
+
+  text-align: center;
+}
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media (max-width: 1000px) {
+
+  .fund-transfer-main-grid {
+    grid-template-columns: 1fr;
+
+    column-gap: 0;
+  }
+
+  .fund-transfer-right {
+    margin-top: 10px;
+  }
+
+}
+
+@media (max-width: 700px) {
+
+  .fund-transfer-page {
+    padding: 10px;
+  }
+
+  .fund-transfer-page-header {
+    flex-direction: column;
+
+    align-items: flex-start;
+
+    gap: 8px;
+  }
+
+  .fund-transfer-form-card {
+    padding: 0 12px 15px;
+  }
+
+  .fund-transfer-form-title {
+    margin-left: -12px;
+
+    margin-right: -12px;
+
+    height: auto;
+
+    min-height: 35px;
+
+    flex-direction: column;
+
+    align-items: flex-start;
+
+    gap: 3px;
+
+    padding: 7px 10px;
+  }
+
+  .fund-transfer-row {
+    grid-template-columns: 1fr;
+
+    gap: 5px;
+
+    margin-bottom: 10px;
+  }
+
+  .fund-transfer-payment-type {
+    margin-left: 0;
+  }
+
+  .fund-transfer-table-top {
+    flex-direction: column;
+
+    align-items: flex-start;
+
+    gap: 10px;
+  }
+
+  .fund-transfer-table-controls {
+    flex-direction: column;
+
+    align-items: stretch;
+
+    gap: 10px;
+  }
+
+  .fund-transfer-entry-control,
+  .fund-transfer-search {
+    width: 100%;
+  }
+
+}

@@ -1,0 +1,1277 @@
+/* =========================================================
+   PAID EMI PAGE
+========================================================= */
+
+.paid-emi-page {
+  width: 100%;
+  min-height: 100vh;
+
+  padding: 22px 24px 40px;
+
+  box-sizing: border-box;
+
+  background: #f5f7f9;
+
+  color: #303840;
+}
+
+
+/* =========================================================
+   PAGE HEADER
+========================================================= */
+
+.paid-emi-page-header {
+  min-height: 48px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  margin-bottom: 14px;
+}
+
+.paid-emi-page-header h2 {
+  margin: 0;
+
+  font-size: 15px;
+
+  font-weight: 700;
+
+  color: #252d33;
+
+  text-transform: uppercase;
+}
+
+.paid-emi-breadcrumb {
+  display: flex;
+
+  align-items: center;
+
+  gap: 8px;
+
+  font-size: 10px;
+
+  color: #8b9298;
+}
+
+.paid-emi-breadcrumb strong {
+  color: #333d45;
+}
+
+
+/* =========================================================
+   FILTER CARD
+========================================================= */
+
+.paid-emi-filter-card {
+  width: 100%;
+
+  padding: 22px;
+
+  box-sizing: border-box;
+
+  background: #ffffff;
+
+  border: 1px solid #dfe5e9;
+
+  border-radius: 8px;
+
+  margin-bottom: 16px;
+
+  box-shadow: 0 2px 7px rgba(0, 0, 0, 0.03);
+}
+
+.paid-emi-filter-title {
+  margin-bottom: 20px;
+
+  font-size: 14px;
+
+  font-weight: 700;
+
+  color: #3d454c;
+}
+
+
+/* =========================================================
+   FILTER GRID
+========================================================= */
+
+.paid-emi-filter-grid {
+  display: grid;
+
+  grid-template-columns:
+    repeat(4, minmax(180px, 1fr));
+
+  gap: 18px 22px;
+}
+
+.paid-emi-field {
+  min-width: 0;
+
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 7px;
+}
+
+.paid-emi-field label {
+  font-size: 10px;
+
+  font-weight: 700;
+
+  color: #333b42;
+
+  text-transform: uppercase;
+}
+
+.paid-emi-field input,
+.paid-emi-field select {
+  width: 100%;
+
+  height: 38px;
+
+  padding: 0 12px;
+
+  box-sizing: border-box;
+
+  border: 1px solid #ccd3d8;
+
+  border-radius: 4px;
+
+  background: #ffffff;
+
+  color: #4b555d;
+
+  font-size: 12px;
+
+  outline: none;
+
+  transition: border 0.2s ease;
+}
+
+.paid-emi-field input:focus,
+.paid-emi-field select:focus {
+  border-color: #35a6c6;
+}
+
+.paid-emi-field input::placeholder {
+  color: #9ca4aa;
+}
+
+
+/* =========================================================
+   FILTER BUTTONS
+========================================================= */
+
+.paid-emi-filter-actions {
+  display: flex;
+
+  align-items: center;
+
+  gap: 10px;
+
+  margin-top: 20px;
+}
+
+.paid-emi-get-record {
+  height: 38px;
+
+  padding: 0 22px;
+
+  border: none;
+
+  border-radius: 4px;
+
+  background: #2da7c5;
+
+  color: #ffffff;
+
+  font-size: 11px;
+
+  font-weight: 700;
+
+  cursor: pointer;
+
+  transition: 0.2s ease;
+}
+
+.paid-emi-get-record:hover {
+  background: #218da9;
+}
+
+.paid-emi-clear-button {
+  height: 38px;
+
+  padding: 0 20px;
+
+  border: 1px solid #cbd2d7;
+
+  border-radius: 4px;
+
+  background: #ffffff;
+
+  color: #59636b;
+
+  font-size: 11px;
+
+  font-weight: 700;
+
+  cursor: pointer;
+}
+
+.paid-emi-clear-button:hover {
+  background: #f3f5f6;
+}
+
+
+/* =========================================================
+   TABLE CARD
+========================================================= */
+
+.paid-emi-table-card {
+  width: 100%;
+
+  background: #ffffff;
+
+  border: 1px solid #dfe5e9;
+
+  border-radius: 8px;
+
+  overflow: hidden;
+
+  box-shadow: 0 2px 7px rgba(0, 0, 0, 0.03);
+}
+
+
+/* =========================================================
+   TABLE HEADER
+========================================================= */
+
+.paid-emi-table-header {
+  min-height: 65px;
+
+  padding: 0 18px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  gap: 20px;
+}
+
+.paid-emi-table-header h3 {
+  margin: 0;
+
+  font-size: 18px;
+
+  font-weight: 500;
+
+  color: #3e464d;
+
+  text-transform: uppercase;
+}
+
+.paid-emi-table-header-right {
+  display: flex;
+
+  align-items: center;
+
+  gap: 20px;
+}
+
+.paid-emi-total {
+  font-size: 12px;
+
+  font-weight: 700;
+
+  color: #535d64;
+}
+
+.paid-emi-search {
+  width: 190px;
+
+  height: 34px;
+
+  display: flex;
+
+  align-items: center;
+
+  border: 1px solid #d7dde1;
+
+  border-radius: 4px;
+
+  overflow: hidden;
+
+  background: #ffffff;
+}
+
+.paid-emi-search input {
+  flex: 1;
+
+  width: 100%;
+
+  height: 100%;
+
+  padding: 0 10px;
+
+  border: none;
+
+  outline: none;
+
+  font-size: 11px;
+
+  color: #555e65;
+}
+
+.paid-emi-search span {
+  width: 32px;
+
+  text-align: center;
+
+  color: #737d84;
+
+  font-size: 17px;
+}
+
+
+/* =========================================================
+   TABLE CONTROLS
+========================================================= */
+
+.paid-emi-table-controls {
+  padding: 0 18px 12px;
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 6px;
+
+  font-size: 10px;
+
+  color: #7c858c;
+}
+
+.paid-emi-table-controls select {
+  width: 58px;
+
+  height: 31px;
+
+  border: 1px solid #d3d9dd;
+
+  border-radius: 4px;
+
+  padding: 0 7px;
+
+  background: #ffffff;
+
+  outline: none;
+
+  font-size: 11px;
+}
+
+
+/* =========================================================
+   TABLE WRAPPER
+========================================================= */
+
+.paid-emi-table-wrapper {
+  width: 100%;
+
+  overflow-x: auto;
+}
+
+
+/* =========================================================
+   TABLE
+========================================================= */
+
+.paid-emi-table {
+  width: 100%;
+
+  min-width: 1450px;
+
+  border-collapse: collapse;
+
+  table-layout: auto;
+}
+
+.paid-emi-table thead {
+  background: #e9eff2;
+}
+
+.paid-emi-table th {
+  height: 48px;
+
+  padding: 7px 10px;
+
+  text-align: left;
+
+  vertical-align: middle;
+
+  border-bottom: 1px solid #d4dce0;
+
+  color: #414b53;
+
+  font-size: 9px;
+
+  font-weight: 700;
+
+  text-transform: uppercase;
+
+  white-space: nowrap;
+}
+
+.paid-emi-table td {
+  padding: 13px 10px;
+
+  border-bottom: 1px solid #edf0f2;
+
+  color: #606970;
+
+  font-size: 10px;
+
+  vertical-align: middle;
+
+  white-space: nowrap;
+}
+
+.paid-emi-table tbody tr:hover {
+  background: #fafcfd;
+}
+
+
+/* =========================================================
+   CHECKBOX
+========================================================= */
+
+.paid-emi-checkbox {
+  width: 14px;
+
+  height: 14px;
+
+  cursor: pointer;
+}
+
+
+/* =========================================================
+   MEMBER
+========================================================= */
+
+.paid-emi-member {
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 3px;
+
+  min-width: 130px;
+
+  white-space: normal;
+}
+
+.paid-emi-member strong {
+  font-size: 10px;
+
+  color: #4c555d;
+}
+
+.paid-emi-member small {
+  font-size: 9px;
+
+  color: #899198;
+}
+
+
+/* =========================================================
+   LOAN ID
+========================================================= */
+
+.paid-emi-loan-id {
+  font-weight: 600;
+
+  color: #4d778d;
+}
+
+
+/* =========================================================
+   TYPE
+========================================================= */
+
+.paid-emi-type {
+  font-size: 9px;
+
+  font-style: italic;
+
+  color: #53616a;
+}
+
+
+/* =========================================================
+   AMOUNT
+========================================================= */
+
+.paid-emi-amount {
+  color: #3e7d56;
+
+  font-size: 10px;
+}
+
+
+/* =========================================================
+   STATUS
+========================================================= */
+
+.paid-emi-status {
+  display: inline-flex;
+
+  align-items: center;
+
+  gap: 5px;
+
+  padding: 5px 8px;
+
+  border-radius: 12px;
+
+  font-size: 9px;
+
+  font-weight: 700;
+
+  white-space: nowrap;
+}
+
+.paid-emi-status svg {
+  font-size: 8px;
+}
+
+.paid-emi-status.pending {
+  background: #fff0f0;
+
+  color: #c14b4b;
+
+  border: 1px solid #f0cccc;
+}
+
+.paid-emi-status.approved {
+  background: #e8f7ed;
+
+  color: #2e8b51;
+
+  border: 1px solid #c5e8d1;
+}
+
+
+/* =========================================================
+   ACTION
+========================================================= */
+
+.paid-emi-action {
+  position: relative;
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 5px;
+}
+
+.paid-emi-view-button {
+  height: 27px;
+
+  display: inline-flex;
+
+  align-items: center;
+
+  gap: 5px;
+
+  padding: 0 9px;
+
+  border: none;
+
+  border-radius: 4px;
+
+  background: #4d91ad;
+
+  color: #ffffff;
+
+  font-size: 9px;
+
+  font-weight: 600;
+
+  cursor: pointer;
+}
+
+.paid-emi-view-button:hover {
+  background: #397c98;
+}
+
+.paid-emi-task-button {
+  height: 27px;
+
+  display: inline-flex;
+
+  align-items: center;
+
+  gap: 5px;
+
+  padding: 0 9px;
+
+  border: none;
+
+  border-radius: 4px;
+
+  background: #2ca7a9;
+
+  color: #ffffff;
+
+  font-size: 9px;
+
+  font-weight: 600;
+
+  cursor: pointer;
+}
+
+.paid-emi-task-button:hover {
+  background: #218e90;
+}
+
+
+/* =========================================================
+   TASK MENU
+========================================================= */
+
+.paid-emi-task-menu {
+  position: absolute;
+
+  top: 32px;
+
+  right: 0;
+
+  z-index: 100;
+
+  min-width: 125px;
+
+  padding: 5px;
+
+  background: #ffffff;
+
+  border: 1px solid #dce2e6;
+
+  border-radius: 5px;
+
+  box-shadow:
+    0 5px 18px rgba(0, 0, 0, 0.15);
+}
+
+.paid-emi-task-menu button {
+  width: 100%;
+
+  min-height: 32px;
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 7px;
+
+  padding: 0 9px;
+
+  border: none;
+
+  background: transparent;
+
+  color: #555f66;
+
+  font-size: 10px;
+
+  text-align: left;
+
+  cursor: pointer;
+
+  border-radius: 3px;
+}
+
+.paid-emi-task-menu button:hover {
+  background: #f0f4f6;
+}
+
+
+/* =========================================================
+   NO DATA
+========================================================= */
+
+.paid-emi-no-data {
+  height: 150px;
+
+  text-align: center !important;
+
+  color: #9ba3a9 !important;
+
+  font-size: 11px !important;
+}
+
+
+/* =========================================================
+   TABLE FOOTER
+========================================================= */
+
+.paid-emi-table-footer {
+  min-height: 55px;
+
+  padding: 0 18px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  color: #818a91;
+
+  font-size: 10px;
+}
+
+.paid-emi-pagination {
+  display: flex;
+
+  align-items: center;
+
+  gap: 3px;
+}
+
+.paid-emi-pagination button {
+  width: 28px;
+
+  height: 27px;
+
+  border: 1px solid #dce2e5;
+
+  background: #ffffff;
+
+  color: #69737a;
+
+  border-radius: 3px;
+
+  cursor: pointer;
+
+  font-size: 10px;
+}
+
+.paid-emi-pagination button.active {
+  background: #31a6c5;
+
+  border-color: #31a6c5;
+
+  color: #ffffff;
+}
+
+
+/* =========================================================
+   VIEW OVERLAY
+========================================================= */
+
+.paid-emi-view-overlay {
+  position: fixed;
+
+  inset: 0;
+
+  z-index: 9999;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  padding: 20px;
+
+  box-sizing: border-box;
+
+  background: rgba(20, 28, 35, 0.55);
+}
+
+
+/* =========================================================
+   VIEW MODAL
+========================================================= */
+
+.paid-emi-view-modal {
+  width: min(850px, 100%);
+
+  max-height: 90vh;
+
+  overflow-y: auto;
+
+  background: #ffffff;
+
+  border-radius: 8px;
+
+  box-shadow:
+    0 20px 55px rgba(0, 0, 0, 0.25);
+
+  animation: paidEmiModalOpen 0.2s ease;
+}
+
+@keyframes paidEmiModalOpen {
+
+  from {
+    opacity: 0;
+
+    transform: translateY(-15px);
+  }
+
+  to {
+    opacity: 1;
+
+    transform: translateY(0);
+  }
+
+}
+
+
+/* =========================================================
+   VIEW HEADER
+========================================================= */
+
+.paid-emi-view-header {
+  min-height: 68px;
+
+  padding: 0 20px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  background: #f5f8fa;
+
+  border-bottom: 1px solid #dfe5e8;
+}
+
+.paid-emi-view-title {
+  display: flex;
+
+  align-items: center;
+
+  gap: 12px;
+}
+
+.paid-emi-view-title-icon {
+  width: 38px;
+
+  height: 38px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  border-radius: 50%;
+
+  background: #e3f3f7;
+
+  color: #2c9db8;
+
+  font-size: 16px;
+}
+
+.paid-emi-view-title h3 {
+  margin: 0 0 3px;
+
+  font-size: 15px;
+
+  color: #354049;
+}
+
+.paid-emi-view-title p {
+  margin: 0;
+
+  font-size: 10px;
+
+  color: #8a9399;
+}
+
+.paid-emi-view-close {
+  width: 31px;
+
+  height: 31px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  border: none;
+
+  border-radius: 50%;
+
+  background: #e65b5b;
+
+  color: #ffffff;
+
+  cursor: pointer;
+}
+
+.paid-emi-view-close:hover {
+  background: #cf4545;
+}
+
+
+/* =========================================================
+   VIEW CONTENT
+========================================================= */
+
+.paid-emi-view-content {
+  padding: 20px;
+}
+
+
+/* =========================================================
+   VIEW SECTION
+========================================================= */
+
+.paid-emi-view-section {
+  margin-bottom: 16px;
+
+  padding: 16px;
+
+  border: 1px solid #e2e7ea;
+
+  border-radius: 6px;
+
+  background: #ffffff;
+}
+
+.paid-emi-view-section-title {
+  display: flex;
+
+  align-items: center;
+
+  gap: 8px;
+
+  margin-bottom: 16px;
+
+  padding-bottom: 10px;
+
+  border-bottom: 1px solid #edf0f2;
+
+  color: #3597ae;
+}
+
+.paid-emi-view-section-title h4 {
+  margin: 0;
+
+  font-size: 11px;
+
+  color: #444e55;
+}
+
+
+/* =========================================================
+   VIEW GRID
+========================================================= */
+
+.paid-emi-view-grid {
+  display: grid;
+
+  grid-template-columns:
+    repeat(4, minmax(0, 1fr));
+
+  gap: 18px 20px;
+}
+
+.paid-emi-detail {
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 5px;
+
+  min-width: 0;
+}
+
+.paid-emi-detail span {
+  font-size: 8px;
+
+  font-weight: 700;
+
+  color: #8b949a;
+
+  text-transform: uppercase;
+}
+
+.paid-emi-detail > strong {
+  display: flex;
+
+  align-items: center;
+
+  gap: 6px;
+
+  color: #3f484f;
+
+  font-size: 11px;
+
+  font-weight: 600;
+
+  word-break: break-word;
+}
+
+.paid-emi-detail > strong svg {
+  color: #4298ae;
+
+  font-size: 10px;
+}
+
+.paid-emi-detail.amount > strong {
+  color: #368050;
+
+  font-size: 13px;
+}
+
+
+/* =========================================================
+   VIEW STATUS BOX
+========================================================= */
+
+.paid-emi-view-status-box {
+  display: grid;
+
+  grid-template-columns: 1fr 1fr;
+
+  gap: 20px;
+
+  padding: 15px 16px;
+
+  border-radius: 6px;
+
+  background: #f7f9fa;
+
+  border: 1px solid #e3e8ea;
+}
+
+.paid-emi-view-status-box > div {
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 5px;
+}
+
+.paid-emi-view-status-box span {
+  font-size: 8px;
+
+  font-weight: 700;
+
+  color: #8c959b;
+
+  text-transform: uppercase;
+}
+
+.paid-emi-view-status-box strong {
+  font-size: 11px;
+
+  color: #454e55;
+}
+
+.paid-emi-view-status-box strong.approved {
+  color: #2d8a50;
+}
+
+.paid-emi-view-status-box strong.pending {
+  color: #c34b4b;
+}
+
+
+/* =========================================================
+   VIEW FOOTER
+========================================================= */
+
+.paid-emi-view-footer {
+  min-height: 58px;
+
+  padding: 0 20px;
+
+  display: flex;
+
+  justify-content: flex-end;
+
+  align-items: center;
+
+  border-top: 1px solid #e3e8eb;
+
+  background: #fafbfc;
+}
+
+.paid-emi-view-footer button {
+  height: 34px;
+
+  min-width: 80px;
+
+  padding: 0 15px;
+
+  border: none;
+
+  border-radius: 4px;
+
+  background: #68747c;
+
+  color: #ffffff;
+
+  font-size: 10px;
+
+  font-weight: 700;
+
+  cursor: pointer;
+}
+
+.paid-emi-view-footer button:hover {
+  background: #515d65;
+}
+
+
+/* =========================================================
+   LARGE SCREEN
+========================================================= */
+
+@media (max-width: 1200px) {
+
+  .paid-emi-filter-grid {
+    grid-template-columns:
+      repeat(3, minmax(180px, 1fr));
+  }
+
+  .paid-emi-view-grid {
+    grid-template-columns:
+      repeat(3, minmax(0, 1fr));
+  }
+
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 900px) {
+
+  .paid-emi-page {
+    padding: 16px;
+  }
+
+  .paid-emi-filter-grid {
+    grid-template-columns:
+      repeat(2, minmax(160px, 1fr));
+  }
+
+  .paid-emi-table-header {
+    align-items: flex-start;
+
+    flex-direction: column;
+
+    padding-top: 16px;
+
+    padding-bottom: 16px;
+  }
+
+  .paid-emi-table-header-right {
+    width: 100%;
+
+    justify-content: space-between;
+  }
+
+  .paid-emi-view-grid {
+    grid-template-columns:
+      repeat(2, minmax(0, 1fr));
+  }
+
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 600px) {
+
+  .paid-emi-page {
+    padding: 12px;
+  }
+
+  .paid-emi-page-header {
+    align-items: flex-start;
+
+    flex-direction: column;
+
+    gap: 8px;
+  }
+
+  .paid-emi-filter-card {
+    padding: 14px;
+  }
+
+  .paid-emi-filter-grid {
+    grid-template-columns: 1fr;
+
+    gap: 14px;
+  }
+
+  .paid-emi-filter-actions {
+    width: 100%;
+  }
+
+  .paid-emi-get-record,
+  .paid-emi-clear-button {
+    flex: 1;
+  }
+
+  .paid-emi-table-header {
+    padding: 14px;
+  }
+
+  .paid-emi-table-header-right {
+    align-items: flex-start;
+
+    flex-direction: column;
+
+    gap: 10px;
+  }
+
+  .paid-emi-search {
+    width: 100%;
+  }
+
+  .paid-emi-view-overlay {
+    padding: 10px;
+  }
+
+  .paid-emi-view-modal {
+    max-height: 94vh;
+  }
+
+  .paid-emi-view-content {
+    padding: 12px;
+  }
+
+  .paid-emi-view-section {
+    padding: 13px;
+  }
+
+  .paid-emi-view-grid {
+    grid-template-columns: 1fr;
+
+    gap: 13px;
+  }
+
+  .paid-emi-view-status-box {
+    grid-template-columns: 1fr;
+  }
+
+}
