@@ -85,7 +85,7 @@ import OnlinePaymentReport from "./pages/reporting/onlinepaymentreport/OnlinePay
 import CibilReportExperian from "./pages/reporting/cibilreportexperian/CibilReportExperian";
 import CibilReportEquifax from "./pages/reporting/cibilreportequifax/CibilReportEquifax";
 
-import Dashboard from "./pages/dashboard/Dashboard1";
+import Dashboard from "./pages/dashboard/Dashboard";
 import MasterSettings from "./pages/masterSettings/MasterSettings";
 import NotFound from "./pages/notFound/NotFound";
 
