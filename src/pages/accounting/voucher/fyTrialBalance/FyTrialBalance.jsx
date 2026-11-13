@@ -1,5 +1,5 @@
 import React, { useMemo, useState } from "react";
-import "./FYTrialBalance.css";
+import "./FyTrialBalance11.css";
 
 import EntriesDropdown from "../../../../components/common/EntriesDropdown";
 
@@ -54,7 +54,7 @@ const FyTrialBalance = () => {
       branch: "MAIN BRANCH",
     },
 
- 
+
 
   ];
 
