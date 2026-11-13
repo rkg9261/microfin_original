@@ -14,7 +14,7 @@ import {
   FaShieldAlt,
 } from "react-icons/fa";
 
-import AdminProfile from "./AdminProfile/Adminprofile";
+import AdminProfile from "./AdminProfile/Adminprofile1";
 
 const Navbar = () => {
   const dispatch = useAppDispatch();
@@ -45,11 +45,10 @@ const Navbar = () => {
   return (
 
     <header
-      className={`top-navbar ${
-        sidebarOpen
-          ? "sidebar-open"
-          : "sidebar-close"
-      }`}
+      className={`top-navbar ${sidebarOpen
+        ? "sidebar-open"
+        : "sidebar-close"
+        }`}
     >
 
       {/* =====================================
