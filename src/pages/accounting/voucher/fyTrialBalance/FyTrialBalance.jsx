@@ -1,5 +1,5 @@
 import React, { useMemo, useState } from "react";
-import "./FyTrialBalance11.css";
+import "./FyTrialBalance.css";
 
 import EntriesDropdown from "../../../../components/common/EntriesDropdown";
 
