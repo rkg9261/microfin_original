@@ -14,7 +14,7 @@ import {
   FaShieldAlt,
 } from "react-icons/fa";
 
-import AdminProfile from "./AdminProfile/Adminprofile1";
+import AdminProfile from "./AdminProfile/AdminProfile";
 
 const Navbar = () => {
   const dispatch = useAppDispatch();
