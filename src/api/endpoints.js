@@ -36,6 +36,12 @@ const API = {
 
   MEMBER_CGT_GRTS: "/MemberCgtGrts",
   MEMBER_CGT_GRT_BY_ID: (id) => `/MemberCgtGrts/${id}`,
+  MEMBER_CGT_GRT_DETAIL: (memberId, groupId) => {
+    const base = `/MemberCgtGrts/detail/${memberId}`;
+    return groupId != null && groupId !== ""
+      ? `${base}?groupid=${groupId}`
+      : base;
+  },
 
   EMPLOYEES: "/Employees",
   EMPLOYEE_BY_ID: (id) => `/Employees/${id}`,

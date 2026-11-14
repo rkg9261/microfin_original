@@ -174,24 +174,60 @@ export const entityMappers = {
     };
   },
 
-  memberCgt: (item) => ({
-    ...item,
-    id: item.id,
-    branchId: item.branchId ?? null,
-    memberId: item.memberId ?? null,
-    groupId: item.groupId ?? null,
-    cgtStaffId: item.cgtStaffId ?? null,
-    grtStaffId: item.grtStaffId ?? null,
-    memberName: text(item.memberName, item.memberId),
-    memberCode: text(item.memberCode, item.memberId),
-    branch: text(item.branchName, item.branch, item.branchId),
-    collectionCenter: text(item.collectionCenter),
-    groupName: text(item.groupName, item.groupId),
-    cgtStaff: text(item.cgtStaffName, item.cgtStaff, item.cgtStaffId),
-    grtStaff: text(item.grtStaffName, item.grtStaff, item.grtStaffId),
-    createdAt: text(item.createdDate, item.createdAt),
-    status: statusFrom(item),
-  }),
+  memberCgt: (item) => {
+    const cgtStatus = item.cgtstatus === true || item.cgtStatus === true;
+    const grtStatus = item.grtstatus === true || item.grtStatus === true;
+    const cgtDate = text(item.cgtdate, item.cgtDate).slice(0, 10);
+    const grtDate = text(item.grtdate, item.grtDate).slice(0, 10);
+
+    let trainingStatus = "PENDING";
+    if (cgtStatus && grtStatus) trainingStatus = "PASSED";
+    else if (item.status && typeof item.status === "string") {
+      trainingStatus = text(item.status).toUpperCase();
+    }
+
+    return {
+      ...item,
+      id: item.id,
+      branchId: item.branchId ?? null,
+      memberId: item.memberId ?? null,
+      groupId: item.groupId ?? null,
+      cgtStaffId: item.cgtStaffId ?? null,
+      grtStaffId: item.grtStaffId ?? null,
+      memberName: text(item.memberName, item.memberId),
+      memberCode: text(item.memberCode, item.memberId),
+      branch: text(item.branchName, item.branch, item.branchId),
+      collectionCenter: text(
+        item.collectionCenter,
+        item.cityVillageName
+      ),
+      groupName: text(item.groupName, item.groupId),
+      cgtStaff: text(
+        item.cgtstaffFullName,
+        item.cgtStaffName,
+        item.cgtStaff,
+        item.cgtStaffId
+      ),
+      grtStaff: text(
+        item.grtstaffFullName,
+        item.grtStaffName,
+        item.grtStaff,
+        item.grtStaffId
+      ),
+      cgtStaffCode: text(item.cgtStaffCode),
+      grtStaffCode: text(item.grtStaffCode),
+      cgtStatus: cgtStatus ? "Success" : "Pending",
+      grtStatus: grtStatus ? "Success" : "Pending",
+      cgtstatus: cgtStatus,
+      grtstatus: grtStatus,
+      cgtDate: cgtDate || "-",
+      grtDate: grtDate || "-",
+      cgtdate: item.cgtdate ?? item.cgtDate ?? null,
+      grtdate: item.grtdate ?? item.grtDate ?? null,
+      createdAt: text(item.createdDate, item.createdAt),
+      status: trainingStatus,
+    };
+  },
 
   product: (item) => ({
     ...item,
@@ -537,14 +573,60 @@ export const toApi = {
   },
 
   memberCgt: (form) => {
+    const cgtStatus =
+      form.cgtstatus === true ||
+      form.cgtStatus === true ||
+      form.cgtStatus === "Success";
+    const grtStatus =
+      form.grtstatus === true ||
+      form.grtStatus === true ||
+      form.grtStatus === "Success";
+    const cgtStaffId = num(form.cgtStaffId || form.cgtStaff);
+    const grtStaffId = text(form.grtStaffId || form.grtStaff)
+      ? num(form.grtStaffId || form.grtStaff)
+      : cgtStaffId;
+
+    const toStaffStub = (staff, fallbackId) => {
+      if (staff && typeof staff === "object") {
+        return {
+          employeeId: num(staff.employeeId ?? staff.id ?? fallbackId),
+          companyId: num(staff.companyId) || 1,
+          branchId: num(staff.branchId) || num(form.branchId) || 1,
+          designationId: num(staff.designationId) || 1,
+          employeeCode: text(staff.employeeCode) || `EMP${fallbackId}`,
+          firstName:
+            text(staff.firstName, staff.fullName) ||
+            `Staff${fallbackId}`,
+          middleName: optionalText(staff.middleName),
+          lastName: optionalText(staff.lastName),
+        };
+      }
+      return {
+        employeeId: fallbackId,
+        companyId: 1,
+        branchId: num(form.branchId) || 1,
+        designationId: 1,
+        employeeCode: `EMP${fallbackId}`,
+        firstName: `Staff${fallbackId}`,
+      };
+    };
+
     const payload = {
       branchId: num(form.branchId || form.branch),
       memberId: num(form.memberId || form.member),
       groupId: text(form.groupId || form.group)
         ? num(form.groupId || form.group)
         : null,
-      cgtStaffId: num(form.cgtStaffId || form.cgtStaff),
-      grtStaffId: num(form.grtStaffId || form.grtStaff),
+      cgtStaffId,
+      grtStaffId,
+      cgtstaff: toStaffStub(form.cgtstaff || form.cgtStaffObj, cgtStaffId),
+      grtstaff: toStaffStub(form.grtstaff || form.grtStaffObj, grtStaffId),
+      cgtstatus: cgtStatus,
+      grtstatus: cgtStatus ? grtStatus : false,
+      cgtdate: dateTimeOrNull(form.cgtdate || form.cgtDate),
+      grtdate: cgtStatus
+        ? dateTimeOrNull(form.grtdate || form.grtDate)
+        : null,
       createdDate: form.createdDate || new Date().toISOString(),
     };
     const id = num(form.id);
