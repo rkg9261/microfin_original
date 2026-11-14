@@ -1,17 +1,9 @@
-Options -MultiViews
-
 <IfModule mod_rewrite.c>
   RewriteEngine On
   RewriteBase /
-
-  # Do not rewrite real files or directories (js, css, images, etc.)
-  RewriteCond %{REQUEST_FILENAME} -f [OR]
-  RewriteCond %{REQUEST_FILENAME} -d
-  RewriteRule ^ - [L]
-
-  # All app routes (/memberCgt, /loan-plan, ...) → index.html
-  RewriteRule ^ index.html [L]
+  RewriteRule ^index\.html$ - [L]
+  RewriteCond %{REQUEST_FILENAME} !-f
+  RewriteCond %{REQUEST_FILENAME} !-d
+  RewriteCond %{REQUEST_FILENAME} !-l
+  RewriteRule . /index.html [L]
 </IfModule>
-
-# Hostinger fallback if rewrite is unavailable
-ErrorDocument 404 /index.html
