@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import {
   FaPlus,
   FaSearch,
@@ -10,6 +11,7 @@ import VoucherEntriesTable from "./VoucherEntriesTable";
 import "./VoucherEntries.css";
 
 const VoucherEntries = () => {
+  const navigate = useNavigate();
 
   const [filters, setFilters] = useState({
     date: "",
@@ -57,9 +59,7 @@ const VoucherEntries = () => {
 
         <button
           className="voucher-action-btn payment"
-          onClick={() =>
-            window.location.href = "/payment"
-          }
+          onClick={() => navigate("/payment")}
         >
           <FaPlus />
           PAYMENT
@@ -67,9 +67,7 @@ const VoucherEntries = () => {
 
         <button
           className="voucher-action-btn receipt"
-          onClick={() =>
-            window.location.href = "/receipt"
-          }
+          onClick={() => navigate("/receipt")}
         >
           <FaPlus />
           RECEIPT
@@ -77,9 +75,7 @@ const VoucherEntries = () => {
 
         <button
           className="voucher-action-btn contra"
-          onClick={() =>
-            window.location.href = "/contra"
-          }
+          onClick={() => navigate("/contra")}
         >
           <FaPlus />
           CONTRA
@@ -87,9 +83,7 @@ const VoucherEntries = () => {
 
         <button
           className="voucher-action-btn journal"
-          onClick={() =>
-            window.location.href = "/journal"
-          }
+          onClick={() => navigate("/journal")}
         >
           <FaPlus />
           JOURNAL
