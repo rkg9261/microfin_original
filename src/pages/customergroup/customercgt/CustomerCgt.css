@@ -903,15 +903,13 @@
 
 .customer-cgt-section-row {
     display: grid;
-    grid-template-columns: minmax(0, 1.4fr) auto minmax(0, 1fr);
+    grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr) minmax(0, 1fr);
     gap: 16px 20px;
-    align-items: end;
+    align-items: start;
 }
 
-.customer-cgt-staff-field {
-    min-width: 0;
-}
-
+.customer-cgt-staff-field,
+.customer-cgt-status-field,
 .customer-cgt-date-field {
     min-width: 0;
 }
@@ -920,7 +918,8 @@
     display: inline-flex;
     align-items: center;
     gap: 8px;
-    margin-bottom: 12px;
+    min-height: 46px;
+    margin: 0;
     font-size: 14px;
     font-weight: 600;
     color: #334155;

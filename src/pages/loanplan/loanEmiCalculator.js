@@ -47,9 +47,7 @@ const formatDate = (date) => {
 };
 
 /**
- * Included charges are financed into the EMI base (demo behaviour):
- * plan 10000 + file 300 + processing 200 = 10500 base total
- * BASE/EMI interest split across installments; paidAmount is total to repay.
+ * Included charges (file / processing / insurance) when toggled on.
  */
 export const getIncludedCharges = (formData = {}) => {
   const fileCharge = formData.fileChargeInclude
@@ -65,14 +63,25 @@ export const getIncludedCharges = (formData = {}) => {
   return round2(fileCharge + processingFee + insurance);
 };
 
-export const getSchedulePrincipal = (formData = {}) =>
-  round2(toNumber(formData.planAmount) + getIncludedCharges(formData));
+export const getSchedulePrincipal = (formData = {}) => {
+  const principal = round2(toNumber(formData.planAmount));
+  const charges = getIncludedCharges(formData);
+  const paidAmount = round2(toNumber(formData.paidAmount));
+  const financedWithCharges = round2(principal + charges);
+
+  // Demo style: finance charges into EMI base only when paidAmount covers them.
+  // Otherwise use plan amount only (common when paidAmount === planAmount).
+  if (paidAmount >= financedWithCharges && charges > 0) {
+    return financedWithCharges;
+  }
+  return principal;
+};
 
 export const calcProcessingFeeAmount = (planAmount, percentage) =>
   round2((toNumber(planAmount) * toNumber(percentage)) / 100);
 
 /**
- * Flat EMI schedule matching demo.microfincare.com style:
+ * Flat EMI schedule:
  * BASE = schedulePrincipal / n
  * INTEREST = (paidAmount - schedulePrincipal) / n
  * EMI = BASE + INTEREST
@@ -89,9 +98,15 @@ export const buildFlatEmiSchedule = ({
 } = {}) => {
   const principal = round2(toNumber(planAmount));
   const charges = round2(toNumber(includedCharges));
-  const schedulePrincipal = round2(principal + charges);
   const emiCount = Math.max(0, Math.floor(toNumber(numberOfEMI)));
   const totalAmountToPay = round2(toNumber(paidAmount));
+  const financedWithCharges = round2(principal + charges);
+
+  // Finance charges into base only when total repayment covers plan + charges.
+  const schedulePrincipal =
+    totalAmountToPay >= financedWithCharges && charges > 0
+      ? financedWithCharges
+      : principal;
 
   if (principal <= 0 || emiCount <= 0) {
     return {
@@ -107,10 +122,10 @@ export const buildFlatEmiSchedule = ({
     };
   }
 
-  if (totalAmountToPay < schedulePrincipal) {
+  if (totalAmountToPay < principal) {
     return {
       ok: false,
-      error: `Paid Amount (₹${totalAmountToPay}) cannot be less than financed amount ₹${schedulePrincipal} (plan + included charges).`,
+      error: `Paid Amount (₹${totalAmountToPay}) cannot be less than Plan Amount ₹${principal}.`,
     };
   }
 

@@ -1,13 +1,10 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useMemo, useState } from "react";
 
 import "../../../components/common/CommonForm.css";
+import "../../../components/buttons/Button.css";
 import "../../../utils/validation.css";
 import { validateRequired } from "../../../utils/validation";
-import {
-  SaveButton,
-  CancelButton,
-  CloseButton,
-} from "../../../components/buttons";
+import { CloseButton } from "../../../components/buttons";
 import { useAppDispatch, useAppSelector } from "../../../store/hooks";
 import { fetchBranches } from "../../../store/slices/branchSlice";
 import { fetchEmployees } from "../../../store/slices/employeeSlice";
@@ -83,13 +80,16 @@ const CustomerCgtForm = ({ data, onSave, onClose }) => {
   const { items: employees, loading: employeesLoading } = useAppSelector(
     (state) => state.employee
   );
-  const { items: members } = useSwaggerEntity("member");
-  const { items: groups } = useSwaggerEntity("group");
+  const { items: groups, loading: groupsLoading } = useSwaggerEntity("group");
+  const { items: groupMembers } = useSwaggerEntity("groupMember");
+  const { items: allMembers } = useSwaggerEntity("member");
 
   const [formData, setFormData] = useState(() => emptyForm());
   const [errors, setErrors] = useState({});
   const [detailLoading, setDetailLoading] = useState(false);
+  const [membersLoading, setMembersLoading] = useState(false);
   const [cgtLocked, setCgtLocked] = useState(false);
+  const [groupMemberOptions, setGroupMemberOptions] = useState([]);
 
   useEffect(() => {
     dispatch(fetchBranches());
@@ -102,15 +102,103 @@ const CustomerCgtForm = ({ data, onSave, onClose }) => {
       setFormData(mapped);
       setCgtLocked(mapped.cgtstatus === true);
     } else {
-      const defaultBranchId = branches[0]?.branchId ?? branches[0]?.id;
-      setFormData(
-        emptyForm(defaultBranchId != null ? String(defaultBranchId) : "")
-      );
+      setFormData(emptyForm(""));
       setCgtLocked(false);
     }
     setErrors({});
-  }, [data, branches]);
+  }, [data]);
 
+  const branchGroups = useMemo(() => {
+    if (!formData.branchId) return [];
+    return groups.filter(
+      (group) => String(group.branchId ?? "") === String(formData.branchId)
+    );
+  }, [groups, formData.branchId]);
+
+  // Branch → Group → Member: load members for selected group
+  useEffect(() => {
+    const groupId = formData.groupId;
+    if (!groupId) {
+      setGroupMemberOptions([]);
+      return;
+    }
+
+    let cancelled = false;
+
+    const loadMembersForGroup = async () => {
+      setMembersLoading(true);
+      try {
+        const selectedGroup = groups.find(
+          (group) => String(group.id) === String(groupId)
+        );
+        const groupName = selectedGroup?.groupName || selectedGroup?.name || "";
+
+        const candidates = (groupMembers || []).filter((item) => {
+          if (
+            item.groupId != null &&
+            String(item.groupId) === String(groupId)
+          ) {
+            return true;
+          }
+          return (
+            Boolean(groupName) &&
+            (item.groupName === groupName || item.name === groupName)
+          );
+        });
+
+        const resolved = await Promise.all(
+          candidates.map(async (item) => {
+            let memberId = item.memberId;
+            if (memberId == null || memberId === "") {
+              try {
+                const detail = await api.get(API.GROUP_MEMBER_BY_ID(item.id));
+                memberId = detail?.data?.memberId;
+              } catch {
+                memberId = null;
+              }
+            }
+
+            if (memberId == null || memberId === "") return null;
+
+            const member = allMembers.find(
+              (m) => String(m.memberId ?? m.id) === String(memberId)
+            );
+
+            return {
+              memberId: String(memberId),
+              memberName:
+                member?.memberName ||
+                item.memberName ||
+                `Member ${memberId}`,
+            };
+          })
+        );
+
+        if (!cancelled) {
+          const unique = [];
+          const seen = new Set();
+          resolved.filter(Boolean).forEach((row) => {
+            if (seen.has(row.memberId)) return;
+            seen.add(row.memberId);
+            unique.push(row);
+          });
+          setGroupMemberOptions(unique);
+        }
+      } catch {
+        if (!cancelled) setGroupMemberOptions([]);
+      } finally {
+        if (!cancelled) setMembersLoading(false);
+      }
+    };
+
+    loadMembersForGroup();
+
+    return () => {
+      cancelled = true;
+    };
+  }, [formData.groupId, groups, groupMembers, allMembers]);
+
+  // When member selected, load existing CGT/GRT detail
   useEffect(() => {
     if (data) return;
 
@@ -130,10 +218,17 @@ const CustomerCgtForm = ({ data, onSave, onClose }) => {
         const mapped = mapDetailToForm(response.data);
         setFormData((prev) => ({
           ...prev,
-          ...mapped,
+          id: mapped.id,
+          cgtStaffId: mapped.cgtStaffId,
+          grtStaffId: mapped.grtStaffId,
+          cgtstatus: mapped.cgtstatus,
+          grtstatus: mapped.grtstatus,
+          cgtDate: mapped.cgtDate,
+          grtDate: mapped.grtDate,
+          createdDate: mapped.createdDate,
+          branchId: prev.branchId || mapped.branchId,
+          groupId: prev.groupId || mapped.groupId,
           memberId: prev.memberId,
-          branchId: mapped.branchId || prev.branchId,
-          groupId: mapped.groupId || prev.groupId,
         }));
         setCgtLocked(mapped.cgtstatus === true);
       } catch {
@@ -186,7 +281,40 @@ const CustomerCgtForm = ({ data, onSave, onClose }) => {
       return;
     }
 
-    setFormData((prev) => ({ ...prev, [name]: value }));
+    setFormData((prev) => {
+      const next = { ...prev, [name]: value };
+
+      // Cascade resets
+      if (name === "branchId") {
+        next.groupId = "";
+        next.memberId = "";
+        next.id = null;
+        next.cgtStaffId = "";
+        next.grtStaffId = "";
+        next.cgtstatus = false;
+        next.grtstatus = false;
+        next.cgtDate = "";
+        next.grtDate = "";
+        next.createdDate = null;
+        setCgtLocked(false);
+      }
+
+      if (name === "groupId") {
+        next.memberId = "";
+        next.id = null;
+        next.cgtStaffId = "";
+        next.grtStaffId = "";
+        next.cgtstatus = false;
+        next.grtstatus = false;
+        next.cgtDate = "";
+        next.grtDate = "";
+        next.createdDate = null;
+        setCgtLocked(false);
+      }
+
+      return next;
+    });
+
     if (errors[name]) {
       setErrors((prev) => ({ ...prev, [name]: "" }));
     }
@@ -197,6 +325,7 @@ const CustomerCgtForm = ({ data, onSave, onClose }) => {
 
     const requiredFields = [
       { name: "branchId", label: "Branch" },
+      { name: "groupId", label: "Group" },
       { name: "memberId", label: "Member" },
       { name: "cgtStaffId", label: "CGT Staff" },
     ];
@@ -209,10 +338,14 @@ const CustomerCgtForm = ({ data, onSave, onClose }) => {
     setErrors(validationErrors);
     if (Object.keys(validationErrors).length > 0) return;
 
-    const selectedMember = members.find(
-      (item) =>
-        String(item.memberId ?? item.id) === String(formData.memberId)
-    );
+    const selectedMember =
+      groupMemberOptions.find(
+        (item) => String(item.memberId) === String(formData.memberId)
+      ) ||
+      allMembers.find(
+        (item) =>
+          String(item.memberId ?? item.id) === String(formData.memberId)
+      );
     const selectedGroup = groups.find(
       (item) => String(item.id) === String(formData.groupId)
     );
@@ -246,7 +379,8 @@ const CustomerCgtForm = ({ data, onSave, onClose }) => {
       grtDate: showGrtSection ? formData.grtDate || null : null,
       createdDate: formData.createdDate,
       branch: selectedBranch?.branchName || selectedBranch?.name || "",
-      memberName: selectedMember?.memberName || "",
+      memberName:
+        selectedMember?.memberName || selectedMember?.name || "",
       groupName: selectedGroup?.groupName || selectedGroup?.name || "",
       cgtStaff: getEmployeeLabel(cgtStaff || {}),
       grtStaff: getEmployeeLabel(grtStaff || {}),
@@ -297,47 +431,69 @@ const CustomerCgtForm = ({ data, onSave, onClose }) => {
 
             <div className="common-form-group">
               <label>
+                Group <span>*</span>
+              </label>
+              <select
+                name="groupId"
+                value={formData.groupId}
+                onChange={handleChange}
+                disabled={cgtLocked || !formData.branchId || groupsLoading}
+                className={errors.groupId ? "error-input" : ""}
+              >
+                <option value="">
+                  {!formData.branchId
+                    ? "Select branch first"
+                    : groupsLoading
+                    ? "Loading groups..."
+                    : branchGroups.length
+                    ? "Select Group"
+                    : "No groups for this branch"}
+                </option>
+                {branchGroups.map((group) => (
+                  <option key={group.id} value={String(group.id)}>
+                    {group.groupName || group.name || `Group ${group.id}`}
+                  </option>
+                ))}
+              </select>
+              {errors.groupId && (
+                <p className="error-text">{errors.groupId}</p>
+              )}
+            </div>
+
+            <div className="common-form-group">
+              <label>
                 Member <span>*</span>
               </label>
               <select
                 name="memberId"
                 value={formData.memberId}
                 onChange={handleChange}
-                disabled={cgtLocked || Boolean(data)}
+                disabled={
+                  cgtLocked ||
+                  Boolean(data) ||
+                  !formData.groupId ||
+                  membersLoading
+                }
                 className={errors.memberId ? "error-input" : ""}
               >
                 <option value="">
-                  {detailLoading ? "Loading member..." : "Select Member"}
+                  {!formData.groupId
+                    ? "Select group first"
+                    : membersLoading || detailLoading
+                    ? "Loading members..."
+                    : groupMemberOptions.length
+                    ? "Select Member"
+                    : "No members in this group"}
                 </option>
-                {members.map((member) => {
-                  const id = member.memberId ?? member.id;
-                  return (
-                    <option key={id} value={String(id)}>
-                      {member.memberName || `Member ${id}`}
-                    </option>
-                  );
-                })}
+                {groupMemberOptions.map((member) => (
+                  <option key={member.memberId} value={String(member.memberId)}>
+                    {member.memberName}
+                  </option>
+                ))}
               </select>
               {errors.memberId && (
                 <p className="error-text">{errors.memberId}</p>
               )}
-            </div>
-
-            <div className="common-form-group">
-              <label>Group</label>
-              <select
-                name="groupId"
-                value={formData.groupId}
-                onChange={handleChange}
-                disabled={cgtLocked}
-              >
-                <option value="">Select Group</option>
-                {groups.map((group) => (
-                  <option key={group.id} value={String(group.id)}>
-                    {group.groupName || group.name || `Group ${group.id}`}
-                  </option>
-                ))}
-              </select>
             </div>
           </div>
 
@@ -374,19 +530,22 @@ const CustomerCgtForm = ({ data, onSave, onClose }) => {
                 )}
               </div>
 
-              <label className="customer-cgt-status-check">
-                <input
-                  type="checkbox"
-                  name="cgtstatus"
-                  checked={formData.cgtstatus}
-                  onChange={handleChange}
-                  disabled={cgtLocked}
-                />
-                <span>CGT STATUS Success</span>
-              </label>
+              <div className="common-form-group customer-cgt-status-field">
+                <label>CGT Status</label>
+                <label className="customer-cgt-status-check">
+                  <input
+                    type="checkbox"
+                    name="cgtstatus"
+                    checked={formData.cgtstatus}
+                    onChange={handleChange}
+                    disabled={cgtLocked}
+                  />
+                  <span>Success</span>
+                </label>
+              </div>
 
               <div className="common-form-group customer-cgt-date-field">
-                <label>CGT DATE</label>
+                <label>CGT Date</label>
                 <input
                   type="date"
                   name="cgtDate"
@@ -432,18 +591,21 @@ const CustomerCgtForm = ({ data, onSave, onClose }) => {
                   )}
                 </div>
 
-                <label className="customer-cgt-status-check">
-                  <input
-                    type="checkbox"
-                    name="grtstatus"
-                    checked={formData.grtstatus}
-                    onChange={handleChange}
-                  />
-                  <span>Success</span>
-                </label>
+                <div className="common-form-group customer-cgt-status-field">
+                  <label>GRT Status</label>
+                  <label className="customer-cgt-status-check">
+                    <input
+                      type="checkbox"
+                      name="grtstatus"
+                      checked={formData.grtstatus}
+                      onChange={handleChange}
+                    />
+                    <span>Success</span>
+                  </label>
+                </div>
 
                 <div className="common-form-group customer-cgt-date-field">
-                  <label>DATE</label>
+                  <label>GRT Date</label>
                   <input
                     type="date"
                     name="grtDate"
@@ -456,8 +618,12 @@ const CustomerCgtForm = ({ data, onSave, onClose }) => {
           )}
 
           <div className="common-form-buttons">
-            <SaveButton type="submit" text="Save" />
-            <CancelButton type="button" text="Cancel" onClick={onClose} />
+            <button type="submit" className="btn btn-save">
+              Save
+            </button>
+            <button type="button" className="btn btn-cancel" onClick={onClose}>
+              Cancel
+            </button>
           </div>
         </form>
       </div>
