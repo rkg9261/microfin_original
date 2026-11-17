@@ -412,28 +412,65 @@ export const entityMappers = {
     emiLastDate: text(item.emiLastDate, item.lastEmiEndDate),
   }),
 
-  disbursement: (item) => ({
-    ...item,
-    id: item.id,
-    loanId: text(item.loanId, item.id),
-    member: text(item.member, item.memberId),
-    staff: text(item.staff, item.staffId),
-    branch: text(item.branch, item.branchId),
-    disbursementDate: text(item.disbursementDate),
-    emiStartDate: text(item.emiStartDate, item.disbursementDate),
-    emiEndDate: text(item.emiEndDate),
-  }),
+  disbursement: (item) => {
+    const disDate = text(item.disbursementDate).slice(0, 10);
+    const endDate = text(item.emiEndDate).slice(0, 10);
+    return {
+      ...item,
+      id: item.id,
+      memberId: item.memberId ?? null,
+      branchId: item.branchId ?? null,
+      staffId: item.staffId ?? null,
+      loanId: text(item.loanId, item.id),
+      member: text(item.memberName, item.member),
+      staff: text(item.staffName, item.staff),
+      branch: text(item.branchName, item.branch),
+      disbursementDate: disDate,
+      disDate,
+      emiStartDate: text(item.emiStartDate).slice(0, 10) || disDate,
+      emiEndDate: endDate,
+      createdDate: item.createdDate || null,
+      plName: text(item.plName, item.planName),
+      penaltyName: text(item.penaltyName),
+      category: text(item.category, item.planCategory),
+      emiType: text(item.emiType, item.loanType),
+      planAmount: item.planAmount ?? null,
+      disAmount: item.disAmount ?? item.disbursementAmount ?? null,
+      alias: text(item.alias),
+      branchCenter: text(item.branchCenterName, item.branchCenter),
+      payMode: text(item.payMode, "-"),
+    };
+  },
 
-  groupMemberDisbursement: (item) => ({
-    ...item,
-    id: item.id,
-    member: text(item.member, item.memberId),
-    staff: text(item.staff, item.staffId),
-    branch: text(item.branch, item.branchId),
-    group: text(item.group, item.groupId),
-    disbursementDate: text(item.disbursementDate),
-    emiEndDate: text(item.emiEndDate),
-  }),
+  groupMemberDisbursement: (item) => {
+    const disDate = text(item.disbursementDate).slice(0, 10);
+    const endDate = text(item.emiEndDate).slice(0, 10);
+    return {
+      ...item,
+      id: item.id,
+      memberId: item.memberId ?? null,
+      branchId: item.branchId ?? null,
+      staffId: item.staffId ?? null,
+      groupId: item.groupId ?? null,
+      applicationNo: text(item.applicationNo, item.id),
+      member: text(item.memberName, item.member),
+      staff: text(item.staffName, item.staff),
+      branch: text(item.branchName, item.branch),
+      group: text(item.groupName, item.group),
+      disbursementDate: disDate,
+      disDate,
+      emiStartDate: text(item.emiStartDate).slice(0, 10) || disDate,
+      emiEndDate: endDate,
+      createdDate: item.createdDate || null,
+      plName: text(item.plName, item.planName),
+      penaltyName: text(item.penaltyName),
+      emiType: text(item.emiType, item.loanType),
+      planAmount: item.planAmount ?? null,
+      disAmount: item.disAmount ?? item.disbursementAmount ?? null,
+      branchCenter: text(item.branchCenterName, item.branchCenter),
+      payMode: text(item.payMode, "-"),
+    };
+  },
 
   paidEmi: (item) => ({
     ...item,
@@ -875,26 +912,36 @@ export const toApi = {
     createdDate: form.createdDate || new Date().toISOString(),
   }),
 
-  disbursement: (form) => ({
-    id: num(form.id),
-    memberId: num(form.memberId || form.member),
-    branchId: num(form.branchId || form.branch),
-    staffId: num(form.staffId || form.staff),
-    disbursementDate: dateTime(form.disbursementDate),
-    emiEndDate: dateTime(form.emiEndDate),
-    createdDate: form.createdDate || new Date().toISOString(),
-  }),
+  disbursement: (form) => {
+    const payload = {
+      memberId: num(form.memberId || form.member),
+      branchId: num(form.branchId || form.branch),
+      staffId: num(form.staffId || form.staff),
+      disbursementDate: dateTime(form.disbursementDate || form.disDate),
+      emiEndDate: dateTime(form.emiEndDate),
+      createdDate: form.createdDate || new Date().toISOString(),
+    };
+    const id = num(form.id);
+    if (id > 0) payload.id = id;
+    return payload;
+  },
 
-  groupMemberDisbursement: (form) => ({
-    id: num(form.id),
-    memberId: num(form.memberId || form.member),
-    branchId: num(form.branchId || form.branch),
-    staffId: num(form.staffId || form.staff),
-    groupId: text(form.groupId || form.group) ? num(form.groupId || form.group) : null,
-    disbursementDate: dateTime(form.disbursementDate),
-    emiEndDate: dateTime(form.emiEndDate),
-    createdDate: form.createdDate || new Date().toISOString(),
-  }),
+  groupMemberDisbursement: (form) => {
+    const payload = {
+      memberId: num(form.memberId || form.member),
+      branchId: num(form.branchId || form.branch),
+      staffId: num(form.staffId || form.staff),
+      groupId: text(form.groupId || form.group)
+        ? num(form.groupId || form.group)
+        : null,
+      disbursementDate: dateTime(form.disbursementDate || form.disDate),
+      emiEndDate: dateTime(form.emiEndDate),
+      createdDate: form.createdDate || new Date().toISOString(),
+    };
+    const id = num(form.id);
+    if (id > 0) payload.id = id;
+    return payload;
+  },
 
   paidEmi: (form) => ({
     id: num(form.id),

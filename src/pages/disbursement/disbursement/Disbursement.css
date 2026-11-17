@@ -246,6 +246,32 @@
 
 
 /* =========================================================
+   RESET BUTTON
+========================================================= */
+
+.disbursement-reset-button {
+    height: 33px;
+    padding: 0 15px;
+    border: none;
+    border-radius: 4px;
+    background: #e67e22;
+    color: #ffffff;
+    font-size: 12px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.2s ease;
+}
+
+.disbursement-reset-button:hover {
+    background: #d35400;
+}
+
+.disbursement-reset-button:active {
+    transform: translateY(1px);
+}
+
+
+/* =========================================================
    TABLE CARD
 ========================================================= */
 
@@ -255,7 +281,7 @@
     border: 1px solid #cfcfcf;
     border-radius: 8px;
     box-sizing: border-box;
-    overflow: hidden;
+    overflow: visible;
     box-shadow: 0 1px 4px rgba(0, 0, 0, 0.08);
 }
 
@@ -269,6 +295,8 @@
     padding: 0 12px;
     display: flex;
     align-items: center;
+    justify-content: space-between;
+    gap: 12px;
     box-sizing: border-box;
     background: #ffffff;
 }
@@ -482,14 +510,58 @@
    TASK
 ========================================================= */
 
+.disbursement-action-cell {
+    position: relative;
+    overflow: visible !important;
+}
+
+.disbursement-task-wrap {
+    position: relative;
+    display: inline-block;
+}
+
 .disbursement-task {
+    border: none;
+    background: transparent;
     color: #555;
     font-size: 10px;
+    font-weight: 600;
+    cursor: pointer;
+    padding: 5px 8px;
+}
+
+.disbursement-task:hover {
+    color: #1599bb;
+}
+
+.disbursement-task-menu {
+    position: absolute;
+    right: 0;
+    top: 28px;
+    z-index: 1000;
+    min-width: 100px;
+    padding: 5px;
+    background: #fff;
+    border: 1px solid #d5d5d5;
+    border-radius: 4px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.18);
+}
+
+.disbursement-task-menu button {
+    width: 100%;
+    height: 30px;
+    border: none;
+    border-radius: 3px;
+    background: #fff;
+    color: #444;
+    text-align: left;
+    padding: 0 8px;
+    font-size: 11px;
     cursor: pointer;
 }
 
-
-.disbursement-task:hover {
+.disbursement-task-menu button:hover {
+    background: #eaf7fb;
     color: #1599bb;
 }
 
