@@ -1,661 +1,534 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useMemo, useState } from "react";
 
-import SaveButton from "../../../components/buttons/SaveButton";
-import CancelButton from "../../../components/buttons/CancelButton";
 import CloseButton from "../../../components/buttons/CloseButton";
+import "../../../components/buttons/Button.css";
 import "../../../components/common/CommonForm.css";
+import "../../../utils/validation.css";
+import { validateRequired } from "../../../utils/validation";
 import "./GroupLoan.css";
 
-const GroupLoanForm = ({
-  loan,
-  onClose,
-  onSave,
-}) => {
+import { useAppDispatch, useAppSelector } from "../../../store/hooks";
+import { fetchBranches } from "../../../store/slices/branchSlice";
+import { fetchEmployees } from "../../../store/slices/employeeSlice";
+import { fetchLoanPlans } from "../../../store/slices/loanPlanSlice";
+import { fetchPenaltySchemes } from "../../../store/slices/penaltySchemeSlice";
+import { fetchPurposes } from "../../../store/slices/purposeSlice";
+import { useSwaggerEntity } from "../../../store/useSwaggerEntity";
 
+const FALLBACK_PURPOSES = [
+  { id: 1, name: "Personal" },
+  { id: 2, name: "Business" },
+  { id: 3, name: "Education" },
+  { id: 4, name: "Medical" },
+];
+
+const getEmployeeLabel = (employee) => {
+  const name = [employee.firstName, employee.lastName]
+    .filter(Boolean)
+    .join(" ")
+    .trim();
+  const code = employee.employeeCode || "";
+  if (name && code) return `${name} (${code})`;
+  return name || code || `Staff ${employee.employeeId ?? employee.id}`;
+};
+
+const emptyForm = () => ({
+  branchId: "",
+  planId: "",
+  branchCenterId: "",
+  description: "",
+  agentId: "",
+  memberId: "",
+  groupId: "",
+  guarantorId: "",
+  groupLeaderId: "",
+  purposeId: "",
+  loanType: "Single Ledger",
+  penaltySchemeId: "",
+  hideRateInterest: "NO",
+  createdDate: null,
+});
+
+const GroupLoanForm = ({ loan, onClose, onSave }) => {
   const isEdit = Boolean(loan);
+  const dispatch = useAppDispatch();
 
+  const { items: branches, loading: branchesLoading } = useAppSelector(
+    (state) => state.branch
+  );
+  const { items: employees, loading: employeesLoading } = useAppSelector(
+    (state) => state.employee
+  );
+  const { items: loanPlans, loading: plansLoading } = useAppSelector(
+    (state) => state.loanPlan
+  );
+  const { items: penaltySchemes, loading: penaltyLoading } = useAppSelector(
+    (state) => state.penaltyScheme
+  );
+  const { items: purposes, loading: purposesLoading } = useAppSelector(
+    (state) => state.purpose
+  );
 
-  const [formData, setFormData] = useState({
+  const { items: members } = useSwaggerEntity("member");
+  const { items: groups } = useSwaggerEntity("group");
+  const { items: branchCenters } = useSwaggerEntity("branchCenter");
 
-    branch: "",
-    plan: "",
-    branchCenter: "",
-    description: "",
-    agentId: "",
-    member: "",
-    group: "",
-    guarantor: "",
-    groupLeader: "",
-    purpose: "",
-    loanType: "Single Ledger",
-    penaltyScheme: "",
-    hideRateInterest: "NO",
-
-  });
-
-
-  /* =====================================================
-     LOAD EDIT DATA
-  ===================================================== */
+  const [formData, setFormData] = useState(emptyForm);
+  const [errors, setErrors] = useState({});
 
   useEffect(() => {
+    dispatch(fetchBranches());
+    dispatch(fetchEmployees());
+    dispatch(fetchLoanPlans());
+    dispatch(fetchPenaltySchemes());
+    dispatch(fetchPurposes());
+  }, [dispatch]);
 
+  useEffect(() => {
     if (loan) {
-
       setFormData({
-
-        branch: loan.branch || "",
-        plan: loan.plan || "",
-
-        branchCenter:
-          loan.branchCenter || "",
-
-        description:
-          loan.description || "",
-
+        branchId:
+          loan.branchId != null && loan.branchId !== ""
+            ? String(loan.branchId)
+            : "",
+        planId:
+          loan.planId != null && loan.planId !== ""
+            ? String(loan.planId)
+            : "",
+        branchCenterId:
+          loan.branchCenterId != null && loan.branchCenterId !== ""
+            ? String(loan.branchCenterId)
+            : "",
+        description: loan.description || "",
         agentId:
-          loan.agentId || "",
-
-        member:
-          loan.member || "",
-
-        group:
-          loan.group || "",
-
-        guarantor:
-          loan.guarantor || "",
-
-        groupLeader:
-          loan.groupLeader || "",
-
-        purpose:
-          loan.purpose || "",
-
-        loanType:
-          loan.loanType || "Single Ledger",
-
-        penaltyScheme:
-          loan.penaltyScheme || "",
-
+          loan.agentId != null && loan.agentId !== ""
+            ? String(loan.agentId)
+            : "",
+        memberId:
+          loan.memberId != null && loan.memberId !== ""
+            ? String(loan.memberId)
+            : "",
+        groupId:
+          loan.groupId != null && loan.groupId !== ""
+            ? String(loan.groupId)
+            : "",
+        guarantorId:
+          loan.guarantorId != null && loan.guarantorId !== ""
+            ? String(loan.guarantorId)
+            : "",
+        groupLeaderId:
+          loan.groupLeaderId != null && loan.groupLeaderId !== ""
+            ? String(loan.groupLeaderId)
+            : "",
+        purposeId:
+          loan.purposeId != null && loan.purposeId !== ""
+            ? String(loan.purposeId)
+            : "",
+        loanType: loan.loanType || "Single Ledger",
+        penaltySchemeId:
+          loan.penaltySchemeId != null && loan.penaltySchemeId !== ""
+            ? String(loan.penaltySchemeId)
+            : "",
         hideRateInterest:
-          loan.hideRateInterest || "NO",
-
+          loan.hideRateInterest ||
+          (loan.hideRateOfInterestInPrint ? "YES" : "NO"),
+        createdDate: loan.createdDate || null,
       });
-
+    } else {
+      setFormData(emptyForm());
     }
-
+    setErrors({});
   }, [loan]);
 
+  const purposeOptions = useMemo(() => {
+    const list = (purposes || [])
+      .map((item) => ({
+        id: item.id ?? item.purposeId,
+        name: item.purposeName || item.name || `Purpose ${item.id}`,
+      }))
+      .filter((item) => item.id != null);
+    return list.length ? list : FALLBACK_PURPOSES;
+  }, [purposes]);
 
-  /* =====================================================
-     CHANGE
-  ===================================================== */
+  const filteredCenters = useMemo(() => {
+    if (!formData.branchId) return branchCenters;
+    return branchCenters.filter(
+      (center) =>
+        String(center.branchId ?? "") === String(formData.branchId) ||
+        !center.branchId
+    );
+  }, [branchCenters, formData.branchId]);
+
+  const filteredGroups = useMemo(() => {
+    if (!formData.branchId) return groups;
+    return groups.filter(
+      (group) =>
+        String(group.branchId ?? "") === String(formData.branchId) ||
+        !group.branchId
+    );
+  }, [groups, formData.branchId]);
 
   const handleChange = (e) => {
-
-    const {
-      name,
-      value,
-    } = e.target;
-
-    setFormData((prev) => ({
-      ...prev,
-      [name]: value,
-    }));
-
+    const { name, value } = e.target;
+    setFormData((prev) => {
+      const next = { ...prev, [name]: value };
+      if (name === "branchId") {
+        next.branchCenterId = "";
+        next.groupId = "";
+      }
+      return next;
+    });
+    if (errors[name]) {
+      setErrors((prev) => ({ ...prev, [name]: "" }));
+    }
   };
 
-
-  /* =====================================================
-     SUBMIT
-  ===================================================== */
-
   const handleSubmit = (e) => {
-
     e.preventDefault();
+
+    const validationErrors = validateRequired(formData, [
+      { name: "branchId", label: "Branch" },
+      { name: "planId", label: "Plan" },
+      { name: "agentId", label: "Agent" },
+      { name: "memberId", label: "Member" },
+      { name: "groupLeaderId", label: "Group Leader" },
+      { name: "purposeId", label: "Purpose" },
+      { name: "description", label: "Description" },
+      { name: "loanType", label: "Loan Type" },
+    ]);
+
+    setErrors(validationErrors);
+    if (Object.keys(validationErrors).length > 0) return;
 
     onSave({
       ...formData,
       id: loan?.id,
+      hideRateOfInterestInPrint: formData.hideRateInterest,
     });
-
   };
-
 
   return (
     <div className="group-loan-modal-overlay">
-
       <div className="group-loan-form-modal">
-
-        {/* =================================================
-            HEADER
-        ================================================= */}
-
         <div className="group-loan-form-header">
-
-          <h2>
-            {isEdit
-              ? "EDIT GROUP LOAN"
-              : "CREATE NEW LOAN"}
-          </h2>
-
-          <CloseButton
-                        onClick={onClose}
-                    />
-
+          <h2>{isEdit ? "EDIT GROUP LOAN" : "CREATE NEW LOAN"}</h2>
+          <CloseButton onClick={onClose} />
         </div>
 
-
-        {/* =================================================
-            FORM
-        ================================================= */}
-
-        <form
-          onSubmit={handleSubmit}
-          className="group-loan-form-body"
-        >
-
+        <form onSubmit={handleSubmit} className="group-loan-form-body">
           <div className="group-loan-form-grid">
-
-
-            {/* =================================================
-                LEFT COLUMN
-            ================================================= */}
-
             <div>
-
-
-              {/* BRANCH */}
-
               <div className="group-loan-form-group">
-
                 <label>
                   BRANCH <span>*</span>
                 </label>
-
                 <select
-                  name="branch"
-                  value={formData.branch}
+                  name="branchId"
+                  value={formData.branchId}
                   onChange={handleChange}
-                  required
+                  className={errors.branchId ? "error-input" : ""}
+                  disabled={branchesLoading}
                 >
-
                   <option value="">
-                    Select branch
+                    {branchesLoading ? "Loading branches..." : "Select branch"}
                   </option>
-
-                  <option value="SHREEJA GROUP">
-                    SHREEJA GROUP
-                  </option>
-
-                  <option value="BRANCH M FINANCE">
-                    BRANCH M FINANCE
-                  </option>
-
+                  {branches.map((branch) => {
+                    const id = branch.branchId ?? branch.id;
+                    return (
+                      <option key={id} value={String(id)}>
+                        {branch.branchName || branch.name || `Branch ${id}`}
+                      </option>
+                    );
+                  })}
                 </select>
-
+                {errors.branchId && (
+                  <p className="error-text">{errors.branchId}</p>
+                )}
               </div>
 
-
-              {/* BRANCH CENTER */}
-
               <div className="group-loan-form-group">
-
-                <label>
-                  BRANCH CENTER (TYPE HERE)
-                </label>
-
+                <label>BRANCH CENTER</label>
                 <select
-                  name="branchCenter"
-                  value={formData.branchCenter}
+                  name="branchCenterId"
+                  value={formData.branchCenterId}
                   onChange={handleChange}
                 >
-
-                  <option value="">
-                    Select Branch Center
-                  </option>
-
-                  <option value="SHREEJA CENTER">
-                    SHREEJA CENTER
-                  </option>
-
-                  <option value="CENTER AM5">
-                    CENTER AM5
-                  </option>
-
+                  <option value="">Select Branch Center</option>
+                  {filteredCenters.map((center) => (
+                    <option key={center.id} value={String(center.id)}>
+                      {center.name ||
+                        center.branchCenterName ||
+                        `Center ${center.id}`}
+                    </option>
+                  ))}
                 </select>
-
               </div>
 
-
-              {/* AGENT ID */}
-
               <div className="group-loan-form-group">
-
                 <label>
-                  AGENT ID <span>*</span>
+                  AGENT <span>*</span>
                 </label>
-
                 <select
                   name="agentId"
                   value={formData.agentId}
                   onChange={handleChange}
-                  required
+                  className={errors.agentId ? "error-input" : ""}
+                  disabled={employeesLoading}
                 >
-
                   <option value="">
-                    Select Agent
+                    {employeesLoading ? "Loading agents..." : "Select Agent"}
                   </option>
-
-                  <option value="AG001">
-                    AG001
-                  </option>
-
-                  <option value="AG002">
-                    AG002
-                  </option>
-
-                  <option value="AG003">
-                    AG003
-                  </option>
-
+                  {employees.map((employee) => {
+                    const id = employee.employeeId ?? employee.id;
+                    return (
+                      <option key={id} value={String(id)}>
+                        {getEmployeeLabel(employee)}
+                      </option>
+                    );
+                  })}
                 </select>
-
+                {errors.agentId && (
+                  <p className="error-text">{errors.agentId}</p>
+                )}
               </div>
 
-
-              {/* GROUP */}
-
               <div className="group-loan-form-group">
-
-                <label>
-                  GROUP
-                </label>
-
+                <label>GROUP</label>
                 <select
-                  name="group"
-                  value={formData.group}
+                  name="groupId"
+                  value={formData.groupId}
                   onChange={handleChange}
                 >
-
-                  <option value="">
-                    Select Group
-                  </option>
-
-                  <option value="SHREEJA GROUP">
-                    SHREEJA GROUP
-                  </option>
-
-                  <option value="BRANCH M FINANCE">
-                    BRANCH M FINANCE
-                  </option>
-
+                  <option value="">Select Group</option>
+                  {filteredGroups.map((group) => (
+                    <option key={group.id} value={String(group.id)}>
+                      {group.groupName || group.name || `Group ${group.id}`}
+                    </option>
+                  ))}
                 </select>
-
               </div>
 
-
-              {/* GROUP LEADER */}
-
               <div className="group-loan-form-group">
-
                 <label>
                   GROUP LEADER <span>*</span>
                 </label>
-
                 <select
-                  name="groupLeader"
-                  value={formData.groupLeader}
+                  name="groupLeaderId"
+                  value={formData.groupLeaderId}
                   onChange={handleChange}
-                  required
+                  className={errors.groupLeaderId ? "error-input" : ""}
                 >
-
-                  <option value="">
-                    Select Group Leader
-                  </option>
-
-                  <option value="DEEPAK">
-                    DEEPAK
-                  </option>
-
-                  <option value="AKSHAY GARG">
-                    AKSHAY GARG
-                  </option>
-
-                  <option value="KOYEL SARKAR">
-                    KOYEL SARKAR
-                  </option>
-
+                  <option value="">Select Group Leader</option>
+                  {members.map((member) => {
+                    const id = member.memberId ?? member.id;
+                    return (
+                      <option key={id} value={String(id)}>
+                        {member.memberName || `Member ${id}`}
+                      </option>
+                    );
+                  })}
                 </select>
-
+                {errors.groupLeaderId && (
+                  <p className="error-text">{errors.groupLeaderId}</p>
+                )}
               </div>
 
-
-              {/* PURPOSE */}
-
               <div className="group-loan-form-group">
-
                 <label>
                   PURPOSE <span>*</span>
                 </label>
-
                 <select
-                  name="purpose"
-                  value={formData.purpose}
+                  name="purposeId"
+                  value={formData.purposeId}
                   onChange={handleChange}
-                  required
+                  className={errors.purposeId ? "error-input" : ""}
+                  disabled={purposesLoading}
                 >
-
-                  <option value="">
-                    Select Purpose
-                  </option>
-
-                  <option value="Business">
-                    Business
-                  </option>
-
-                  <option value="Education">
-                    Education
-                  </option>
-
-                  <option value="Medical">
-                    Medical
-                  </option>
-
-                  <option value="Personal">
-                    Personal
-                  </option>
-
+                  <option value="">Select Purpose</option>
+                  {purposeOptions.map((purpose) => (
+                    <option key={purpose.id} value={String(purpose.id)}>
+                      {purpose.name}
+                    </option>
+                  ))}
                 </select>
-
+                {errors.purposeId && (
+                  <p className="error-text">{errors.purposeId}</p>
+                )}
               </div>
 
-
-              {/* LOAN TYPE */}
-
               <div className="group-loan-form-group">
-
                 <label>
                   LOAN TYPE <span>*</span>
                 </label>
-
                 <select
                   name="loanType"
                   value={formData.loanType}
                   onChange={handleChange}
-                  required
+                  className={errors.loanType ? "error-input" : ""}
                 >
-
-                  <option value="Single Ledger">
-                    Single Ledger
-                  </option>
-
-                  <option value="Multiple Ledger">
-                    Multiple Ledger
-                  </option>
-
+                  <option value="Single Ledger">Single Ledger</option>
+                  <option value="Multiple Ledger">Multiple Ledger</option>
                 </select>
-
+                {errors.loanType && (
+                  <p className="error-text">{errors.loanType}</p>
+                )}
               </div>
-
             </div>
 
-
-            {/* =================================================
-                RIGHT COLUMN
-            ================================================= */}
-
             <div>
-
-
-              {/* PLAN */}
-
               <div className="group-loan-form-group">
-
                 <label>
                   PLAN <span>*</span>
                 </label>
-
                 <select
-                  name="plan"
-                  value={formData.plan}
+                  name="planId"
+                  value={formData.planId}
                   onChange={handleChange}
-                  required
+                  className={errors.planId ? "error-input" : ""}
+                  disabled={plansLoading}
                 >
-
                   <option value="">
-                    Select Plan
+                    {plansLoading ? "Loading plans..." : "Select Plan"}
                   </option>
-
-                  <option value="NORMAL PLAN 12 EMI 36%">
-                    NORMAL PLAN 12 EMI 36%
-                  </option>
-
-                  <option value="NORMAL PLAN 24 EMI 30%">
-                    NORMAL PLAN 24 EMI 30%
-                  </option>
-
-                  <option value="MICRO LOAN PLAN">
-                    MICRO LOAN PLAN
-                  </option>
-
+                  {loanPlans.map((plan) => (
+                    <option key={plan.id} value={String(plan.id)}>
+                      {plan.planName || `Plan ${plan.id}`}
+                      {plan.numberOfEmi || plan.numberOfEMI
+                        ? ` (${plan.numberOfEmi || plan.numberOfEMI} EMI)`
+                        : ""}
+                    </option>
+                  ))}
                 </select>
-
+                {errors.planId && (
+                  <p className="error-text">{errors.planId}</p>
+                )}
               </div>
 
-
-              {/* DESCRIPTION */}
-
               <div className="group-loan-form-group">
-
                 <label>
                   DESCRIPTION <span>*</span>
                 </label>
-
                 <input
                   type="text"
                   name="description"
                   value={formData.description}
                   onChange={handleChange}
                   placeholder="Enter Description"
-                  required
+                  className={errors.description ? "error-input" : ""}
                 />
-
+                {errors.description && (
+                  <p className="error-text">{errors.description}</p>
+                )}
               </div>
 
-
-              {/* MEMBER */}
-
               <div className="group-loan-form-group">
-
                 <label>
                   MEMBER <span>*</span>
                 </label>
-
                 <select
-                  name="member"
-                  value={formData.member}
+                  name="memberId"
+                  value={formData.memberId}
                   onChange={handleChange}
-                  required
+                  className={errors.memberId ? "error-input" : ""}
                 >
-
-                  <option value="">
-                    Select Member
-                  </option>
-
-                  <option value="DEEPAK">
-                    DEEPAK
-                  </option>
-
-                  <option value="AKSHAY GARG">
-                    AKSHAY GARG
-                  </option>
-
-                  <option value="KOYEL SARKAR">
-                    KOYEL SARKAR
-                  </option>
-
+                  <option value="">Select Member</option>
+                  {members.map((member) => {
+                    const id = member.memberId ?? member.id;
+                    return (
+                      <option key={id} value={String(id)}>
+                        {member.memberName || `Member ${id}`}
+                      </option>
+                    );
+                  })}
                 </select>
-
+                {errors.memberId && (
+                  <p className="error-text">{errors.memberId}</p>
+                )}
               </div>
 
-
-              {/* GUARANTOR */}
-
               <div className="group-loan-form-group">
-
-                <label>
-                  GUARANTOR (TYPE HERE)
-                </label>
-
+                <label>GUARANTOR</label>
                 <select
-                  name="guarantor"
-                  value={formData.guarantor}
+                  name="guarantorId"
+                  value={formData.guarantorId}
                   onChange={handleChange}
                 >
-
-                  <option value="">
-                    Select Guarantor
-                  </option>
-
-                  <option value="DEEPAK">
-                    DEEPAK
-                  </option>
-
-                  <option value="AKSHAY GARG">
-                    AKSHAY GARG
-                  </option>
-
-                  <option value="KOYEL SARKAR">
-                    KOYEL SARKAR
-                  </option>
-
+                  <option value="">Select Guarantor</option>
+                  {members.map((member) => {
+                    const id = member.memberId ?? member.id;
+                    return (
+                      <option key={id} value={String(id)}>
+                        {member.memberName || `Member ${id}`}
+                      </option>
+                    );
+                  })}
                 </select>
-
               </div>
 
-
-              {/* PENALTY SCHEME */}
-
               <div className="group-loan-form-group">
-
-                <label>
-                  SELECT PENALTY SCHEME
-                </label>
-
+                <label>PENALTY SCHEME</label>
                 <select
-                  name="penaltyScheme"
-                  value={formData.penaltyScheme}
+                  name="penaltySchemeId"
+                  value={formData.penaltySchemeId}
                   onChange={handleChange}
+                  disabled={penaltyLoading}
                 >
-
                   <option value="">
-                    Select Penalty Scheme
+                    {penaltyLoading
+                      ? "Loading schemes..."
+                      : "Select Penalty Scheme"}
                   </option>
-
-                  <option value="NORMAL PENALTY">
-                    NORMAL PENALTY
-                  </option>
-
-                  <option value="STANDARD PENALTY">
-                    STANDARD PENALTY
-                  </option>
-
-                  <option value="MICRO PENALTY">
-                    MICRO PENALTY
-                  </option>
-
+                  {penaltySchemes.map((scheme) => {
+                    const id = scheme.penaltySchemeId ?? scheme.id;
+                    return (
+                      <option key={id} value={String(id)}>
+                        {scheme.schemeName ||
+                          scheme.penaltySchemeName ||
+                          `Scheme ${id}`}
+                      </option>
+                    );
+                  })}
                 </select>
-
               </div>
 
-
-              {/* HIDE RATE */}
-
               <div className="group-loan-form-group">
-
-                <label>
-                  HIDE RATE OF INTEREST IN PRINT
-                </label>
-
+                <label>HIDE RATE OF INTEREST IN PRINT</label>
                 <div className="group-loan-radio-group">
-
                   <label>
-
                     <input
                       type="radio"
                       name="hideRateInterest"
                       value="YES"
-                      checked={
-                        formData.hideRateInterest === "YES"
-                      }
+                      checked={formData.hideRateInterest === "YES"}
                       onChange={handleChange}
                     />
-
-                    <span className="radio-yes">
-                      ✓ YES
-                    </span>
-
+                    <span className="radio-yes">YES</span>
                   </label>
-
-
                   <label>
-
                     <input
                       type="radio"
                       name="hideRateInterest"
                       value="NO"
-                      checked={
-                        formData.hideRateInterest === "NO"
-                      }
+                      checked={formData.hideRateInterest === "NO"}
                       onChange={handleChange}
                     />
-
-                    <span className="radio-no">
-                      ✕ NO
-                    </span>
-
+                    <span className="radio-no">NO</span>
                   </label>
-
                 </div>
-
               </div>
-
             </div>
-
           </div>
-
-
-          {/* =================================================
-              FOOTER BUTTONS
-          ================================================= */}
 
           <div className="group-loan-form-footer">
-
-            <button
-              type="button"
-              className="group-loan-calculator-btn"
-            >
-              Calculator
-            </button>
-
-            <SaveButton type="submit">
+            <button type="submit" className="btn btn-save">
               {isEdit ? "UPDATE" : "CREATE"}
-            </SaveButton>
-
-            <CancelButton
-              type="button"
-              onClick={onClose}
-            >
+            </button>
+            <button type="button" className="btn btn-cancel" onClick={onClose}>
               CANCEL
-            </CancelButton>
-
+            </button>
           </div>
-
         </form>
-
       </div>
-
     </div>
   );
 };

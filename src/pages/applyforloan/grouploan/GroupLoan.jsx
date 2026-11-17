@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 
 import GroupLoanTable from "./GroupLoanTable";
 import GroupLoanForm from "./GroupLoanForm";
@@ -7,9 +7,20 @@ import GroupLoanView from "./GroupLoanView";
 import "./GroupLoan.css";
 import { toast } from "react-toastify";
 import { useSwaggerEntity } from "../../../store/useSwaggerEntity";
+import { useAppDispatch, useAppSelector } from "../../../store/hooks";
+import { fetchBranches } from "../../../store/slices/branchSlice";
 
 const GroupLoan = () => {
+  const dispatch = useAppDispatch();
   const { save } = useSwaggerEntity("groupLoan");
+  const { items: branches, loading: branchesLoading } = useAppSelector(
+    (state) => state.branch
+  );
+
+  useEffect(() => {
+    dispatch(fetchBranches());
+  }, [dispatch]);
+
   const [showForm, setShowForm] = useState(false);
   const [showView, setShowView] = useState(false);
 
@@ -124,23 +135,20 @@ const GroupLoan = () => {
                 onChange={(e) =>
                   setBranchSearch(e.target.value)
                 }
+                disabled={branchesLoading}
               >
 
                 <option value="">
-                  Select Branch
+                  {branchesLoading ? "Loading branches..." : "All Branches"}
                 </option>
-
-                <option value="SHREEJA GROUP">
-                  SHREEJA GROUP
-                </option>
-
-                <option value="BRANCH M FINANCE">
-                  BRANCH M FINANCE
-                </option>
-
-                <option value="ABC BRANCH">
-                  ABC BRANCH
-                </option>
+                {branches.map((branch) => {
+                  const id = branch.branchId ?? branch.id;
+                  return (
+                    <option key={id} value={String(id)}>
+                      {branch.branchName || branch.name || `Branch ${id}`}
+                    </option>
+                  );
+                })}
 
               </select>
 

@@ -416,3 +416,158 @@
     }
 
 }
+
+/* =========================================================
+   EMI SCHEDULE MODAL
+========================================================= */
+
+.loan-plan-emi-overlay {
+    position: fixed;
+    inset: 0;
+    z-index: 100000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(15, 23, 42, 0.45);
+    padding: 20px;
+}
+
+.loan-plan-emi-modal {
+    width: min(920px, 100%);
+    max-height: 92vh;
+    background: #fff;
+    border-radius: 12px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 20px 50px rgba(15, 23, 42, 0.25);
+}
+
+.loan-plan-emi-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    padding: 16px 22px;
+    background: linear-gradient(90deg, #087fa3, #159bc2, #1daed3);
+    color: #fff;
+}
+
+.loan-plan-emi-header h2 {
+    margin: 0;
+    font-size: 20px;
+    font-weight: 700;
+}
+
+.loan-plan-emi-header p {
+    margin: 4px 0 0;
+    font-size: 14px;
+    font-weight: 600;
+    opacity: 0.95;
+}
+
+.loan-plan-emi-summary {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 12px 18px;
+    padding: 16px 22px;
+    border-bottom: 1px solid #e2e8f0;
+    background: #fff;
+}
+
+.loan-plan-emi-summary div {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.loan-plan-emi-summary span {
+    font-size: 11px;
+    font-weight: 700;
+    color: #64748b;
+    letter-spacing: 0.02em;
+}
+
+.loan-plan-emi-summary strong {
+    font-size: 18px;
+    font-weight: 700;
+    color: #0f172a;
+}
+
+.loan-plan-emi-table-wrap {
+    overflow: auto;
+    max-height: min(55vh, 480px);
+    padding: 0 0 8px;
+}
+
+.loan-plan-emi-table {
+    width: 100%;
+    border-collapse: collapse;
+    min-width: 640px;
+}
+
+.loan-plan-emi-table th {
+    position: sticky;
+    top: 0;
+    background: #eef2f7;
+    color: #334155;
+    font-size: 12px;
+    font-weight: 700;
+    text-align: left;
+    padding: 12px 14px;
+    border-bottom: 1px solid #dbe3ee;
+}
+
+.loan-plan-emi-table td {
+    padding: 11px 14px;
+    font-size: 13px;
+    color: #334155;
+    border-bottom: 1px solid #edf2f7;
+}
+
+.loan-plan-emi-table tbody tr:hover {
+    background: #f8fafc;
+}
+
+.loan-plan-emi-footer {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+    padding: 14px 22px 18px;
+    border-top: 1px solid #e2e8f0;
+    background: #fff;
+}
+
+.loan-plan-emi-back-btn,
+.loan-plan-emi-cancel-btn {
+    min-width: 110px;
+    height: 40px;
+    border: none;
+    border-radius: 8px;
+    font-size: 13px;
+    font-weight: 700;
+    cursor: pointer;
+    color: #fff;
+}
+
+.loan-plan-emi-back-btn {
+    background: #2563eb;
+}
+
+.loan-plan-emi-back-btn:hover {
+    background: #1d4ed8;
+}
+
+.loan-plan-emi-cancel-btn {
+    background: #f97316;
+}
+
+.loan-plan-emi-cancel-btn:hover {
+    background: #ea580c;
+}
+
+@media (max-width: 768px) {
+    .loan-plan-emi-summary {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}

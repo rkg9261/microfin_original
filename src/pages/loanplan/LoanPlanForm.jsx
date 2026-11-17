@@ -23,6 +23,11 @@ import {
   getLoanTypes,
   getRecoveryTypes,
 } from "../../api/loanplanApi";
+import LoanPlanEmiModal from "./LoanPlanEmiModal";
+import {
+  buildEmiScheduleFromForm,
+  calcProcessingFeeAmount,
+} from "./loanEmiCalculator";
 
 const LoanPlanForm = ({
   onClose,
@@ -73,6 +78,8 @@ const LoanPlanForm = ({
   const [errors, setErrors] = useState({});
 
   const [saving, setSaving] = useState(false);
+  const [emiSchedule, setEmiSchedule] = useState(null);
+  const [showEmiModal, setShowEmiModal] = useState(false);
 
 
   
@@ -227,31 +234,42 @@ const LoanPlanForm = ({
   
 
   const handleChange = (e) => {
+    const { name, value, type, checked } = e.target;
+    const nextValue = type === "checkbox" ? checked : value;
 
-    const {
-      name,
-      value,
-      type,
-      checked,
-    } = e.target;
+    setFormData((prev) => {
+      const next = {
+        ...prev,
+        [name]: nextValue,
+      };
 
+      // Keep processing fee amount in sync with plan amount × percentage
+      if (
+        name === "planAmount" ||
+        name === "processingFeePercentage" ||
+        name === "processingFeeInclude"
+      ) {
+        const include =
+          name === "processingFeeInclude"
+            ? Boolean(nextValue)
+            : Boolean(next.processingFeeInclude);
+        if (include) {
+          next.processingFeeAmount = calcProcessingFeeAmount(
+            name === "planAmount" ? nextValue : next.planAmount,
+            name === "processingFeePercentage"
+              ? nextValue
+              : next.processingFeePercentage
+          );
+        }
+      }
 
-    setFormData((prev) => ({
-      ...prev,
-
-      [name]:
-        type === "checkbox"
-          ? checked
-          : value,
-    }));
-
+      return next;
+    });
 
     setErrors((prev) => ({
       ...prev,
-
       [name]: "",
     }));
-
   };
 
 
@@ -532,47 +550,27 @@ const LoanPlanForm = ({
   // CALCULATE EMI
   
 
+  const getRecoveryTypeName = () => {
+    const selected = recoveryTypes.find(
+      (item) => String(item.id) === String(formData.recoveryTypeId)
+    );
+    return selected?.name || "Monthly";
+  };
+
   const handleCalculateEmi = () => {
+    const result = buildEmiScheduleFromForm(formData, getRecoveryTypeName());
 
-    const planAmount =
-      Number(
-        formData.planAmount || 0
-      );
-
-    const paidAmount =
-      Number(
-        formData.paidAmount || 0
-      );
-
-    const emiCount =
-      Number(
-        formData.numberOfEMI || 0
-      );
-
-
-    if (
-      planAmount <= 0 ||
-      paidAmount <= 0 ||
-      emiCount <= 0
-    ) {
-
-      toast.error(
-        "Please enter Plan Amount, Paid Amount and Number Of EMI."
-      );
-
+    if (!result.ok) {
+      toast.error(result.error);
       return;
-
     }
 
+    setEmiSchedule(result);
+    setShowEmiModal(true);
+  };
 
-    const emi =
-      paidAmount / emiCount;
-
-
-    toast.success(
-      `EMI Amount: ₹${emi.toFixed(2)}`
-    );
-
+  const handleCloseEmiModal = () => {
+    setShowEmiModal(false);
   };
 
 
@@ -581,8 +579,8 @@ const LoanPlanForm = ({
   
 
   return (
-
-    <div className="loan-plan-modal">
+    <>
+    <div className="loan-plan-modal" style={{ display: showEmiModal ? "none" : undefined }}>
 
       <div className="loan-plan-modal-content">
 
@@ -1225,6 +1223,18 @@ const LoanPlanForm = ({
 
     </div>
 
+    {showEmiModal && (
+      <LoanPlanEmiModal
+        schedule={emiSchedule}
+        planName={formData.planName || (isEditMode ? "EDIT LOAN PLAN" : "ADD NEW PLAN")}
+        onBack={handleCloseEmiModal}
+        onClose={() => {
+          handleCloseEmiModal();
+          onClose?.();
+        }}
+      />
+    )}
+    </>
   );
 
 };

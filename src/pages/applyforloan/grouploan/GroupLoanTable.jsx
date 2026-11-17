@@ -1,5 +1,14 @@
-import React, { useState } from "react";
+import React, { useEffect, useMemo, useState } from "react";
 import { useSwaggerEntity } from "../../../store/useSwaggerEntity";
+import { useAppDispatch, useAppSelector } from "../../../store/hooks";
+import { fetchEmployees } from "../../../store/slices/employeeSlice";
+import { fetchLoanPlans } from "../../../store/slices/loanPlanSlice";
+import { fetchPenaltySchemes } from "../../../store/slices/penaltySchemeSlice";
+import { fetchBranches } from "../../../store/slices/branchSlice";
+import {
+  enrichGroupLoanRow,
+  formatBranchCell,
+} from "../loanDisplayUtils";
 
 import AddButton from "../../../components/buttons/AddButton";
 import EntriesDropdown from "../../../components/common/EntriesDropdown";
@@ -13,42 +22,67 @@ const GroupLoanTable = ({
   onView,
   onEdit,
 }) => {
-
+  const dispatch = useAppDispatch();
   const [entries, setEntries] = useState(10);
   const [openTask, setOpenTask] = useState(null);
   const [tableSearch, setTableSearch] = useState("");
 
-  /* =====================================================
-     DEMO DATA
-  ===================================================== */
-
   const { items: groupLoanData, remove } = useSwaggerEntity("groupLoan");
+  const { items: members } = useSwaggerEntity("member");
+  const { items: groups } = useSwaggerEntity("group");
+  const { items: branchCenters } = useSwaggerEntity("branchCenter");
+  const { items: branches } = useAppSelector((state) => state.branch);
+  const { items: employees } = useAppSelector((state) => state.employee);
+  const { items: loanPlans } = useAppSelector((state) => state.loanPlan);
+  const { items: penaltySchemes } = useAppSelector((state) => state.penaltyScheme);
 
+  useEffect(() => {
+    dispatch(fetchBranches());
+    dispatch(fetchEmployees());
+    dispatch(fetchLoanPlans());
+    dispatch(fetchPenaltySchemes());
+  }, [dispatch]);
 
+  const enrichedData = useMemo(
+    () =>
+      groupLoanData.map((item) =>
+        enrichGroupLoanRow(item, {
+          branches,
+          loanPlans,
+          members,
+          groups,
+          employees,
+          branchCenters,
+          penaltySchemes,
+        })
+      ),
+    [
+      groupLoanData,
+      branches,
+      loanPlans,
+      members,
+      groups,
+      employees,
+      branchCenters,
+      penaltySchemes,
+    ]
+  );
 
-  /* =====================================================
-     FILTER
-  ===================================================== */
-
-  const filteredData = groupLoanData.filter((item) => {
-
+  const filteredData = enrichedData.filter((item) => {
     const branchMatch =
-      branchSearch.trim() === "" ||
-      item.branch
+      !branchSearch ||
+      String(item.branchId ?? "") === String(branchSearch) ||
+      String(item.branch || "")
         .toLowerCase()
-        .includes(branchSearch.toLowerCase());
+        .includes(String(branchSearch).toLowerCase());
 
+    const value = tableSearch.trim().toLowerCase();
     const searchMatch =
-      tableSearch.trim() === "" ||
-      item.member
-        .toLowerCase()
-        .includes(tableSearch.toLowerCase()) ||
-      item.plan
-        .toLowerCase()
-        .includes(tableSearch.toLowerCase()) ||
-      item.group
-        .toLowerCase()
-        .includes(tableSearch.toLowerCase());
+      !value ||
+      String(item.member || "").toLowerCase().includes(value) ||
+      String(item.plan || "").toLowerCase().includes(value) ||
+      String(item.group || "").toLowerCase().includes(value) ||
+      String(item.staff || "").toLowerCase().includes(value);
 
     return branchMatch && searchMatch;
   });
@@ -293,15 +327,7 @@ const GroupLoanTable = ({
                   {/* BRANCH */}
 
                   <td>
-
-                    {loan.branch}
-
-                    <br />
-
-                    <small>
-                      ({loan.branchCode})
-                    </small>
-
+                    {formatBranchCell(loan.branch, loan.branchCode)}
                   </td>
 
 

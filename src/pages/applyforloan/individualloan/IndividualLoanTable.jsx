@@ -1,5 +1,14 @@
-import React, { useState } from "react";
+import React, { useEffect, useMemo, useState } from "react";
 import { useSwaggerEntity } from "../../../store/useSwaggerEntity";
+import { useAppDispatch, useAppSelector } from "../../../store/hooks";
+import { fetchEmployees } from "../../../store/slices/employeeSlice";
+import { fetchLoanPlans } from "../../../store/slices/loanPlanSlice";
+import { fetchPenaltySchemes } from "../../../store/slices/penaltySchemeSlice";
+import { fetchBranches } from "../../../store/slices/branchSlice";
+import {
+  enrichIndividualLoanRow,
+  formatBranchCell,
+} from "../loanDisplayUtils";
 
 import AddButton from "../../../components/buttons/AddButton";
 import EntriesDropdown from "../../../components/common/EntriesDropdown";
@@ -13,47 +22,64 @@ const IndividualLoanTable = ({
   onView,
   onEdit,
 }) => {
-
+  const dispatch = useAppDispatch();
   const [entries, setEntries] = useState(10);
-
   const [search, setSearch] = useState("");
-
   const [openTask, setOpenTask] = useState(null);
 
-
-  /* =====================================================
-     DEMO DATA
-  ===================================================== */
-
   const { items: individualLoanData, remove } = useSwaggerEntity("individualLoan");
+  const { items: members } = useSwaggerEntity("member");
+  const { items: branchCenters } = useSwaggerEntity("branchCenter");
+  const { items: branches } = useAppSelector((state) => state.branch);
+  const { items: employees } = useAppSelector((state) => state.employee);
+  const { items: loanPlans } = useAppSelector((state) => state.loanPlan);
+  const { items: penaltySchemes } = useAppSelector((state) => state.penaltyScheme);
 
+  useEffect(() => {
+    dispatch(fetchBranches());
+    dispatch(fetchEmployees());
+    dispatch(fetchLoanPlans());
+    dispatch(fetchPenaltySchemes());
+  }, [dispatch]);
 
+  const enrichedData = useMemo(
+    () =>
+      individualLoanData.map((item) =>
+        enrichIndividualLoanRow(item, {
+          branches,
+          loanPlans,
+          members,
+          employees,
+          branchCenters,
+          penaltySchemes,
+        })
+      ),
+    [
+      individualLoanData,
+      branches,
+      loanPlans,
+      members,
+      employees,
+      branchCenters,
+      penaltySchemes,
+    ]
+  );
 
-  /* =====================================================
-     FILTER
-  ===================================================== */
-
-  const filteredData = individualLoanData.filter((item) => {
-
+  const filteredData = enrichedData.filter((item) => {
     const branchMatch =
-      branchSearch.trim() === "" ||
-      item.branchName
+      !branchSearch ||
+      String(item.branchId ?? "") === String(branchSearch) ||
+      String(item.branchName || "")
         .toLowerCase()
-        .includes(branchSearch.toLowerCase());
+        .includes(String(branchSearch).toLowerCase());
 
-
+    const value = search.trim().toLowerCase();
     const searchMatch =
-      search.trim() === "" ||
-      item.member
-        .toLowerCase()
-        .includes(search.toLowerCase()) ||
-      item.planName
-        .toLowerCase()
-        .includes(search.toLowerCase()) ||
-      item.branchName
-        .toLowerCase()
-        .includes(search.toLowerCase());
-
+      !value ||
+      String(item.member || "").toLowerCase().includes(value) ||
+      String(item.planName || "").toLowerCase().includes(value) ||
+      String(item.branchName || "").toLowerCase().includes(value) ||
+      String(item.staff || "").toLowerCase().includes(value);
 
     return branchMatch && searchMatch;
   });
@@ -293,13 +319,7 @@ const IndividualLoanTable = ({
 
 
                   <td>
-
-                    {loan.branchName}
-
-                    <br />
-
-                    ({loan.branchCode})
-
+                    {formatBranchCell(loan.branchName, loan.branchCode)}
                   </td>
 
 

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 
 import IndividualLoanTable from "./IndividualLoanTable";
 import IndividualLoanForm from "./IndividualLoanForm";
@@ -7,10 +7,19 @@ import IndividualLoanView from "./IndividualLoanView";
 import "./IndividualLoan.css";
 import { toast } from "react-toastify";
 import { useSwaggerEntity } from "../../../store/useSwaggerEntity";
+import { useAppDispatch, useAppSelector } from "../../../store/hooks";
+import { fetchBranches } from "../../../store/slices/branchSlice";
 
 const IndividualLoan = () => {
+  const dispatch = useAppDispatch();
   const { save } = useSwaggerEntity("individualLoan");
+  const { items: branches, loading: branchesLoading } = useAppSelector(
+    (state) => state.branch
+  );
 
+  useEffect(() => {
+    dispatch(fetchBranches());
+  }, [dispatch]);
 
   const [branchSearch, setBranchSearch] = useState("");
 
@@ -157,14 +166,23 @@ const IndividualLoan = () => {
 
             <div className="individual-loan-input-wrapper">
 
-              <input
-                type="text"
-                placeholder="Select Branch"
+              <select
                 value={branchSearch}
-                onChange={(e) =>
-                  setBranchSearch(e.target.value)
-                }
-              />
+                onChange={(e) => setBranchSearch(e.target.value)}
+                disabled={branchesLoading}
+              >
+                <option value="">
+                  {branchesLoading ? "Loading branches..." : "All Branches"}
+                </option>
+                {branches.map((branch) => {
+                  const id = branch.branchId ?? branch.id;
+                  return (
+                    <option key={id} value={String(id)}>
+                      {branch.branchName || branch.name || `Branch ${id}`}
+                    </option>
+                  );
+                })}
+              </select>
 
               {branchSearch && (
 
@@ -178,10 +196,6 @@ const IndividualLoan = () => {
                 </button>
 
               )}
-
-              <span>
-                ▾
-              </span>
 
             </div>
 

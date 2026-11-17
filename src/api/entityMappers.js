@@ -304,32 +304,90 @@ export const entityMappers = {
     status: statusFrom(item),
   }),
 
-  individualLoan: (item) => ({
-    ...item,
-    id: item.id,
-    planName: text(item.planName, item.planId),
-    planType: text(item.planType, item.loanType),
-    member: text(item.member, item.memberId),
-    memberCode: text(item.memberCode, item.memberId),
-    staff: text(item.staff, item.staffId),
-    branch: text(item.branch, item.branchId),
-    loanType: text(item.loanType),
-    description: text(item.description),
-  }),
+  individualLoan: (item) => {
+    // API returns FK ids only (branchId/planId/...). Do not put ids into name fields.
+    const created = text(item.createdDate, item.date).slice(0, 10);
+    return {
+      ...item,
+      id: item.id,
+      branchId: item.branchId ?? null,
+      planId: item.planId ?? null,
+      staffId: item.staffId ?? null,
+      memberId: item.memberId ?? null,
+      purposeId: item.purposeId ?? null,
+      branchCenterId: item.branchCenterId ?? null,
+      guarantorId: item.guarantorId ?? null,
+      penaltySchemeId: item.penaltySchemeId ?? null,
+      planName: text(item.planName, item.plan),
+      planType: text(item.planType, item.loanType),
+      member: text(item.memberName, item.member),
+      memberCode: text(item.memberCode),
+      staff: text(item.staffName, item.staff),
+      branch: text(item.branchName, item.branch),
+      branchName: text(item.branchName, item.branch),
+      branchCode: text(item.branchCode),
+      branchCenter: text(item.branchCenterName, item.branchCenter),
+      guarantor: text(item.guarantorName, item.guarantor),
+      purpose: text(item.purposeName, item.purpose),
+      penaltyScheme: text(item.penaltySchemeName, item.penaltyScheme),
+      penaltyName: text(item.penaltySchemeName, item.penaltyName),
+      hideRateInterest: item.hideRateOfInterestInPrint ? "YES" : "NO",
+      hideRateOfInterestInPrint: Boolean(item.hideRateOfInterestInPrint),
+      loanType: text(item.loanType, "Single Ledger"),
+      description: text(item.description),
+      date: created || "-",
+      createdDate: item.createdDate || null,
+      emi: text(item.emi, item.numberOfEMI),
+      loanAmount: item.loanAmount ?? item.planAmount ?? null,
+      disAmount: item.disAmount ?? item.disbursementAmount ?? null,
+      fcPfIf: text(item.fcPfIf),
+      payMode: text(item.payMode),
+    };
+  },
 
-  groupLoan: (item) => ({
-    ...item,
-    id: item.id,
-    plan: text(item.plan, item.planId),
-    member: text(item.member, item.memberId),
-    memberCode: text(item.memberCode, item.memberId),
-    group: text(item.group, item.groupId),
-    staff: text(item.staff, item.agentId),
-    branch: text(item.branch, item.branchId),
-    branchCode: text(item.branchCode),
-    branchCenter: text(item.branchCenter, item.branchCenterId),
-    loanType: text(item.loanType),
-  }),
+  groupLoan: (item) => {
+    // API returns FK ids only. Names are resolved in the table from lookup APIs.
+    const created = text(item.createdDate).slice(0, 10);
+    return {
+      ...item,
+      id: item.id,
+      branchId: item.branchId ?? null,
+      planId: item.planId ?? null,
+      agentId: item.agentId ?? null,
+      memberId: item.memberId ?? null,
+      groupLeaderId: item.groupLeaderId ?? null,
+      purposeId: item.purposeId ?? null,
+      branchCenterId: item.branchCenterId ?? null,
+      groupId: item.groupId ?? null,
+      guarantorId: item.guarantorId ?? null,
+      penaltySchemeId: item.penaltySchemeId ?? null,
+      plan: text(item.planName, item.plan),
+      planName: text(item.planName, item.plan),
+      member: text(item.memberName, item.member),
+      memberCode: text(item.memberCode),
+      group: text(item.groupName, item.group),
+      staff: text(item.agentName, item.staff),
+      agentName: text(item.agentName, item.staff),
+      branch: text(item.branchName, item.branch),
+      branchName: text(item.branchName, item.branch),
+      branchCode: text(item.branchCode),
+      branchCenter: text(item.branchCenterName, item.branchCenter),
+      groupLeader: text(item.groupLeaderName, item.groupLeader),
+      centerLeader: text(item.centerLeader, item.groupLeaderName, item.groupLeader),
+      guarantor: text(item.guarantorName, item.guarantor),
+      purpose: text(item.purposeName, item.purpose),
+      penaltyScheme: text(item.penaltySchemeName, item.penaltyScheme),
+      penaltyName: text(item.penaltySchemeName, item.penaltyName),
+      hideRateInterest: item.hideRateOfInterestInPrint ? "YES" : "NO",
+      hideRateOfInterestInPrint: Boolean(item.hideRateOfInterestInPrint),
+      loanType: text(item.loanType, "Single Ledger"),
+      description: text(item.description),
+      emiType: text(item.emiType, item.loanType),
+      planAmount: item.planAmount ?? item.loanAmount ?? null,
+      createdDate: item.createdDate || null,
+      date: created || "-",
+    };
+  },
 
   loanTopup: (item) => ({
     ...item,
@@ -733,55 +791,65 @@ export const toApi = {
     updatedDate: form.updatedDate || null,
   }),
 
-  individualLoan: (form) => ({
-    id: num(form.id),
-    branchId: num(form.branchId || form.branch),
-    planId: num(form.planId || form.plan),
-    description: text(form.description, "-"),
-    staffId: num(form.staffId || form.staff),
-    memberId: num(form.memberId || form.member),
-    purposeId: num(form.purposeId || form.purpose),
-    branchCenterId: text(form.branchCenterId || form.branchCenter)
-      ? num(form.branchCenterId || form.branchCenter)
-      : null,
-    guarantorId: text(form.guarantorId || form.guarantor)
-      ? num(form.guarantorId || form.guarantor)
-      : null,
-    penaltySchemeId: text(form.penaltySchemeId || form.penaltyScheme)
-      ? num(form.penaltySchemeId || form.penaltyScheme)
-      : null,
-    hideRateOfInterestInPrint: yesNo(
-      form.hideRateOfInterestInPrint ?? form.hideRateInterest
-    ),
-    loanType: text(form.loanType, "INDIVIDUAL"),
-    createdDate: form.createdDate || new Date().toISOString(),
-  }),
+  individualLoan: (form) => {
+    const payload = {
+      branchId: num(form.branchId || form.branch),
+      planId: num(form.planId || form.plan),
+      description: text(form.description) || "-",
+      staffId: num(form.staffId || form.staff),
+      memberId: num(form.memberId || form.member),
+      purposeId: num(form.purposeId || form.purpose),
+      branchCenterId: text(form.branchCenterId || form.branchCenter)
+        ? num(form.branchCenterId || form.branchCenter)
+        : null,
+      guarantorId: text(form.guarantorId || form.guarantor)
+        ? num(form.guarantorId || form.guarantor)
+        : null,
+      penaltySchemeId: text(form.penaltySchemeId || form.penaltyScheme)
+        ? num(form.penaltySchemeId || form.penaltyScheme)
+        : null,
+      hideRateOfInterestInPrint: yesNo(
+        form.hideRateOfInterestInPrint ?? form.hideRateInterest
+      ),
+      loanType: text(form.loanType, "Single Ledger"),
+      createdDate: form.createdDate || new Date().toISOString(),
+    };
+    const id = num(form.id);
+    if (id > 0) payload.id = id;
+    return payload;
+  },
 
-  groupLoan: (form) => ({
-    id: num(form.id),
-    branchId: num(form.branchId || form.branch),
-    planId: num(form.planId || form.plan),
-    description: text(form.description, "-"),
-    agentId: num(form.agentId || form.staff),
-    memberId: num(form.memberId || form.member),
-    groupLeaderId: num(form.groupLeaderId || form.groupLeader),
-    purposeId: num(form.purposeId || form.purpose),
-    branchCenterId: text(form.branchCenterId || form.branchCenter)
-      ? num(form.branchCenterId || form.branchCenter)
-      : null,
-    groupId: text(form.groupId || form.group) ? num(form.groupId || form.group) : null,
-    guarantorId: text(form.guarantorId || form.guarantor)
-      ? num(form.guarantorId || form.guarantor)
-      : null,
-    penaltySchemeId: text(form.penaltySchemeId || form.penaltyScheme)
-      ? num(form.penaltySchemeId || form.penaltyScheme)
-      : null,
-    hideRateOfInterestInPrint: yesNo(
-      form.hideRateOfInterestInPrint ?? form.hideRateInterest
-    ),
-    loanType: text(form.loanType, "GROUP"),
-    createdDate: form.createdDate || new Date().toISOString(),
-  }),
+  groupLoan: (form) => {
+    const payload = {
+      branchId: num(form.branchId || form.branch),
+      planId: num(form.planId || form.plan),
+      description: text(form.description) || "-",
+      agentId: num(form.agentId || form.staff),
+      memberId: num(form.memberId || form.member),
+      groupLeaderId: num(form.groupLeaderId || form.groupLeader),
+      purposeId: num(form.purposeId || form.purpose),
+      branchCenterId: text(form.branchCenterId || form.branchCenter)
+        ? num(form.branchCenterId || form.branchCenter)
+        : null,
+      groupId: text(form.groupId || form.group)
+        ? num(form.groupId || form.group)
+        : null,
+      guarantorId: text(form.guarantorId || form.guarantor)
+        ? num(form.guarantorId || form.guarantor)
+        : null,
+      penaltySchemeId: text(form.penaltySchemeId || form.penaltyScheme)
+        ? num(form.penaltySchemeId || form.penaltyScheme)
+        : null,
+      hideRateOfInterestInPrint: yesNo(
+        form.hideRateOfInterestInPrint ?? form.hideRateInterest
+      ),
+      loanType: text(form.loanType, "Single Ledger"),
+      createdDate: form.createdDate || new Date().toISOString(),
+    };
+    const id = num(form.id);
+    if (id > 0) payload.id = id;
+    return payload;
+  },
 
   loanTopup: (form) => ({
     id: num(form.id),
