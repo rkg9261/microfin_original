@@ -42,21 +42,59 @@
 
 .sidebar-logo {
   width: 100%;
-  height: 58px;
+  min-height: 64px;
+  padding: 8px 10px;
   border-bottom: 1px solid #ececec;
   display: flex;
   align-items: center;
   justify-content: center;
+  gap: 8px;
+  box-sizing: border-box;
   background: #fff;
 }
 
-.sidebar-logo img {
-  width: 175px;
-  transition: .3s; 
+.sidebar-logo-mark {
+  width: 36px;
+  height: 36px;
+  flex-shrink: 0;
+  transition: .3s;
 }
 
-.sidebar.close .sidebar-logo img {
-  width: 42px;
+.sidebar-logo-text {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.15;
+  transition: .3s;
+}
+
+.sidebar-logo-title {
+  font-size: 13px;
+  font-weight: 700;
+  color: #1a5f4a;
+  letter-spacing: 0.02em;
+  white-space: nowrap;
+}
+
+.sidebar-logo-subtitle {
+  font-size: 11px;
+  font-weight: 600;
+  color: #b8860b;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.sidebar.close .sidebar-logo {
+  padding: 8px 4px;
+}
+
+.sidebar.close .sidebar-logo-mark {
+  width: 34px;
+  height: 34px;
+}
+
+.sidebar.close .sidebar-logo-text {
+  display: none;
 }
 
 /* ===========================

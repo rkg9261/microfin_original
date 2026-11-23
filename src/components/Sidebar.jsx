@@ -799,12 +799,15 @@ const Sidebar = () => {
       ===================================================== */}
 
       <div className="sidebar-logo">
-
         <img
-          src="https://images-platform.99static.com/C4X2T4gOTyMopKdpRxN4WWm63Yo=/500x500/top/smart/99designs-contests-attachments/7/7745/attachment_7745006"
-          alt="Logo"
+          src="/maalaxmi-logo.svg"
+          alt="Maa Laxmi Foundation"
+          className="sidebar-logo-mark"
         />
-
+        <div className="sidebar-logo-text">
+          <span className="sidebar-logo-title">Maa Laxmi</span>
+          <span className="sidebar-logo-subtitle">Foundation</span>
+        </div>
       </div>
 
       {/* =====================================================
