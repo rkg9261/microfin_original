@@ -424,13 +424,9 @@
 ========================================================= */
 
 .product-loan-form-modal {
-
     width: 1050px;
-
     max-width: 95%;
-
-    margin-top: 70px;
-
+    margin-top: 0;
 }
 
 

@@ -304,13 +304,9 @@ td:nth-child(5) {
 ========================================================= */
 
 .insurance-party-form-modal {
-
     width: 850px;
-
     max-width: 95%;
-
-    margin-top: 80px;
-
+    margin-top: 0;
 }
 
 

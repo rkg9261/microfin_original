@@ -228,7 +228,7 @@ const ProductSupplierForm = ({
 
         <div className="common-modal">
 
-            <div className="common-modal-content">
+            <div className="common-modal-content product-supplier-form-modal">
 
 
                 {/* ==================================

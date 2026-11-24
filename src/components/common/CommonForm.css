@@ -10,17 +10,32 @@
     bottom:0;
     display:flex;
     justify-content:center;
-    align-items:center;
+    align-items:flex-start;
     background:rgba(0,0,0,.45);
     z-index:99999;
-    padding:20px;
+    padding:32px 20px 24px;
     overflow-y:auto;
+    -ms-overflow-style:none;
+    scrollbar-width:none;
 }
 
+.common-modal::-webkit-scrollbar{
+    display:none;
+    width:0;
+    height:0;
+}
+
+/* ==========================================
+   MODAL BOX
+========================================== */
+
 .common-modal-content{
-    
     width:700px;
     max-width:100%;
+    max-height:calc(100vh - 56px);
+    margin-top:0;
+    display:flex;
+    flex-direction:column;
     background:#fff;
     border-radius:16px;
     overflow:hidden;
@@ -44,25 +59,13 @@
 }
 
 /* ==========================================
-   MODAL BOX
-========================================== */
-
-.common-modal-content{
-    width:700px;
-    max-width:100%;
-    background:#fff;
-    border-radius:16px;
-    overflow:hidden;
-    animation:fadeIn .25s ease;
-}
-
-/* ==========================================
    HEADER
 ========================================== */
 
 .common-modal-header{
 
     height:62px;
+    flex-shrink:0;
 
     background:linear-gradient(90deg,#1557ff,#2468ff,#2f80ed);
 
@@ -95,7 +98,19 @@
 .common-form{
 
     padding:28px;
+    flex:1 1 auto;
+    min-height:0;
+    overflow-x:hidden;
+    overflow-y:auto;
+    -ms-overflow-style:none;
+    scrollbar-width:none;
 
+}
+
+.common-form::-webkit-scrollbar{
+    display:none;
+    width:0;
+    height:0;
 }
 
 /* ==========================================
