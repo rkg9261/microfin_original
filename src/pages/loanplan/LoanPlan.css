@@ -222,6 +222,15 @@
     border-color:#2563eb;
 }
 
+.loan-plan-form-group input.loan-plan-readonly-input,
+.loan-plan-form-group input.loan-plan-readonly-input:focus {
+    background: #f1f5f9;
+    color: #475569;
+    cursor: not-allowed;
+    border-color: #dbe4ee;
+    box-shadow: none;
+}
+
 /*  FORM BUTTONS */
   
 

@@ -95,12 +95,26 @@ export const buildFlatEmiSchedule = ({
   recoveryTypeName = "Monthly",
   startDate = new Date(),
   preloanEmiInterest = 0,
+  rateOfInterest = 0,
 } = {}) => {
   const principal = round2(toNumber(planAmount));
   const charges = round2(toNumber(includedCharges));
   const emiCount = Math.max(0, Math.floor(toNumber(numberOfEMI)));
-  const totalAmountToPay = round2(toNumber(paidAmount));
+  const rate = toNumber(rateOfInterest);
+  const periodsPerYear = periodsPerYearFromRecovery(recoveryTypeName);
   const financedWithCharges = round2(principal + charges);
+
+  // Prefer Rate of Interest when provided; otherwise fall back to paidAmount spread.
+  const interestFromRate =
+    rate > 0
+      ? round2(principal * (rate / 100) * (emiCount / periodsPerYear))
+      : 0;
+
+  const paid = round2(toNumber(paidAmount) || principal);
+  const totalAmountToPay =
+    rate > 0
+      ? round2(principal + interestFromRate + (charges > 0 ? charges : 0))
+      : paid;
 
   // Finance charges into base only when total repayment covers plan + charges.
   const schedulePrincipal =
@@ -115,14 +129,14 @@ export const buildFlatEmiSchedule = ({
     };
   }
 
-  if (totalAmountToPay <= 0) {
+  if (rate <= 0 && totalAmountToPay <= 0) {
     return {
       ok: false,
-      error: "Please enter Paid Amount (total amount to repay).",
+      error: "Please enter Rate of Interest (%) or Paid Amount.",
     };
   }
 
-  if (totalAmountToPay < principal) {
+  if (rate <= 0 && totalAmountToPay < principal) {
     return {
       ok: false,
       error: `Paid Amount (₹${totalAmountToPay}) cannot be less than Plan Amount ₹${principal}.`,
@@ -130,7 +144,12 @@ export const buildFlatEmiSchedule = ({
   }
 
   const totalInterest = round2(
-    Math.max(0, totalAmountToPay - schedulePrincipal - toNumber(preloanEmiInterest))
+    rate > 0
+      ? Math.max(0, interestFromRate - toNumber(preloanEmiInterest))
+      : Math.max(
+          0,
+          totalAmountToPay - schedulePrincipal - toNumber(preloanEmiInterest)
+        )
   );
 
   const baseRaw = schedulePrincipal / emiCount;
@@ -177,7 +196,8 @@ export const buildFlatEmiSchedule = ({
     schedulePrincipal,
     totalInterest,
     recoveryTypeName,
-    periodsPerYear: periodsPerYearFromRecovery(recoveryTypeName),
+    periodsPerYear,
+    rateOfInterest: rate,
     rows,
   };
 };
@@ -185,10 +205,11 @@ export const buildFlatEmiSchedule = ({
 export const buildEmiScheduleFromForm = (formData = {}, recoveryTypeName = "Monthly") =>
   buildFlatEmiSchedule({
     planAmount: formData.planAmount,
-    paidAmount: formData.paidAmount,
+    paidAmount: formData.paidAmount || formData.planAmount,
     numberOfEMI: formData.numberOfEMI,
     includedCharges: getIncludedCharges(formData),
     recoveryTypeName,
     startDate: new Date(),
     preloanEmiInterest: 0,
+    rateOfInterest: formData.rateOfInterest,
   });

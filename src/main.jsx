@@ -31,6 +31,7 @@ ReactDOM.createRoot(document.getElementById("root")).render(
         pauseOnHover
         draggable
         theme="colored"
+        style={{ zIndex: 2000000 }}
       />
     </BrowserRouter>
   </Provider>

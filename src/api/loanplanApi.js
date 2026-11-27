@@ -86,7 +86,8 @@ const toApiLoanPlan = (data, id = 0) => {
     numberOfEMI: Number(data.numberOfEMI ?? data.numberOfEmi ?? 0),
     recoveryTypeId: toId(data.recoveryTypeId ?? data.recoveryType),
     planAmount: Number(data.planAmount || 0),
-    paidAmount: Number(data.paidAmount || 0),
+    // API has no rateOfInterest field; Paid Amount stays equal to Plan Amount
+    paidAmount: Number(data.planAmount || data.paidAmount || 0),
     holidayExclude: yesNo(data.holidayExclude),
     gstChargeInclude: yesNo(data.gstChargeInclude),
     fileChargeInclude: yesNo(data.fileChargeInclude),

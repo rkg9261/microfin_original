@@ -49,6 +49,7 @@ const LoanPlanForm = ({
     recoveryTypeId: "",
     planAmount: "",
     paidAmount: "",
+    rateOfInterest: "",
     holidayExclude: false,
     gstChargeInclude: false,
     fileChargeInclude: false,
@@ -196,7 +197,9 @@ const LoanPlanForm = ({
       loanTypeId,
       planName: initialData.planName ?? "",
       planAmount: initialData.planAmount ?? "",
-      paidAmount: initialData.paidAmount ?? "",
+      paidAmount: initialData.planAmount ?? initialData.paidAmount ?? "",
+      rateOfInterest:
+        initialData.rateOfInterest ?? initialData.interestRate ?? "",
       numberOfEMI: initialData.numberOfEMI ?? initialData.numberOfEmi ?? "",
       recoveryTypeId,
       holidayExclude: Boolean(initialData.holidayExclude),
@@ -242,6 +245,11 @@ const LoanPlanForm = ({
         ...prev,
         [name]: nextValue,
       };
+
+      // Paid Amount always mirrors Plan Amount
+      if (name === "planAmount") {
+        next.paidAmount = nextValue;
+      }
 
       // Keep processing fee amount in sync with plan amount × percentage
       if (
@@ -299,13 +307,13 @@ const LoanPlanForm = ({
         },
 
         {
-          name: "paidAmount",
-          label: "Paid Amount",
+          name: "numberOfEMI",
+          label: "Number Of EMI",
         },
 
         {
-          name: "numberOfEMI",
-          label: "Number Of EMI",
+          name: "rateOfInterest",
+          label: "Rate of Interest",
         },
 
         {
@@ -360,7 +368,8 @@ const LoanPlanForm = ({
     numberOfEMI: Number(formData.numberOfEMI || 0),
     recoveryTypeId: Number(formData.recoveryTypeId),
     planAmount: Number(formData.planAmount || 0),
-    paidAmount: Number(formData.paidAmount || 0),
+    paidAmount: Number(formData.planAmount || 0),
+    rateOfInterest: Number(formData.rateOfInterest || 0),
     holidayExclude: Boolean(formData.holidayExclude),
     gstChargeInclude: Boolean(formData.gstChargeInclude),
     fileChargeInclude: Boolean(formData.fileChargeInclude),
@@ -777,7 +786,7 @@ const LoanPlanForm = ({
 
 
           {/* =================================================
-              PAID AMOUNT
+              PAID AMOUNT (mirrors Plan Amount)
           ================================================== */}
 
           <div className="loan-plan-form-group">
@@ -789,18 +798,14 @@ const LoanPlanForm = ({
             <input
               type="number"
               name="paidAmount"
-              placeholder="Enter Paid Amount"
+              placeholder="Same as Plan Amount"
               value={formData.paidAmount}
-              onChange={handleChange}
+              readOnly
+              tabIndex={-1}
               min="0"
               step="0.01"
+              className="loan-plan-readonly-input"
             />
-
-            {errors.paidAmount && (
-              <p className="error-text">
-                {errors.paidAmount}
-              </p>
-            )}
 
           </div>
 
@@ -1190,6 +1195,35 @@ const LoanPlanForm = ({
               </option>
 
             </select>
+
+          </div>
+
+
+          {/* =================================================
+              RATE OF INTEREST
+          ================================================== */}
+
+          <div className="loan-plan-form-group">
+
+            <label>
+              Rate of Interest (%) *
+            </label>
+
+            <input
+              type="number"
+              name="rateOfInterest"
+              placeholder="Enter Rate of Interest"
+              value={formData.rateOfInterest}
+              onChange={handleChange}
+              min="0"
+              step="0.01"
+            />
+
+            {errors.rateOfInterest && (
+              <p className="error-text">
+                {errors.rateOfInterest}
+              </p>
+            )}
 
           </div>
 

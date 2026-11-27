@@ -1,3 +1,8 @@
+/* Keep toasts above app modals (common-modal / loan-plan-modal use ~99999) */
+.Toastify__toast-container {
+  z-index: 2000000 !important;
+}
+
 .Toastify__toast {
   border-radius: 8px;
   font-family: "Poppins", sans-serif;
