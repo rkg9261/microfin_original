@@ -786,6 +786,35 @@ const LoanPlanForm = ({
 
 
           {/* =================================================
+              RATE OF INTEREST
+          ================================================== */}
+
+          <div className="loan-plan-form-group">
+
+            <label>
+              Rate of Interest (%) *
+            </label>
+
+            <input
+              type="number"
+              name="rateOfInterest"
+              placeholder="Enter Rate of Interest"
+              value={formData.rateOfInterest}
+              onChange={handleChange}
+              min="0"
+              step="0.01"
+            />
+
+            {errors.rateOfInterest && (
+              <p className="error-text">
+                {errors.rateOfInterest}
+              </p>
+            )}
+
+          </div>
+
+
+          {/* =================================================
               PAID AMOUNT (mirrors Plan Amount)
           ================================================== */}
 
@@ -1195,35 +1224,6 @@ const LoanPlanForm = ({
               </option>
 
             </select>
-
-          </div>
-
-
-          {/* =================================================
-              RATE OF INTEREST
-          ================================================== */}
-
-          <div className="loan-plan-form-group">
-
-            <label>
-              Rate of Interest (%) *
-            </label>
-
-            <input
-              type="number"
-              name="rateOfInterest"
-              placeholder="Enter Rate of Interest"
-              value={formData.rateOfInterest}
-              onChange={handleChange}
-              min="0"
-              step="0.01"
-            />
-
-            {errors.rateOfInterest && (
-              <p className="error-text">
-                {errors.rateOfInterest}
-              </p>
-            )}
 
           </div>
 
